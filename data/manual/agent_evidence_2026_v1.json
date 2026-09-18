@@ -1,0 +1,488 @@
+{
+  "evidence_version": "agent_evidence_2026_v1",
+  "generated_on": "2026-07-04T00:00:00Z",
+  "source_policy": "Agent-curated, bounded pre-event evidence. Official F1/FIA/team sources are preferred; media analysis is used only when it answers one of the event questions.",
+  "model_usage_policy": "Current target models load this file as target-neutral evidence signals. Legacy adjustment fields, if present, are ignored by current loaders and retained only for historical legacy modules. Community/social evidence cannot override official timing or classification.",
+  "events": [
+    {
+      "event_round": 2,
+      "race_name": "Chinese Grand Prix",
+      "pre_qualifying_cutoff": "2026-03-13T07:00:00Z",
+      "pre_race_cutoff": "2026-03-15T07:00:00Z",
+      "search_questions": [
+        {
+          "question_id": "r02_q1",
+          "question": "Did the single practice and Sprint Qualifying show a clear Mercedes pace signal?",
+          "attribution_basis": ["winner_miss", "podium_overlap"]
+        },
+        {
+          "question_id": "r02_q2",
+          "question": "Was there pre-race evidence of Red Bull or Verstappen weakness?",
+          "attribution_basis": ["dnf_brier_driver", "top10_false_positive"]
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "r02_e001",
+          "source_id": "f1_china_fp1_mercedes_2026",
+          "source_type": "official",
+          "source_url": "https://www.formula1.com/en/latest/article/fp1-russell-sets-the-pace-from-antonelli-and-norris-during-sole-chinese.5mXgmJfYHY5aWepDGxjbi0",
+          "retrieved_on": "2026-07-04T00:00:00Z",
+          "published_on": "2026-03-13T04:47:00Z",
+          "event_round": 2,
+          "applies_to": {"type": "team", "ids": ["mercedes"]},
+          "signal_type": "pace",
+          "direction": "positive",
+          "confidence": 0.85,
+          "summary": "F1 official FP1 report had Russell ahead of Antonelli in a Mercedes 1-2 during the only practice session in Shanghai.",
+          "model_usage": "feature",
+          "session_scope": ["race", "sprint_qualifying"]
+        },
+        {
+          "evidence_id": "r02_e002",
+          "source_id": "the_race_china_red_bull_undriveable_2026",
+          "source_type": "media",
+          "source_url": "https://www.the-race.com/formula-1/completely-undriveable-max-verstappen-big-red-bull-kicking-explained/",
+          "retrieved_on": "2026-07-04T00:00:00Z",
+          "published_on": "2026-03-14T12:00:00Z",
+          "event_round": 2,
+          "applies_to": {"type": "driver", "ids": ["max_verstappen"]},
+          "signal_type": "reliability",
+          "direction": "negative",
+          "confidence": 0.72,
+          "summary": "The Race reported Verstappen describing the Red Bull as difficult to drive across the Chinese GP weekend after a poor Saturday.",
+          "model_usage": "feature",
+          "session_scope": ["race"]
+        },
+        {
+          "evidence_id": "r02_e003",
+          "source_id": "f1_china_sprint_qualifying_2026",
+          "source_type": "official",
+          "source_url": "https://www.formula1.com/en/latest/article/russell-clinches-pole-position-in-china-sprint-qualifying-ahead-of-antonelli.5jusmBWV5jpO0919j6RzYg",
+          "retrieved_on": "2026-07-04T00:00:00Z",
+          "published_on": "2026-03-13T08:35:00Z",
+          "event_round": 2,
+          "applies_to": {"type": "team", "ids": ["mercedes"]},
+          "signal_type": "pace",
+          "direction": "positive",
+          "confidence": 0.88,
+          "summary": "F1 official Sprint Qualifying report recorded Russell and Antonelli locking out the front row.",
+          "model_usage": "note",
+          "session_scope": ["race"]
+        }
+      ]
+    },
+    {
+      "event_round": 3,
+      "race_name": "Japanese Grand Prix",
+      "pre_qualifying_cutoff": "2026-03-28T06:00:00Z",
+      "pre_race_cutoff": "2026-03-29T06:00:00Z",
+      "search_questions": [
+        {
+          "question_id": "r03_q1",
+          "question": "Was McLaren or Piastri materially faster than the baseline expected at Suzuka?",
+          "attribution_basis": ["podium_missing", "top10_missing", "qualifying_pace_error"]
+        },
+        {
+          "question_id": "r03_q2",
+          "question": "Were there reliability notes that should change Norris or McLaren risk?",
+          "attribution_basis": ["dnf_brier_driver"]
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "r03_e001",
+          "source_id": "f1_japan_fp2_piastri_2026",
+          "source_type": "official",
+          "source_url": "https://www.formula1.com/en/latest/article/fp2-piastri-sets-the-pace-from-antonelli-and-russell-during-second-practice.2CeFTkESJX45t8tlF1V0rm",
+          "retrieved_on": "2026-07-04T00:00:00Z",
+          "published_on": "2026-03-27T06:00:00Z",
+          "event_round": 3,
+          "applies_to": {"type": "team", "ids": ["mclaren"]},
+          "signal_type": "pace",
+          "direction": "positive",
+          "confidence": 0.78,
+          "summary": "F1 official FP2 report had Piastri fastest, with Norris also in the top four, indicating McLaren pace at Suzuka.",
+          "model_usage": "feature",
+          "session_scope": ["race", "qualifying"]
+        },
+        {
+          "evidence_id": "r03_e002",
+          "source_id": "f1_japan_mclaren_threat_2026",
+          "source_type": "official",
+          "source_url": "https://www.formula1.com/en/latest/article/a-little-bit-of-a-surprise-russell-and-mercedes-wary-of-mclaren-threat-after.8dIuAJUSdqU2MwGnvy7et",
+          "retrieved_on": "2026-07-04T00:00:00Z",
+          "published_on": "2026-03-27T12:00:00Z",
+          "event_round": 3,
+          "applies_to": {"type": "team", "ids": ["mclaren"]},
+          "signal_type": "pace",
+          "direction": "positive",
+          "confidence": 0.68,
+          "summary": "F1 official follow-up framed McLaren as a meaningful threat to Mercedes after Friday practice, while noting Norris had a disrupted FP2.",
+          "model_usage": "note",
+          "session_scope": ["race", "qualifying"]
+        }
+      ]
+    },
+    {
+      "event_round": 4,
+      "race_name": "Miami Grand Prix",
+      "pre_qualifying_cutoff": "2026-05-02T20:00:00Z",
+      "pre_race_cutoff": "2026-05-03T19:00:00Z",
+      "search_questions": [
+        {
+          "question_id": "r04_q1",
+          "question": "Did McLaren's sprint-weekend form warrant a race-order boost?",
+          "attribution_basis": ["podium_missing", "top10_missing"]
+        },
+        {
+          "question_id": "r04_q2",
+          "question": "Did Mercedes show trouble or pace volatility in Miami?",
+          "attribution_basis": ["podium_false_positive", "race_position_error"]
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "r04_e001",
+          "source_id": "f1_miami_sprint_qualifying_norris_2026",
+          "source_type": "official",
+          "source_url": "https://www.formula1.com/en/latest/article/norris-seizes-pole-position-in-miami-sprint-qualifying-ahead-of-antonelli-and-piastri.3RVsemdZrx7agWsQaMzrm5",
+          "retrieved_on": "2026-07-04T00:00:00Z",
+          "published_on": "2026-05-01T21:31:00Z",
+          "event_round": 4,
+          "applies_to": {"type": "team", "ids": ["mclaren"]},
+          "signal_type": "pace",
+          "direction": "positive",
+          "confidence": 0.82,
+          "summary": "F1 official Sprint Qualifying report had Norris on Sprint pole and Piastri third, a clear McLaren short-run pace signal before the Grand Prix.",
+          "model_usage": "feature",
+          "session_scope": ["race"]
+        },
+        {
+          "evidence_id": "r04_e002",
+          "source_id": "f1_miami_sprint_mclaren_2026",
+          "source_type": "official",
+          "source_url": "https://www.formula1.com/en/latest/article/norris-beats-piastri-and-leclerc-to-victory-in-miami-sprint.4H4WI3lnIs7jOZ8lSBIp6X",
+          "retrieved_on": "2026-07-04T00:00:00Z",
+          "published_on": "2026-05-02T16:48:00Z",
+          "event_round": 4,
+          "applies_to": {"type": "team", "ids": ["mclaren"]},
+          "signal_type": "pace",
+          "direction": "positive",
+          "confidence": 0.88,
+          "summary": "F1 official Sprint report had Norris leading Piastri, reinforcing McLaren race-pace evidence before Sunday's Grand Prix.",
+          "model_usage": "note",
+          "session_scope": ["race"]
+        },
+        {
+          "evidence_id": "r04_e003",
+          "source_id": "f1_miami_fp1_mercedes_trouble_2026",
+          "source_type": "official",
+          "source_url": "https://www.formula1.com/en/latest/article/fp1-leclerc-leads-verstappen-and-piastri-during-miami-practice-as-mercedes-hit-trouble.5DlhsKDvclB0W01S0mk1lB",
+          "retrieved_on": "2026-07-04T00:00:00Z",
+          "published_on": "2026-05-01T17:46:00Z",
+          "event_round": 4,
+          "applies_to": {"type": "team", "ids": ["mercedes"]},
+          "signal_type": "reliability",
+          "direction": "negative",
+          "confidence": 0.58,
+          "summary": "F1 official FP1 report noted Mercedes trouble in Miami practice, but the signal was kept diagnostic because later sessions were mixed.",
+          "model_usage": "note",
+          "session_scope": ["race", "qualifying"]
+        }
+      ]
+    },
+    {
+      "event_round": 5,
+      "race_name": "Canadian Grand Prix",
+      "pre_qualifying_cutoff": "2026-05-23T21:00:00Z",
+      "pre_race_cutoff": "2026-05-24T18:00:00Z",
+      "search_questions": [
+        {
+          "question_id": "r05_q1",
+          "question": "Did Mercedes' Canada upgrade and FP pace justify maintaining a front bias?",
+          "attribution_basis": ["winner_hit", "podium_overlap"]
+        },
+        {
+          "question_id": "r05_q2",
+          "question": "Was Hamilton showing enough form to correct his podium probability?",
+          "attribution_basis": ["podium_missing", "race_position_error"]
+        },
+        {
+          "question_id": "r05_q3",
+          "question": "Were there pre-race damage or reliability warnings?",
+          "attribution_basis": ["dnf_brier_driver"]
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "r05_e001",
+          "source_id": "f1_canada_fp1_mercedes_upgrade_2026",
+          "source_type": "official",
+          "source_url": "https://www.formula1.com/en/latest/article/fp1-antonelli-leads-russell-as-mercedes-dominate-disrupted-canadian-gp-practice-session.52B0jh2hwB6deh2lcWmGt5",
+          "retrieved_on": "2026-07-04T00:00:00Z",
+          "published_on": "2026-05-22T16:45:00Z",
+          "event_round": 5,
+          "applies_to": {"type": "team", "ids": ["mercedes"]},
+          "signal_type": "upgrade",
+          "direction": "positive",
+          "confidence": 0.84,
+          "summary": "F1 official FP1 report said Antonelli led Russell as Mercedes dominated a disrupted Canadian GP practice after a substantial upgrade package.",
+          "model_usage": "feature",
+          "session_scope": ["race", "qualifying", "sprint_qualifying"]
+        },
+        {
+          "evidence_id": "r05_e002",
+          "source_id": "f1_canada_hamilton_sprint_qualifying_2026",
+          "source_type": "official",
+          "source_url": "https://www.formula1.com/en/latest/article/this-is-the-best-ive-felt-all-year-hamilton-overjoyed-with-fun-sprint-qualifying-in-canada.2qNjqDSnr8QDICwGiRuXXy",
+          "retrieved_on": "2026-07-04T00:00:00Z",
+          "published_on": "2026-05-22T23:25:00Z",
+          "event_round": 5,
+          "applies_to": {"type": "driver", "ids": ["hamilton"]},
+          "signal_type": "pace",
+          "direction": "positive",
+          "confidence": 0.66,
+          "summary": "F1 official article quoted Hamilton saying Canada Sprint Qualifying was his best feeling of the year.",
+          "model_usage": "feature",
+          "session_scope": ["race"]
+        },
+        {
+          "evidence_id": "r05_e003",
+          "source_id": "f1_canada_albon_damage_2026",
+          "source_type": "official",
+          "source_url": "https://www.formula1.com/en/latest/article/russell-grabs-pole-position-in-canada-sprint-qualifying-ahead-of-antonelli-and-norris.7Fm9bjk84nwzOysiMriBCs",
+          "retrieved_on": "2026-07-04T00:00:00Z",
+          "published_on": "2026-05-22T22:00:00Z",
+          "event_round": 5,
+          "applies_to": {"type": "driver", "ids": ["albon"]},
+          "signal_type": "reliability",
+          "direction": "negative",
+          "confidence": 0.70,
+          "summary": "F1 official Sprint Qualifying report said Williams could not repair Albon's FP1 damage in time for SQ1.",
+          "model_usage": "feature",
+          "session_scope": ["race"]
+        }
+      ]
+    },
+    {
+      "event_round": 6,
+      "race_name": "Monaco Grand Prix",
+      "pre_qualifying_cutoff": "2026-06-06T14:00:00Z",
+      "pre_race_cutoff": "2026-06-07T13:00:00Z",
+      "search_questions": [
+        {
+          "question_id": "r06_q1",
+          "question": "Which drivers showed Monaco-specific qualifying strength before the race?",
+          "attribution_basis": ["race_mean_abs_position_error", "top10_missing"]
+        },
+        {
+          "question_id": "r06_q2",
+          "question": "Was there a Ferrari or Hamilton Monaco pace signal?",
+          "attribution_basis": ["podium_overlap", "qualifying_rank_error"]
+        },
+        {
+          "question_id": "r06_q3",
+          "question": "Were narrow-track incidents or penalties visible before the race?",
+          "attribution_basis": ["dnf_brier_driver", "data_gap"]
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "r06_e001",
+          "source_id": "f1_monaco_fp2_hamilton_2026",
+          "source_type": "official",
+          "source_url": "https://www.formula1.com/en/latest/article/fp2-hamilton-leads-another-ferrari-1-2-during-second-practice-in-monaco.bCQgEBYyVg0K6KvGKPj6V",
+          "retrieved_on": "2026-07-04T00:00:00Z",
+          "published_on": "2026-06-05T16:07:00Z",
+          "event_round": 6,
+          "applies_to": {"type": "driver", "ids": ["hamilton"]},
+          "signal_type": "pace",
+          "direction": "positive",
+          "confidence": 0.75,
+          "summary": "F1 official FP2 report had Hamilton fastest in Monaco, giving a driver-specific pace signal without boosting the whole Ferrari team.",
+          "model_usage": "feature",
+          "session_scope": ["race", "qualifying"]
+        },
+        {
+          "evidence_id": "r06_e002",
+          "source_id": "guardian_monaco_qualifying_hadjar_2026",
+          "source_type": "media",
+          "source_url": "https://www.theguardian.com/sport/live/2026/jun/06/formula-one-monaco-grand-prix-qualifying-live",
+          "retrieved_on": "2026-07-04T00:00:00Z",
+          "published_on": "2026-06-06T16:30:00Z",
+          "event_round": 6,
+          "applies_to": {"type": "driver", "ids": ["hadjar"]},
+          "signal_type": "pace",
+          "direction": "positive",
+          "confidence": 0.70,
+          "summary": "Guardian live qualifying report highlighted Hadjar's fifth place in Monaco qualifying among a tight top ten.",
+          "model_usage": "feature",
+          "session_scope": ["race"]
+        },
+        {
+          "evidence_id": "r06_e003",
+          "source_id": "f1_monaco_fp2_hadjar_2026",
+          "source_type": "official",
+          "source_url": "https://www.formula1.com/en/latest/article/fp2-hamilton-leads-another-ferrari-1-2-during-second-practice-in-monaco.bCQgEBYyVg0K6KvGKPj6V",
+          "retrieved_on": "2026-07-04T00:00:00Z",
+          "published_on": "2026-06-05T16:07:00Z",
+          "event_round": 6,
+          "applies_to": {"type": "driver", "ids": ["hadjar"]},
+          "signal_type": "pace",
+          "direction": "positive",
+          "confidence": 0.62,
+          "summary": "The same F1 FP2 report listed Hadjar sixth after recovering useful mileage from an earlier incident.",
+          "model_usage": "note",
+          "session_scope": ["race", "qualifying"]
+        }
+      ]
+    },
+    {
+      "event_round": 7,
+      "race_name": "Barcelona Grand Prix",
+      "pre_qualifying_cutoff": "2026-06-13T14:00:00Z",
+      "pre_race_cutoff": "2026-06-14T13:00:00Z",
+      "search_questions": [
+        {
+          "question_id": "r07_q1",
+          "question": "Did Barcelona practice show McLaren and Norris stronger than the baseline?",
+          "attribution_basis": ["top10_missing", "race_position_error"]
+        },
+        {
+          "question_id": "r07_q2",
+          "question": "Was Russell's Barcelona pace stronger than his recent baseline?",
+          "attribution_basis": ["podium_missing", "race_mean_abs_position_error"]
+        },
+        {
+          "question_id": "r07_q3",
+          "question": "Was Antonelli showing a Friday weakness that should reduce race confidence?",
+          "attribution_basis": ["winner_miss", "podium_false_positive"]
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "r07_e001",
+          "source_id": "f1_barcelona_fp2_norris_2026",
+          "source_type": "official",
+          "source_url": "https://www.formula1.com/en/latest/article/norris-heads-russell-and-piastri-in-fp2-ahead-of-barcelona-catalunya-grand-prix.5Ot32uuMMaW0tDC9lLpB71",
+          "retrieved_on": "2026-07-04T00:00:00Z",
+          "published_on": "2026-06-12T16:14:00Z",
+          "event_round": 7,
+          "applies_to": {"type": "driver", "ids": ["norris"]},
+          "signal_type": "pace",
+          "direction": "positive",
+          "confidence": 0.80,
+          "summary": "F1 official FP2 report had Norris fastest in Barcelona, only 0.057s covering Norris, Russell and Piastri.",
+          "model_usage": "feature",
+          "session_scope": ["race", "qualifying"]
+        },
+        {
+          "evidence_id": "r07_e002",
+          "source_id": "f1_barcelona_fp2_russell_2026",
+          "source_type": "official",
+          "source_url": "https://www.formula1.com/en/latest/article/norris-heads-russell-and-piastri-in-fp2-ahead-of-barcelona-catalunya-grand-prix.5Ot32uuMMaW0tDC9lLpB71",
+          "retrieved_on": "2026-07-04T00:00:00Z",
+          "published_on": "2026-06-12T16:14:00Z",
+          "event_round": 7,
+          "applies_to": {"type": "driver", "ids": ["russell"]},
+          "signal_type": "pace",
+          "direction": "positive",
+          "confidence": 0.76,
+          "summary": "The same F1 FP2 report placed Russell within 0.009s of Norris, supporting a Barcelona-specific Russell boost.",
+          "model_usage": "feature",
+          "session_scope": ["race", "qualifying"]
+        },
+        {
+          "evidence_id": "r07_e003",
+          "source_id": "f1_barcelona_antonelli_tricky_2026",
+          "source_type": "official",
+          "source_url": "https://www.formula1.com/en/latest/article/not-going-to-be-easy-antonelli-assesses-tricky-friday-in-barcelona-as-he-targets-sixth-win-in-a-row.5MVU1FpsomsbeutBOaVAqk",
+          "retrieved_on": "2026-07-04T00:00:00Z",
+          "published_on": "2026-06-12T18:00:00Z",
+          "event_round": 7,
+          "applies_to": {"type": "driver", "ids": ["antonelli"]},
+          "signal_type": "pace",
+          "direction": "negative",
+          "confidence": 0.72,
+          "summary": "F1 official article quoted Antonelli describing a tricky Friday after missing FP1 and ending FP2 more than half a second behind Russell.",
+          "model_usage": "feature",
+          "session_scope": ["race", "qualifying"]
+        }
+      ]
+    },
+    {
+      "event_round": 8,
+      "race_name": "Austrian Grand Prix",
+      "pre_qualifying_cutoff": "2026-06-27T13:00:00Z",
+      "pre_race_cutoff": "2026-06-28T13:00:00Z",
+      "search_questions": [
+        {
+          "question_id": "r08_q1",
+          "question": "Did practice and long-run evidence support Russell more than the baseline did?",
+          "attribution_basis": ["winner_miss", "race_position_error"]
+        },
+        {
+          "question_id": "r08_q2",
+          "question": "Was Verstappen's Red Bull race pace better than his baseline rank?",
+          "attribution_basis": ["podium_missing", "top10_order"]
+        },
+        {
+          "question_id": "r08_q3",
+          "question": "Did Ferrari's qualifying position overstate its race pace?",
+          "attribution_basis": ["podium_false_positive", "race_position_error"]
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "r08_e001",
+          "source_id": "the_race_austria_long_runs_2026",
+          "source_type": "media",
+          "source_url": "https://www.the-race.com/formula-1/mclarens-shot-at-mercedes-four-austria-practice-pace-takeaways/",
+          "retrieved_on": "2026-07-04T00:00:00Z",
+          "published_on": "2026-06-27T08:00:00Z",
+          "event_round": 8,
+          "applies_to": {"type": "driver", "ids": ["russell"]},
+          "signal_type": "pace",
+          "direction": "positive",
+          "confidence": 0.76,
+          "summary": "The Race long-run analysis listed Russell fastest on FP2 race-pace averages, narrowly ahead of Antonelli.",
+          "model_usage": "feature",
+          "session_scope": ["race"]
+        },
+        {
+          "evidence_id": "r08_e002",
+          "source_id": "f1_austria_qualifying_russell_verstappen_2026",
+          "source_type": "official",
+          "source_url": "https://www.formula1.com/en/latest/article/russell-beats-leclerc-and-hamilton-to-austrian-gp-pole-after-dramatic-late-verstappen-crash.6oiA7Tyo3B89DFJNLWtG8P",
+          "retrieved_on": "2026-07-04T00:00:00Z",
+          "published_on": "2026-06-27T15:00:00Z",
+          "event_round": 8,
+          "applies_to": {"type": "driver", "ids": ["max_verstappen"]},
+          "signal_type": "pace",
+          "direction": "positive",
+          "confidence": 0.68,
+          "summary": "F1 official qualifying report noted Verstappen had shown front-running speed before the late Q3 crash disrupted the final laps.",
+          "model_usage": "feature",
+          "session_scope": ["race"]
+        },
+        {
+          "evidence_id": "r08_e003",
+          "source_id": "the_race_austria_ferrari_long_run_2026",
+          "source_type": "media",
+          "source_url": "https://www.the-race.com/formula-1/winners-and-losers-from-austrian-gp-f1-practice-2026/",
+          "retrieved_on": "2026-07-04T00:00:00Z",
+          "published_on": "2026-06-27T08:30:00Z",
+          "event_round": 8,
+          "applies_to": {"type": "team", "ids": ["ferrari"]},
+          "signal_type": "pace",
+          "direction": "negative",
+          "confidence": 0.64,
+          "summary": "The Race practice review said Hamilton's long-run average sat behind Mercedes, McLaren and Verstappen, cautioning against overrating Ferrari's one-lap showing.",
+          "model_usage": "feature",
+          "session_scope": ["race"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schema": "subjective_residual_event_v1",
+  "residual_version": "subjective_residuals_2026_v1",
+  "source_evidence_version": "agent_evidence_2026_v1",
+  "generated_on": "2026-03-15T06:30:00Z",
+  "signal_policy": "Ordinal signals are -2..2 evidence strengths used only to derive direction. Current target models do not apply the numeric value directly. Every signal must reference same-round archived evidence.",
+  "event_round": 2,
+  "race_name": "Chinese Grand Prix",
+  "frozen": true,
+  "frozen_at": "2026-03-15T06:30:00Z",
+  "scale": "-2..2 ordinal signal; 0 neutral; sign sets evidence direction only",
+  "entries": [
+    {
+      "residual_id": "r02_sr001",
+      "event_round": 2,
+      "target": {
+        "type": "team",
+        "ids": [
+          "mercedes"
+        ]
+      },
+      "dimension": "weekend_state",
+      "ordinal_signal": 1.5,
+      "confidence": 0.86,
+      "evidence_ids": [
+        "r02_e001",
+        "r02_e003"
+      ],
+      "summary": "Mercedes showed a repeated Shanghai short-run signal across sole practice and Sprint Qualifying.",
+      "session_scope": [
+        "race"
+      ]
+    },
+    {
+      "residual_id": "r02_sr002",
+      "event_round": 2,
+      "target": {
+        "type": "driver",
+        "ids": [
+          "max_verstappen"
+        ]
+      },
+      "dimension": "reliability_risk",
+      "ordinal_signal": -1.5,
+      "confidence": 0.72,
+      "evidence_ids": [
+        "r02_e002"
+      ],
+      "summary": "The pre-race report described a difficult Red Bull handling state, treated as a race risk signal rather than a direct position call.",
+      "session_scope": [
+        "race"
+      ]
+    }
+  ]
+}

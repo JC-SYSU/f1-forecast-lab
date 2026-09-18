@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="364" viewBox="0 0 640 364">
+<style>text{font-family:-apple-system,'PingFang SC','Microsoft YaHei','Segoe UI',sans-serif;}</style>
+<rect width="640" height="364" fill="#ffffff"/>
+<text x="20" y="26" font-size="15" font-weight="700" fill="#1c1c1e">Qualifying line: four assembly iterations (R03–R09 window means)</text>
+<text x="240" y="75" font-size="12.5" fill="#1c1c1e" text-anchor="end" font-weight="400">Round 1 · cross-paradigm ensemble</text>
+<rect x="250" y="60" width="83" height="22" fill="#9aa4b2" rx="3"/>
+<text x="341" y="76" font-size="12.5" fill="#5f6368" text-anchor="start" font-weight="400">0.4795</text>
+<text x="240" y="121" font-size="12.5" fill="#1c1c1e" text-anchor="end" font-weight="400">Round 2 · slot assembly</text>
+<rect x="250" y="106" width="129" height="22" fill="#9aa4b2" rx="3"/>
+<text x="387" y="122" font-size="12.5" fill="#5f6368" text-anchor="start" font-weight="400">0.4903</text>
+<text x="240" y="167" font-size="12.5" fill="#1c1c1e" text-anchor="end" font-weight="400">Round 3 · robust</text>
+<rect x="250" y="152" width="143" height="22" fill="#9aa4b2" rx="3"/>
+<text x="401" y="168" font-size="12.5" fill="#5f6368" text-anchor="start" font-weight="400">0.4934</text>
+<text x="240" y="213" font-size="12.5" fill="#1c1c1e" text-anchor="end" font-weight="400">Round 3 · peak</text>
+<rect x="250" y="198" width="188" height="22" fill="#9aa4b2" rx="3"/>
+<text x="446" y="214" font-size="12.5" fill="#5f6368" text-anchor="start" font-weight="400">0.5039</text>
+<text x="240" y="259" font-size="12.5" fill="#1c1c1e" text-anchor="end" font-weight="400">Round 4 · robust (#31)</text>
+<rect x="250" y="244" width="215" height="22" fill="#9aa4b2" rx="3"/>
+<text x="473" y="260" font-size="12.5" fill="#5f6368" text-anchor="start" font-weight="400">0.5103</text>
+<text x="240" y="305" font-size="12.5" fill="#1c1c1e" text-anchor="end" font-weight="400">Round 4 · peak (#30)</text>
+<rect x="250" y="290" width="245" height="22" fill="#d40000" rx="3"/>
+<text x="503" y="306" font-size="12.5" fill="#d40000" text-anchor="start" font-weight="600">0.5173</text>
+</svg>

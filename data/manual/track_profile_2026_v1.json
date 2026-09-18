@@ -1,0 +1,111 @@
+{
+  "profile_version": "track_profile_2026_v1",
+  "generated_on": "2026-07-04",
+  "source_policy": "Manual seed for round_3 track similarity. Labels are versioned and should only change through a new profile_version.",
+  "profiles": [
+    {
+      "circuit_id": "albert_park",
+      "race_name": "Australian Grand Prix",
+      "circuit_name": "Albert Park Grand Prix Circuit",
+      "track_type": "street",
+      "speed_type": "medium",
+      "downforce": "medium",
+      "tyre_degradation": "medium",
+      "overtaking_difficulty": "medium",
+      "safety_car_probability": "high",
+      "source_type": "manual_curated",
+      "source_note": "Manual label from official circuit layout characteristics and recent race behaviour for the round_3 seed."
+    },
+    {
+      "circuit_id": "shanghai",
+      "race_name": "Chinese Grand Prix",
+      "circuit_name": "Shanghai International Circuit",
+      "track_type": "permanent",
+      "speed_type": "high",
+      "downforce": "medium",
+      "tyre_degradation": "medium",
+      "overtaking_difficulty": "medium",
+      "safety_car_probability": "medium",
+      "source_type": "manual_curated",
+      "source_note": "Manual label from official circuit layout characteristics and recent race behaviour for the round_3 seed."
+    },
+    {
+      "circuit_id": "suzuka",
+      "race_name": "Japanese Grand Prix",
+      "circuit_name": "Suzuka Circuit",
+      "track_type": "permanent",
+      "speed_type": "high",
+      "downforce": "high",
+      "tyre_degradation": "medium",
+      "overtaking_difficulty": "high",
+      "safety_car_probability": "medium",
+      "source_type": "manual_curated",
+      "source_note": "Manual label from official circuit layout characteristics and recent race behaviour for the round_3 seed."
+    },
+    {
+      "circuit_id": "miami",
+      "race_name": "Miami Grand Prix",
+      "circuit_name": "Miami International Autodrome",
+      "track_type": "street",
+      "speed_type": "high",
+      "downforce": "medium",
+      "tyre_degradation": "medium",
+      "overtaking_difficulty": "medium",
+      "safety_car_probability": "high",
+      "source_type": "manual_curated",
+      "source_note": "Manual label from official circuit layout characteristics and recent race behaviour for the round_3 seed."
+    },
+    {
+      "circuit_id": "villeneuve",
+      "race_name": "Canadian Grand Prix",
+      "circuit_name": "Circuit Gilles Villeneuve",
+      "track_type": "street",
+      "speed_type": "high",
+      "downforce": "low",
+      "tyre_degradation": "low",
+      "overtaking_difficulty": "low",
+      "safety_car_probability": "high",
+      "source_type": "manual_curated",
+      "source_note": "Manual label from official circuit layout characteristics and recent race behaviour for the round_3 seed."
+    },
+    {
+      "circuit_id": "monaco",
+      "race_name": "Monaco Grand Prix",
+      "circuit_name": "Circuit de Monaco",
+      "track_type": "street",
+      "speed_type": "low",
+      "downforce": "high",
+      "tyre_degradation": "low",
+      "overtaking_difficulty": "high",
+      "safety_car_probability": "high",
+      "source_type": "manual_curated",
+      "source_note": "Manual label from official circuit layout characteristics and recent race behaviour for the round_3 seed."
+    },
+    {
+      "circuit_id": "catalunya",
+      "race_name": "Barcelona Grand Prix",
+      "circuit_name": "Circuit de Barcelona-Catalunya",
+      "track_type": "permanent",
+      "speed_type": "medium",
+      "downforce": "high",
+      "tyre_degradation": "high",
+      "overtaking_difficulty": "medium",
+      "safety_car_probability": "low",
+      "source_type": "manual_curated",
+      "source_note": "Manual label from official circuit layout characteristics and recent race behaviour for the round_3 seed."
+    },
+    {
+      "circuit_id": "red_bull_ring",
+      "race_name": "Austrian Grand Prix",
+      "circuit_name": "Red Bull Ring",
+      "track_type": "permanent",
+      "speed_type": "high",
+      "downforce": "medium",
+      "tyre_degradation": "medium",
+      "overtaking_difficulty": "medium",
+      "safety_car_probability": "medium",
+      "source_type": "manual_curated",
+      "source_note": "Manual label from official circuit layout characteristics and recent race behaviour for the round_3 seed."
+    }
+  ]
+}

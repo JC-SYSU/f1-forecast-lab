@@ -1,0 +1,1268 @@
+{
+  "schema_version": "qualifying.official_labels.v1",
+  "document_id": "QUALIFYING-OFFICIAL-LABELS-2026-R01-R09-001",
+  "season": 2026,
+  "decision_effective_date": "2026-07-19",
+  "status": "accepted_for_internal_development",
+  "authority_priority": [
+    "FIA final qualifying classification",
+    "FIA entry list",
+    "F1 official report only when FIA classification semantics are incomplete",
+    "structured collectors are non-authoritative"
+  ],
+  "evaluation_window": {
+    "rounds": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "reason": "R01 is the training seed; R02-R09 are complete and C0-scoreable"
+  },
+  "non_numeric_policy": {
+    "R04": "Hadjar remains position=null with classification_status=DSQ",
+    "R01": "unresolved branches are not guessed; R01 is training-only",
+    "default": "unknown non-numeric statuses fail closed until explicitly reviewed"
+  },
+  "source_audits": [
+    "docs/data_and_evidence/qualifying/official_labels/qualifying_v1_p0_4_official_label_audit.json",
+    "docs/data_and_evidence/qualifying/official_labels/qualifying_v1_p0_4b_field_size_evidence.json"
+  ],
+  "rounds": [
+    {
+      "round_id": "R01",
+      "round": 1,
+      "race_name": "Australian Grand Prix",
+      "field_size": 22,
+      "training_eligible": true,
+      "c0_scoreable": false,
+      "scoreability_note": "training_seed_only; three entry-list drivers are absent from the FIA final classification and their non-numeric branches are not frozen",
+      "official_records": [
+        {
+          "driver_id": "russell",
+          "position": 1,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "antonelli",
+          "position": 2,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "hadjar",
+          "position": 3,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "leclerc",
+          "position": 4,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "piastri",
+          "position": 5,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "norris",
+          "position": 6,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "hamilton",
+          "position": 7,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "lawson",
+          "position": 8,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "arvid_lindblad",
+          "position": 9,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "bortoleto",
+          "position": 10,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "hulkenberg",
+          "position": 11,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "bearman",
+          "position": 12,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "ocon",
+          "position": 13,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "gasly",
+          "position": 14,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "albon",
+          "position": 15,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "colapinto",
+          "position": 16,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "alonso",
+          "position": 17,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "perez",
+          "position": 18,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "bottas",
+          "position": 19,
+          "classification_status": "classified"
+        }
+      ],
+      "unresolved_entry_driver_ids": [
+        "max_verstappen",
+        "sainz",
+        "stroll"
+      ],
+      "classification_source": {
+        "authority": "FIA final qualifying classification",
+        "url": "https://www.fia.com/system/files/decision-document/2026_australian_grand_prix_-_final_qualifying_classification.pdf",
+        "retrieved_at": "2026-07-11T08:41:53Z",
+        "raw_path": "data/raw/p0_4_2026_qualifying/r01_fia_final_qualifying/2026_australian_grand_prix_-_final_qualifying_classification.pdf",
+        "sha256": "f71f4d807d2016394dad7646a10eb404bd2f18d7d85741509cfbf842d8aacc4f"
+      },
+      "field_size_source": {
+        "authority": "FIA entry list",
+        "document_title": "Entry List V2",
+        "document_number": 13,
+        "url": "https://www.fia.com/system/files/decision-document/2026_australian_grand_prix_-_entry_list_v2.pdf",
+        "retrieved_at": "2026-07-15T09:59:29Z",
+        "raw_path": "data/raw/p0_4b_2026_qualifying_field_size/r01_fia_entry_list/2026_australian_grand_prix_-_entry_list_v2.pdf",
+        "sha256": "567f0cf78e882b70a18936a1aca157935f796c2013d0d3dbf1b6345e9f0f1e31"
+      }
+    },
+    {
+      "round_id": "R02",
+      "round": 2,
+      "race_name": "Chinese Grand Prix",
+      "field_size": 22,
+      "training_eligible": true,
+      "c0_scoreable": true,
+      "scoreability_note": "complete_status_aware_official_universe",
+      "official_records": [
+        {
+          "driver_id": "antonelli",
+          "position": 1,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "russell",
+          "position": 2,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "hamilton",
+          "position": 3,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "leclerc",
+          "position": 4,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "piastri",
+          "position": 5,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "norris",
+          "position": 6,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "gasly",
+          "position": 7,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "max_verstappen",
+          "position": 8,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "hadjar",
+          "position": 9,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "bearman",
+          "position": 10,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "hulkenberg",
+          "position": 11,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "colapinto",
+          "position": 12,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "ocon",
+          "position": 13,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "lawson",
+          "position": 14,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "arvid_lindblad",
+          "position": 15,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "bortoleto",
+          "position": 16,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "sainz",
+          "position": 17,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "albon",
+          "position": 18,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "alonso",
+          "position": 19,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "bottas",
+          "position": 20,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "stroll",
+          "position": 21,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "perez",
+          "position": 22,
+          "classification_status": "classified"
+        }
+      ],
+      "unresolved_entry_driver_ids": [],
+      "classification_source": {
+        "authority": "FIA final qualifying classification",
+        "url": "https://www.fia.com/system/files/decision-document/2026_chinese_grand_prix_-_final_qualifying_classification.pdf",
+        "retrieved_at": "2026-07-11T08:41:54Z",
+        "raw_path": "data/raw/p0_4_2026_qualifying/r02_fia_final_qualifying/2026_chinese_grand_prix_-_final_qualifying_classification.pdf",
+        "sha256": "1a472f3605ed23fb3ac5e6f9cf37e0ecf2a8632a59a60bb662c21d47ef37b4a7"
+      },
+      "field_size_source": {
+        "authority": "FIA entry list",
+        "document_title": "Entry List",
+        "document_number": 14,
+        "url": "https://www.fia.com/system/files/decision-document/2026_chinese_grand_prix_-_entry_list.pdf",
+        "retrieved_at": "2026-07-15T09:59:29Z",
+        "raw_path": "data/raw/p0_4b_2026_qualifying_field_size/r02_fia_entry_list/2026_chinese_grand_prix_-_entry_list.pdf",
+        "sha256": "df4000c6a3a4fb3fc48ed8e8699a94c26814c4422c7019e279eaafc8c3d37442"
+      }
+    },
+    {
+      "round_id": "R03",
+      "round": 3,
+      "race_name": "Japanese Grand Prix",
+      "field_size": 22,
+      "training_eligible": true,
+      "c0_scoreable": true,
+      "scoreability_note": "complete_status_aware_official_universe",
+      "official_records": [
+        {
+          "driver_id": "antonelli",
+          "position": 1,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "russell",
+          "position": 2,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "piastri",
+          "position": 3,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "leclerc",
+          "position": 4,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "norris",
+          "position": 5,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "hamilton",
+          "position": 6,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "gasly",
+          "position": 7,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "hadjar",
+          "position": 8,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "bortoleto",
+          "position": 9,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "arvid_lindblad",
+          "position": 10,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "max_verstappen",
+          "position": 11,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "ocon",
+          "position": 12,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "hulkenberg",
+          "position": 13,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "lawson",
+          "position": 14,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "colapinto",
+          "position": 15,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "sainz",
+          "position": 16,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "albon",
+          "position": 17,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "bearman",
+          "position": 18,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "perez",
+          "position": 19,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "bottas",
+          "position": 20,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "alonso",
+          "position": 21,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "stroll",
+          "position": 22,
+          "classification_status": "classified"
+        }
+      ],
+      "unresolved_entry_driver_ids": [],
+      "classification_source": {
+        "authority": "FIA final qualifying classification",
+        "url": "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_final_qualifying_classification.pdf",
+        "retrieved_at": "2026-07-11T08:41:54Z",
+        "raw_path": "data/raw/p0_4_2026_qualifying/r03_fia_final_qualifying/2026_japanese_grand_prix_-_final_qualifying_classification.pdf",
+        "sha256": "4ca4b176210ea43454fa0b0bd0407f5b49eed6b7d9f2df8a25e39d3d8ff3f9e5"
+      },
+      "field_size_source": {
+        "authority": "FIA entry list",
+        "document_title": "Entry List",
+        "document_number": 12,
+        "url": "https://www.fia.com/system/files/decision-document/2026_japanese_grand_prix_-_entry_list.pdf",
+        "retrieved_at": "2026-07-15T09:59:29Z",
+        "raw_path": "data/raw/p0_4b_2026_qualifying_field_size/r03_fia_entry_list/2026_japanese_grand_prix_-_entry_list.pdf",
+        "sha256": "20b30ca85cd75b4fdba0890b7d00729fdaf06c1bd6aff95ee025a24a92db5b35"
+      }
+    },
+    {
+      "round_id": "R04",
+      "round": 4,
+      "race_name": "Miami Grand Prix",
+      "field_size": 22,
+      "training_eligible": true,
+      "c0_scoreable": true,
+      "scoreability_note": "complete_status_aware_official_universe",
+      "official_records": [
+        {
+          "driver_id": "antonelli",
+          "position": 1,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "max_verstappen",
+          "position": 2,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "leclerc",
+          "position": 3,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "norris",
+          "position": 4,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "russell",
+          "position": 5,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "hamilton",
+          "position": 6,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "piastri",
+          "position": 7,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "colapinto",
+          "position": 8,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "gasly",
+          "position": 9,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "hulkenberg",
+          "position": 10,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "lawson",
+          "position": 11,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "bearman",
+          "position": 12,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "sainz",
+          "position": 13,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "ocon",
+          "position": 14,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "albon",
+          "position": 15,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "arvid_lindblad",
+          "position": 16,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "alonso",
+          "position": 17,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "stroll",
+          "position": 18,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "bottas",
+          "position": 19,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "perez",
+          "position": 20,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "bortoleto",
+          "position": 21,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "hadjar",
+          "position": null,
+          "classification_status": "DSQ"
+        }
+      ],
+      "unresolved_entry_driver_ids": [],
+      "classification_source": {
+        "authority": "FIA final qualifying classification",
+        "url": "https://www.fia.com/system/files/decision-document/2026_miami_grand_prix_-_final_qualifying_classification.pdf",
+        "retrieved_at": "2026-07-11T08:41:55Z",
+        "raw_path": "data/raw/p0_4_2026_qualifying/r04_fia_final_qualifying/2026_miami_grand_prix_-_final_qualifying_classification.pdf",
+        "sha256": "60fa7f48e50209a8e2797bc281e6088743bf1ff7849f3c8832a073ecd49d5e71"
+      },
+      "field_size_source": {
+        "authority": "FIA entry list",
+        "document_title": "Entry List",
+        "document_number": 12,
+        "url": "https://www.fia.com/system/files/decision-document/2026_miami_grand_prix_-_entry_list.pdf",
+        "retrieved_at": "2026-07-15T09:59:29Z",
+        "raw_path": "data/raw/p0_4b_2026_qualifying_field_size/r04_fia_entry_list/2026_miami_grand_prix_-_entry_list.pdf",
+        "sha256": "f369fd3fdcc39f07884e40b36c5037cdd8ed506e94edc08a65d1cc313b28be5e"
+      }
+    },
+    {
+      "round_id": "R05",
+      "round": 5,
+      "race_name": "Canadian Grand Prix",
+      "field_size": 22,
+      "training_eligible": true,
+      "c0_scoreable": true,
+      "scoreability_note": "complete_status_aware_official_universe",
+      "official_records": [
+        {
+          "driver_id": "russell",
+          "position": 1,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "antonelli",
+          "position": 2,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "norris",
+          "position": 3,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "piastri",
+          "position": 4,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "hamilton",
+          "position": 5,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "max_verstappen",
+          "position": 6,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "hadjar",
+          "position": 7,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "leclerc",
+          "position": 8,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "arvid_lindblad",
+          "position": 9,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "colapinto",
+          "position": 10,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "hulkenberg",
+          "position": 11,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "lawson",
+          "position": 12,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "bortoleto",
+          "position": 13,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "gasly",
+          "position": 14,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "sainz",
+          "position": 15,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "bearman",
+          "position": 16,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "ocon",
+          "position": 17,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "albon",
+          "position": 18,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "alonso",
+          "position": 19,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "perez",
+          "position": 20,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "stroll",
+          "position": 21,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "bottas",
+          "position": 22,
+          "classification_status": "classified"
+        }
+      ],
+      "unresolved_entry_driver_ids": [],
+      "classification_source": {
+        "authority": "FIA final qualifying classification",
+        "url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_final_qualifying_classification.pdf",
+        "retrieved_at": "2026-07-11T08:41:55Z",
+        "raw_path": "data/raw/p0_4_2026_qualifying/r05_fia_final_qualifying/2026_canadian_grand_prix_-_final_qualifying_classification.pdf",
+        "sha256": "25cafba38d890dacafd1276bf142824c41a2a2c76a5fd07816930451faa4be46"
+      },
+      "field_size_source": {
+        "authority": "FIA entry list",
+        "document_title": "Entry List",
+        "document_number": 14,
+        "url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_entry_list.pdf",
+        "retrieved_at": "2026-07-15T09:59:29Z",
+        "raw_path": "data/raw/p0_4b_2026_qualifying_field_size/r05_fia_entry_list/2026_canadian_grand_prix_-_entry_list.pdf",
+        "sha256": "976a323011aefbed050cf2dafa53e0a43ab2c040ab93f2bbb6d89911241c0506"
+      }
+    },
+    {
+      "round_id": "R06",
+      "round": 6,
+      "race_name": "Monaco Grand Prix",
+      "field_size": 22,
+      "training_eligible": true,
+      "c0_scoreable": true,
+      "scoreability_note": "complete_status_aware_official_universe",
+      "official_records": [
+        {
+          "driver_id": "antonelli",
+          "position": 1,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "max_verstappen",
+          "position": 2,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "hamilton",
+          "position": 3,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "leclerc",
+          "position": 4,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "hadjar",
+          "position": 5,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "russell",
+          "position": 6,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "piastri",
+          "position": 7,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "norris",
+          "position": 8,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "gasly",
+          "position": 9,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "lawson",
+          "position": 10,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "albon",
+          "position": 11,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "sainz",
+          "position": 12,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "hulkenberg",
+          "position": 13,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "colapinto",
+          "position": 14,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "arvid_lindblad",
+          "position": 15,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "bortoleto",
+          "position": 16,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "ocon",
+          "position": 17,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "perez",
+          "position": 18,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "bearman",
+          "position": 19,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "bottas",
+          "position": 20,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "alonso",
+          "position": 21,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "stroll",
+          "position": 22,
+          "classification_status": "classified"
+        }
+      ],
+      "unresolved_entry_driver_ids": [],
+      "classification_source": {
+        "authority": "FIA final qualifying classification",
+        "url": "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_final_qualifying_classification.pdf",
+        "retrieved_at": "2026-07-11T08:41:56Z",
+        "raw_path": "data/raw/p0_4_2026_qualifying/r06_fia_final_qualifying/2026_monaco_grand_prix_-_final_qualifying_classification.pdf",
+        "sha256": "3cc1fd7fd48acb3ac1207bb810163fc8a3cdeada699629df857d47198d8d0dad"
+      },
+      "field_size_source": {
+        "authority": "FIA entry list",
+        "document_title": "Entry List",
+        "document_number": 16,
+        "url": "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_entry_list.pdf",
+        "retrieved_at": "2026-07-15T09:59:30Z",
+        "raw_path": "data/raw/p0_4b_2026_qualifying_field_size/r06_fia_entry_list/2026_monaco_grand_prix_-_entry_list.pdf",
+        "sha256": "39e78b309685e6867dc72208f2d5b847b49c354f124690ddccab7f03bae2018b"
+      }
+    },
+    {
+      "round_id": "R07",
+      "round": 7,
+      "race_name": "Barcelona Grand Prix",
+      "field_size": 22,
+      "training_eligible": true,
+      "c0_scoreable": true,
+      "scoreability_note": "complete_status_aware_official_universe",
+      "official_records": [
+        {
+          "driver_id": "russell",
+          "position": 1,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "hamilton",
+          "position": 2,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "antonelli",
+          "position": 3,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "norris",
+          "position": 4,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "max_verstappen",
+          "position": 5,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "hadjar",
+          "position": 6,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "piastri",
+          "position": 7,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "lawson",
+          "position": 8,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "hulkenberg",
+          "position": 9,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "leclerc",
+          "position": 10,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "arvid_lindblad",
+          "position": 11,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "bortoleto",
+          "position": 12,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "colapinto",
+          "position": 13,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "gasly",
+          "position": 14,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "bearman",
+          "position": 15,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "sainz",
+          "position": 16,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "ocon",
+          "position": 17,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "albon",
+          "position": 18,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "perez",
+          "position": 19,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "bottas",
+          "position": 20,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "stroll",
+          "position": 21,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "alonso",
+          "position": 22,
+          "classification_status": "classified"
+        }
+      ],
+      "unresolved_entry_driver_ids": [],
+      "classification_source": {
+        "authority": "FIA final qualifying classification",
+        "url": "https://www.fia.com/system/files/decision-document/2026_barcelona-catalunya_grand_prix_-_final_qualifying_classification.pdf",
+        "retrieved_at": "2026-07-11T08:41:56Z",
+        "raw_path": "data/raw/p0_4_2026_qualifying/r07_fia_final_qualifying/2026_barcelona-catalunya_grand_prix_-_final_qualifying_classification.pdf",
+        "sha256": "92c63ea27519c9ea3c92eb6ddf80f5b9d79d8eb58a6bf5c2df65820c58eefcbc"
+      },
+      "field_size_source": {
+        "authority": "FIA entry list",
+        "document_title": "Entry List",
+        "document_number": 13,
+        "url": "https://www.fia.com/system/files/decision-document/2026_barcelona-catalunya_grand_prix_-_entry_list.pdf",
+        "retrieved_at": "2026-07-15T09:59:30Z",
+        "raw_path": "data/raw/p0_4b_2026_qualifying_field_size/r07_fia_entry_list/2026_barcelona-catalunya_grand_prix_-_entry_list.pdf",
+        "sha256": "87291ffd585dd24d6eb93f303e5e0b61e7e35d4e5082371fdb9fbb0adb37ac97"
+      }
+    },
+    {
+      "round_id": "R08",
+      "round": 8,
+      "race_name": "Austrian Grand Prix",
+      "field_size": 22,
+      "training_eligible": true,
+      "c0_scoreable": true,
+      "scoreability_note": "complete_status_aware_official_universe",
+      "official_records": [
+        {
+          "driver_id": "russell",
+          "position": 1,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "leclerc",
+          "position": 2,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "hamilton",
+          "position": 3,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "antonelli",
+          "position": 4,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "max_verstappen",
+          "position": 5,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "norris",
+          "position": 6,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "piastri",
+          "position": 7,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "hadjar",
+          "position": 8,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "lawson",
+          "position": 9,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "arvid_lindblad",
+          "position": 10,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "gasly",
+          "position": 11,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "bortoleto",
+          "position": 12,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "bearman",
+          "position": 13,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "hulkenberg",
+          "position": 14,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "ocon",
+          "position": 15,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "colapinto",
+          "position": 16,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "sainz",
+          "position": 17,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "albon",
+          "position": 18,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "perez",
+          "position": 19,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "bottas",
+          "position": 20,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "alonso",
+          "position": 21,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "stroll",
+          "position": 22,
+          "classification_status": "classified"
+        }
+      ],
+      "unresolved_entry_driver_ids": [],
+      "classification_source": {
+        "authority": "FIA final qualifying classification",
+        "url": "https://www.fia.com/system/files/decision-document/2026_austrian_grand_prix_-_final_qualifying_classification.pdf",
+        "retrieved_at": "2026-07-11T08:41:57Z",
+        "raw_path": "data/raw/p0_4_2026_qualifying/r08_fia_final_qualifying/2026_austrian_grand_prix_-_final_qualifying_classification.pdf",
+        "sha256": "20588b7f8a7cdc16930e9a3838731ac0b73f795af025ca6defeebdff0d8b048c"
+      },
+      "field_size_source": {
+        "authority": "FIA entry list",
+        "document_title": "Entry List",
+        "document_number": 11,
+        "url": "https://www.fia.com/system/files/decision-document/2026_austrian_grand_prix_-_entry_list.pdf",
+        "retrieved_at": "2026-07-15T09:59:30Z",
+        "raw_path": "data/raw/p0_4b_2026_qualifying_field_size/r08_fia_entry_list/2026_austrian_grand_prix_-_entry_list.pdf",
+        "sha256": "3b3b93c7d689b5104a94d1db900bbb72e185ee653bc74279f40485c410c34100"
+      }
+    },
+    {
+      "round_id": "R09",
+      "round": 9,
+      "race_name": "British Grand Prix",
+      "field_size": 22,
+      "training_eligible": true,
+      "c0_scoreable": true,
+      "scoreability_note": "complete_status_aware_official_universe",
+      "official_records": [
+        {
+          "driver_id": "antonelli",
+          "position": 1,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "leclerc",
+          "position": 2,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "hamilton",
+          "position": 3,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "russell",
+          "position": 4,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "hadjar",
+          "position": 5,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "norris",
+          "position": 6,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "max_verstappen",
+          "position": 7,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "piastri",
+          "position": 8,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "arvid_lindblad",
+          "position": 9,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "lawson",
+          "position": 10,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "bortoleto",
+          "position": 11,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "gasly",
+          "position": 12,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "hulkenberg",
+          "position": 13,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "bearman",
+          "position": 14,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "sainz",
+          "position": 15,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "albon",
+          "position": 16,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "ocon",
+          "position": 17,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "bottas",
+          "position": 18,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "colapinto",
+          "position": 19,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "perez",
+          "position": 20,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "stroll",
+          "position": 21,
+          "classification_status": "classified"
+        },
+        {
+          "driver_id": "alonso",
+          "position": 22,
+          "classification_status": "classified"
+        }
+      ],
+      "unresolved_entry_driver_ids": [],
+      "classification_source": {
+        "authority": "FIA final qualifying classification",
+        "url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_final_qualifying_classification.pdf",
+        "retrieved_at": "2026-07-11T08:41:57Z",
+        "raw_path": "data/raw/p0_4_2026_qualifying/r09_fia_final_qualifying/2026_british_grand_prix_-_final_qualifying_classification.pdf",
+        "sha256": "6cb7d4af65707a1cec79f75094780a2f79fdf722785efd3f1fd1efab2070629d"
+      },
+      "field_size_source": {
+        "authority": "FIA entry list",
+        "document_title": "Entry List",
+        "document_number": 11,
+        "url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_entry_list.pdf",
+        "retrieved_at": "2026-07-15T09:59:30Z",
+        "raw_path": "data/raw/p0_4b_2026_qualifying_field_size/r09_fia_entry_list/2026_british_grand_prix_-_entry_list.pdf",
+        "sha256": "900a57fb60a89c4ab881822fa84dad6a3d8c58874c9be5494030c6e7c40c60b4"
+      }
+    }
+  ]
+}

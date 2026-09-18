@@ -1,0 +1,26 @@
+{
+  "week_id": "260703a",
+  "notes": "Manual pace anchors from news, live blogs, team comments, or community posts. Keep source_url and retrieved_on for every item.",
+  "anchors": [
+    {
+      "session_type": "qualifying",
+      "lap_time": "1:26.400",
+      "source_id": "example_news_pole_estimate",
+      "source_type": "news",
+      "source_url": "https://example.com/f1/practice-pace-report",
+      "retrieved_on": "2026-07-03T12:00:00Z",
+      "confidence": 0.35,
+      "note": "Example only: article estimates pole pace after FP2 short runs."
+    },
+    {
+      "session_type": "sprint_qualifying",
+      "lap_time": "1:27.100",
+      "source_id": "example_community_fp_thread",
+      "source_type": "community",
+      "source_url": "https://example.com/forum/f1-weekend-thread",
+      "retrieved_on": "2026-07-03T12:10:00Z",
+      "confidence": 0.2,
+      "note": "Example only: community timing synthesis, lower confidence than official timing."
+    }
+  ]
+}

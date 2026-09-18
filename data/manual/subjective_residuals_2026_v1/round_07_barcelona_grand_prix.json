@@ -1,0 +1,77 @@
+{
+  "schema": "subjective_residual_event_v1",
+  "residual_version": "subjective_residuals_2026_v1",
+  "source_evidence_version": "agent_evidence_2026_v1",
+  "generated_on": "2026-06-14T12:30:00Z",
+  "signal_policy": "Ordinal signals are -2..2 evidence strengths used only to derive direction. Current target models do not apply the numeric value directly. Every signal must reference same-round archived evidence.",
+  "event_round": 7,
+  "race_name": "Barcelona Grand Prix",
+  "frozen": true,
+  "frozen_at": "2026-06-14T12:30:00Z",
+  "scale": "-2..2 ordinal signal; 0 neutral; sign sets evidence direction only",
+  "entries": [
+    {
+      "residual_id": "r07_sr001",
+      "event_round": 7,
+      "target": {
+        "type": "driver",
+        "ids": [
+          "norris"
+        ]
+      },
+      "dimension": "weekend_state",
+      "ordinal_signal": 1.5,
+      "confidence": 0.8,
+      "evidence_ids": [
+        "r07_e001"
+      ],
+      "summary": "Norris led a tightly matched Barcelona FP2, supporting a driver-level form residual.",
+      "session_scope": [
+        "race",
+        "qualifying"
+      ]
+    },
+    {
+      "residual_id": "r07_sr002",
+      "event_round": 7,
+      "target": {
+        "type": "driver",
+        "ids": [
+          "russell"
+        ]
+      },
+      "dimension": "track_adaptation",
+      "ordinal_signal": 1.0,
+      "confidence": 0.76,
+      "evidence_ids": [
+        "r07_e002"
+      ],
+      "summary": "Russell being within 0.009s of Norris in FP2 supports a modest Barcelona-specific residual.",
+      "session_scope": [
+        "race",
+        "qualifying"
+      ]
+    },
+    {
+      "residual_id": "r07_sr003",
+      "event_round": 7,
+      "target": {
+        "type": "driver",
+        "ids": [
+          "antonelli"
+        ]
+      },
+      "dimension": "weekend_state",
+      "ordinal_signal": -1.5,
+      "confidence": 0.72,
+      "evidence_ids": [
+        "r07_e003"
+      ],
+      "summary": "Antonelli's tricky Friday and missed FP1 are treated as a negative weekend-state residual.",
+      "session_scope": [
+        "race",
+        "qualifying"
+      ]
+    }
+  ]
+}

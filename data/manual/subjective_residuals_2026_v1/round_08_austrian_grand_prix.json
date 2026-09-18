@@ -1,0 +1,74 @@
+{
+  "schema": "subjective_residual_event_v1",
+  "residual_version": "subjective_residuals_2026_v1",
+  "source_evidence_version": "agent_evidence_2026_v1",
+  "generated_on": "2026-06-28T12:30:00Z",
+  "signal_policy": "Ordinal signals are -2..2 evidence strengths used only to derive direction. Current target models do not apply the numeric value directly. Every signal must reference same-round archived evidence.",
+  "event_round": 8,
+  "race_name": "Austrian Grand Prix",
+  "frozen": true,
+  "frozen_at": "2026-06-28T12:30:00Z",
+  "scale": "-2..2 ordinal signal; 0 neutral; sign sets evidence direction only",
+  "entries": [
+    {
+      "residual_id": "r08_sr001",
+      "event_round": 8,
+      "target": {
+        "type": "driver",
+        "ids": [
+          "russell"
+        ]
+      },
+      "dimension": "weekend_state",
+      "ordinal_signal": 1.5,
+      "confidence": 0.76,
+      "evidence_ids": [
+        "r08_e001"
+      ],
+      "summary": "Russell's FP2 long-run pace evidence supports a race-only positive residual.",
+      "session_scope": [
+        "race"
+      ]
+    },
+    {
+      "residual_id": "r08_sr002",
+      "event_round": 8,
+      "target": {
+        "type": "driver",
+        "ids": [
+          "max_verstappen"
+        ]
+      },
+      "dimension": "track_adaptation",
+      "ordinal_signal": 1.0,
+      "confidence": 0.68,
+      "evidence_ids": [
+        "r08_e002"
+      ],
+      "summary": "Verstappen had front-running speed before the Q3 disruption, treated as a modest race residual.",
+      "session_scope": [
+        "race"
+      ]
+    },
+    {
+      "residual_id": "r08_sr003",
+      "event_round": 8,
+      "target": {
+        "type": "team",
+        "ids": [
+          "ferrari"
+        ]
+      },
+      "dimension": "weekend_state",
+      "ordinal_signal": -1.0,
+      "confidence": 0.64,
+      "evidence_ids": [
+        "r08_e003"
+      ],
+      "summary": "Ferrari's one-lap showing was discounted by weaker long-run evidence, so the residual is race-only and negative.",
+      "session_scope": [
+        "race"
+      ]
+    }
+  ]
+}

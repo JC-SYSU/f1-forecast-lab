@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
+<style>text{font-family:-apple-system,'PingFang SC','Microsoft YaHei','Segoe UI',sans-serif;}</style>
+<rect width="640" height="360" fill="#ffffff"/>
+<text x="20" y="26" font-size="15" font-weight="700" fill="#1c1c1e">Transform comparison experiment (R10–R11 test window)</text>
+<line x1="70" y1="300.0" x2="610" y2="300.0" stroke="#e4e4e7" stroke-width="1"/>
+<text x="62" y="304.0" font-size="11" fill="#5f6368" text-anchor="end" font-weight="400">0.50</text>
+<line x1="70" y1="240.0" x2="610" y2="240.0" stroke="#e4e4e7" stroke-width="1"/>
+<text x="62" y="244.0" font-size="11" fill="#5f6368" text-anchor="end" font-weight="400">0.52</text>
+<line x1="70" y1="180.0" x2="610" y2="180.0" stroke="#e4e4e7" stroke-width="1"/>
+<text x="62" y="184.0" font-size="11" fill="#5f6368" text-anchor="end" font-weight="400">0.54</text>
+<line x1="70" y1="120.0" x2="610" y2="120.0" stroke="#e4e4e7" stroke-width="1"/>
+<text x="62" y="124.0" font-size="11" fill="#5f6368" text-anchor="end" font-weight="400">0.56</text>
+<line x1="70" y1="60.0" x2="610" y2="60.0" stroke="#e4e4e7" stroke-width="1"/>
+<text x="62" y="64.0" font-size="11" fill="#5f6368" text-anchor="end" font-weight="400">0.58</text>
+<rect x="87.35714285714286" y="169" width="42.42857142857143" height="131" fill="#9aa4b2" rx="3"/>
+<text x="108.57142857142857" y="161" font-size="11.5" fill="#5f6368" text-anchor="middle" font-weight="400">0.5438</text>
+<text x="108.57142857142857" y="320" font-size="12" fill="#1c1c1e" text-anchor="middle" font-weight="400">Baseline</text>
+<rect x="164.5" y="169" width="42.42857142857143" height="131" fill="#9aa4b2" rx="3"/>
+<text x="185.71428571428572" y="161" font-size="11.5" fill="#5f6368" text-anchor="middle" font-weight="400">0.5438</text>
+<text x="185.71428571428572" y="320" font-size="12" fill="#1c1c1e" text-anchor="middle" font-weight="400">Centering</text>
+<rect x="241.6428571428571" y="237" width="42.42857142857143" height="63" fill="#9aa4b2" rx="3"/>
+<text x="262.85714285714283" y="229" font-size="11.5" fill="#5f6368" text-anchor="middle" font-weight="400">0.5213</text>
+<text x="262.85714285714283" y="320" font-size="12" fill="#1c1c1e" text-anchor="middle" font-weight="400">Log</text>
+<rect x="318.7857142857143" y="169" width="42.42857142857143" height="131" fill="#9aa4b2" rx="3"/>
+<text x="340.0" y="161" font-size="11.5" fill="#5f6368" text-anchor="middle" font-weight="400">0.5438</text>
+<text x="340.0" y="320" font-size="12" fill="#1c1c1e" text-anchor="middle" font-weight="400">Sqrt</text>
+<rect x="395.9285714285714" y="169" width="42.42857142857143" height="131" fill="#9aa4b2" rx="3"/>
+<text x="417.1428571428571" y="161" font-size="11.5" fill="#5f6368" text-anchor="middle" font-weight="400">0.5438</text>
+<text x="417.1428571428571" y="320" font-size="12" fill="#1c1c1e" text-anchor="middle" font-weight="400">Rank</text>
+<rect x="473.07142857142856" y="169" width="42.42857142857143" height="131" fill="#9aa4b2" rx="3"/>
+<text x="494.2857142857143" y="161" font-size="11.5" fill="#5f6368" text-anchor="middle" font-weight="400">0.5438</text>
+<text x="494.2857142857143" y="320" font-size="12" fill="#1c1c1e" text-anchor="middle" font-weight="400">Box-Cox</text>
+<rect x="550.2142857142857" y="71" width="42.42857142857143" height="229" fill="#d40000" rx="3"/>
+<text x="571.4285714285713" y="63" font-size="11.5" fill="#d40000" text-anchor="middle" font-weight="600">0.5766</text>
+<text x="571.4285714285713" y="320" font-size="12" fill="#1c1c1e" text-anchor="middle" font-weight="400">Standardize</text>
+<text x="70" y="344" font-size="11.5" fill="#5f6368" text-anchor="start" font-weight="400">Baseline = no transform; centering, sqrt, rank and Box-Cox are flat against it.</text>
+<text x="70" y="360" font-size="11.5" fill="#5f6368" text-anchor="start" font-weight="400">Log is worse (0.5213). Only standardization (red) brings a gain.</text>
+</svg>

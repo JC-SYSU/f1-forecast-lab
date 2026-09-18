@@ -1,0 +1,2577 @@
+{
+  "A0_baseline": {
+    "q13": [
+      [
+        3,
+        0.4769186721
+      ],
+      [
+        4,
+        0.4524503276
+      ],
+      [
+        5,
+        0.3957777778
+      ],
+      [
+        6,
+        0.4737318956
+      ],
+      [
+        7,
+        0.3755555556
+      ],
+      [
+        8,
+        0.5762956934
+      ],
+      [
+        9,
+        0.5409304685
+      ],
+      [
+        10,
+        0.3588333333
+      ],
+      [
+        11,
+        0.4802118235
+      ],
+      [
+        12,
+        null
+      ]
+    ],
+    "q31": [
+      [
+        3,
+        0.5155406343
+      ],
+      [
+        4,
+        0.4524503276
+      ],
+      [
+        5,
+        0.4657821511
+      ],
+      [
+        6,
+        0.5269268766
+      ],
+      [
+        7,
+        0.5502358224
+      ],
+      [
+        8,
+        0.5762956934
+      ],
+      [
+        9,
+        0.4846036778
+      ],
+      [
+        10,
+        0.3588333333
+      ],
+      [
+        11,
+        0.4802118235
+      ],
+      [
+        12,
+        null
+      ]
+    ],
+    "q30": [
+      [
+        3,
+        0.5155406343
+      ],
+      [
+        4,
+        0.3903808415
+      ],
+      [
+        5,
+        0.4911805972
+      ],
+      [
+        6,
+        0.6323450954
+      ],
+      [
+        7,
+        0.4948571042
+      ],
+      [
+        8,
+        0.6698105343
+      ],
+      [
+        9,
+        0.4225341917
+      ],
+      [
+        10,
+        0.3322777778
+      ],
+      [
+        11,
+        0.441697893
+      ],
+      [
+        12,
+        null
+      ]
+    ],
+    "race": [
+      [
+        3,
+        0.6836
+      ],
+      [
+        4,
+        0.5133
+      ],
+      [
+        5,
+        0.4969
+      ],
+      [
+        6,
+        0.415
+      ],
+      [
+        7,
+        0.5864
+      ],
+      [
+        8,
+        0.555
+      ],
+      [
+        9,
+        0.516
+      ],
+      [
+        10,
+        0.6007
+      ],
+      [
+        11,
+        0.5828
+      ],
+      [
+        12,
+        0.6155
+      ]
+    ],
+    "gridcorr": {
+      "3": 0.791,
+      "4": 0.955,
+      "5": 0.873,
+      "6": 0.864,
+      "7": 0.882,
+      "8": 0.909,
+      "9": 0.855,
+      "10": 0.818,
+      "11": 0.845,
+      "12": 0.945
+    },
+    "fired": {
+      "R07:ferrari": {
+        "E": 4,
+        "post": 3,
+        "pred_q_top10_drivers": [
+          "hamilton",
+          "leclerc"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R07:mclaren": {
+        "E": 4,
+        "post": 3,
+        "pred_q_top10_drivers": [
+          "norris",
+          "piastri"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R07:red_bull": {
+        "E": 4,
+        "post": 3,
+        "pred_q_top10_drivers": [
+          "hadjar",
+          "max_verstappen"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R08:mercedes": {
+        "E": 5,
+        "post": 3,
+        "pred_q_top10_drivers": [
+          "antonelli",
+          "russell"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R08:ferrari": {
+        "E": 4,
+        "post": 4,
+        "pred_q_top10_drivers": [
+          "hamilton",
+          "leclerc"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R08:mclaren": {
+        "E": 4,
+        "post": 4,
+        "pred_q_top10_drivers": [
+          "norris",
+          "piastri"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R08:red_bull": {
+        "E": 4,
+        "post": 4,
+        "pred_q_top10_drivers": [
+          "hadjar",
+          "max_verstappen"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R09:mercedes": {
+        "E": 5,
+        "post": 4,
+        "pred_q_top10_drivers": [
+          "antonelli",
+          "russell"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R09:ferrari": {
+        "E": 4,
+        "post": 5,
+        "pred_q_top10_drivers": [
+          "hamilton",
+          "leclerc"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R09:mclaren": {
+        "E": 4,
+        "post": 5,
+        "pred_q_top10_drivers": [
+          "norris",
+          "piastri"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R09:red_bull": {
+        "E": 4,
+        "post": 5,
+        "pred_q_top10_drivers": [
+          "hadjar",
+          "max_verstappen"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R10:mercedes": {
+        "E": 5,
+        "post": 5,
+        "pred_q_top10_drivers": [
+          "antonelli",
+          "russell"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R10:ferrari": {
+        "E": 7,
+        "post": 3,
+        "pred_q_top10_drivers": [
+          "hamilton",
+          "leclerc"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R10:mclaren": {
+        "E": 4,
+        "post": 6,
+        "pred_q_top10_drivers": [
+          "norris",
+          "piastri"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R10:red_bull": {
+        "E": 7,
+        "post": 3,
+        "pred_q_top10_drivers": [
+          "hadjar",
+          "max_verstappen"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R11:mercedes": {
+        "E": 5,
+        "post": 6,
+        "pred_q_top10_drivers": [
+          "antonelli",
+          "russell"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R11:ferrari": {
+        "E": 8,
+        "post": 3,
+        "pred_q_top10_drivers": [
+          "hamilton",
+          "leclerc"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R11:mclaren": {
+        "E": 4,
+        "post": 7,
+        "pred_q_top10_drivers": [
+          "norris",
+          "piastri"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R11:red_bull": {
+        "E": 7,
+        "post": 4,
+        "pred_q_top10_drivers": [
+          "hadjar",
+          "max_verstappen"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R12:mercedes": {
+        "E": 5,
+        "post": 7,
+        "pred_q_top10_drivers": [
+          "antonelli",
+          "russell"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R12:ferrari": {
+        "E": 8,
+        "post": 4,
+        "pred_q_top10_drivers": [
+          "hamilton",
+          "leclerc"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R12:mclaren": {
+        "E": 4,
+        "post": 8,
+        "pred_q_top10_drivers": [
+          "norris",
+          "piastri"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R12:red_bull": {
+        "E": 7,
+        "post": 5,
+        "pred_q_top10_drivers": [
+          "lawson",
+          "max_verstappen"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      }
+    }
+  },
+  "A1_full_switch": {
+    "q13": [
+      [
+        3,
+        0.4769186721
+      ],
+      [
+        4,
+        0.4524503276
+      ],
+      [
+        5,
+        0.3957777778
+      ],
+      [
+        6,
+        0.4737318956
+      ],
+      [
+        7,
+        0.38
+      ],
+      [
+        8,
+        0.5474068045
+      ],
+      [
+        9,
+        0.4683818402
+      ],
+      [
+        10,
+        0.3816709072
+      ],
+      [
+        11,
+        0.4523732735
+      ],
+      [
+        12,
+        null
+      ]
+    ],
+    "q31": [
+      [
+        3,
+        0.5155406343
+      ],
+      [
+        4,
+        0.4524503276
+      ],
+      [
+        5,
+        0.4657821511
+      ],
+      [
+        6,
+        0.5269268766
+      ],
+      [
+        7,
+        0.5199538041
+      ],
+      [
+        8,
+        0.5688512489
+      ],
+      [
+        9,
+        0.5215768211
+      ],
+      [
+        10,
+        0.3816709072
+      ],
+      [
+        11,
+        0.4332621623
+      ],
+      [
+        12,
+        null
+      ]
+    ],
+    "q30": [
+      [
+        3,
+        0.5155406343
+      ],
+      [
+        4,
+        0.3903808415
+      ],
+      [
+        5,
+        0.4911805972
+      ],
+      [
+        6,
+        0.6323450954
+      ],
+      [
+        7,
+        0.4645750858
+      ],
+      [
+        8,
+        0.5670083585
+      ],
+      [
+        9,
+        0.4550628906
+      ],
+      [
+        10,
+        0.3625597961
+      ],
+      [
+        11,
+        0.4852831839
+      ],
+      [
+        12,
+        null
+      ]
+    ],
+    "race": [
+      [
+        3,
+        0.6836
+      ],
+      [
+        4,
+        0.5133
+      ],
+      [
+        5,
+        0.4969
+      ],
+      [
+        6,
+        0.415
+      ],
+      [
+        7,
+        0.5864
+      ],
+      [
+        8,
+        0.555
+      ],
+      [
+        9,
+        0.516
+      ],
+      [
+        10,
+        0.5271
+      ],
+      [
+        11,
+        0.5828
+      ],
+      [
+        12,
+        0.6155
+      ]
+    ],
+    "gridcorr": {
+      "3": 0.791,
+      "4": 0.955,
+      "5": 0.873,
+      "6": 0.864,
+      "7": 0.882,
+      "8": 0.909,
+      "9": 0.855,
+      "10": 0.809,
+      "11": 0.827,
+      "12": 0.909
+    },
+    "fired": {
+      "R07:ferrari": {
+        "E": 4,
+        "post": 3,
+        "pred_q_top10_drivers": [
+          "hamilton",
+          "leclerc"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R07:mclaren": {
+        "E": 4,
+        "post": 3,
+        "pred_q_top10_drivers": [
+          "norris",
+          "piastri"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R07:red_bull": {
+        "E": 4,
+        "post": 3,
+        "pred_q_top10_drivers": [
+          "hadjar",
+          "max_verstappen"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R08:mercedes": {
+        "E": 5,
+        "post": 3,
+        "pred_q_top10_drivers": [
+          "antonelli",
+          "russell"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R08:ferrari": {
+        "E": 4,
+        "post": 4,
+        "pred_q_top10_drivers": [
+          "hamilton",
+          "leclerc"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R08:mclaren": {
+        "E": 4,
+        "post": 4,
+        "pred_q_top10_drivers": [
+          "norris",
+          "piastri"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R08:red_bull": {
+        "E": 4,
+        "post": 4,
+        "pred_q_top10_drivers": [
+          "hadjar",
+          "max_verstappen"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R09:mercedes": {
+        "E": 5,
+        "post": 4,
+        "pred_q_top10_drivers": [
+          "antonelli",
+          "russell"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R09:ferrari": {
+        "E": 4,
+        "post": 5,
+        "pred_q_top10_drivers": [
+          "hamilton",
+          "leclerc"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R09:mclaren": {
+        "E": 4,
+        "post": 5,
+        "pred_q_top10_drivers": [
+          "norris",
+          "piastri"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R09:red_bull": {
+        "E": 4,
+        "post": 5,
+        "pred_q_top10_drivers": [
+          "hadjar",
+          "max_verstappen"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R10:mercedes": {
+        "E": 5,
+        "post": 5,
+        "pred_q_top10_drivers": [
+          "antonelli",
+          "russell"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R10:ferrari": {
+        "E": 7,
+        "post": 3,
+        "pred_q_top10_drivers": [
+          "hamilton",
+          "leclerc"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R10:mclaren": {
+        "E": 4,
+        "post": 6,
+        "pred_q_top10_drivers": [
+          "norris",
+          "piastri"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R10:red_bull": {
+        "E": 7,
+        "post": 3,
+        "pred_q_top10_drivers": [
+          "hadjar",
+          "max_verstappen"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R11:mercedes": {
+        "E": 5,
+        "post": 6,
+        "pred_q_top10_drivers": [
+          "antonelli",
+          "russell"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R11:ferrari": {
+        "E": 8,
+        "post": 3,
+        "pred_q_top10_drivers": [
+          "hamilton",
+          "leclerc"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R11:mclaren": {
+        "E": 4,
+        "post": 7,
+        "pred_q_top10_drivers": [
+          "norris",
+          "piastri"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R11:red_bull": {
+        "E": 7,
+        "post": 4,
+        "pred_q_top10_drivers": [
+          "hadjar",
+          "max_verstappen"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R12:mercedes": {
+        "E": 5,
+        "post": 7,
+        "pred_q_top10_drivers": [
+          "antonelli",
+          "russell"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R12:ferrari": {
+        "E": 8,
+        "post": 4,
+        "pred_q_top10_drivers": [
+          "hamilton",
+          "leclerc"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R12:mclaren": {
+        "E": 4,
+        "post": 8,
+        "pred_q_top10_drivers": [
+          "norris",
+          "piastri"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R12:red_bull": {
+        "E": 7,
+        "post": 5,
+        "pred_q_top10_drivers": [
+          "lawson",
+          "max_verstappen"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      }
+    }
+  },
+  "A2_gradual_m3": {
+    "q13": [
+      [
+        3,
+        0.4769186721
+      ],
+      [
+        4,
+        0.4524503276
+      ],
+      [
+        5,
+        0.3957777778
+      ],
+      [
+        6,
+        0.4737318956
+      ],
+      [
+        7,
+        0.3755555556
+      ],
+      [
+        8,
+        0.5762956934
+      ],
+      [
+        9,
+        0.4639373957
+      ],
+      [
+        10,
+        0.3588333333
+      ],
+      [
+        11,
+        0.4802118235
+      ],
+      [
+        12,
+        null
+      ]
+    ],
+    "q31": [
+      [
+        3,
+        0.5155406343
+      ],
+      [
+        4,
+        0.4524503276
+      ],
+      [
+        5,
+        0.4657821511
+      ],
+      [
+        6,
+        0.5269268766
+      ],
+      [
+        7,
+        0.5502358224
+      ],
+      [
+        8,
+        0.5762956934
+      ],
+      [
+        9,
+        0.5171323767
+      ],
+      [
+        10,
+        0.3588333333
+      ],
+      [
+        11,
+        0.4802118235
+      ],
+      [
+        12,
+        null
+      ]
+    ],
+    "q30": [
+      [
+        3,
+        0.5155406343
+      ],
+      [
+        4,
+        0.3903808415
+      ],
+      [
+        5,
+        0.4911805972
+      ],
+      [
+        6,
+        0.6323450954
+      ],
+      [
+        7,
+        0.4948571042
+      ],
+      [
+        8,
+        0.6698105343
+      ],
+      [
+        9,
+        0.459507335
+      ],
+      [
+        10,
+        0.3322777778
+      ],
+      [
+        11,
+        0.441697893
+      ],
+      [
+        12,
+        null
+      ]
+    ],
+    "race": [
+      [
+        3,
+        0.6836
+      ],
+      [
+        4,
+        0.5133
+      ],
+      [
+        5,
+        0.4969
+      ],
+      [
+        6,
+        0.415
+      ],
+      [
+        7,
+        0.5864
+      ],
+      [
+        8,
+        0.555
+      ],
+      [
+        9,
+        0.516
+      ],
+      [
+        10,
+        0.6386
+      ],
+      [
+        11,
+        0.5828
+      ],
+      [
+        12,
+        0.6155
+      ]
+    ],
+    "gridcorr": {
+      "3": 0.791,
+      "4": 0.955,
+      "5": 0.873,
+      "6": 0.864,
+      "7": 0.882,
+      "8": 0.909,
+      "9": 0.855,
+      "10": 0.818,
+      "11": 0.845,
+      "12": 0.945
+    },
+    "fired": {
+      "R07:ferrari": {
+        "E": 4,
+        "post": 3,
+        "pred_q_top10_drivers": [
+          "hamilton",
+          "leclerc"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R07:mclaren": {
+        "E": 4,
+        "post": 3,
+        "pred_q_top10_drivers": [
+          "norris",
+          "piastri"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R07:red_bull": {
+        "E": 4,
+        "post": 3,
+        "pred_q_top10_drivers": [
+          "hadjar",
+          "max_verstappen"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R08:mercedes": {
+        "E": 5,
+        "post": 3,
+        "pred_q_top10_drivers": [
+          "antonelli",
+          "russell"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R08:ferrari": {
+        "E": 4,
+        "post": 4,
+        "pred_q_top10_drivers": [
+          "hamilton",
+          "leclerc"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R08:mclaren": {
+        "E": 4,
+        "post": 4,
+        "pred_q_top10_drivers": [
+          "norris",
+          "piastri"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R08:red_bull": {
+        "E": 4,
+        "post": 4,
+        "pred_q_top10_drivers": [
+          "hadjar",
+          "max_verstappen"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R09:mercedes": {
+        "E": 5,
+        "post": 4,
+        "pred_q_top10_drivers": [
+          "antonelli",
+          "russell"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R09:ferrari": {
+        "E": 4,
+        "post": 5,
+        "pred_q_top10_drivers": [
+          "hamilton",
+          "leclerc"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R09:mclaren": {
+        "E": 4,
+        "post": 5,
+        "pred_q_top10_drivers": [
+          "norris",
+          "piastri"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R09:red_bull": {
+        "E": 4,
+        "post": 5,
+        "pred_q_top10_drivers": [
+          "hadjar",
+          "max_verstappen"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R10:mercedes": {
+        "E": 5,
+        "post": 5,
+        "pred_q_top10_drivers": [
+          "antonelli",
+          "russell"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R10:ferrari": {
+        "E": 7,
+        "post": 3,
+        "pred_q_top10_drivers": [
+          "hamilton",
+          "leclerc"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R10:mclaren": {
+        "E": 4,
+        "post": 6,
+        "pred_q_top10_drivers": [
+          "norris",
+          "piastri"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R10:red_bull": {
+        "E": 7,
+        "post": 3,
+        "pred_q_top10_drivers": [
+          "hadjar",
+          "max_verstappen"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R11:mercedes": {
+        "E": 5,
+        "post": 6,
+        "pred_q_top10_drivers": [
+          "antonelli",
+          "russell"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R11:ferrari": {
+        "E": 8,
+        "post": 3,
+        "pred_q_top10_drivers": [
+          "hamilton",
+          "leclerc"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R11:mclaren": {
+        "E": 4,
+        "post": 7,
+        "pred_q_top10_drivers": [
+          "norris",
+          "piastri"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R11:red_bull": {
+        "E": 7,
+        "post": 4,
+        "pred_q_top10_drivers": [
+          "hadjar",
+          "max_verstappen"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R12:mercedes": {
+        "E": 5,
+        "post": 7,
+        "pred_q_top10_drivers": [
+          "antonelli",
+          "russell"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R12:ferrari": {
+        "E": 8,
+        "post": 4,
+        "pred_q_top10_drivers": [
+          "hamilton",
+          "leclerc"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R12:mclaren": {
+        "E": 4,
+        "post": 8,
+        "pred_q_top10_drivers": [
+          "norris",
+          "piastri"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R12:red_bull": {
+        "E": 7,
+        "post": 5,
+        "pred_q_top10_drivers": [
+          "lawson",
+          "max_verstappen"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      }
+    }
+  },
+  "A3_gradual_m6": {
+    "q13": [
+      [
+        3,
+        0.4769186721
+      ],
+      [
+        4,
+        0.4524503276
+      ],
+      [
+        5,
+        0.3957777778
+      ],
+      [
+        6,
+        0.4737318956
+      ],
+      [
+        7,
+        0.3755555556
+      ],
+      [
+        8,
+        0.5762956934
+      ],
+      [
+        9,
+        0.4314086968
+      ],
+      [
+        10,
+        0.3588333333
+      ],
+      [
+        11,
+        0.4802118235
+      ],
+      [
+        12,
+        null
+      ]
+    ],
+    "q31": [
+      [
+        3,
+        0.5155406343
+      ],
+      [
+        4,
+        0.4524503276
+      ],
+      [
+        5,
+        0.4657821511
+      ],
+      [
+        6,
+        0.5269268766
+      ],
+      [
+        7,
+        0.5502358224
+      ],
+      [
+        8,
+        0.5762956934
+      ],
+      [
+        9,
+        0.5171323767
+      ],
+      [
+        10,
+        0.3588333333
+      ],
+      [
+        11,
+        0.4802118235
+      ],
+      [
+        12,
+        null
+      ]
+    ],
+    "q30": [
+      [
+        3,
+        0.5155406343
+      ],
+      [
+        4,
+        0.3903808415
+      ],
+      [
+        5,
+        0.4911805972
+      ],
+      [
+        6,
+        0.6323450954
+      ],
+      [
+        7,
+        0.4948571042
+      ],
+      [
+        8,
+        0.6698105343
+      ],
+      [
+        9,
+        0.4550628906
+      ],
+      [
+        10,
+        0.3322777778
+      ],
+      [
+        11,
+        0.441697893
+      ],
+      [
+        12,
+        null
+      ]
+    ],
+    "race": [
+      [
+        3,
+        0.6836
+      ],
+      [
+        4,
+        0.5133
+      ],
+      [
+        5,
+        0.4969
+      ],
+      [
+        6,
+        0.415
+      ],
+      [
+        7,
+        0.5864
+      ],
+      [
+        8,
+        0.555
+      ],
+      [
+        9,
+        0.516
+      ],
+      [
+        10,
+        0.5486
+      ],
+      [
+        11,
+        0.5828
+      ],
+      [
+        12,
+        0.6155
+      ]
+    ],
+    "gridcorr": {
+      "3": 0.791,
+      "4": 0.955,
+      "5": 0.873,
+      "6": 0.864,
+      "7": 0.882,
+      "8": 0.909,
+      "9": 0.855,
+      "10": 0.818,
+      "11": 0.845,
+      "12": 0.945
+    },
+    "fired": {
+      "R07:ferrari": {
+        "E": 4,
+        "post": 3,
+        "pred_q_top10_drivers": [
+          "hamilton",
+          "leclerc"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R07:mclaren": {
+        "E": 4,
+        "post": 3,
+        "pred_q_top10_drivers": [
+          "norris",
+          "piastri"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R07:red_bull": {
+        "E": 4,
+        "post": 3,
+        "pred_q_top10_drivers": [
+          "hadjar",
+          "max_verstappen"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R08:mercedes": {
+        "E": 5,
+        "post": 3,
+        "pred_q_top10_drivers": [
+          "antonelli",
+          "russell"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R08:ferrari": {
+        "E": 4,
+        "post": 4,
+        "pred_q_top10_drivers": [
+          "hamilton",
+          "leclerc"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R08:mclaren": {
+        "E": 4,
+        "post": 4,
+        "pred_q_top10_drivers": [
+          "norris",
+          "piastri"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R08:red_bull": {
+        "E": 4,
+        "post": 4,
+        "pred_q_top10_drivers": [
+          "hadjar",
+          "max_verstappen"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R09:mercedes": {
+        "E": 5,
+        "post": 4,
+        "pred_q_top10_drivers": [
+          "antonelli",
+          "russell"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R09:ferrari": {
+        "E": 4,
+        "post": 5,
+        "pred_q_top10_drivers": [
+          "hamilton",
+          "leclerc"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R09:mclaren": {
+        "E": 4,
+        "post": 5,
+        "pred_q_top10_drivers": [
+          "norris",
+          "piastri"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R09:red_bull": {
+        "E": 4,
+        "post": 5,
+        "pred_q_top10_drivers": [
+          "hadjar",
+          "max_verstappen"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R10:mercedes": {
+        "E": 5,
+        "post": 5,
+        "pred_q_top10_drivers": [
+          "antonelli",
+          "russell"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R10:ferrari": {
+        "E": 7,
+        "post": 3,
+        "pred_q_top10_drivers": [
+          "hamilton",
+          "leclerc"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R10:mclaren": {
+        "E": 4,
+        "post": 6,
+        "pred_q_top10_drivers": [
+          "norris",
+          "piastri"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R10:red_bull": {
+        "E": 7,
+        "post": 3,
+        "pred_q_top10_drivers": [
+          "hadjar",
+          "max_verstappen"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R11:mercedes": {
+        "E": 5,
+        "post": 6,
+        "pred_q_top10_drivers": [
+          "antonelli",
+          "russell"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R11:ferrari": {
+        "E": 8,
+        "post": 3,
+        "pred_q_top10_drivers": [
+          "hamilton",
+          "leclerc"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R11:mclaren": {
+        "E": 4,
+        "post": 7,
+        "pred_q_top10_drivers": [
+          "norris",
+          "piastri"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R11:red_bull": {
+        "E": 7,
+        "post": 4,
+        "pred_q_top10_drivers": [
+          "hadjar",
+          "max_verstappen"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R12:mercedes": {
+        "E": 5,
+        "post": 7,
+        "pred_q_top10_drivers": [
+          "antonelli",
+          "russell"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R12:ferrari": {
+        "E": 8,
+        "post": 4,
+        "pred_q_top10_drivers": [
+          "hamilton",
+          "leclerc"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R12:mclaren": {
+        "E": 4,
+        "post": 8,
+        "pred_q_top10_drivers": [
+          "norris",
+          "piastri"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R12:red_bull": {
+        "E": 7,
+        "post": 5,
+        "pred_q_top10_drivers": [
+          "lawson",
+          "max_verstappen"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      }
+    }
+  },
+  "A1f_false_full": {
+    "q13": [
+      [
+        3,
+        0.4769186721
+      ],
+      [
+        4,
+        0.4524503276
+      ],
+      [
+        5,
+        0.3957777778
+      ],
+      [
+        6,
+        0.4737318956
+      ],
+      [
+        7,
+        0.3755555556
+      ],
+      [
+        8,
+        0.6716534248
+      ],
+      [
+        9,
+        0.4914028194
+      ],
+      [
+        10,
+        0.3418333333
+      ],
+      [
+        11,
+        0.3865112412
+      ],
+      [
+        12,
+        null
+      ]
+    ],
+    "q31": [
+      [
+        3,
+        0.5155406343
+      ],
+      [
+        4,
+        0.4524503276
+      ],
+      [
+        5,
+        0.4657821511
+      ],
+      [
+        6,
+        0.5269268766
+      ],
+      [
+        7,
+        0.5502358224
+      ],
+      [
+        8,
+        0.6716534248
+      ],
+      [
+        9,
+        0.5231533559
+      ],
+      [
+        10,
+        0.3418333333
+      ],
+      [
+        11,
+        0.36740013
+      ],
+      [
+        12,
+        null
+      ]
+    ],
+    "q30": [
+      [
+        3,
+        0.5155406343
+      ],
+      [
+        4,
+        0.3903808415
+      ],
+      [
+        5,
+        0.4911805972
+      ],
+      [
+        6,
+        0.6323450954
+      ],
+      [
+        7,
+        0.4948571042
+      ],
+      [
+        8,
+        0.6698105343
+      ],
+      [
+        9,
+        0.4566394254
+      ],
+      [
+        10,
+        0.3152777778
+      ],
+      [
+        11,
+        0.4194211517
+      ],
+      [
+        12,
+        null
+      ]
+    ],
+    "race": [
+      [
+        3,
+        0.6836
+      ],
+      [
+        4,
+        0.5133
+      ],
+      [
+        5,
+        0.4969
+      ],
+      [
+        6,
+        0.415
+      ],
+      [
+        7,
+        0.5864
+      ],
+      [
+        8,
+        0.555
+      ],
+      [
+        9,
+        0.516
+      ],
+      [
+        10,
+        0.5414
+      ],
+      [
+        11,
+        0.5828
+      ],
+      [
+        12,
+        0.6155
+      ]
+    ],
+    "gridcorr": {
+      "3": 0.791,
+      "4": 0.955,
+      "5": 0.873,
+      "6": 0.9,
+      "7": 0.873,
+      "8": 0.891,
+      "9": 0.9,
+      "10": 0.836,
+      "11": 0.845,
+      "12": 0.945
+    },
+    "fired": {
+      "R06:mercedes": {
+        "E": 3,
+        "post": 3,
+        "pred_q_top10_drivers": [
+          "antonelli",
+          "russell"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R06:haas": {
+        "E": 3,
+        "post": 3,
+        "pred_q_top10_drivers": [],
+        "hits_vs_q_truth": 0,
+        "false_alarm": 0
+      },
+      "R07:mercedes": {
+        "E": 3,
+        "post": 4,
+        "pred_q_top10_drivers": [
+          "antonelli",
+          "russell"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R07:haas": {
+        "E": 3,
+        "post": 4,
+        "pred_q_top10_drivers": [],
+        "hits_vs_q_truth": 0,
+        "false_alarm": 0
+      },
+      "R08:mercedes": {
+        "E": 3,
+        "post": 5,
+        "pred_q_top10_drivers": [
+          "antonelli",
+          "russell"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R08:red_bull": {
+        "E": 5,
+        "post": 3,
+        "pred_q_top10_drivers": [
+          "hadjar",
+          "max_verstappen"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R08:haas": {
+        "E": 3,
+        "post": 5,
+        "pred_q_top10_drivers": [],
+        "hits_vs_q_truth": 0,
+        "false_alarm": 0
+      },
+      "R09:mercedes": {
+        "E": 3,
+        "post": 6,
+        "pred_q_top10_drivers": [
+          "antonelli",
+          "russell"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R09:ferrari": {
+        "E": 6,
+        "post": 3,
+        "pred_q_top10_drivers": [
+          "hamilton",
+          "leclerc"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R09:red_bull": {
+        "E": 5,
+        "post": 4,
+        "pred_q_top10_drivers": [
+          "hadjar",
+          "max_verstappen"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R09:haas": {
+        "E": 3,
+        "post": 6,
+        "pred_q_top10_drivers": [],
+        "hits_vs_q_truth": 0,
+        "false_alarm": 0
+      },
+      "R09:rb": {
+        "E": 6,
+        "post": 3,
+        "pred_q_top10_drivers": [
+          "arvid_lindblad",
+          "lawson"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R09:cadillac": {
+        "E": 6,
+        "post": 3,
+        "pred_q_top10_drivers": [],
+        "hits_vs_q_truth": 0,
+        "false_alarm": 0
+      },
+      "R10:mercedes": {
+        "E": 3,
+        "post": 7,
+        "pred_q_top10_drivers": [
+          "antonelli",
+          "russell"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R10:ferrari": {
+        "E": 6,
+        "post": 4,
+        "pred_q_top10_drivers": [
+          "hamilton",
+          "leclerc"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R10:red_bull": {
+        "E": 5,
+        "post": 5,
+        "pred_q_top10_drivers": [
+          "hadjar",
+          "max_verstappen"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R10:haas": {
+        "E": 3,
+        "post": 7,
+        "pred_q_top10_drivers": [],
+        "hits_vs_q_truth": 0,
+        "false_alarm": 0
+      },
+      "R10:rb": {
+        "E": 6,
+        "post": 4,
+        "pred_q_top10_drivers": [
+          "arvid_lindblad",
+          "lawson"
+        ],
+        "hits_vs_q_truth": 1,
+        "false_alarm": 1
+      },
+      "R10:cadillac": {
+        "E": 6,
+        "post": 4,
+        "pred_q_top10_drivers": [],
+        "hits_vs_q_truth": 0,
+        "false_alarm": 0
+      },
+      "R11:mercedes": {
+        "E": 3,
+        "post": 8,
+        "pred_q_top10_drivers": [
+          "antonelli",
+          "russell"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R11:ferrari": {
+        "E": 6,
+        "post": 5,
+        "pred_q_top10_drivers": [
+          "hamilton",
+          "leclerc"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R11:red_bull": {
+        "E": 5,
+        "post": 6,
+        "pred_q_top10_drivers": [
+          "hadjar",
+          "max_verstappen"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R11:haas": {
+        "E": 3,
+        "post": 8,
+        "pred_q_top10_drivers": [],
+        "hits_vs_q_truth": 0,
+        "false_alarm": 0
+      },
+      "R11:rb": {
+        "E": 6,
+        "post": 5,
+        "pred_q_top10_drivers": [
+          "arvid_lindblad",
+          "lawson"
+        ],
+        "hits_vs_q_truth": 1,
+        "false_alarm": 1
+      },
+      "R11:cadillac": {
+        "E": 6,
+        "post": 5,
+        "pred_q_top10_drivers": [],
+        "hits_vs_q_truth": 0,
+        "false_alarm": 0
+      },
+      "R12:mercedes": {
+        "E": 3,
+        "post": 9,
+        "pred_q_top10_drivers": [
+          "antonelli",
+          "russell"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R12:ferrari": {
+        "E": 6,
+        "post": 6,
+        "pred_q_top10_drivers": [
+          "hamilton",
+          "leclerc"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R12:red_bull": {
+        "E": 5,
+        "post": 7,
+        "pred_q_top10_drivers": [
+          "lawson",
+          "max_verstappen"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R12:haas": {
+        "E": 3,
+        "post": 9,
+        "pred_q_top10_drivers": [],
+        "hits_vs_q_truth": 0,
+        "false_alarm": 0
+      },
+      "R12:rb": {
+        "E": 6,
+        "post": 6,
+        "pred_q_top10_drivers": [
+          "arvid_lindblad"
+        ],
+        "hits_vs_q_truth": 1,
+        "false_alarm": 0
+      },
+      "R12:cadillac": {
+        "E": 6,
+        "post": 6,
+        "pred_q_top10_drivers": [],
+        "hits_vs_q_truth": 0,
+        "false_alarm": 0
+      }
+    }
+  },
+  "A2f_false_gradual_m3": {
+    "q13": [
+      [
+        3,
+        0.4769186721
+      ],
+      [
+        4,
+        0.4524503276
+      ],
+      [
+        5,
+        0.3957777778
+      ],
+      [
+        6,
+        0.4737318956
+      ],
+      [
+        7,
+        0.3755555556
+      ],
+      [
+        8,
+        0.7206095866
+      ],
+      [
+        9,
+        0.4298472638
+      ],
+      [
+        10,
+        0.3588333333
+      ],
+      [
+        11,
+        0.413358505
+      ],
+      [
+        12,
+        null
+      ]
+    ],
+    "q31": [
+      [
+        3,
+        0.5155406343
+      ],
+      [
+        4,
+        0.4524503276
+      ],
+      [
+        5,
+        0.4657821511
+      ],
+      [
+        6,
+        0.5269268766
+      ],
+      [
+        7,
+        0.5502358224
+      ],
+      [
+        8,
+        0.7206095866
+      ],
+      [
+        9,
+        0.4615978004
+      ],
+      [
+        10,
+        0.3588333333
+      ],
+      [
+        11,
+        0.413358505
+      ],
+      [
+        12,
+        null
+      ]
+    ],
+    "q30": [
+      [
+        3,
+        0.5155406343
+      ],
+      [
+        4,
+        0.3903808415
+      ],
+      [
+        5,
+        0.4911805972
+      ],
+      [
+        6,
+        0.6323450954
+      ],
+      [
+        7,
+        0.4948571042
+      ],
+      [
+        8,
+        0.6698105343
+      ],
+      [
+        9,
+        0.3995283143
+      ],
+      [
+        10,
+        0.3322777778
+      ],
+      [
+        11,
+        0.3748445745
+      ],
+      [
+        12,
+        null
+      ]
+    ],
+    "race": [
+      [
+        3,
+        0.6836
+      ],
+      [
+        4,
+        0.5133
+      ],
+      [
+        5,
+        0.4969
+      ],
+      [
+        6,
+        0.415
+      ],
+      [
+        7,
+        0.5864
+      ],
+      [
+        8,
+        0.555
+      ],
+      [
+        9,
+        0.516
+      ],
+      [
+        10,
+        0.6007
+      ],
+      [
+        11,
+        0.5828
+      ],
+      [
+        12,
+        0.6155
+      ]
+    ],
+    "gridcorr": {
+      "3": 0.791,
+      "4": 0.955,
+      "5": 0.873,
+      "6": 0.864,
+      "7": 0.882,
+      "8": 0.909,
+      "9": 0.909,
+      "10": 0.809,
+      "11": 0.845,
+      "12": 0.964
+    },
+    "fired": {
+      "R06:mercedes": {
+        "E": 3,
+        "post": 3,
+        "pred_q_top10_drivers": [
+          "antonelli",
+          "russell"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R06:haas": {
+        "E": 3,
+        "post": 3,
+        "pred_q_top10_drivers": [],
+        "hits_vs_q_truth": 0,
+        "false_alarm": 0
+      },
+      "R07:mercedes": {
+        "E": 3,
+        "post": 4,
+        "pred_q_top10_drivers": [
+          "antonelli",
+          "russell"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R07:haas": {
+        "E": 3,
+        "post": 4,
+        "pred_q_top10_drivers": [],
+        "hits_vs_q_truth": 0,
+        "false_alarm": 0
+      },
+      "R08:mercedes": {
+        "E": 3,
+        "post": 5,
+        "pred_q_top10_drivers": [
+          "antonelli",
+          "russell"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R08:red_bull": {
+        "E": 5,
+        "post": 3,
+        "pred_q_top10_drivers": [
+          "hadjar",
+          "max_verstappen"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R08:haas": {
+        "E": 3,
+        "post": 5,
+        "pred_q_top10_drivers": [],
+        "hits_vs_q_truth": 0,
+        "false_alarm": 0
+      },
+      "R09:mercedes": {
+        "E": 3,
+        "post": 6,
+        "pred_q_top10_drivers": [
+          "antonelli",
+          "russell"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R09:ferrari": {
+        "E": 6,
+        "post": 3,
+        "pred_q_top10_drivers": [
+          "hamilton",
+          "leclerc"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R09:red_bull": {
+        "E": 5,
+        "post": 4,
+        "pred_q_top10_drivers": [
+          "hadjar",
+          "max_verstappen"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R09:haas": {
+        "E": 3,
+        "post": 6,
+        "pred_q_top10_drivers": [],
+        "hits_vs_q_truth": 0,
+        "false_alarm": 0
+      },
+      "R09:rb": {
+        "E": 6,
+        "post": 3,
+        "pred_q_top10_drivers": [
+          "lawson"
+        ],
+        "hits_vs_q_truth": 1,
+        "false_alarm": 0
+      },
+      "R09:cadillac": {
+        "E": 6,
+        "post": 3,
+        "pred_q_top10_drivers": [],
+        "hits_vs_q_truth": 0,
+        "false_alarm": 0
+      },
+      "R10:mercedes": {
+        "E": 3,
+        "post": 7,
+        "pred_q_top10_drivers": [
+          "antonelli",
+          "russell"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R10:ferrari": {
+        "E": 6,
+        "post": 4,
+        "pred_q_top10_drivers": [
+          "hamilton",
+          "leclerc"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R10:red_bull": {
+        "E": 5,
+        "post": 5,
+        "pred_q_top10_drivers": [
+          "hadjar",
+          "max_verstappen"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R10:haas": {
+        "E": 3,
+        "post": 7,
+        "pred_q_top10_drivers": [],
+        "hits_vs_q_truth": 0,
+        "false_alarm": 0
+      },
+      "R10:rb": {
+        "E": 6,
+        "post": 4,
+        "pred_q_top10_drivers": [
+          "arvid_lindblad",
+          "lawson"
+        ],
+        "hits_vs_q_truth": 1,
+        "false_alarm": 1
+      },
+      "R10:cadillac": {
+        "E": 6,
+        "post": 4,
+        "pred_q_top10_drivers": [],
+        "hits_vs_q_truth": 0,
+        "false_alarm": 0
+      },
+      "R11:mercedes": {
+        "E": 3,
+        "post": 8,
+        "pred_q_top10_drivers": [
+          "antonelli",
+          "russell"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R11:ferrari": {
+        "E": 6,
+        "post": 5,
+        "pred_q_top10_drivers": [
+          "hamilton",
+          "leclerc"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R11:red_bull": {
+        "E": 5,
+        "post": 6,
+        "pred_q_top10_drivers": [
+          "hadjar",
+          "max_verstappen"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R11:haas": {
+        "E": 3,
+        "post": 8,
+        "pred_q_top10_drivers": [],
+        "hits_vs_q_truth": 0,
+        "false_alarm": 0
+      },
+      "R11:rb": {
+        "E": 6,
+        "post": 5,
+        "pred_q_top10_drivers": [
+          "arvid_lindblad",
+          "lawson"
+        ],
+        "hits_vs_q_truth": 1,
+        "false_alarm": 1
+      },
+      "R11:cadillac": {
+        "E": 6,
+        "post": 5,
+        "pred_q_top10_drivers": [],
+        "hits_vs_q_truth": 0,
+        "false_alarm": 0
+      },
+      "R12:mercedes": {
+        "E": 3,
+        "post": 9,
+        "pred_q_top10_drivers": [
+          "antonelli",
+          "russell"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R12:ferrari": {
+        "E": 6,
+        "post": 6,
+        "pred_q_top10_drivers": [
+          "hamilton",
+          "leclerc"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R12:red_bull": {
+        "E": 5,
+        "post": 7,
+        "pred_q_top10_drivers": [
+          "lawson",
+          "max_verstappen"
+        ],
+        "hits_vs_q_truth": 2,
+        "false_alarm": 0
+      },
+      "R12:haas": {
+        "E": 3,
+        "post": 9,
+        "pred_q_top10_drivers": [],
+        "hits_vs_q_truth": 0,
+        "false_alarm": 0
+      },
+      "R12:rb": {
+        "E": 6,
+        "post": 6,
+        "pred_q_top10_drivers": [
+          "arvid_lindblad"
+        ],
+        "hits_vs_q_truth": 1,
+        "false_alarm": 0
+      },
+      "R12:cadillac": {
+        "E": 6,
+        "post": 6,
+        "pred_q_top10_drivers": [],
+        "hits_vs_q_truth": 0,
+        "false_alarm": 0
+      }
+    }
+  }
+}

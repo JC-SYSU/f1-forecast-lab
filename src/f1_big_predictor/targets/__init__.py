@@ -1,0 +1,1 @@
+"""Independent target model namespaces."""

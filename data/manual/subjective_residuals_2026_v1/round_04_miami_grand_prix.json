@@ -1,0 +1,35 @@
+{
+  "schema": "subjective_residual_event_v1",
+  "residual_version": "subjective_residuals_2026_v1",
+  "source_evidence_version": "agent_evidence_2026_v1",
+  "generated_on": "2026-05-03T18:00:00Z",
+  "signal_policy": "Ordinal signals are -2..2 evidence strengths used only to derive direction. Current target models do not apply the numeric value directly. Every signal must reference same-round archived evidence.",
+  "event_round": 4,
+  "race_name": "Miami Grand Prix",
+  "frozen": true,
+  "frozen_at": "2026-05-03T18:00:00Z",
+  "scale": "-2..2 ordinal signal; 0 neutral; sign sets evidence direction only",
+  "entries": [
+    {
+      "residual_id": "r04_sr001",
+      "event_round": 4,
+      "target": {
+        "type": "team",
+        "ids": [
+          "mclaren"
+        ]
+      },
+      "dimension": "weekend_state",
+      "ordinal_signal": 1.5,
+      "confidence": 0.85,
+      "evidence_ids": [
+        "r04_e001",
+        "r04_e002"
+      ],
+      "summary": "McLaren converted Sprint Qualifying and Sprint form into repeated Miami pace evidence before the Grand Prix.",
+      "session_scope": [
+        "race"
+      ]
+    }
+  ]
+}

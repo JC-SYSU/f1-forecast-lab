@@ -1,0 +1,45 @@
+{
+  "season": 2026,
+  "retrieved_on": "2026-07-03",
+  "source": {
+    "name": "Manual snapshot from Formula 1 teams/drivers pages and FIA entry-list cross-check",
+    "url": "https://www.formula1.com/en/teams"
+  },
+  "teams": [
+    {"team_id": "mclaren", "display_name": "McLaren", "drivers": ["norris", "piastri"]},
+    {"team_id": "ferrari", "display_name": "Ferrari", "drivers": ["leclerc", "hamilton"]},
+    {"team_id": "red_bull", "display_name": "Red Bull Racing", "drivers": ["max_verstappen", "hadjar"]},
+    {"team_id": "mercedes", "display_name": "Mercedes", "drivers": ["russell", "antonelli"]},
+    {"team_id": "aston_martin", "display_name": "Aston Martin", "drivers": ["alonso", "stroll"]},
+    {"team_id": "alpine", "display_name": "Alpine", "drivers": ["gasly", "colapinto"]},
+    {"team_id": "haas", "display_name": "Haas", "drivers": ["ocon", "bearman"]},
+    {"team_id": "rb", "display_name": "Racing Bulls", "drivers": ["lawson", "arvid_lindblad"]},
+    {"team_id": "williams", "display_name": "Williams", "drivers": ["albon", "sainz"]},
+    {"team_id": "audi", "display_name": "Audi", "drivers": ["hulkenberg", "bortoleto"]},
+    {"team_id": "cadillac", "display_name": "Cadillac", "drivers": ["bottas", "perez"]}
+  ],
+  "drivers": [
+    {"driver_id": "norris", "display_name": "Lando Norris", "team_id": "mclaren", "racing_number": 4, "country": "United Kingdom"},
+    {"driver_id": "piastri", "display_name": "Oscar Piastri", "team_id": "mclaren", "racing_number": 81, "country": "Australia"},
+    {"driver_id": "leclerc", "display_name": "Charles Leclerc", "team_id": "ferrari", "racing_number": 16, "country": "Monaco"},
+    {"driver_id": "hamilton", "display_name": "Lewis Hamilton", "team_id": "ferrari", "racing_number": 44, "country": "United Kingdom"},
+    {"driver_id": "max_verstappen", "display_name": "Max Verstappen", "team_id": "red_bull", "racing_number": 1, "country": "Netherlands"},
+    {"driver_id": "hadjar", "display_name": "Isack Hadjar", "team_id": "red_bull", "racing_number": 6, "country": "France"},
+    {"driver_id": "russell", "display_name": "George Russell", "team_id": "mercedes", "racing_number": 63, "country": "United Kingdom"},
+    {"driver_id": "antonelli", "display_name": "Kimi Antonelli", "team_id": "mercedes", "racing_number": 12, "country": "Italy"},
+    {"driver_id": "alonso", "display_name": "Fernando Alonso", "team_id": "aston_martin", "racing_number": 14, "country": "Spain"},
+    {"driver_id": "stroll", "display_name": "Lance Stroll", "team_id": "aston_martin", "racing_number": 18, "country": "Canada"},
+    {"driver_id": "gasly", "display_name": "Pierre Gasly", "team_id": "alpine", "racing_number": 10, "country": "France"},
+    {"driver_id": "colapinto", "display_name": "Franco Colapinto", "team_id": "alpine", "racing_number": 43, "country": "Argentina"},
+    {"driver_id": "ocon", "display_name": "Esteban Ocon", "team_id": "haas", "racing_number": 31, "country": "France"},
+    {"driver_id": "bearman", "display_name": "Oliver Bearman", "team_id": "haas", "racing_number": 87, "country": "United Kingdom"},
+    {"driver_id": "lawson", "display_name": "Liam Lawson", "team_id": "rb", "racing_number": 30, "country": "New Zealand"},
+    {"driver_id": "arvid_lindblad", "display_name": "Arvid Lindblad", "team_id": "rb", "racing_number": 41, "country": "United Kingdom"},
+    {"driver_id": "albon", "display_name": "Alexander Albon", "team_id": "williams", "racing_number": 23, "country": "Thailand"},
+    {"driver_id": "sainz", "display_name": "Carlos Sainz", "team_id": "williams", "racing_number": 55, "country": "Spain"},
+    {"driver_id": "hulkenberg", "display_name": "Nico Hulkenberg", "team_id": "audi", "racing_number": 27, "country": "Germany"},
+    {"driver_id": "bortoleto", "display_name": "Gabriel Bortoleto", "team_id": "audi", "racing_number": 5, "country": "Brazil"},
+    {"driver_id": "bottas", "display_name": "Valtteri Bottas", "team_id": "cadillac", "racing_number": 77, "country": "Finland"},
+    {"driver_id": "perez", "display_name": "Sergio Perez", "team_id": "cadillac", "racing_number": 11, "country": "Mexico"}
+  ]
+}

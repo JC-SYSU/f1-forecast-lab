@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="380" viewBox="0 0 640 380">
+<style>text{font-family:-apple-system,'PingFang SC','Microsoft YaHei','Segoe UI',sans-serif;}</style>
+<rect width="640" height="380" fill="#ffffff"/>
+<text x="20" y="26" font-size="15" font-weight="700" fill="#1c1c1e">Correlation of 208 grid-delta variants with race result</text>
+<line x1="70" y1="300.0" x2="610" y2="300.0" stroke="#e4e4e7" stroke-width="1"/>
+<text x="62" y="304.0" font-size="11" fill="#5f6368" text-anchor="end" font-weight="400">0</text>
+<line x1="70" y1="240.0" x2="610" y2="240.0" stroke="#e4e4e7" stroke-width="1"/>
+<text x="62" y="244.0" font-size="11" fill="#5f6368" text-anchor="end" font-weight="400">6</text>
+<line x1="70" y1="180.0" x2="610" y2="180.0" stroke="#e4e4e7" stroke-width="1"/>
+<text x="62" y="184.0" font-size="11" fill="#5f6368" text-anchor="end" font-weight="400">13</text>
+<line x1="70" y1="120.0" x2="610" y2="120.0" stroke="#e4e4e7" stroke-width="1"/>
+<text x="62" y="124.0" font-size="11" fill="#5f6368" text-anchor="end" font-weight="400">20</text>
+<line x1="70" y1="60.0" x2="610" y2="60.0" stroke="#e4e4e7" stroke-width="1"/>
+<text x="62" y="64.0" font-size="11" fill="#5f6368" text-anchor="end" font-weight="400">27</text>
+<rect x="77.13636363636364" y="247" width="10.272727272727273" height="53" fill="#9aa4b2" rx="2"/>
+<rect x="89.40909090909092" y="238" width="10.272727272727273" height="62" fill="#9aa4b2" rx="2"/>
+<rect x="101.68181818181817" y="220" width="10.272727272727273" height="80" fill="#9aa4b2" rx="2"/>
+<rect x="113.95454545454545" y="194" width="10.272727272727273" height="106" fill="#9aa4b2" rx="2"/>
+<rect x="126.22727272727273" y="167" width="10.272727272727273" height="133" fill="#9aa4b2" rx="2"/>
+<rect x="138.5" y="158" width="10.272727272727273" height="142" fill="#9aa4b2" rx="2"/>
+<rect x="150.77272727272728" y="60" width="10.272727272727273" height="240" fill="#9aa4b2" rx="2"/>
+<rect x="163.04545454545456" y="78" width="10.272727272727273" height="222" fill="#9aa4b2" rx="2"/>
+<rect x="175.31818181818184" y="256" width="10.272727272727273" height="44" fill="#9aa4b2" rx="2"/>
+<rect x="187.5909090909091" y="194" width="10.272727272727273" height="106" fill="#9aa4b2" rx="2"/>
+<rect x="199.86363636363637" y="238" width="10.272727272727273" height="62" fill="#9aa4b2" rx="2"/>
+<rect x="212.13636363636365" y="194" width="10.272727272727273" height="106" fill="#9aa4b2" rx="2"/>
+<rect x="224.4090909090909" y="247" width="10.272727272727273" height="53" fill="#9aa4b2" rx="2"/>
+<rect x="236.6818181818182" y="256" width="10.272727272727273" height="44" fill="#9aa4b2" rx="2"/>
+<rect x="248.95454545454544" y="229" width="10.272727272727273" height="71" fill="#9aa4b2" rx="2"/>
+<rect x="261.22727272727275" y="265" width="10.272727272727273" height="35" fill="#9aa4b2" rx="2"/>
+<rect x="433.0454545454545" y="292" width="10.272727272727273" height="8" fill="#9aa4b2" rx="2"/>
+<rect x="457.5909090909091" y="292" width="10.272727272727273" height="8" fill="#9aa4b2" rx="2"/>
+<rect x="469.8636363636363" y="265" width="10.272727272727273" height="35" fill="#9aa4b2" rx="2"/>
+<rect x="482.1363636363636" y="247" width="10.272727272727273" height="53" fill="#9aa4b2" rx="2"/>
+<rect x="568.0454545454544" y="158" width="10.272727272727273" height="142" fill="#9aa4b2" rx="2"/>
+<text x="143.63636363636363" y="320" font-size="11" fill="#5f6368" text-anchor="middle" font-weight="400">-0.25</text>
+<text x="266.3636363636364" y="320" font-size="11" fill="#5f6368" text-anchor="middle" font-weight="400">+0.00</text>
+<text x="389.09090909090907" y="320" font-size="11" fill="#5f6368" text-anchor="middle" font-weight="400">+0.25</text>
+<line x1="596.6963636363637" y1="50" x2="596.6963636363637" y2="300" stroke="#d40000" stroke-width="1.5" stroke-dasharray="5,4"/>
+<text x="590.6963636363637" y="44" font-size="11.5" fill="#d40000" text-anchor="end" font-weight="600">Reference (raw grid) 0.6729</text>
+<text x="70" y="344" font-size="11.5" fill="#5f6368" text-anchor="start" font-weight="400">Of 208 variants, 204 produced a computable correlation (4 did not).</text>
+<text x="70" y="360" font-size="11.5" fill="#5f6368" text-anchor="start" font-weight="400">The distribution is bimodal: most variants sit in the negative range; one stronger cluster gathers near 0.63 — none beats the reference.</text>
+</svg>

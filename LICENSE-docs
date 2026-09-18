@@ -1,0 +1,10 @@
+The narrative content of this repository (the `research/` and `appendix/`
+directories, plus `README.md`) is licensed under the
+Creative Commons Attribution 4.0 International License (CC-BY-4.0).
+
+Copyright (c) 2026 hoho (JC-SYSU).
+Full text: https://creativecommons.org/licenses/by/4.0/legalcode
+
+Code under `code/` is licensed separately under the MIT License
+(see code/LICENSE). Data subsets under `code/data/` retain their
+upstream provenance as documented in Appendix A.

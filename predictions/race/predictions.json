@@ -1,0 +1,449 @@
+{
+ "schema": "race.predictions.v1",
+ "season": 2026,
+ "description": "Race-line predictions and C0 scores for R03-R14: the grid-order baseline versus the optimized model (weights frozen at commit 606117e, before R12). Extracted from c0_race_r03_r12_615232a3 and c0_race_r13_r14_6a01fdaa.",
+ "models": [
+  {
+   "model_id": "race_grid_only",
+   "description": "Grid-order baseline"
+  },
+  {
+   "model_id": "race_optimized_606117e",
+   "description": "Optimized model (weights frozen at 606117e)"
+  }
+ ],
+ "rounds": {
+  "3": {
+   "race_name": "Japanese Grand Prix",
+   "race_grid_only": {
+    "predicted_top10": [
+     "antonelli",
+     "russell",
+     "piastri",
+     "leclerc",
+     "norris",
+     "hamilton",
+     "gasly",
+     "hadjar",
+     "bortoleto",
+     "arvid_lindblad"
+    ],
+    "c0": 0.605952,
+    "status": "scored"
+   },
+   "race_optimized_606117e": {
+    "predicted_top10": [
+     "antonelli",
+     "russell",
+     "leclerc",
+     "piastri",
+     "norris",
+     "hamilton",
+     "gasly",
+     "hadjar",
+     "max_verstappen",
+     "bearman"
+    ],
+    "c0": 0.683571,
+    "status": "scored"
+   },
+   "actual_top10": null
+  },
+  "4": {
+   "race_name": "Miami Grand Prix",
+   "race_grid_only": {
+    "predicted_top10": [
+     "antonelli",
+     "max_verstappen",
+     "leclerc",
+     "norris",
+     "russell",
+     "hamilton",
+     "piastri",
+     "colapinto",
+     "gasly",
+     "hulkenberg"
+    ],
+    "c0": 0.498571,
+    "status": "scored"
+   },
+   "race_optimized_606117e": {
+    "predicted_top10": [
+     "antonelli",
+     "leclerc",
+     "norris",
+     "russell",
+     "max_verstappen",
+     "piastri",
+     "hamilton",
+     "gasly",
+     "bearman",
+     "lawson"
+    ],
+    "c0": 0.513333,
+    "status": "scored"
+   },
+   "actual_top10": null
+  },
+  "5": {
+   "race_name": "Canadian Grand Prix",
+   "race_grid_only": {
+    "predicted_top10": [
+     "russell",
+     "antonelli",
+     "norris",
+     "piastri",
+     "hamilton",
+     "max_verstappen",
+     "hadjar",
+     "leclerc",
+     "arvid_lindblad",
+     "colapinto"
+    ],
+    "c0": 0.396667,
+    "status": "scored"
+   },
+   "race_optimized_606117e": {
+    "predicted_top10": [
+     "antonelli",
+     "russell",
+     "norris",
+     "piastri",
+     "hamilton",
+     "leclerc",
+     "max_verstappen",
+     "gasly",
+     "colapinto",
+     "hadjar"
+    ],
+    "c0": 0.496905,
+    "status": "scored"
+   },
+   "actual_top10": null
+  },
+  "6": {
+   "race_name": "Monaco Grand Prix",
+   "race_grid_only": {
+    "predicted_top10": [
+     "antonelli",
+     "max_verstappen",
+     "hamilton",
+     "leclerc",
+     "hadjar",
+     "russell",
+     "piastri",
+     "norris",
+     "gasly",
+     "lawson"
+    ],
+    "c0": 0.428333,
+    "status": "scored"
+   },
+   "race_optimized_606117e": {
+    "predicted_top10": [
+     "antonelli",
+     "max_verstappen",
+     "leclerc",
+     "hamilton",
+     "russell",
+     "piastri",
+     "norris",
+     "hadjar",
+     "gasly",
+     "lawson"
+    ],
+    "c0": 0.415,
+    "status": "scored"
+   },
+   "actual_top10": null
+  },
+  "7": {
+   "race_name": "Barcelona Grand Prix",
+   "race_grid_only": {
+    "predicted_top10": [
+     "russell",
+     "hamilton",
+     "antonelli",
+     "norris",
+     "max_verstappen",
+     "hadjar",
+     "piastri",
+     "lawson",
+     "hulkenberg",
+     "leclerc"
+    ],
+    "c0": 0.515952,
+    "status": "scored"
+   },
+   "race_optimized_606117e": {
+    "predicted_top10": [
+     "antonelli",
+     "russell",
+     "hamilton",
+     "max_verstappen",
+     "norris",
+     "piastri",
+     "leclerc",
+     "lawson",
+     "hadjar",
+     "gasly"
+    ],
+    "c0": 0.586429,
+    "status": "scored"
+   },
+   "actual_top10": null
+  },
+  "8": {
+   "race_name": "Austrian Grand Prix",
+   "race_grid_only": {
+    "predicted_top10": [
+     "russell",
+     "leclerc",
+     "hamilton",
+     "antonelli",
+     "max_verstappen",
+     "norris",
+     "piastri",
+     "hadjar",
+     "lawson",
+     "arvid_lindblad"
+    ],
+    "c0": 0.631667,
+    "status": "scored"
+   },
+   "race_optimized_606117e": {
+    "predicted_top10": [
+     "russell",
+     "antonelli",
+     "hamilton",
+     "leclerc",
+     "max_verstappen",
+     "norris",
+     "piastri",
+     "hadjar",
+     "lawson",
+     "gasly"
+    ],
+    "c0": 0.555,
+    "status": "scored"
+   },
+   "actual_top10": null
+  },
+  "9": {
+   "race_name": "British Grand Prix",
+   "race_grid_only": {
+    "predicted_top10": [
+     "antonelli",
+     "leclerc",
+     "hamilton",
+     "russell",
+     "hadjar",
+     "norris",
+     "max_verstappen",
+     "piastri",
+     "arvid_lindblad",
+     "lawson"
+    ],
+    "c0": 0.506429,
+    "status": "scored"
+   },
+   "race_optimized_606117e": {
+    "predicted_top10": [
+     "antonelli",
+     "leclerc",
+     "hamilton",
+     "russell",
+     "max_verstappen",
+     "hadjar",
+     "norris",
+     "piastri",
+     "lawson",
+     "gasly"
+    ],
+    "c0": 0.515952,
+    "status": "scored"
+   },
+   "actual_top10": null
+  },
+  "10": {
+   "race_name": "Belgian Grand Prix",
+   "race_grid_only": {
+    "predicted_top10": [
+     "antonelli",
+     "max_verstappen",
+     "russell",
+     "leclerc",
+     "hamilton",
+     "piastri",
+     "arvid_lindblad",
+     "bortoleto",
+     "lawson",
+     "gasly"
+    ],
+    "c0": 0.515952,
+    "status": "scored"
+   },
+   "race_optimized_606117e": {
+    "predicted_top10": [
+     "antonelli",
+     "russell",
+     "max_verstappen",
+     "leclerc",
+     "hamilton",
+     "piastri",
+     "norris",
+     "hadjar",
+     "lawson",
+     "arvid_lindblad"
+    ],
+    "c0": 0.600714,
+    "status": "scored"
+   },
+   "actual_top10": null
+  },
+  "11": {
+   "race_name": "Hungarian Grand Prix",
+   "race_grid_only": {
+    "predicted_top10": [
+     "norris",
+     "leclerc",
+     "piastri",
+     "max_verstappen",
+     "hamilton",
+     "russell",
+     "antonelli",
+     "hadjar",
+     "arvid_lindblad",
+     "hulkenberg"
+    ],
+    "c0": 0.571667,
+    "status": "scored"
+   },
+   "race_optimized_606117e": {
+    "predicted_top10": [
+     "norris",
+     "leclerc",
+     "max_verstappen",
+     "piastri",
+     "antonelli",
+     "hamilton",
+     "russell",
+     "hadjar",
+     "arvid_lindblad",
+     "lawson"
+    ],
+    "c0": 0.582778,
+    "status": "scored"
+   },
+   "actual_top10": null
+  },
+  "12": {
+   "race_name": "Dutch Grand Prix",
+   "race_grid_only": {
+    "predicted_top10": [
+     "norris",
+     "russell",
+     "antonelli",
+     "piastri",
+     "hamilton",
+     "leclerc",
+     "max_verstappen",
+     "lawson",
+     "bortoleto",
+     "arvid_lindblad"
+    ],
+    "c0": 0.461429,
+    "status": "scored"
+   },
+   "race_optimized_606117e": {
+    "predicted_top10": [
+     "norris",
+     "antonelli",
+     "russell",
+     "hamilton",
+     "piastri",
+     "leclerc",
+     "max_verstappen",
+     "lawson",
+     "arvid_lindblad",
+     "bortoleto"
+    ],
+    "c0": 0.615476,
+    "status": "scored"
+   },
+   "actual_top10": null
+  },
+  "13": {
+   "race_name": "Italian Grand Prix",
+   "race_grid_only": {
+    "predicted_top10": [
+     "gasly",
+     "russell",
+     "leclerc",
+     "hamilton",
+     "max_verstappen",
+     "piastri",
+     "colapinto",
+     "norris",
+     "arvid_lindblad",
+     "bortoleto"
+    ],
+    "c0": 0.446429,
+    "status": "scored"
+   },
+   "race_optimized_606117e": {
+    "predicted_top10": [
+     "antonelli",
+     "russell",
+     "leclerc",
+     "hamilton",
+     "max_verstappen",
+     "norris",
+     "gasly",
+     "piastri",
+     "colapinto",
+     "arvid_lindblad"
+    ],
+    "c0": 0.667222,
+    "status": "scored"
+   },
+   "actual_top10": null
+  },
+  "14": {
+   "race_name": "Spanish Grand Prix",
+   "race_grid_only": {
+    "predicted_top10": [
+     "norris",
+     "antonelli",
+     "max_verstappen",
+     "hamilton",
+     "leclerc",
+     "russell",
+     "piastri",
+     "lawson",
+     "colapinto",
+     "arvid_lindblad"
+    ],
+    "c0": 0.492778,
+    "status": "scored"
+   },
+   "race_optimized_606117e": {
+    "predicted_top10": [
+     "norris",
+     "antonelli",
+     "max_verstappen",
+     "hamilton",
+     "leclerc",
+     "russell",
+     "piastri",
+     "lawson",
+     "arvid_lindblad",
+     "colapinto"
+    ],
+    "c0": 0.532222,
+    "status": "scored"
+   },
+   "actual_top10": null
+  }
+ }
+}

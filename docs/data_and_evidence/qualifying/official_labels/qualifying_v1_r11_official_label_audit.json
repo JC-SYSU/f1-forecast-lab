@@ -1,0 +1,266 @@
+{
+  "schema_version": "qualifying.r11_c0_official_label_audit.v1",
+  "document_id": "QUALIFYING-OFFICIAL-LABEL-AUDIT-2026-R11-001",
+  "season": 2026,
+  "target_round": 11,
+  "race_name": "Hungarian Grand Prix",
+  "circuit_id": "hungaroring",
+  "field_size": 22,
+  "status": "accepted_for_r11_replay_scoring_only",
+  "authority_priority": [
+    "FIA final qualifying classification",
+    "FIA entry list",
+    "Jolpica structured response for driver-id and constructor-id cross-check only"
+  ],
+  "transcription_method": "FIA R11 entry and final-classification PDFs were inspected through local text extraction on 2026-07-26; the structured response is only a consistency check.",
+  "entry_list_source": {
+    "authority": "FIA entry list",
+    "url": "https://www.fia.com/system/files/decision-document/2026_hungarian_grand_prix_-_entry_list.pdf",
+    "retrieved_at": "2026-07-25T16-42-24Z",
+    "raw_path": "data/raw/fia_2026_round_11/fia_documents/2026-07-25T16-42-24Z_entry_list_9b2258e1.pdf",
+    "sha256": "9b2258e17e28b648fef2feac946a40fa822c9f08828b62df2273911e8364d0bc"
+  },
+  "classification_source": {
+    "authority": "FIA final qualifying classification",
+    "url": "https://www.fia.com/system/files/decision-document/2026_hungarian_grand_prix_-_final_qualifying_classification.pdf",
+    "retrieved_at": "2026-07-26T02-01-50Z",
+    "raw_path": "data/raw/fia_2026_round_11/fia_documents/2026-07-26T02-01-50Z_final_qualifying_classification_b238634b.pdf",
+    "sha256": "b238634b1e9abfb46852e1623ce61f8e7205d8046fefcc104cac39c2b53fbd9c"
+  },
+  "structured_crosscheck_source": {
+    "authority": "Jolpica structured collector",
+    "url": "https://api.jolpi.ca/ergast/f1/2026/11/qualifying.json",
+    "retrieved_at": "2026-07-26T02-01-49Z",
+    "raw_path": "data/raw/season_2026_actuals_r11/jolpica/2026-07-26T02-01-49Z_qualifying_round_11_dee6a179.json",
+    "sha256": "dee6a17959e7523ab022c604a6d32b2f0c35b874f28e257d6460ed6a2cfe3b28"
+  },
+  "entry_field": [
+    {
+      "driver_id": "piastri",
+      "display_name": "Oscar Piastri",
+      "constructor_id": "mclaren"
+    },
+    {
+      "driver_id": "norris",
+      "display_name": "Lando Norris",
+      "constructor_id": "mclaren"
+    },
+    {
+      "driver_id": "russell",
+      "display_name": "George Russell",
+      "constructor_id": "mercedes"
+    },
+    {
+      "driver_id": "antonelli",
+      "display_name": "Kimi Antonelli",
+      "constructor_id": "mercedes"
+    },
+    {
+      "driver_id": "max_verstappen",
+      "display_name": "Max Verstappen",
+      "constructor_id": "red_bull"
+    },
+    {
+      "driver_id": "hadjar",
+      "display_name": "Isack Hadjar",
+      "constructor_id": "red_bull"
+    },
+    {
+      "driver_id": "leclerc",
+      "display_name": "Charles Leclerc",
+      "constructor_id": "ferrari"
+    },
+    {
+      "driver_id": "hamilton",
+      "display_name": "Lewis Hamilton",
+      "constructor_id": "ferrari"
+    },
+    {
+      "driver_id": "albon",
+      "display_name": "Alexander Albon",
+      "constructor_id": "williams"
+    },
+    {
+      "driver_id": "sainz",
+      "display_name": "Carlos Sainz",
+      "constructor_id": "williams"
+    },
+    {
+      "driver_id": "arvid_lindblad",
+      "display_name": "Arvid Lindblad",
+      "constructor_id": "rb"
+    },
+    {
+      "driver_id": "lawson",
+      "display_name": "Liam Lawson",
+      "constructor_id": "rb"
+    },
+    {
+      "driver_id": "stroll",
+      "display_name": "Lance Stroll",
+      "constructor_id": "aston_martin"
+    },
+    {
+      "driver_id": "alonso",
+      "display_name": "Fernando Alonso",
+      "constructor_id": "aston_martin"
+    },
+    {
+      "driver_id": "ocon",
+      "display_name": "Esteban Ocon",
+      "constructor_id": "haas"
+    },
+    {
+      "driver_id": "bearman",
+      "display_name": "Oliver Bearman",
+      "constructor_id": "haas"
+    },
+    {
+      "driver_id": "hulkenberg",
+      "display_name": "Nico Hulkenberg",
+      "constructor_id": "audi"
+    },
+    {
+      "driver_id": "bortoleto",
+      "display_name": "Gabriel Bortoleto",
+      "constructor_id": "audi"
+    },
+    {
+      "driver_id": "gasly",
+      "display_name": "Pierre Gasly",
+      "constructor_id": "alpine"
+    },
+    {
+      "driver_id": "colapinto",
+      "display_name": "Franco Colapinto",
+      "constructor_id": "alpine"
+    },
+    {
+      "driver_id": "perez",
+      "display_name": "Sergio Perez",
+      "constructor_id": "cadillac"
+    },
+    {
+      "driver_id": "bottas",
+      "display_name": "Valtteri Bottas",
+      "constructor_id": "cadillac"
+    }
+  ],
+  "official_records": [
+    {
+      "driver_id": "norris",
+      "position": 1,
+      "classification_status": "classified"
+    },
+    {
+      "driver_id": "hamilton",
+      "position": 2,
+      "classification_status": "classified"
+    },
+    {
+      "driver_id": "leclerc",
+      "position": 3,
+      "classification_status": "classified"
+    },
+    {
+      "driver_id": "antonelli",
+      "position": 4,
+      "classification_status": "classified"
+    },
+    {
+      "driver_id": "piastri",
+      "position": 5,
+      "classification_status": "classified"
+    },
+    {
+      "driver_id": "max_verstappen",
+      "position": 6,
+      "classification_status": "classified"
+    },
+    {
+      "driver_id": "russell",
+      "position": 7,
+      "classification_status": "classified"
+    },
+    {
+      "driver_id": "hadjar",
+      "position": 8,
+      "classification_status": "classified"
+    },
+    {
+      "driver_id": "arvid_lindblad",
+      "position": 9,
+      "classification_status": "classified"
+    },
+    {
+      "driver_id": "hulkenberg",
+      "position": 10,
+      "classification_status": "classified"
+    },
+    {
+      "driver_id": "lawson",
+      "position": 11,
+      "classification_status": "classified"
+    },
+    {
+      "driver_id": "gasly",
+      "position": 12,
+      "classification_status": "classified"
+    },
+    {
+      "driver_id": "colapinto",
+      "position": 13,
+      "classification_status": "classified"
+    },
+    {
+      "driver_id": "bortoleto",
+      "position": 14,
+      "classification_status": "classified"
+    },
+    {
+      "driver_id": "ocon",
+      "position": 15,
+      "classification_status": "classified"
+    },
+    {
+      "driver_id": "alonso",
+      "position": 16,
+      "classification_status": "classified"
+    },
+    {
+      "driver_id": "bearman",
+      "position": 17,
+      "classification_status": "classified"
+    },
+    {
+      "driver_id": "sainz",
+      "position": 18,
+      "classification_status": "classified"
+    },
+    {
+      "driver_id": "albon",
+      "position": 19,
+      "classification_status": "classified"
+    },
+    {
+      "driver_id": "stroll",
+      "position": 20,
+      "classification_status": "classified"
+    },
+    {
+      "driver_id": "bottas",
+      "position": 21,
+      "classification_status": "classified"
+    },
+    {
+      "driver_id": "perez",
+      "position": 22,
+      "classification_status": "classified"
+    }
+  ],
+  "crosscheck_result": {
+    "jolpica_field_set_matches_fia_entry_list": true,
+    "jolpica_position_order_matches_fia_final_classification": true,
+    "note": "The FIA documents remain authoritative whenever a mismatch occurs."
+  }
+}

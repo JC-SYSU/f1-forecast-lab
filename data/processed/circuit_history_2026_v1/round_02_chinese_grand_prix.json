@@ -1,0 +1,2406 @@
+{
+  "schema": "circuit_history_event_v1",
+  "season": 2026,
+  "target_round": 2,
+  "race_name": "Chinese Grand Prix",
+  "circuit_id": "shanghai",
+  "circuit_name": "Shanghai International Circuit",
+  "lookback_years": 5,
+  "recency_decay": 0.72,
+  "generated_at": "2026-07-04T12:27:50+00:00",
+  "archive_week_id": "circuit_history_2026_round_02",
+  "source": "jolpica",
+  "authority": "structured collection mechanism, pending official FIA/F1 classification verification",
+  "usage": "same-circuit historical driver scoring for model_v1.5 candidate work",
+  "target_schedule_source": {
+    "archive_week_id": "season_2026_actuals",
+    "dataset": "races_round_na",
+    "url": "https://api.jolpi.ca/ergast/f1/2026/races.json",
+    "retrieved_at": "2026-07-03T15-58-12Z",
+    "status_code": 200,
+    "content_type": "application/json",
+    "payload_sha256": "29ebfe1bf25033540a2a68eb0f6d79143e27e9d67600249b517668bc9418541f",
+    "data_path": "data/raw/season_2026_actuals/jolpica/2026-07-03T15-58-12Z_races_round_na_29ebfe1b.json",
+    "meta_path": "data/raw/season_2026_actuals/jolpica/2026-07-03T15-58-12Z_races_round_na_29ebfe1b.json.meta.json"
+  },
+  "current_driver_standings_source": {
+    "archive_week_id": "season_2026_actuals",
+    "dataset": "driverstandings_round_1",
+    "url": "https://api.jolpi.ca/ergast/f1/2026/1/driverstandings.json",
+    "retrieved_at": "2026-07-03T15-58-13Z",
+    "status_code": 200,
+    "content_type": "application/json",
+    "payload_sha256": "895213defbe27f538bb750a23d862e2b822248b8617fe7f7383a47dc35d7dcf3",
+    "data_path": "data/raw/season_2026_actuals/jolpica/2026-07-03T15-58-13Z_driverstandings_round_1_895213de.json",
+    "meta_path": "data/raw/season_2026_actuals/jolpica/2026-07-03T15-58-13Z_driverstandings_round_1_895213de.json.meta.json"
+  },
+  "evidence_issues": [],
+  "matched_historical_events": [
+    {
+      "historical_season": 2025,
+      "historical_round": 2,
+      "race_name": "Chinese Grand Prix",
+      "circuit_id": "shanghai",
+      "circuit_name": "Shanghai International Circuit",
+      "match_method": "circuit_id",
+      "datasets": {
+        "results": {
+          "status": "ok",
+          "row_count": 20,
+          "records": [
+            {
+              "driver_id": "piastri",
+              "driver_code": "PIA",
+              "driver_name": "Oscar Piastri",
+              "constructor_id": "mclaren",
+              "constructor_name": "McLaren",
+              "position": 1,
+              "grid": 1,
+              "points": 25.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "norris",
+              "driver_code": "NOR",
+              "driver_name": "Lando Norris",
+              "constructor_id": "mclaren",
+              "constructor_name": "McLaren",
+              "position": 2,
+              "grid": 3,
+              "points": 18.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "russell",
+              "driver_code": "RUS",
+              "driver_name": "George Russell",
+              "constructor_id": "mercedes",
+              "constructor_name": "Mercedes",
+              "position": 3,
+              "grid": 2,
+              "points": 15.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "max_verstappen",
+              "driver_code": "VER",
+              "driver_name": "Max Verstappen",
+              "constructor_id": "red_bull",
+              "constructor_name": "Red Bull",
+              "position": 4,
+              "grid": 4,
+              "points": 12.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "ocon",
+              "driver_code": "OCO",
+              "driver_name": "Esteban Ocon",
+              "constructor_id": "haas",
+              "constructor_name": "Haas F1 Team",
+              "position": 5,
+              "grid": 11,
+              "points": 10.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "antonelli",
+              "driver_code": "ANT",
+              "driver_name": "Andrea Kimi Antonelli",
+              "constructor_id": "mercedes",
+              "constructor_name": "Mercedes",
+              "position": 6,
+              "grid": 8,
+              "points": 8.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "albon",
+              "driver_code": "ALB",
+              "driver_name": "Alexander Albon",
+              "constructor_id": "williams",
+              "constructor_name": "Williams",
+              "position": 7,
+              "grid": 10,
+              "points": 6.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "bearman",
+              "driver_code": "BEA",
+              "driver_name": "Oliver Bearman",
+              "constructor_id": "haas",
+              "constructor_name": "Haas F1 Team",
+              "position": 8,
+              "grid": 17,
+              "points": 4.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "stroll",
+              "driver_code": "STR",
+              "driver_name": "Lance Stroll",
+              "constructor_id": "aston_martin",
+              "constructor_name": "Aston Martin",
+              "position": 9,
+              "grid": 14,
+              "points": 2.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "sainz",
+              "driver_code": "SAI",
+              "driver_name": "Carlos Sainz",
+              "constructor_id": "williams",
+              "constructor_name": "Williams",
+              "position": 10,
+              "grid": 15,
+              "points": 1.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "hadjar",
+              "driver_code": "HAD",
+              "driver_name": "Isack Hadjar",
+              "constructor_id": "rb",
+              "constructor_name": "RB F1 Team",
+              "position": 11,
+              "grid": 7,
+              "points": 0.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "lawson",
+              "driver_code": "LAW",
+              "driver_name": "Liam Lawson",
+              "constructor_id": "red_bull",
+              "constructor_name": "Red Bull",
+              "position": 12,
+              "grid": 20,
+              "points": 0.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "doohan",
+              "driver_code": "DOO",
+              "driver_name": "Jack Doohan",
+              "constructor_id": "alpine",
+              "constructor_name": "Alpine F1 Team",
+              "position": 13,
+              "grid": 18,
+              "points": 0.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "bortoleto",
+              "driver_code": "BOR",
+              "driver_name": "Gabriel Bortoleto",
+              "constructor_id": "sauber",
+              "constructor_name": "Sauber",
+              "position": 14,
+              "grid": 19,
+              "points": 0.0,
+              "status": "Lapped"
+            },
+            {
+              "driver_id": "hulkenberg",
+              "driver_code": "HUL",
+              "driver_name": "Nico Hülkenberg",
+              "constructor_id": "sauber",
+              "constructor_name": "Sauber",
+              "position": 15,
+              "grid": 12,
+              "points": 0.0,
+              "status": "Lapped"
+            },
+            {
+              "driver_id": "tsunoda",
+              "driver_code": "TSU",
+              "driver_name": "Yuki Tsunoda",
+              "constructor_id": "rb",
+              "constructor_name": "RB F1 Team",
+              "position": 16,
+              "grid": 9,
+              "points": 0.0,
+              "status": "Lapped"
+            },
+            {
+              "driver_id": "alonso",
+              "driver_code": "ALO",
+              "driver_name": "Fernando Alonso",
+              "constructor_id": "aston_martin",
+              "constructor_name": "Aston Martin",
+              "position": 17,
+              "grid": 13,
+              "points": 0.0,
+              "status": "Retired"
+            },
+            {
+              "driver_id": "leclerc",
+              "driver_code": "LEC",
+              "driver_name": "Charles Leclerc",
+              "constructor_id": "ferrari",
+              "constructor_name": "Ferrari",
+              "position": 18,
+              "grid": 6,
+              "points": 0.0,
+              "status": "Disqualified"
+            },
+            {
+              "driver_id": "hamilton",
+              "driver_code": "HAM",
+              "driver_name": "Lewis Hamilton",
+              "constructor_id": "ferrari",
+              "constructor_name": "Ferrari",
+              "position": 19,
+              "grid": 5,
+              "points": 0.0,
+              "status": "Disqualified"
+            },
+            {
+              "driver_id": "gasly",
+              "driver_code": "GAS",
+              "driver_name": "Pierre Gasly",
+              "constructor_id": "alpine",
+              "constructor_name": "Alpine F1 Team",
+              "position": 20,
+              "grid": 16,
+              "points": 0.0,
+              "status": "Disqualified"
+            }
+          ],
+          "source": {
+            "archive_week_id": "circuit_history_2026_round_02",
+            "dataset": "results_round_2",
+            "url": "https://api.jolpi.ca/ergast/f1/2025/2/results.json",
+            "retrieved_at": "2026-07-04T12-27-48Z",
+            "status_code": 200,
+            "content_type": "application/json",
+            "payload_sha256": "1527fe04009ef5cffdbb1db70eb914096922aa438e8e2692d6bfe246219c50bb",
+            "data_path": "data/raw/circuit_history_2026_round_02/jolpica/2026-07-04T12-27-48Z_results_round_2_1527fe04.json",
+            "meta_path": "data/raw/circuit_history_2026_round_02/jolpica/2026-07-04T12-27-48Z_results_round_2_1527fe04.json.meta.json"
+          },
+          "error": null
+        },
+        "qualifying": {
+          "status": "ok",
+          "row_count": 20,
+          "records": [
+            {
+              "driver_id": "piastri",
+              "driver_code": "PIA",
+              "driver_name": "Oscar Piastri",
+              "constructor_id": "mclaren",
+              "constructor_name": "McLaren",
+              "position": 1,
+              "q1": "1:31.591",
+              "q2": "1:31.200",
+              "q3": "1:30.641"
+            },
+            {
+              "driver_id": "russell",
+              "driver_code": "RUS",
+              "driver_name": "George Russell",
+              "constructor_id": "mercedes",
+              "constructor_name": "Mercedes",
+              "position": 2,
+              "q1": "1:31.295",
+              "q2": "1:31.307",
+              "q3": "1:30.723"
+            },
+            {
+              "driver_id": "norris",
+              "driver_code": "NOR",
+              "driver_name": "Lando Norris",
+              "constructor_id": "mclaren",
+              "constructor_name": "McLaren",
+              "position": 3,
+              "q1": "1:30.983",
+              "q2": "1:30.787",
+              "q3": "1:30.793"
+            },
+            {
+              "driver_id": "max_verstappen",
+              "driver_code": "VER",
+              "driver_name": "Max Verstappen",
+              "constructor_id": "red_bull",
+              "constructor_name": "Red Bull",
+              "position": 4,
+              "q1": "1:31.424",
+              "q2": "1:31.142",
+              "q3": "1:30.817"
+            },
+            {
+              "driver_id": "hamilton",
+              "driver_code": "HAM",
+              "driver_name": "Lewis Hamilton",
+              "constructor_id": "ferrari",
+              "constructor_name": "Ferrari",
+              "position": 5,
+              "q1": "1:31.690",
+              "q2": "1:31.501",
+              "q3": "1:30.927"
+            },
+            {
+              "driver_id": "leclerc",
+              "driver_code": "LEC",
+              "driver_name": "Charles Leclerc",
+              "constructor_id": "ferrari",
+              "constructor_name": "Ferrari",
+              "position": 6,
+              "q1": "1:31.579",
+              "q2": "1:31.450",
+              "q3": "1:31.021"
+            },
+            {
+              "driver_id": "hadjar",
+              "driver_code": "HAD",
+              "driver_name": "Isack Hadjar",
+              "constructor_id": "rb",
+              "constructor_name": "RB F1 Team",
+              "position": 7,
+              "q1": "1:31.162",
+              "q2": "1:31.253",
+              "q3": "1:31.079"
+            },
+            {
+              "driver_id": "antonelli",
+              "driver_code": "ANT",
+              "driver_name": "Andrea Kimi Antonelli",
+              "constructor_id": "mercedes",
+              "constructor_name": "Mercedes",
+              "position": 8,
+              "q1": "1:31.676",
+              "q2": "1:31.590",
+              "q3": "1:31.103"
+            },
+            {
+              "driver_id": "tsunoda",
+              "driver_code": "TSU",
+              "driver_name": "Yuki Tsunoda",
+              "constructor_id": "rb",
+              "constructor_name": "RB F1 Team",
+              "position": 9,
+              "q1": "1:31.238",
+              "q2": "1:31.260",
+              "q3": "1:31.638"
+            },
+            {
+              "driver_id": "albon",
+              "driver_code": "ALB",
+              "driver_name": "Alexander Albon",
+              "constructor_id": "williams",
+              "constructor_name": "Williams",
+              "position": 10,
+              "q1": "1:31.503",
+              "q2": "1:31.595",
+              "q3": "1:31.706"
+            },
+            {
+              "driver_id": "ocon",
+              "driver_code": "OCO",
+              "driver_name": "Esteban Ocon",
+              "constructor_id": "haas",
+              "constructor_name": "Haas F1 Team",
+              "position": 11,
+              "q1": "1:31.876",
+              "q2": "1:31.625",
+              "q3": null
+            },
+            {
+              "driver_id": "hulkenberg",
+              "driver_code": "HUL",
+              "driver_name": "Nico Hülkenberg",
+              "constructor_id": "sauber",
+              "constructor_name": "Sauber",
+              "position": 12,
+              "q1": "1:31.921",
+              "q2": "1:31.632",
+              "q3": null
+            },
+            {
+              "driver_id": "alonso",
+              "driver_code": "ALO",
+              "driver_name": "Fernando Alonso",
+              "constructor_id": "aston_martin",
+              "constructor_name": "Aston Martin",
+              "position": 13,
+              "q1": "1:31.719",
+              "q2": "1:31.688",
+              "q3": null
+            },
+            {
+              "driver_id": "stroll",
+              "driver_code": "STR",
+              "driver_name": "Lance Stroll",
+              "constructor_id": "aston_martin",
+              "constructor_name": "Aston Martin",
+              "position": 14,
+              "q1": "1:31.923",
+              "q2": "1:31.773",
+              "q3": null
+            },
+            {
+              "driver_id": "sainz",
+              "driver_code": "SAI",
+              "driver_name": "Carlos Sainz",
+              "constructor_id": "williams",
+              "constructor_name": "Williams",
+              "position": 15,
+              "q1": "1:31.628",
+              "q2": "1:31.840",
+              "q3": null
+            },
+            {
+              "driver_id": "gasly",
+              "driver_code": "GAS",
+              "driver_name": "Pierre Gasly",
+              "constructor_id": "alpine",
+              "constructor_name": "Alpine F1 Team",
+              "position": 16,
+              "q1": "1:31.992",
+              "q2": null,
+              "q3": null
+            },
+            {
+              "driver_id": "bearman",
+              "driver_code": "BEA",
+              "driver_name": "Oliver Bearman",
+              "constructor_id": "haas",
+              "constructor_name": "Haas F1 Team",
+              "position": 17,
+              "q1": "1:32.018",
+              "q2": null,
+              "q3": null
+            },
+            {
+              "driver_id": "doohan",
+              "driver_code": "DOO",
+              "driver_name": "Jack Doohan",
+              "constructor_id": "alpine",
+              "constructor_name": "Alpine F1 Team",
+              "position": 18,
+              "q1": "1:32.092",
+              "q2": null,
+              "q3": null
+            },
+            {
+              "driver_id": "bortoleto",
+              "driver_code": "BOR",
+              "driver_name": "Gabriel Bortoleto",
+              "constructor_id": "sauber",
+              "constructor_name": "Sauber",
+              "position": 19,
+              "q1": "1:32.141",
+              "q2": null,
+              "q3": null
+            },
+            {
+              "driver_id": "lawson",
+              "driver_code": "LAW",
+              "driver_name": "Liam Lawson",
+              "constructor_id": "red_bull",
+              "constructor_name": "Red Bull",
+              "position": 20,
+              "q1": "1:32.174",
+              "q2": null,
+              "q3": null
+            }
+          ],
+          "source": {
+            "archive_week_id": "baseline_2026_v0",
+            "dataset": "qualifying_round_2",
+            "url": "https://api.jolpi.ca/ergast/f1/2025/2/qualifying.json",
+            "retrieved_at": "2026-07-04T03-29-51Z",
+            "status_code": 200,
+            "content_type": "application/json",
+            "payload_sha256": "74f2db6032bfa2b3ae4b5423178d66b8b9a40dcc047d72562ec49c215f39c0d3",
+            "data_path": "data/raw/baseline_2026_v0/jolpica/2026-07-04T03-29-51Z_qualifying_round_2_74f2db60.json",
+            "meta_path": "data/raw/baseline_2026_v0/jolpica/2026-07-04T03-29-51Z_qualifying_round_2_74f2db60.json.meta.json"
+          },
+          "error": null
+        },
+        "sprint": {
+          "status": "ok",
+          "row_count": 20,
+          "records": [
+            {
+              "driver_id": "hamilton",
+              "driver_code": "HAM",
+              "driver_name": "Lewis Hamilton",
+              "constructor_id": "ferrari",
+              "constructor_name": "Ferrari",
+              "position": 1,
+              "grid": 1,
+              "points": 8.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "piastri",
+              "driver_code": "PIA",
+              "driver_name": "Oscar Piastri",
+              "constructor_id": "mclaren",
+              "constructor_name": "McLaren",
+              "position": 2,
+              "grid": 3,
+              "points": 7.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "max_verstappen",
+              "driver_code": "VER",
+              "driver_name": "Max Verstappen",
+              "constructor_id": "red_bull",
+              "constructor_name": "Red Bull",
+              "position": 3,
+              "grid": 2,
+              "points": 6.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "russell",
+              "driver_code": "RUS",
+              "driver_name": "George Russell",
+              "constructor_id": "mercedes",
+              "constructor_name": "Mercedes",
+              "position": 4,
+              "grid": 5,
+              "points": 5.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "leclerc",
+              "driver_code": "LEC",
+              "driver_name": "Charles Leclerc",
+              "constructor_id": "ferrari",
+              "constructor_name": "Ferrari",
+              "position": 5,
+              "grid": 4,
+              "points": 4.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "tsunoda",
+              "driver_code": "TSU",
+              "driver_name": "Yuki Tsunoda",
+              "constructor_id": "rb",
+              "constructor_name": "RB F1 Team",
+              "position": 6,
+              "grid": 8,
+              "points": 3.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "antonelli",
+              "driver_code": "ANT",
+              "driver_name": "Andrea Kimi Antonelli",
+              "constructor_id": "mercedes",
+              "constructor_name": "Mercedes",
+              "position": 7,
+              "grid": 7,
+              "points": 2.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "norris",
+              "driver_code": "NOR",
+              "driver_name": "Lando Norris",
+              "constructor_id": "mclaren",
+              "constructor_name": "McLaren",
+              "position": 8,
+              "grid": 6,
+              "points": 1.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "stroll",
+              "driver_code": "STR",
+              "driver_name": "Lance Stroll",
+              "constructor_id": "aston_martin",
+              "constructor_name": "Aston Martin",
+              "position": 9,
+              "grid": 10,
+              "points": 0.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "alonso",
+              "driver_code": "ALO",
+              "driver_name": "Fernando Alonso",
+              "constructor_id": "aston_martin",
+              "constructor_name": "Aston Martin",
+              "position": 10,
+              "grid": 11,
+              "points": 0.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "albon",
+              "driver_code": "ALB",
+              "driver_name": "Alexander Albon",
+              "constructor_id": "williams",
+              "constructor_name": "Williams",
+              "position": 11,
+              "grid": 9,
+              "points": 0.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "gasly",
+              "driver_code": "GAS",
+              "driver_name": "Pierre Gasly",
+              "constructor_id": "alpine",
+              "constructor_name": "Alpine F1 Team",
+              "position": 12,
+              "grid": 17,
+              "points": 0.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "hadjar",
+              "driver_code": "HAD",
+              "driver_name": "Isack Hadjar",
+              "constructor_id": "rb",
+              "constructor_name": "RB F1 Team",
+              "position": 13,
+              "grid": 15,
+              "points": 0.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "lawson",
+              "driver_code": "LAW",
+              "driver_name": "Liam Lawson",
+              "constructor_id": "red_bull",
+              "constructor_name": "Red Bull",
+              "position": 14,
+              "grid": 19,
+              "points": 0.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "bearman",
+              "driver_code": "BEA",
+              "driver_name": "Oliver Bearman",
+              "constructor_id": "haas",
+              "constructor_name": "Haas F1 Team",
+              "position": 15,
+              "grid": 12,
+              "points": 0.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "ocon",
+              "driver_code": "OCO",
+              "driver_name": "Esteban Ocon",
+              "constructor_id": "haas",
+              "constructor_name": "Haas F1 Team",
+              "position": 16,
+              "grid": 18,
+              "points": 0.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "sainz",
+              "driver_code": "SAI",
+              "driver_name": "Carlos Sainz",
+              "constructor_id": "williams",
+              "constructor_name": "Williams",
+              "position": 17,
+              "grid": 13,
+              "points": 0.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "bortoleto",
+              "driver_code": "BOR",
+              "driver_name": "Gabriel Bortoleto",
+              "constructor_id": "sauber",
+              "constructor_name": "Sauber",
+              "position": 18,
+              "grid": 14,
+              "points": 0.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "hulkenberg",
+              "driver_code": "HUL",
+              "driver_name": "Nico Hülkenberg",
+              "constructor_id": "sauber",
+              "constructor_name": "Sauber",
+              "position": 19,
+              "grid": 20,
+              "points": 0.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "doohan",
+              "driver_code": "DOO",
+              "driver_name": "Jack Doohan",
+              "constructor_id": "alpine",
+              "constructor_name": "Alpine F1 Team",
+              "position": 20,
+              "grid": 16,
+              "points": 0.0,
+              "status": "Finished"
+            }
+          ],
+          "source": {
+            "archive_week_id": "circuit_history_2026_round_02",
+            "dataset": "sprint_round_2",
+            "url": "https://api.jolpi.ca/ergast/f1/2025/2/sprint.json",
+            "retrieved_at": "2026-07-04T12-27-48Z",
+            "status_code": 200,
+            "content_type": "application/json",
+            "payload_sha256": "2488d803fead58100639e7386fe8bce6e3d1b8b85f6869a35ba78118a6ae8ce5",
+            "data_path": "data/raw/circuit_history_2026_round_02/jolpica/2026-07-04T12-27-48Z_sprint_round_2_2488d803.json",
+            "meta_path": "data/raw/circuit_history_2026_round_02/jolpica/2026-07-04T12-27-48Z_sprint_round_2_2488d803.json.meta.json"
+          },
+          "error": null
+        }
+      },
+      "raw_archive_records": {
+        "schedule": {
+          "archive_week_id": "backtest_2026_austria_circuit_history",
+          "dataset": "races_round_na",
+          "url": "https://api.jolpi.ca/ergast/f1/2025/races.json",
+          "retrieved_at": "2026-07-04T11-57-26Z",
+          "status_code": 200,
+          "content_type": "application/json",
+          "payload_sha256": "338b4a19892cbd2acde9571bbee4d63de5ac5ff0feca2e4366c9f0389ae27669",
+          "data_path": "data/raw/backtest_2026_austria_circuit_history/jolpica/2026-07-04T11-57-26Z_races_round_na_338b4a19.json",
+          "meta_path": "data/raw/backtest_2026_austria_circuit_history/jolpica/2026-07-04T11-57-26Z_races_round_na_338b4a19.json.meta.json"
+        },
+        "results": {
+          "archive_week_id": "circuit_history_2026_round_02",
+          "dataset": "results_round_2",
+          "url": "https://api.jolpi.ca/ergast/f1/2025/2/results.json",
+          "retrieved_at": "2026-07-04T12-27-48Z",
+          "status_code": 200,
+          "content_type": "application/json",
+          "payload_sha256": "1527fe04009ef5cffdbb1db70eb914096922aa438e8e2692d6bfe246219c50bb",
+          "data_path": "data/raw/circuit_history_2026_round_02/jolpica/2026-07-04T12-27-48Z_results_round_2_1527fe04.json",
+          "meta_path": "data/raw/circuit_history_2026_round_02/jolpica/2026-07-04T12-27-48Z_results_round_2_1527fe04.json.meta.json"
+        },
+        "qualifying": {
+          "archive_week_id": "baseline_2026_v0",
+          "dataset": "qualifying_round_2",
+          "url": "https://api.jolpi.ca/ergast/f1/2025/2/qualifying.json",
+          "retrieved_at": "2026-07-04T03-29-51Z",
+          "status_code": 200,
+          "content_type": "application/json",
+          "payload_sha256": "74f2db6032bfa2b3ae4b5423178d66b8b9a40dcc047d72562ec49c215f39c0d3",
+          "data_path": "data/raw/baseline_2026_v0/jolpica/2026-07-04T03-29-51Z_qualifying_round_2_74f2db60.json",
+          "meta_path": "data/raw/baseline_2026_v0/jolpica/2026-07-04T03-29-51Z_qualifying_round_2_74f2db60.json.meta.json"
+        },
+        "sprint": {
+          "archive_week_id": "circuit_history_2026_round_02",
+          "dataset": "sprint_round_2",
+          "url": "https://api.jolpi.ca/ergast/f1/2025/2/sprint.json",
+          "retrieved_at": "2026-07-04T12-27-48Z",
+          "status_code": 200,
+          "content_type": "application/json",
+          "payload_sha256": "2488d803fead58100639e7386fe8bce6e3d1b8b85f6869a35ba78118a6ae8ce5",
+          "data_path": "data/raw/circuit_history_2026_round_02/jolpica/2026-07-04T12-27-48Z_sprint_round_2_2488d803.json",
+          "meta_path": "data/raw/circuit_history_2026_round_02/jolpica/2026-07-04T12-27-48Z_sprint_round_2_2488d803.json.meta.json"
+        }
+      }
+    },
+    {
+      "historical_season": 2024,
+      "historical_round": 5,
+      "race_name": "Chinese Grand Prix",
+      "circuit_id": "shanghai",
+      "circuit_name": "Shanghai International Circuit",
+      "match_method": "circuit_id",
+      "datasets": {
+        "results": {
+          "status": "ok",
+          "row_count": 20,
+          "records": [
+            {
+              "driver_id": "max_verstappen",
+              "driver_code": "VER",
+              "driver_name": "Max Verstappen",
+              "constructor_id": "red_bull",
+              "constructor_name": "Red Bull",
+              "position": 1,
+              "grid": 1,
+              "points": 25.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "norris",
+              "driver_code": "NOR",
+              "driver_name": "Lando Norris",
+              "constructor_id": "mclaren",
+              "constructor_name": "McLaren",
+              "position": 2,
+              "grid": 4,
+              "points": 18.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "perez",
+              "driver_code": "PER",
+              "driver_name": "Sergio Pérez",
+              "constructor_id": "red_bull",
+              "constructor_name": "Red Bull",
+              "position": 3,
+              "grid": 2,
+              "points": 15.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "leclerc",
+              "driver_code": "LEC",
+              "driver_name": "Charles Leclerc",
+              "constructor_id": "ferrari",
+              "constructor_name": "Ferrari",
+              "position": 4,
+              "grid": 6,
+              "points": 12.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "sainz",
+              "driver_code": "SAI",
+              "driver_name": "Carlos Sainz",
+              "constructor_id": "ferrari",
+              "constructor_name": "Ferrari",
+              "position": 5,
+              "grid": 7,
+              "points": 10.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "russell",
+              "driver_code": "RUS",
+              "driver_name": "George Russell",
+              "constructor_id": "mercedes",
+              "constructor_name": "Mercedes",
+              "position": 6,
+              "grid": 8,
+              "points": 8.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "alonso",
+              "driver_code": "ALO",
+              "driver_name": "Fernando Alonso",
+              "constructor_id": "aston_martin",
+              "constructor_name": "Aston Martin",
+              "position": 7,
+              "grid": 3,
+              "points": 7.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "piastri",
+              "driver_code": "PIA",
+              "driver_name": "Oscar Piastri",
+              "constructor_id": "mclaren",
+              "constructor_name": "McLaren",
+              "position": 8,
+              "grid": 5,
+              "points": 4.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "hamilton",
+              "driver_code": "HAM",
+              "driver_name": "Lewis Hamilton",
+              "constructor_id": "mercedes",
+              "constructor_name": "Mercedes",
+              "position": 9,
+              "grid": 18,
+              "points": 2.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "hulkenberg",
+              "driver_code": "HUL",
+              "driver_name": "Nico Hülkenberg",
+              "constructor_id": "haas",
+              "constructor_name": "Haas F1 Team",
+              "position": 10,
+              "grid": 9,
+              "points": 1.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "ocon",
+              "driver_code": "OCO",
+              "driver_name": "Esteban Ocon",
+              "constructor_id": "alpine",
+              "constructor_name": "Alpine F1 Team",
+              "position": 11,
+              "grid": 13,
+              "points": 0.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "albon",
+              "driver_code": "ALB",
+              "driver_name": "Alexander Albon",
+              "constructor_id": "williams",
+              "constructor_name": "Williams",
+              "position": 12,
+              "grid": 14,
+              "points": 0.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "gasly",
+              "driver_code": "GAS",
+              "driver_name": "Pierre Gasly",
+              "constructor_id": "alpine",
+              "constructor_name": "Alpine F1 Team",
+              "position": 13,
+              "grid": 15,
+              "points": 0.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "zhou",
+              "driver_code": "ZHO",
+              "driver_name": "Guanyu Zhou",
+              "constructor_id": "sauber",
+              "constructor_name": "Sauber",
+              "position": 14,
+              "grid": 16,
+              "points": 0.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "stroll",
+              "driver_code": "STR",
+              "driver_name": "Lance Stroll",
+              "constructor_id": "aston_martin",
+              "constructor_name": "Aston Martin",
+              "position": 15,
+              "grid": 11,
+              "points": 0.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "kevin_magnussen",
+              "driver_code": "MAG",
+              "driver_name": "Kevin Magnussen",
+              "constructor_id": "haas",
+              "constructor_name": "Haas F1 Team",
+              "position": 16,
+              "grid": 17,
+              "points": 0.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "sargeant",
+              "driver_code": "SAR",
+              "driver_name": "Logan Sargeant",
+              "constructor_id": "williams",
+              "constructor_name": "Williams",
+              "position": 17,
+              "grid": 20,
+              "points": 0.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "ricciardo",
+              "driver_code": "RIC",
+              "driver_name": "Daniel Ricciardo",
+              "constructor_id": "rb",
+              "constructor_name": "RB F1 Team",
+              "position": 18,
+              "grid": 12,
+              "points": 0.0,
+              "status": "Retired"
+            },
+            {
+              "driver_id": "tsunoda",
+              "driver_code": "TSU",
+              "driver_name": "Yuki Tsunoda",
+              "constructor_id": "rb",
+              "constructor_name": "RB F1 Team",
+              "position": 19,
+              "grid": 19,
+              "points": 0.0,
+              "status": "Retired"
+            },
+            {
+              "driver_id": "bottas",
+              "driver_code": "BOT",
+              "driver_name": "Valtteri Bottas",
+              "constructor_id": "sauber",
+              "constructor_name": "Sauber",
+              "position": 20,
+              "grid": 10,
+              "points": 0.0,
+              "status": "Retired"
+            }
+          ],
+          "source": {
+            "archive_week_id": "circuit_history_2026_round_02",
+            "dataset": "results_round_5",
+            "url": "https://api.jolpi.ca/ergast/f1/2024/5/results.json",
+            "retrieved_at": "2026-07-04T12-27-49Z",
+            "status_code": 200,
+            "content_type": "application/json",
+            "payload_sha256": "406b9f91d0902356336d22c008b24bfb00dbd2aa2e671b269a30653f059be9d3",
+            "data_path": "data/raw/circuit_history_2026_round_02/jolpica/2026-07-04T12-27-49Z_results_round_5_406b9f91.json",
+            "meta_path": "data/raw/circuit_history_2026_round_02/jolpica/2026-07-04T12-27-49Z_results_round_5_406b9f91.json.meta.json"
+          },
+          "error": null
+        },
+        "qualifying": {
+          "status": "ok",
+          "row_count": 20,
+          "records": [
+            {
+              "driver_id": "max_verstappen",
+              "driver_code": "VER",
+              "driver_name": "Max Verstappen",
+              "constructor_id": "red_bull",
+              "constructor_name": "Red Bull",
+              "position": 1,
+              "q1": "1:34.742",
+              "q2": "1:33.794",
+              "q3": "1:33.660"
+            },
+            {
+              "driver_id": "perez",
+              "driver_code": "PER",
+              "driver_name": "Sergio Pérez",
+              "constructor_id": "red_bull",
+              "constructor_name": "Red Bull",
+              "position": 2,
+              "q1": "1:35.457",
+              "q2": "1:34.026",
+              "q3": "1:33.982"
+            },
+            {
+              "driver_id": "alonso",
+              "driver_code": "ALO",
+              "driver_name": "Fernando Alonso",
+              "constructor_id": "aston_martin",
+              "constructor_name": "Aston Martin",
+              "position": 3,
+              "q1": "1:35.116",
+              "q2": "1:34.652",
+              "q3": "1:34.148"
+            },
+            {
+              "driver_id": "norris",
+              "driver_code": "NOR",
+              "driver_name": "Lando Norris",
+              "constructor_id": "mclaren",
+              "constructor_name": "McLaren",
+              "position": 4,
+              "q1": "1:34.842",
+              "q2": "1:34.460",
+              "q3": "1:34.165"
+            },
+            {
+              "driver_id": "piastri",
+              "driver_code": "PIA",
+              "driver_name": "Oscar Piastri",
+              "constructor_id": "mclaren",
+              "constructor_name": "McLaren",
+              "position": 5,
+              "q1": "1:35.014",
+              "q2": "1:34.659",
+              "q3": "1:34.273"
+            },
+            {
+              "driver_id": "leclerc",
+              "driver_code": "LEC",
+              "driver_name": "Charles Leclerc",
+              "constructor_id": "ferrari",
+              "constructor_name": "Ferrari",
+              "position": 6,
+              "q1": "1:34.797",
+              "q2": "1:34.399",
+              "q3": "1:34.289"
+            },
+            {
+              "driver_id": "sainz",
+              "driver_code": "SAI",
+              "driver_name": "Carlos Sainz",
+              "constructor_id": "ferrari",
+              "constructor_name": "Ferrari",
+              "position": 7,
+              "q1": "1:34.970",
+              "q2": "1:34.368",
+              "q3": "1:34.297"
+            },
+            {
+              "driver_id": "russell",
+              "driver_code": "RUS",
+              "driver_name": "George Russell",
+              "constructor_id": "mercedes",
+              "constructor_name": "Mercedes",
+              "position": 8,
+              "q1": "1:35.084",
+              "q2": "1:34.609",
+              "q3": "1:34.433"
+            },
+            {
+              "driver_id": "hulkenberg",
+              "driver_code": "HUL",
+              "driver_name": "Nico Hülkenberg",
+              "constructor_id": "haas",
+              "constructor_name": "Haas F1 Team",
+              "position": 9,
+              "q1": "1:35.068",
+              "q2": "1:34.667",
+              "q3": "1:34.604"
+            },
+            {
+              "driver_id": "bottas",
+              "driver_code": "BOT",
+              "driver_name": "Valtteri Bottas",
+              "constructor_id": "sauber",
+              "constructor_name": "Sauber",
+              "position": 10,
+              "q1": "1:35.169",
+              "q2": "1:34.769",
+              "q3": "1:34.665"
+            },
+            {
+              "driver_id": "stroll",
+              "driver_code": "STR",
+              "driver_name": "Lance Stroll",
+              "constructor_id": "aston_martin",
+              "constructor_name": "Aston Martin",
+              "position": 11,
+              "q1": "1:35.334",
+              "q2": "1:34.838",
+              "q3": null
+            },
+            {
+              "driver_id": "ricciardo",
+              "driver_code": "RIC",
+              "driver_name": "Daniel Ricciardo",
+              "constructor_id": "rb",
+              "constructor_name": "RB F1 Team",
+              "position": 12,
+              "q1": "1:35.443",
+              "q2": "1:34.934",
+              "q3": null
+            },
+            {
+              "driver_id": "ocon",
+              "driver_code": "OCO",
+              "driver_name": "Esteban Ocon",
+              "constructor_id": "alpine",
+              "constructor_name": "Alpine F1 Team",
+              "position": 13,
+              "q1": "1:35.356",
+              "q2": "1:35.223",
+              "q3": null
+            },
+            {
+              "driver_id": "albon",
+              "driver_code": "ALB",
+              "driver_name": "Alexander Albon",
+              "constructor_id": "williams",
+              "constructor_name": "Williams",
+              "position": 14,
+              "q1": "1:35.384",
+              "q2": "1:35.241",
+              "q3": null
+            },
+            {
+              "driver_id": "gasly",
+              "driver_code": "GAS",
+              "driver_name": "Pierre Gasly",
+              "constructor_id": "alpine",
+              "constructor_name": "Alpine F1 Team",
+              "position": 15,
+              "q1": "1:35.287",
+              "q2": "1:35.463",
+              "q3": null
+            },
+            {
+              "driver_id": "zhou",
+              "driver_code": "ZHO",
+              "driver_name": "Guanyu Zhou",
+              "constructor_id": "sauber",
+              "constructor_name": "Sauber",
+              "position": 16,
+              "q1": "1:35.505",
+              "q2": null,
+              "q3": null
+            },
+            {
+              "driver_id": "kevin_magnussen",
+              "driver_code": "MAG",
+              "driver_name": "Kevin Magnussen",
+              "constructor_id": "haas",
+              "constructor_name": "Haas F1 Team",
+              "position": 17,
+              "q1": "1:35.516",
+              "q2": null,
+              "q3": null
+            },
+            {
+              "driver_id": "hamilton",
+              "driver_code": "HAM",
+              "driver_name": "Lewis Hamilton",
+              "constructor_id": "mercedes",
+              "constructor_name": "Mercedes",
+              "position": 18,
+              "q1": "1:35.573",
+              "q2": null,
+              "q3": null
+            },
+            {
+              "driver_id": "tsunoda",
+              "driver_code": "TSU",
+              "driver_name": "Yuki Tsunoda",
+              "constructor_id": "rb",
+              "constructor_name": "RB F1 Team",
+              "position": 19,
+              "q1": "1:35.746",
+              "q2": null,
+              "q3": null
+            },
+            {
+              "driver_id": "sargeant",
+              "driver_code": "SAR",
+              "driver_name": "Logan Sargeant",
+              "constructor_id": "williams",
+              "constructor_name": "Williams",
+              "position": 20,
+              "q1": "1:36.358",
+              "q2": null,
+              "q3": null
+            }
+          ],
+          "source": {
+            "archive_week_id": "baseline_2026_v0",
+            "dataset": "qualifying_round_5",
+            "url": "https://api.jolpi.ca/ergast/f1/2024/5/qualifying.json",
+            "retrieved_at": "2026-07-04T03-29-52Z",
+            "status_code": 200,
+            "content_type": "application/json",
+            "payload_sha256": "5e005eb36790a1273de4b30049a5d8107ecb97e9b9a11fb8c632f8ca769f4e25",
+            "data_path": "data/raw/baseline_2026_v0/jolpica/2026-07-04T03-29-52Z_qualifying_round_5_5e005eb3.json",
+            "meta_path": "data/raw/baseline_2026_v0/jolpica/2026-07-04T03-29-52Z_qualifying_round_5_5e005eb3.json.meta.json"
+          },
+          "error": null
+        },
+        "sprint": {
+          "status": "ok",
+          "row_count": 20,
+          "records": [
+            {
+              "driver_id": "max_verstappen",
+              "driver_code": "VER",
+              "driver_name": "Max Verstappen",
+              "constructor_id": "red_bull",
+              "constructor_name": "Red Bull",
+              "position": 1,
+              "grid": 4,
+              "points": 8.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "hamilton",
+              "driver_code": "HAM",
+              "driver_name": "Lewis Hamilton",
+              "constructor_id": "mercedes",
+              "constructor_name": "Mercedes",
+              "position": 2,
+              "grid": 2,
+              "points": 7.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "perez",
+              "driver_code": "PER",
+              "driver_name": "Sergio Pérez",
+              "constructor_id": "red_bull",
+              "constructor_name": "Red Bull",
+              "position": 3,
+              "grid": 6,
+              "points": 6.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "leclerc",
+              "driver_code": "LEC",
+              "driver_name": "Charles Leclerc",
+              "constructor_id": "ferrari",
+              "constructor_name": "Ferrari",
+              "position": 4,
+              "grid": 7,
+              "points": 5.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "sainz",
+              "driver_code": "SAI",
+              "driver_name": "Carlos Sainz",
+              "constructor_id": "ferrari",
+              "constructor_name": "Ferrari",
+              "position": 5,
+              "grid": 5,
+              "points": 4.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "norris",
+              "driver_code": "NOR",
+              "driver_name": "Lando Norris",
+              "constructor_id": "mclaren",
+              "constructor_name": "McLaren",
+              "position": 6,
+              "grid": 1,
+              "points": 3.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "piastri",
+              "driver_code": "PIA",
+              "driver_name": "Oscar Piastri",
+              "constructor_id": "mclaren",
+              "constructor_name": "McLaren",
+              "position": 7,
+              "grid": 8,
+              "points": 2.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "russell",
+              "driver_code": "RUS",
+              "driver_name": "George Russell",
+              "constructor_id": "mercedes",
+              "constructor_name": "Mercedes",
+              "position": 8,
+              "grid": 11,
+              "points": 1.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "zhou",
+              "driver_code": "ZHO",
+              "driver_name": "Guanyu Zhou",
+              "constructor_id": "sauber",
+              "constructor_name": "Sauber",
+              "position": 9,
+              "grid": 10,
+              "points": 0.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "kevin_magnussen",
+              "driver_code": "MAG",
+              "driver_name": "Kevin Magnussen",
+              "constructor_id": "haas",
+              "constructor_name": "Haas F1 Team",
+              "position": 10,
+              "grid": 12,
+              "points": 0.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "ricciardo",
+              "driver_code": "RIC",
+              "driver_name": "Daniel Ricciardo",
+              "constructor_id": "rb",
+              "constructor_name": "RB F1 Team",
+              "position": 11,
+              "grid": 14,
+              "points": 0.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "bottas",
+              "driver_code": "BOT",
+              "driver_name": "Valtteri Bottas",
+              "constructor_id": "sauber",
+              "constructor_name": "Sauber",
+              "position": 12,
+              "grid": 9,
+              "points": 0.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "ocon",
+              "driver_code": "OCO",
+              "driver_name": "Esteban Ocon",
+              "constructor_id": "alpine",
+              "constructor_name": "Alpine F1 Team",
+              "position": 13,
+              "grid": 17,
+              "points": 0.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "stroll",
+              "driver_code": "STR",
+              "driver_name": "Lance Stroll",
+              "constructor_id": "aston_martin",
+              "constructor_name": "Aston Martin",
+              "position": 14,
+              "grid": 15,
+              "points": 0.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "gasly",
+              "driver_code": "GAS",
+              "driver_name": "Pierre Gasly",
+              "constructor_id": "alpine",
+              "constructor_name": "Alpine F1 Team",
+              "position": 15,
+              "grid": 16,
+              "points": 0.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "tsunoda",
+              "driver_code": "TSU",
+              "driver_name": "Yuki Tsunoda",
+              "constructor_id": "rb",
+              "constructor_name": "RB F1 Team",
+              "position": 16,
+              "grid": 19,
+              "points": 0.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "albon",
+              "driver_code": "ALB",
+              "driver_name": "Alexander Albon",
+              "constructor_id": "williams",
+              "constructor_name": "Williams",
+              "position": 17,
+              "grid": 18,
+              "points": 0.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "sargeant",
+              "driver_code": "SAR",
+              "driver_name": "Logan Sargeant",
+              "constructor_id": "williams",
+              "constructor_name": "Williams",
+              "position": 18,
+              "grid": 20,
+              "points": 0.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "hulkenberg",
+              "driver_code": "HUL",
+              "driver_name": "Nico Hülkenberg",
+              "constructor_id": "haas",
+              "constructor_name": "Haas F1 Team",
+              "position": 19,
+              "grid": 13,
+              "points": 0.0,
+              "status": "Finished"
+            },
+            {
+              "driver_id": "alonso",
+              "driver_code": "ALO",
+              "driver_name": "Fernando Alonso",
+              "constructor_id": "aston_martin",
+              "constructor_name": "Aston Martin",
+              "position": 20,
+              "grid": 3,
+              "points": 0.0,
+              "status": "Retired"
+            }
+          ],
+          "source": {
+            "archive_week_id": "circuit_history_2026_round_02",
+            "dataset": "sprint_round_5",
+            "url": "https://api.jolpi.ca/ergast/f1/2024/5/sprint.json",
+            "retrieved_at": "2026-07-04T12-27-50Z",
+            "status_code": 200,
+            "content_type": "application/json",
+            "payload_sha256": "6d5ae034ce0d0e1a22bf506e83d4a0019543f4326cd6e65b3da5162c2cf96ae3",
+            "data_path": "data/raw/circuit_history_2026_round_02/jolpica/2026-07-04T12-27-50Z_sprint_round_5_6d5ae034.json",
+            "meta_path": "data/raw/circuit_history_2026_round_02/jolpica/2026-07-04T12-27-50Z_sprint_round_5_6d5ae034.json.meta.json"
+          },
+          "error": null
+        }
+      },
+      "raw_archive_records": {
+        "schedule": {
+          "archive_week_id": "backtest_2026_austria_circuit_history",
+          "dataset": "races_round_na",
+          "url": "https://api.jolpi.ca/ergast/f1/2024/races.json",
+          "retrieved_at": "2026-07-04T11-57-28Z",
+          "status_code": 200,
+          "content_type": "application/json",
+          "payload_sha256": "2909a2b858311d7023422e6e3aca43f633c9b1c0e610b00cbc1ccb106f6dab84",
+          "data_path": "data/raw/backtest_2026_austria_circuit_history/jolpica/2026-07-04T11-57-28Z_races_round_na_2909a2b8.json",
+          "meta_path": "data/raw/backtest_2026_austria_circuit_history/jolpica/2026-07-04T11-57-28Z_races_round_na_2909a2b8.json.meta.json"
+        },
+        "results": {
+          "archive_week_id": "circuit_history_2026_round_02",
+          "dataset": "results_round_5",
+          "url": "https://api.jolpi.ca/ergast/f1/2024/5/results.json",
+          "retrieved_at": "2026-07-04T12-27-49Z",
+          "status_code": 200,
+          "content_type": "application/json",
+          "payload_sha256": "406b9f91d0902356336d22c008b24bfb00dbd2aa2e671b269a30653f059be9d3",
+          "data_path": "data/raw/circuit_history_2026_round_02/jolpica/2026-07-04T12-27-49Z_results_round_5_406b9f91.json",
+          "meta_path": "data/raw/circuit_history_2026_round_02/jolpica/2026-07-04T12-27-49Z_results_round_5_406b9f91.json.meta.json"
+        },
+        "qualifying": {
+          "archive_week_id": "baseline_2026_v0",
+          "dataset": "qualifying_round_5",
+          "url": "https://api.jolpi.ca/ergast/f1/2024/5/qualifying.json",
+          "retrieved_at": "2026-07-04T03-29-52Z",
+          "status_code": 200,
+          "content_type": "application/json",
+          "payload_sha256": "5e005eb36790a1273de4b30049a5d8107ecb97e9b9a11fb8c632f8ca769f4e25",
+          "data_path": "data/raw/baseline_2026_v0/jolpica/2026-07-04T03-29-52Z_qualifying_round_5_5e005eb3.json",
+          "meta_path": "data/raw/baseline_2026_v0/jolpica/2026-07-04T03-29-52Z_qualifying_round_5_5e005eb3.json.meta.json"
+        },
+        "sprint": {
+          "archive_week_id": "circuit_history_2026_round_02",
+          "dataset": "sprint_round_5",
+          "url": "https://api.jolpi.ca/ergast/f1/2024/5/sprint.json",
+          "retrieved_at": "2026-07-04T12-27-50Z",
+          "status_code": 200,
+          "content_type": "application/json",
+          "payload_sha256": "6d5ae034ce0d0e1a22bf506e83d4a0019543f4326cd6e65b3da5162c2cf96ae3",
+          "data_path": "data/raw/circuit_history_2026_round_02/jolpica/2026-07-04T12-27-50Z_sprint_round_5_6d5ae034.json",
+          "meta_path": "data/raw/circuit_history_2026_round_02/jolpica/2026-07-04T12-27-50Z_sprint_round_5_6d5ae034.json.meta.json"
+        }
+      }
+    }
+  ],
+  "skipped_historical_events": [
+    {
+      "historical_season": 2023,
+      "reason": "no matching race for Chinese Grand Prix",
+      "raw_archive_records": {
+        "schedule": {
+          "archive_week_id": "backtest_2026_austria_circuit_history",
+          "dataset": "races_round_na",
+          "url": "https://api.jolpi.ca/ergast/f1/2023/races.json",
+          "retrieved_at": "2026-07-04T11-57-29Z",
+          "status_code": 200,
+          "content_type": "application/json",
+          "payload_sha256": "c8ab40ea7583e6ae7f51570b3e66dc0c4a2ad4f61c41c8e64939f7d1b055cef6",
+          "data_path": "data/raw/backtest_2026_austria_circuit_history/jolpica/2026-07-04T11-57-29Z_races_round_na_c8ab40ea.json",
+          "meta_path": "data/raw/backtest_2026_austria_circuit_history/jolpica/2026-07-04T11-57-29Z_races_round_na_c8ab40ea.json.meta.json"
+        }
+      }
+    },
+    {
+      "historical_season": 2022,
+      "reason": "no matching race for Chinese Grand Prix",
+      "raw_archive_records": {
+        "schedule": {
+          "archive_week_id": "backtest_2026_austria_circuit_history",
+          "dataset": "races_round_na",
+          "url": "https://api.jolpi.ca/ergast/f1/2022/races.json",
+          "retrieved_at": "2026-07-04T11-57-30Z",
+          "status_code": 200,
+          "content_type": "application/json",
+          "payload_sha256": "4f904fb71cf8cbaf47c84d5e6602f04eb50d062961cc25a409d3e3ea16f72cb7",
+          "data_path": "data/raw/backtest_2026_austria_circuit_history/jolpica/2026-07-04T11-57-30Z_races_round_na_4f904fb7.json",
+          "meta_path": "data/raw/backtest_2026_austria_circuit_history/jolpica/2026-07-04T11-57-30Z_races_round_na_4f904fb7.json.meta.json"
+        }
+      }
+    },
+    {
+      "historical_season": 2021,
+      "reason": "no matching race for Chinese Grand Prix",
+      "raw_archive_records": {
+        "schedule": {
+          "archive_week_id": "backtest_2026_austria_circuit_history",
+          "dataset": "races_round_na",
+          "url": "https://api.jolpi.ca/ergast/f1/2021/races.json",
+          "retrieved_at": "2026-07-04T11-57-31Z",
+          "status_code": 200,
+          "content_type": "application/json",
+          "payload_sha256": "1e8e51fc8299a6c845c8549871c0a63f7d61d7ed79b6a9d3961fe4fdedb18400",
+          "data_path": "data/raw/backtest_2026_austria_circuit_history/jolpica/2026-07-04T11-57-31Z_races_round_na_1e8e51fc.json",
+          "meta_path": "data/raw/backtest_2026_austria_circuit_history/jolpica/2026-07-04T11-57-31Z_races_round_na_1e8e51fc.json.meta.json"
+        }
+      }
+    }
+  ],
+  "driver_history_scores": [
+    {
+      "driver_id": "russell",
+      "driver_code": "RUS",
+      "driver_name": "George Russell",
+      "coverage_count": 2,
+      "race_score": 0.7812,
+      "qualifying_score": 0.8244,
+      "sprint_score": 0.6436,
+      "teammate_relative_score": 0.6651,
+      "reliability_score": 1.0,
+      "composite_score": 0.7769,
+      "evidence_issues": [],
+      "season_scores": [
+        {
+          "historical_season": 2025,
+          "historical_round": 2,
+          "race_name": "Chinese Grand Prix",
+          "circuit_id": "shanghai",
+          "match_method": "circuit_id",
+          "recency_weight": 1.0,
+          "race_year_score": 0.845,
+          "qualifying_year_score": 0.95,
+          "sprint_year_score": 0.77125,
+          "teammate_relative_year_score": 0.7000000000000001,
+          "reliability_year_score": 1.0
+        },
+        {
+          "historical_season": 2024,
+          "historical_round": 5,
+          "race_name": "Chinese Grand Prix",
+          "circuit_id": "shanghai",
+          "match_method": "circuit_id",
+          "recency_weight": 0.72,
+          "race_year_score": 0.6925000000000001,
+          "qualifying_year_score": 0.65,
+          "sprint_year_score": 0.46625000000000005,
+          "teammate_relative_year_score": 0.6166666666666667,
+          "reliability_year_score": 1.0
+        }
+      ]
+    },
+    {
+      "driver_id": "antonelli",
+      "driver_code": "ANT",
+      "driver_name": "Andrea Kimi Antonelli",
+      "coverage_count": 1,
+      "race_score": 0.6925,
+      "qualifying_score": 0.65,
+      "sprint_score": 0.5425,
+      "teammate_relative_score": 0.3,
+      "reliability_score": 1.0,
+      "composite_score": 0.6191,
+      "evidence_issues": [],
+      "season_scores": [
+        {
+          "historical_season": 2025,
+          "historical_round": 2,
+          "race_name": "Chinese Grand Prix",
+          "circuit_id": "shanghai",
+          "match_method": "circuit_id",
+          "recency_weight": 1.0,
+          "race_year_score": 0.6925000000000001,
+          "qualifying_year_score": 0.65,
+          "sprint_year_score": 0.5425,
+          "teammate_relative_year_score": 0.3,
+          "reliability_year_score": 1.0
+        }
+      ]
+    },
+    {
+      "driver_id": "leclerc",
+      "driver_code": "LEC",
+      "driver_name": "Charles Leclerc",
+      "coverage_count": 2,
+      "race_score": 0.4416,
+      "qualifying_score": 0.75,
+      "sprint_score": 0.7269,
+      "teammate_relative_score": 0.4822,
+      "reliability_score": 0.7384,
+      "composite_score": 0.585,
+      "evidence_issues": [],
+      "season_scores": [
+        {
+          "historical_season": 2025,
+          "historical_round": 2,
+          "race_name": "Chinese Grand Prix",
+          "circuit_id": "shanghai",
+          "match_method": "circuit_id",
+          "recency_weight": 1.0,
+          "race_year_score": 0.1925,
+          "qualifying_year_score": 0.75,
+          "sprint_year_score": 0.6950000000000001,
+          "teammate_relative_year_score": 0.43333333333333335,
+          "reliability_year_score": 0.55
+        },
+        {
+          "historical_season": 2024,
+          "historical_round": 5,
+          "race_name": "Chinese Grand Prix",
+          "circuit_id": "shanghai",
+          "match_method": "circuit_id",
+          "recency_weight": 0.72,
+          "race_year_score": 0.7875000000000001,
+          "qualifying_year_score": 0.75,
+          "sprint_year_score": 0.77125,
+          "teammate_relative_year_score": 0.55,
+          "reliability_year_score": 1.0
+        }
+      ]
+    },
+    {
+      "driver_id": "hamilton",
+      "driver_code": "HAM",
+      "driver_name": "Lewis Hamilton",
+      "coverage_count": 2,
+      "race_score": 0.3262,
+      "qualifying_score": 0.5279,
+      "sprint_score": 0.9681,
+      "teammate_relative_score": 0.4899,
+      "reliability_score": 0.7384,
+      "composite_score": 0.5148,
+      "evidence_issues": [],
+      "season_scores": [
+        {
+          "historical_season": 2025,
+          "historical_round": 2,
+          "race_name": "Chinese Grand Prix",
+          "circuit_id": "shanghai",
+          "match_method": "circuit_id",
+          "recency_weight": 1.0,
+          "race_year_score": 0.16500000000000004,
+          "qualifying_year_score": 0.8,
+          "sprint_year_score": 1.0,
+          "teammate_relative_year_score": 0.5666666666666667,
+          "reliability_year_score": 0.55
+        },
+        {
+          "historical_season": 2024,
+          "historical_round": 5,
+          "race_name": "Chinese Grand Prix",
+          "circuit_id": "shanghai",
+          "match_method": "circuit_id",
+          "recency_weight": 0.72,
+          "race_year_score": 0.55,
+          "qualifying_year_score": 0.15,
+          "sprint_year_score": 0.9237499999999998,
+          "teammate_relative_year_score": 0.38333333333333336,
+          "reliability_year_score": 1.0
+        }
+      ]
+    },
+    {
+      "driver_id": "norris",
+      "driver_code": "NOR",
+      "driver_name": "Lando Norris",
+      "coverage_count": 2,
+      "race_score": 0.9025,
+      "qualifying_score": 0.8791,
+      "sprint_score": 0.5301,
+      "teammate_relative_score": 0.4686,
+      "reliability_score": 1.0,
+      "composite_score": 0.7824,
+      "evidence_issues": [],
+      "season_scores": [
+        {
+          "historical_season": 2025,
+          "historical_round": 2,
+          "race_name": "Chinese Grand Prix",
+          "circuit_id": "shanghai",
+          "match_method": "circuit_id",
+          "recency_weight": 1.0,
+          "race_year_score": 0.9024999999999999,
+          "qualifying_year_score": 0.9,
+          "sprint_year_score": 0.46625000000000005,
+          "teammate_relative_year_score": 0.35000000000000003,
+          "reliability_year_score": 1.0
+        },
+        {
+          "historical_season": 2024,
+          "historical_round": 5,
+          "race_name": "Chinese Grand Prix",
+          "circuit_id": "shanghai",
+          "match_method": "circuit_id",
+          "recency_weight": 0.72,
+          "race_year_score": 0.9024999999999999,
+          "qualifying_year_score": 0.85,
+          "sprint_year_score": 0.61875,
+          "teammate_relative_year_score": 0.6333333333333334,
+          "reliability_year_score": 1.0
+        }
+      ]
+    },
+    {
+      "driver_id": "max_verstappen",
+      "driver_code": "VER",
+      "driver_name": "Max Verstappen",
+      "coverage_count": 2,
+      "race_score": 0.8765,
+      "qualifying_score": 0.9128,
+      "sprint_score": 0.9113,
+      "teammate_relative_score": 0.8062,
+      "reliability_score": 1.0,
+      "composite_score": 0.8873,
+      "evidence_issues": [],
+      "season_scores": [
+        {
+          "historical_season": 2025,
+          "historical_round": 2,
+          "race_name": "Chinese Grand Prix",
+          "circuit_id": "shanghai",
+          "match_method": "circuit_id",
+          "recency_weight": 1.0,
+          "race_year_score": 0.7875000000000001,
+          "qualifying_year_score": 0.85,
+          "sprint_year_score": 0.8475,
+          "teammate_relative_year_score": 0.9666666666666667,
+          "reliability_year_score": 1.0
+        },
+        {
+          "historical_season": 2024,
+          "historical_round": 5,
+          "race_name": "Chinese Grand Prix",
+          "circuit_id": "shanghai",
+          "match_method": "circuit_id",
+          "recency_weight": 0.72,
+          "race_year_score": 1.0,
+          "qualifying_year_score": 1.0,
+          "sprint_year_score": 1.0,
+          "teammate_relative_year_score": 0.5833333333333334,
+          "reliability_year_score": 1.0
+        }
+      ]
+    },
+    {
+      "driver_id": "bearman",
+      "driver_code": "BEA",
+      "driver_name": "Oliver Bearman",
+      "coverage_count": 1,
+      "race_score": 0.5975,
+      "qualifying_score": 0.2,
+      "sprint_score": 0.195,
+      "teammate_relative_score": 0.3667,
+      "reliability_score": 1.0,
+      "composite_score": 0.452,
+      "evidence_issues": [],
+      "season_scores": [
+        {
+          "historical_season": 2025,
+          "historical_round": 2,
+          "race_name": "Chinese Grand Prix",
+          "circuit_id": "shanghai",
+          "match_method": "circuit_id",
+          "recency_weight": 1.0,
+          "race_year_score": 0.5975,
+          "qualifying_year_score": 0.2,
+          "sprint_year_score": 0.195,
+          "teammate_relative_year_score": 0.3666666666666667,
+          "reliability_year_score": 1.0
+        }
+      ]
+    },
+    {
+      "driver_id": "arvid_lindblad",
+      "driver_code": "LIN",
+      "driver_name": "Arvid Lindblad",
+      "coverage_count": 0,
+      "race_score": 0.5,
+      "qualifying_score": 0.5,
+      "sprint_score": 0.5,
+      "teammate_relative_score": 0.5,
+      "reliability_score": 0.5,
+      "composite_score": 0.5,
+      "evidence_issues": [
+        "missing_race_year_score",
+        "missing_qualifying_year_score",
+        "missing_sprint_year_score",
+        "missing_teammate_relative_year_score",
+        "missing_reliability_year_score",
+        "no_same_circuit_history"
+      ],
+      "season_scores": []
+    },
+    {
+      "driver_id": "bortoleto",
+      "driver_code": "BOR",
+      "driver_name": "Gabriel Bortoleto",
+      "coverage_count": 1,
+      "race_score": 0.3925,
+      "qualifying_score": 0.1,
+      "sprint_score": 0.0975,
+      "teammate_relative_score": 0.4167,
+      "reliability_score": 1.0,
+      "composite_score": 0.3555,
+      "evidence_issues": [],
+      "season_scores": [
+        {
+          "historical_season": 2025,
+          "historical_round": 2,
+          "race_name": "Chinese Grand Prix",
+          "circuit_id": "shanghai",
+          "match_method": "circuit_id",
+          "recency_weight": 1.0,
+          "race_year_score": 0.3925,
+          "qualifying_year_score": 0.1,
+          "sprint_year_score": 0.0975,
+          "teammate_relative_year_score": 0.4166666666666667,
+          "reliability_year_score": 1.0
+        }
+      ]
+    },
+    {
+      "driver_id": "gasly",
+      "driver_code": "GAS",
+      "driver_name": "Pierre Gasly",
+      "coverage_count": 2,
+      "race_score": 0.2558,
+      "qualifying_score": 0.2709,
+      "sprint_score": 0.2517,
+      "teammate_relative_score": 0.4872,
+      "reliability_score": 0.7384,
+      "composite_score": 0.3537,
+      "evidence_issues": [],
+      "season_scores": [
+        {
+          "historical_season": 2025,
+          "historical_round": 2,
+          "race_name": "Chinese Grand Prix",
+          "circuit_id": "shanghai",
+          "match_method": "circuit_id",
+          "recency_weight": 1.0,
+          "race_year_score": 0.1375,
+          "qualifying_year_score": 0.25,
+          "sprint_year_score": 0.29250000000000004,
+          "teammate_relative_year_score": 0.55,
+          "reliability_year_score": 0.55
+        },
+        {
+          "historical_season": 2024,
+          "historical_round": 5,
+          "race_name": "Chinese Grand Prix",
+          "circuit_id": "shanghai",
+          "match_method": "circuit_id",
+          "recency_weight": 0.72,
+          "race_year_score": 0.42000000000000004,
+          "qualifying_year_score": 0.3,
+          "sprint_year_score": 0.195,
+          "teammate_relative_year_score": 0.4,
+          "reliability_year_score": 1.0
+        }
+      ]
+    },
+    {
+      "driver_id": "ocon",
+      "driver_code": "OCO",
+      "driver_name": "Esteban Ocon",
+      "coverage_count": 2,
+      "race_score": 0.6291,
+      "qualifying_score": 0.4581,
+      "sprint_score": 0.2033,
+      "teammate_relative_score": 0.6194,
+      "reliability_score": 1.0,
+      "composite_score": 0.5789,
+      "evidence_issues": [],
+      "season_scores": [
+        {
+          "historical_season": 2025,
+          "historical_round": 2,
+          "race_name": "Chinese Grand Prix",
+          "circuit_id": "shanghai",
+          "match_method": "circuit_id",
+          "recency_weight": 1.0,
+          "race_year_score": 0.74,
+          "qualifying_year_score": 0.5,
+          "sprint_year_score": 0.1625,
+          "teammate_relative_year_score": 0.6333333333333333,
+          "reliability_year_score": 1.0
+        },
+        {
+          "historical_season": 2024,
+          "historical_round": 5,
+          "race_name": "Chinese Grand Prix",
+          "circuit_id": "shanghai",
+          "match_method": "circuit_id",
+          "recency_weight": 0.72,
+          "race_year_score": 0.47500000000000003,
+          "qualifying_year_score": 0.4,
+          "sprint_year_score": 0.26,
+          "teammate_relative_year_score": 0.6,
+          "reliability_year_score": 1.0
+        }
+      ]
+    },
+    {
+      "driver_id": "albon",
+      "driver_code": "ALB",
+      "driver_name": "Alexander Albon",
+      "coverage_count": 2,
+      "race_score": 0.5623,
+      "qualifying_score": 0.4663,
+      "sprint_score": 0.2434,
+      "teammate_relative_score": 0.7194,
+      "reliability_score": 1.0,
+      "composite_score": 0.5816,
+      "evidence_issues": [],
+      "season_scores": [
+        {
+          "historical_season": 2025,
+          "historical_round": 2,
+          "race_name": "Chinese Grand Prix",
+          "circuit_id": "shanghai",
+          "match_method": "circuit_id",
+          "recency_weight": 1.0,
+          "race_year_score": 0.645,
+          "qualifying_year_score": 0.55,
+          "sprint_year_score": 0.325,
+          "teammate_relative_year_score": 0.7333333333333334,
+          "reliability_year_score": 1.0
+        },
+        {
+          "historical_season": 2024,
+          "historical_round": 5,
+          "race_name": "Chinese Grand Prix",
+          "circuit_id": "shanghai",
+          "match_method": "circuit_id",
+          "recency_weight": 0.72,
+          "race_year_score": 0.4475,
+          "qualifying_year_score": 0.35,
+          "sprint_year_score": 0.13,
+          "teammate_relative_year_score": 0.7000000000000001,
+          "reliability_year_score": 1.0
+        }
+      ]
+    },
+    {
+      "driver_id": "lawson",
+      "driver_code": "LAW",
+      "driver_name": "Liam Lawson",
+      "coverage_count": 1,
+      "race_score": 0.4475,
+      "qualifying_score": 0.05,
+      "sprint_score": 0.2275,
+      "teammate_relative_score": 0.0333,
+      "reliability_score": 1.0,
+      "composite_score": 0.2985,
+      "evidence_issues": [],
+      "season_scores": [
+        {
+          "historical_season": 2025,
+          "historical_round": 2,
+          "race_name": "Chinese Grand Prix",
+          "circuit_id": "shanghai",
+          "match_method": "circuit_id",
+          "recency_weight": 1.0,
+          "race_year_score": 0.4475,
+          "qualifying_year_score": 0.05,
+          "sprint_year_score": 0.22749999999999998,
+          "teammate_relative_year_score": 0.033333333333333326,
+          "reliability_year_score": 1.0
+        }
+      ]
+    },
+    {
+      "driver_id": "colapinto",
+      "driver_code": "COL",
+      "driver_name": "Franco Colapinto",
+      "coverage_count": 0,
+      "race_score": 0.5,
+      "qualifying_score": 0.5,
+      "sprint_score": 0.5,
+      "teammate_relative_score": 0.5,
+      "reliability_score": 0.5,
+      "composite_score": 0.5,
+      "evidence_issues": [
+        "missing_race_year_score",
+        "missing_qualifying_year_score",
+        "missing_sprint_year_score",
+        "missing_teammate_relative_year_score",
+        "missing_reliability_year_score",
+        "no_same_circuit_history"
+      ],
+      "season_scores": []
+    },
+    {
+      "driver_id": "sainz",
+      "driver_code": "SAI",
+      "driver_name": "Carlos Sainz",
+      "coverage_count": 2,
+      "race_score": 0.6077,
+      "qualifying_score": 0.4674,
+      "sprint_score": 0.3665,
+      "teammate_relative_score": 0.3434,
+      "reliability_score": 1.0,
+      "composite_score": 0.5349,
+      "evidence_issues": [],
+      "season_scores": [
+        {
+          "historical_season": 2025,
+          "historical_round": 2,
+          "race_name": "Chinese Grand Prix",
+          "circuit_id": "shanghai",
+          "match_method": "circuit_id",
+          "recency_weight": 1.0,
+          "race_year_score": 0.5125000000000001,
+          "qualifying_year_score": 0.3,
+          "sprint_year_score": 0.13,
+          "teammate_relative_year_score": 0.26666666666666666,
+          "reliability_year_score": 1.0
+        },
+        {
+          "historical_season": 2024,
+          "historical_round": 5,
+          "race_name": "Chinese Grand Prix",
+          "circuit_id": "shanghai",
+          "match_method": "circuit_id",
+          "recency_weight": 0.72,
+          "race_year_score": 0.74,
+          "qualifying_year_score": 0.7,
+          "sprint_year_score": 0.6950000000000001,
+          "teammate_relative_year_score": 0.45,
+          "reliability_year_score": 1.0
+        }
+      ]
+    },
+    {
+      "driver_id": "perez",
+      "driver_code": "PER",
+      "driver_name": "Sergio Pérez",
+      "coverage_count": 1,
+      "race_score": 0.845,
+      "qualifying_score": 0.95,
+      "sprint_score": 0.8475,
+      "teammate_relative_score": 0.4167,
+      "reliability_score": 1.0,
+      "composite_score": 0.8013,
+      "evidence_issues": [],
+      "season_scores": [
+        {
+          "historical_season": 2024,
+          "historical_round": 5,
+          "race_name": "Chinese Grand Prix",
+          "circuit_id": "shanghai",
+          "match_method": "circuit_id",
+          "recency_weight": 0.72,
+          "race_year_score": 0.845,
+          "qualifying_year_score": 0.95,
+          "sprint_year_score": 0.8475,
+          "teammate_relative_year_score": 0.4166666666666667,
+          "reliability_year_score": 1.0
+        }
+      ]
+    },
+    {
+      "driver_id": "hadjar",
+      "driver_code": "HAD",
+      "driver_name": "Isack Hadjar",
+      "coverage_count": 1,
+      "race_score": 0.475,
+      "qualifying_score": 0.7,
+      "sprint_score": 0.26,
+      "teammate_relative_score": 0.5,
+      "reliability_score": 1.0,
+      "composite_score": 0.5673,
+      "evidence_issues": [],
+      "season_scores": [
+        {
+          "historical_season": 2025,
+          "historical_round": 2,
+          "race_name": "Chinese Grand Prix",
+          "circuit_id": "shanghai",
+          "match_method": "circuit_id",
+          "recency_weight": 1.0,
+          "race_year_score": 0.47500000000000003,
+          "qualifying_year_score": 0.7,
+          "sprint_year_score": 0.26,
+          "teammate_relative_year_score": 0.5,
+          "reliability_year_score": 1.0
+        }
+      ]
+    },
+    {
+      "driver_id": "piastri",
+      "driver_code": "PIA",
+      "driver_name": "Oscar Piastri",
+      "coverage_count": 2,
+      "race_score": 0.8315,
+      "qualifying_score": 0.9163,
+      "sprint_score": 0.7642,
+      "teammate_relative_score": 0.5314,
+      "reliability_score": 1.0,
+      "composite_score": 0.8028,
+      "evidence_issues": [],
+      "season_scores": [
+        {
+          "historical_season": 2025,
+          "historical_round": 2,
+          "race_name": "Chinese Grand Prix",
+          "circuit_id": "shanghai",
+          "match_method": "circuit_id",
+          "recency_weight": 1.0,
+          "race_year_score": 1.0,
+          "qualifying_year_score": 1.0,
+          "sprint_year_score": 0.9237499999999998,
+          "teammate_relative_year_score": 0.65,
+          "reliability_year_score": 1.0
+        },
+        {
+          "historical_season": 2024,
+          "historical_round": 5,
+          "race_name": "Chinese Grand Prix",
+          "circuit_id": "shanghai",
+          "match_method": "circuit_id",
+          "recency_weight": 0.72,
+          "race_year_score": 0.5975,
+          "qualifying_year_score": 0.8,
+          "sprint_year_score": 0.5425,
+          "teammate_relative_year_score": 0.3666666666666667,
+          "reliability_year_score": 1.0
+        }
+      ]
+    },
+    {
+      "driver_id": "hulkenberg",
+      "driver_code": "HUL",
+      "driver_name": "Nico Hülkenberg",
+      "coverage_count": 2,
+      "race_score": 0.4267,
+      "qualifying_score": 0.5128,
+      "sprint_score": 0.065,
+      "teammate_relative_score": 0.5833,
+      "reliability_score": 1.0,
+      "composite_score": 0.5007,
+      "evidence_issues": [],
+      "season_scores": [
+        {
+          "historical_season": 2025,
+          "historical_round": 2,
+          "race_name": "Chinese Grand Prix",
+          "circuit_id": "shanghai",
+          "match_method": "circuit_id",
+          "recency_weight": 1.0,
+          "race_year_score": 0.365,
+          "qualifying_year_score": 0.45,
+          "sprint_year_score": 0.065,
+          "teammate_relative_year_score": 0.5833333333333334,
+          "reliability_year_score": 1.0
+        },
+        {
+          "historical_season": 2024,
+          "historical_round": 5,
+          "race_name": "Chinese Grand Prix",
+          "circuit_id": "shanghai",
+          "match_method": "circuit_id",
+          "recency_weight": 0.72,
+          "race_year_score": 0.5125000000000001,
+          "qualifying_year_score": 0.6,
+          "sprint_year_score": 0.065,
+          "teammate_relative_year_score": 0.5833333333333334,
+          "reliability_year_score": 1.0
+        }
+      ]
+    },
+    {
+      "driver_id": "alonso",
+      "driver_code": "ALO",
+      "driver_name": "Fernando Alonso",
+      "coverage_count": 2,
+      "race_score": 0.4021,
+      "qualifying_score": 0.6093,
+      "sprint_score": 0.2215,
+      "teammate_relative_score": 0.4922,
+      "reliability_score": 0.7384,
+      "composite_score": 0.4875,
+      "evidence_issues": [],
+      "season_scores": [
+        {
+          "historical_season": 2025,
+          "historical_round": 2,
+          "race_name": "Chinese Grand Prix",
+          "circuit_id": "shanghai",
+          "match_method": "circuit_id",
+          "recency_weight": 1.0,
+          "race_year_score": 0.22000000000000003,
+          "qualifying_year_score": 0.4,
+          "sprint_year_score": 0.35750000000000004,
+          "teammate_relative_year_score": 0.3666666666666667,
+          "reliability_year_score": 0.55
+        },
+        {
+          "historical_season": 2024,
+          "historical_round": 5,
+          "race_name": "Chinese Grand Prix",
+          "circuit_id": "shanghai",
+          "match_method": "circuit_id",
+          "recency_weight": 0.72,
+          "race_year_score": 0.655,
+          "qualifying_year_score": 0.9,
+          "sprint_year_score": 0.0325,
+          "teammate_relative_year_score": 0.6666666666666667,
+          "reliability_year_score": 1.0
+        }
+      ]
+    },
+    {
+      "driver_id": "bottas",
+      "driver_code": "BOT",
+      "driver_name": "Valtteri Bottas",
+      "coverage_count": 1,
+      "race_score": 0.1375,
+      "qualifying_score": 0.55,
+      "sprint_score": 0.2925,
+      "teammate_relative_score": 0.45,
+      "reliability_score": 0.55,
+      "composite_score": 0.3599,
+      "evidence_issues": [],
+      "season_scores": [
+        {
+          "historical_season": 2024,
+          "historical_round": 5,
+          "race_name": "Chinese Grand Prix",
+          "circuit_id": "shanghai",
+          "match_method": "circuit_id",
+          "recency_weight": 0.72,
+          "race_year_score": 0.1375,
+          "qualifying_year_score": 0.55,
+          "sprint_year_score": 0.29250000000000004,
+          "teammate_relative_year_score": 0.45,
+          "reliability_year_score": 0.55
+        }
+      ]
+    },
+    {
+      "driver_id": "stroll",
+      "driver_code": "STR",
+      "driver_name": "Lance Stroll",
+      "coverage_count": 2,
+      "race_score": 0.4726,
+      "qualifying_score": 0.4128,
+      "sprint_score": 0.322,
+      "teammate_relative_score": 0.5078,
+      "reliability_score": 1.0,
+      "composite_score": 0.5023,
+      "evidence_issues": [],
+      "season_scores": [
+        {
+          "historical_season": 2025,
+          "historical_round": 2,
+          "race_name": "Chinese Grand Prix",
+          "circuit_id": "shanghai",
+          "match_method": "circuit_id",
+          "recency_weight": 1.0,
+          "race_year_score": 0.55,
+          "qualifying_year_score": 0.35,
+          "sprint_year_score": 0.39,
+          "teammate_relative_year_score": 0.6333333333333333,
+          "reliability_year_score": 1.0
+        },
+        {
+          "historical_season": 2024,
+          "historical_round": 5,
+          "race_name": "Chinese Grand Prix",
+          "circuit_id": "shanghai",
+          "match_method": "circuit_id",
+          "recency_weight": 0.72,
+          "race_year_score": 0.365,
+          "qualifying_year_score": 0.5,
+          "sprint_year_score": 0.22749999999999998,
+          "teammate_relative_year_score": 0.3333333333333333,
+          "reliability_year_score": 1.0
+        }
+      ]
+    }
+  ]
+}

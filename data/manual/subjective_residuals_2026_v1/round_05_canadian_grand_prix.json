@@ -1,0 +1,75 @@
+{
+  "schema": "subjective_residual_event_v1",
+  "residual_version": "subjective_residuals_2026_v1",
+  "source_evidence_version": "agent_evidence_2026_v1",
+  "generated_on": "2026-05-24T17:30:00Z",
+  "signal_policy": "Ordinal signals are -2..2 evidence strengths used only to derive direction. Current target models do not apply the numeric value directly. Every signal must reference same-round archived evidence.",
+  "event_round": 5,
+  "race_name": "Canadian Grand Prix",
+  "frozen": true,
+  "frozen_at": "2026-05-24T17:30:00Z",
+  "scale": "-2..2 ordinal signal; 0 neutral; sign sets evidence direction only",
+  "entries": [
+    {
+      "residual_id": "r05_sr001",
+      "event_round": 5,
+      "target": {
+        "type": "team",
+        "ids": [
+          "mercedes"
+        ]
+      },
+      "dimension": "weekend_state",
+      "ordinal_signal": 1.0,
+      "confidence": 0.84,
+      "evidence_ids": [
+        "r05_e001"
+      ],
+      "summary": "Mercedes' Canada upgrade and disrupted FP1 1-2 support a modest continuation of front-running bias.",
+      "session_scope": [
+        "race",
+        "qualifying"
+      ]
+    },
+    {
+      "residual_id": "r05_sr002",
+      "event_round": 5,
+      "target": {
+        "type": "driver",
+        "ids": [
+          "hamilton"
+        ]
+      },
+      "dimension": "weekend_state",
+      "ordinal_signal": 1.0,
+      "confidence": 0.66,
+      "evidence_ids": [
+        "r05_e002"
+      ],
+      "summary": "Hamilton's own Canada comments are treated as a driver-level confidence residual, not a podium selection.",
+      "session_scope": [
+        "race"
+      ]
+    },
+    {
+      "residual_id": "r05_sr003",
+      "event_round": 5,
+      "target": {
+        "type": "driver",
+        "ids": [
+          "albon"
+        ]
+      },
+      "dimension": "reliability_risk",
+      "ordinal_signal": -1.5,
+      "confidence": 0.7,
+      "evidence_ids": [
+        "r05_e003"
+      ],
+      "summary": "Albon's unrepaired FP1 damage before Sprint Qualifying is kept as a race-risk residual.",
+      "session_scope": [
+        "race"
+      ]
+    }
+  ]
+}

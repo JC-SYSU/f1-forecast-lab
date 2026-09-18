@@ -1,0 +1,51 @@
+# Appendix B: Reproduction Guide
+
+This appendix gives the minimal path for reproducing the scorecards. The commands run directly from the root of this repository, which mirrors the original research layout: `src/`, `scripts/`, `tests/`, `data/`, `docs/`. The archived scorecards themselves live in `predictions/` (see Appendix C).
+
+## B.1 Environment and code
+
+- Python 3.11; dependencies include LightGBM (needed by the LambdaMART slots), scikit-learn (elastic net / ridge regression), and the standard scientific computing stack.
+- Code lives in `src/f1_big_predictor/`, split by target: `targets/qualifying/` (the qualifying line) and `targets/race/` (the race line).
+- Frozen state: the qualifying scoring scale and the 31-candidate registry were frozen in July 2026 (commits `d7f7c44`, `9fcb0e8`); the race model formula was frozen at commit `606117e`. Reproduction should not modify these files.
+
+## B.2 Data placement
+
+Rerunning the evaluations requires the following minimal datasets (SHA-256 values are in each scorecard artifact's `input_snapshot` field; comparing them one by one confirms input identity):
+
+| Path | Contents |
+| --- | --- |
+| `data/processed/season_2026_actuals/actuals.json` | Actuals for each round (qualifying/race results and standings) |
+| `data/processed/circuit_history_2026_v1/` | Circuit history for R01–R13 (R14 Madrid is a new circuit; no file is expected) |
+| `data/manual/` | Manually maintained files: season rosters, track profiles, pre-race evidence, and the like |
+| `docs/data_and_evidence/qualifying/official_labels/` | Official qualifying label lists for R03–R09 (the scoring overlay layer) |
+| `data/raw/` | Raw archives (required to rerun qualifying R03–R12; offline circuit-history generation depends on it) |
+
+## B.3 Minimal example: scoring a single round with the frozen race model
+
+```python
+from pathlib import Path
+from f1_big_predictor.targets.race.optimized_model import predict_top10, evaluate_model
+
+root = Path("/path/to/repo")
+top10 = predict_top10(root, target_round=12)          # race top-10 prediction for R12
+metrics = evaluate_model(root, rounds=[12, 13, 14])   # multi-round scoring (including C0)
+```
+
+Prediction depends only on data from before the target round (`evaluate_model` truncates by round internally); the score is the single-race C0, and the reading rules are in 7.1.
+
+## B.4 Full-volume rerun
+
+```bash
+# Qualifying: merged 31-candidate × R03–R12 scorecard (tens of minutes)
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 scripts/run_qualifying_c0_roster_r03_r12.py
+# Qualifying: R13–R14 incremental
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 scripts/run_qualifying_c0_roster_r13_r14.py
+# Race: baseline vs frozen model comparison over R03–R12
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 scripts/evaluate_race_c0_r03_r12.py
+```
+
+Artifacts are written to `outputs/experiments/<line>/<directory derived from the script name>/`; the directory name carries the first 8 characters of the code commit hash. Repeated runs under the same commit should produce bit-identical results. The copies under `predictions/` are the archived release view of exactly these artifacts (the scripts always write to `outputs/`; nothing reads or writes `predictions/`).
+
+## B.5 Verification
+
+After a rerun, compare three places against the official artifacts: the per-candidate means in `summary` (should match bit for bit), `candidate_registry` (31 entries and their configurations), and `input_snapshot.combined_sha256` (the overall check of input identity). Field meanings are in Appendix C.2.
