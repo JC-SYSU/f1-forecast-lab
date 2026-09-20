@@ -56,3 +56,22 @@ Artifacts are written to `outputs/experiments/<line>/<directory derived from the
 ## B.5 Verification
 
 After a rerun, compare three places against the official artifacts: the per-candidate means in `summary` (should match bit for bit), `candidate_registry` (31 entries and their configurations), and `input_snapshot.combined_sha256` (the overall check of input identity). Field meanings are in Appendix C.2.
+
+## B.6 The practice-session experiments (September 20)
+
+The practice-signal line (decision log, entries 13–14) ran as isolated, read-only experiments against the official scorecards. The scripts need the same data placement as B.2 plus the raw OpenF1 lap and session archives (`data/raw/openf1_laps_2026_round_*/`, `data/raw/openf1_sessions_2026_round_*/`). Artifacts are written under `outputs/experiments/` and are not distributed with this repository.
+
+```bash
+# Correlation audits (blocks A / A2 / C for qualifying; B' / C1' / C3'
+# and the Block D gap test for the race line)
+PYTHONPATH=src:scripts python3 scripts/analyze_fp_signal_correlation.py
+PYTHONPATH=src:scripts python3 scripts/analyze_fp_race_line.py
+
+# Replacement ablations (qualifying: 7 combinations of form / ctor /
+# circuit_fit; race: GAP correction vs FP-DIRECT, lambda selected on
+# dev R03-R09 only)
+PYTHONPATH=src:scripts python3 scripts/ablation_fp_replace.py --replace form
+PYTHONPATH=src:scripts python3 scripts/ablation_fp_race.py
+```
+
+The headline outcome, for checking a rerun against: every combination on either side stayed below the +0.010 bar (qualifying best +0.0072, inside the noise band; race GAP correction +0.0006, FP-DIRECT selecting λ*=0) — the evidence the line was closed on. The weekly coverage check behind B.2's collection list is `scripts/check_fp_sq_laps_coverage.py`.
