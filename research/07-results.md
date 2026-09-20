@@ -137,6 +137,10 @@ The top-eight table covered only the leading part; the full picture of all 31 ca
 
 The table below is the complete data behind the box plots and the scorecard: each cell is the candidate's single-round C0 in that round, all 372 cells scored on the official caliber. The seat-rotation recompute filled the twelve cells the roster episode had left empty (7.3) and redefined the six feature-set candidates' reliability window, so those six rows differ from the pre-recompute basis; the 21 classical candidates' R03–R12 cells are bit-identical to it. One data note kept on record: R14's qualifying archive itself carries only 20 rows (the upstream source is missing 2 cars) — the gap is in the data, not the scoring.
 
+![Qualifying line: single-event C0 heat map, 31 candidates x 12 rounds](../assets/charts/qualifying-heatmap.svg)
+
+*Figure: the same 372 cells as color. Rows are the candidates in descending combined-mean order (#30, #31 in red); darker blue = higher single-round score, and the bottom reference row is the field median per round — R13's dark column (median 0.34) is the heavy-shuffle round made visible for the whole field, with R09 (0.53) the brightest. No cell falls below zero on the official caliber.*
+
 | Candidate | R03 | R04 | R05 | R06 | R07 | R08 | R09 | R10 | R11 | R12 | R13 | R14 |
 | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | #01 | 0.5241 | 0.3431 | 0.2847 | 0.2350 | 0.3748 | 0.5094 | 0.5860 | 0.4303 | 0.3388 | 0.4165 | 0.4004 | 0.2826 |

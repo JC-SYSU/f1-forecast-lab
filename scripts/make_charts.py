@@ -388,6 +388,24 @@ def main():
                'reliability varies by circuit type (an archived mechanism finding).',
                'Red = the weakest round. Signal is real - but redundant with recent form (0.876) and adds no model gain.'])
 
+    # 12. qualifying heatmap: 31 candidates x 12 rounds (predictions/qualifying/predictions.json)
+    hm_rows, hm_vals, hm_hi = [], [], set()
+    for i, c in enumerate(qual['candidates']):
+        o = c['ordinal']
+        hm_rows.append(f'#{o}')
+        hm_vals.append([rd['c0'] for rd in c['rounds'].values()])
+        if o in (30, 31):
+            hm_hi.add(i)
+    n_colds = len(hm_vals[0])
+    med = [sorted(r[j] for r in hm_vals)[len(hm_vals) // 2] for j in range(n_colds)]
+    heatmap(out / 'qualifying-heatmap.svg',
+        'Qualifying line: single-event C0, 31 candidates x 12 rounds (sorted by combined mean)',
+        hm_rows, labels_r, hm_vals, 0.0, 0.65, hm_hi,
+        notes=['Darker blue = higher single-round score; red tint = negative (penalised into it; none in the official caliber).',
+               'The bottom reference row is the field median per round: R13 is the darkest column for everyone (median 0.34),',
+               'R09 the brightest (0.53) - the heavy-shuffle reading of 7.2/7.3, visible for the whole field. #30/#31 in red, the two ensembles.'],
+        col_ref=med)
+
 def scatter_plot(path, title, points, xrange, yrange, ref_lines, hi_points, xlabel, ylabel, notes=None):
     """points: list of (x, y). ref_lines: list of (axis, value, color, dash, label).
     hi_points: list of (x, y, label). notes drawn below."""
@@ -421,6 +439,54 @@ def scatter_plot(path, title, points, xrange, yrange, ref_lines, hi_points, xlab
     p.append(f'<text x="24" y="{(y0 + y1) / 2}" font-size="12" fill="{INK}" text-anchor="middle" transform="rotate(-90 24 {(y0 + y1) / 2})">{esc(ylabel)}</text>')
     for j, note in enumerate(notes):
         p.append(text(x0, y0 + 50 + j * 16, note, 11.5, MUT))
+    write(path, p)
+
+
+def _heat_color(v, vmin, vmax):
+    """Sequential blue for v >= 0; a distinct red tint for negative cells."""
+    if v < 0:
+        k = min(1.0, abs(v) / 0.08)
+        return '#%02x%02x%02x' % (int(0xf3 - 0x10 * k), int(0xd0 - 0x40 * k), int(0xd3 - 0x40 * k))
+    k = max(0.0, min(1.0, (v - vmin) / (vmax - vmin)))
+    lo, hi = (0xf8, 0xfa, 0xfd), (0x1f, 0x5f, 0xa8)
+    return '#%02x%02x%02x' % tuple(int(lo[i] + (hi[i] - lo[i]) * k) for i in range(3))
+
+
+def heatmap(path, title, row_labels, col_labels, values, vmin, vmax, hi_rows, notes=None, col_ref=None):
+    """values: rows x cols numbers. col_ref: optional per-column reference row (median)."""
+    notes = notes or []
+    n_r, n_c = len(row_labels), len(col_labels)
+    cell, ch = 34, 15
+    w = 120 + n_c * cell + 40
+    h = 70 + n_r * ch + (26 if col_ref else 0) + 66 + len(notes) * 16
+    p = open_svg(w, h, title)
+    x0, y0 = 120, 64
+    for j, cl in enumerate(col_labels):
+        p.append(text(x0 + j * cell + cell / 2, y0 - 8, cl, 10.5, INK, 'middle'))
+    for i, rl in enumerate(row_labels):
+        yy = y0 + i * ch
+        color = RED if i in hi_rows else INK
+        weight = '700' if i in hi_rows else '400'
+        p.append(text(x0 - 8, yy + ch * 0.75, rl, 10.5, color, 'end', weight))
+        for j, v in enumerate(values[i]):
+            p.append(rect(x0 + j * cell, yy, cell - 1.5, ch - 1.5, _heat_color(v, vmin, vmax)))
+    if col_ref:
+        yy = y0 + n_r * ch + 8
+        p.append(text(x0 - 8, yy + ch * 0.75, 'field median', 10, MUT, 'end'))
+        for j, v in enumerate(col_ref):
+            p.append(rect(x0 + j * cell, yy, cell - 1.5, ch - 1.5, _heat_color(v, vmin, vmax)))
+            p.append(text(x0 + j * cell + cell / 2, yy + ch * 0.75, f'{v:.2f}', 8.5, INK if v < 0.35 else '#ffffff', 'middle'))
+    # legend
+    ly = y0 + n_r * ch + (34 if col_ref else 8)
+    for k in range(24):
+        v = vmin + (vmax - vmin) * k / 23
+        p.append(rect(x0 + k * 14, ly, 14, 10, _heat_color(v, vmin, vmax)))
+    p.append(text(x0 + 24 * 14 + 8, ly + 9, f'{vmin:.2f}', 10, MUT))
+    p.append(text(x0 - 6, ly + 9, f'{vmax:.2f}', 10, MUT, 'end'))
+    p.append(rect(x0 + 24 * 14 + 70, ly, 14, 10, _heat_color(-0.04, vmin, vmax)))
+    p.append(text(x0 + 24 * 14 + 88, ly + 9, 'negative (penalised)', 10, MUT))
+    for j, note in enumerate(notes):
+        p.append(text(x0, ly + 28 + j * 16, note, 11.5, MUT))
     write(path, p)
 
 
