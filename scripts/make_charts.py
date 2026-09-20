@@ -6,7 +6,13 @@ Data sources (all read from this repo's predictions/ directory):
 - all other figures: hard-coded from the archived records cited in the chapter
   (breakthrough commit 606117e; R10/R11 replay reports; roster version log).
 
-Usage: python3 make_charts.py <private_repo_root> <output_dir>
+Usage: python3 make_charts.py <repo_root> <output_dir> [private_repo_root]
+
+<repo_root> is this repository (predictions/ is read from it); the
+optional <private_repo_root> is the research archive whose
+outputs/experiments/ holds the raw artifact JSONs not distributed
+here (the two September-20 charts read from it; when omitted, both
+default to <repo_root>).
 """
 import json, sys
 from pathlib import Path
@@ -243,6 +249,7 @@ def vertical_bars(path, title, labels, values, highlight, ymin, ymax, notes=None
 
 def main():
     root, out = Path(sys.argv[1]), Path(sys.argv[2])
+    priv = Path(sys.argv[3]) if len(sys.argv) > 3 else root
     pred_dir = root / 'predictions'
     out.mkdir(parents=True, exist_ok=True)
 
@@ -351,6 +358,71 @@ def main():
         notes=['31 candidates, sorted by combined mean; #30 and #31 (red) are the two final ensembles.',
                'Boxes use all twelve rounds; every candidate-round cell is scored.'],
         width=900)
+    # 10. formula-slot audit scatter (private artifact nsw_scan.json)
+    nsw = json.load(open(priv / 'outputs/experiments/race/nsw_racecraft_scan_035117f2/nsw_scan.json'))
+    pts = [(v['delta_full_vs_base'], v['delta_pros_vs_base'])
+           for k, v in nsw['scan'].items() if k != 'official_baseline']
+    scatter_plot(out / 'nsw-formula-slot.svg',
+        'Formula-slot audit: 204 racecraft variants vs the incumbent (R03-R14 deltas)',
+        pts, (-0.09, 0.012), (-0.11, 0.03),
+        [('x', 0.0, MUT, '6,4', 'incumbent level (deltas measured against it)'),
+         ('y', 0.010, RED, '', 'prospective gate +0.010')],
+        [(-0.0281, 0.0183, 'N2f2_Wexp: the only gate pass')],
+        'delta vs incumbent, full window R03-R14',
+        'delta vs incumbent, prospective R10-R14',
+        notes=['Every variant sits left of the incumbent level: none beats it over the full window.',
+               'The one variant over the prospective gate (red) loses 0.028 on the full window.',
+               'The succession rule requires BOTH - the top-right region is empty.',
+               'Note: S0/S1 rescaling pairs score identically (the formula standardizes anyway), so points overlap in pairs - 204 combinations, 104 distinct orderings.'])
+
+    # 11. practice-signal correlation by round (private artifact fp_corr_stats_A.json)
+    fpa = json.load(open(priv / 'outputs/experiments/whatif_upgrade/fp_signal_corr_d739e6e0/fp_corr_stats_A.json'))
+    rds = sorted(fpa['rounds'].items(), key=lambda kv: int(kv[0]))
+    labels_fp = ['R%02d' % int(k) for k, _ in rds]
+    rhos = [v['spearman_rho'] for _, v in rds]
+    lo = min(range(len(rhos)), key=lambda i: rhos[i])
+    vertical_bars(out / 'fp-corr-by-round.svg',
+        'Practice rank vs same-round qualifying: Spearman rho by round (pooled 0.886, 14/14 positive)',
+        labels_fp, rhos, {lo}, 0.0, 1.0,
+        notes=['Every round positive; weakest R04 Miami 0.748, strongest R08 Austria 0.967 - practice',
+               'reliability varies by circuit type (an archived mechanism finding).',
+               'Red = the weakest round. Signal is real - but redundant with recent form (0.876) and adds no model gain.'])
+
+def scatter_plot(path, title, points, xrange, yrange, ref_lines, hi_points, xlabel, ylabel, notes=None):
+    """points: list of (x, y). ref_lines: list of (axis, value, color, dash, label).
+    hi_points: list of (x, y, label). notes drawn below."""
+    notes = notes or []
+    w, h = 680, 540
+    p = open_svg(w, h, title)
+    x0, x1, y0, y1 = 78, w - 30, h - 108, 64
+    def px(v):
+        return x0 + (v - xrange[0]) / (xrange[1] - xrange[0]) * (x1 - x0)
+    def py(v):
+        return y0 - (v - yrange[0]) / (yrange[1] - yrange[0]) * (y0 - y1)
+    for gv in [xrange[0] + k * 0.02 for k in range(6)]:
+        p.append(line(px(gv), y1, px(gv), y0, GRID))
+        p.append(text(px(gv), y0 + 16, f'{gv:+.2f}', 10.5, MUT, 'middle'))
+    for gv in [yrange[0] + k * 0.02 for k in range(7)]:
+        p.append(line(x0, py(gv), x1, py(gv), GRID))
+        p.append(text(x0 - 8, py(gv) + 4, f'{gv:+.2f}', 10.5, MUT, 'end'))
+    for axis, val, color, dash, lab in ref_lines:
+        if axis == 'x':
+            p.append(line(px(val), y1, px(val), y0, color, 1.6, dash))
+            p.append(text(px(val) + 5, y1 + 12, lab, 10.5, color))
+        else:
+            p.append(line(x0, py(val), x1, py(val), color, 1.6, dash))
+            p.append(text(x1 - 6, py(val) - 6, lab, 10.5, color, 'end'))
+    for x, y in points:
+        p.append(f'<circle cx="{px(x):.1f}" cy="{py(y):.1f}" r="3" fill="#9aa4b2" fill-opacity="0.45"/>')
+    for x, y, lab in hi_points:
+        p.append(f'<circle cx="{px(x):.1f}" cy="{py(y):.1f}" r="4.5" fill="{RED}"/>')
+        p.append(text(px(x) + 8, py(y) - 7, lab, 11, RED, weight='600'))
+    p.append(text((x0 + x1) / 2, y0 + 32, xlabel, 12, INK, 'middle'))
+    p.append(f'<text x="24" y="{(y0 + y1) / 2}" font-size="12" fill="{INK}" text-anchor="middle" transform="rotate(-90 24 {(y0 + y1) / 2})">{esc(ylabel)}</text>')
+    for j, note in enumerate(notes):
+        p.append(text(x0, y0 + 50 + j * 16, note, 11.5, MUT))
+    write(path, p)
+
 
 if __name__ == '__main__':
     main()
