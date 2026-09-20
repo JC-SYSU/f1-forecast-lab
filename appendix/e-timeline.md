@@ -67,3 +67,11 @@ This appendix collects the project's main events across its whole run, in date o
 **09-20** The seat-rotation policy unlocked (decision log, entry 12), reversing the September 5 no-mechanism ruling: a manual seat-event registry, three-way parameter attribution, split reliability, and a slot entry filter landed in code (55076e4 through 9207683).
 
 **09-20** Both lines recomputed in full over R03–R14 under the policy: qualifying #31 first at 0.4785 with every candidate-round cell scored (a166623); race model mean 0.5581 vs baseline 0.5071, R13 corrected 0.6672 → 0.5864 on the registry's constructor attribution (4ef473b).
+
+**09-20** FP relative-pace modeling plan drafted, then shelved (EXP-001 v1.1); replaced by a two-question correlation design with the fp_score algorithm frozen before any model score was read (CORR-001 §1.1, SQ pooling included), plus a weekly FP/SQ coverage hard check (`scripts/check_fp_sq_laps_coverage.py`).
+
+**09-20** Correlation report: practice rank vs same-round qualifying ρ=0.886 (14/14 positive); sprint rounds 5/5 improved under SQ pooling (0.842 → 0.901); redundant with recent form (0.876); no explanation of #31's errors (ρ=-0.027) Artifacts: `fp_signal_corr_d739e6e0` (raw JSON in the private archive, not distributed).
+
+**09-20** Replacement ablation: all 7 combinations (into recent form / constructor strength / circuit fit, alone or combined) below the +0.010 bar across 217 candidate-cells; only R-ctor +0.0072 (noise band), registered as a candidate-evolution observation. Artifacts: `fp_ablation_*_035117f2` and `fp_ablation_circuit_fit_279780c6` (private archive).
+
+**09-20** The FP feature line for qualifying is declared closed ("strongly correlated but redundant, no model increment"); constructor-level × race-line, the review-lens use and the data pipeline are retained, with reopening conditions recorded.

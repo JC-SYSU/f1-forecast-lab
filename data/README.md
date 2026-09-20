@@ -15,3 +15,7 @@ The single data layer read by the pipeline. Layout matches the paths hard-coded 
 ## Note on paths
 
 The label manifests were moved here from `docs/` on 2026-09-20; the scoring contract's path constants were updated with them. Everything under this directory is an input to scoring — there are no derived outputs here (those live in `predictions/`).
+
+## Weekly collection hard check
+
+`scripts/check_fp_sq_laps_coverage.py` verifies, for every completed round, that practice (FP) and sprint-qualifying lap archives are present and non-empty before the week is considered closed. It runs as part of the weekly collection checklist; a missing batch blocks the week's closure rather than failing silently.
