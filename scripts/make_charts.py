@@ -247,6 +247,91 @@ def vertical_bars(path, title, labels, values, highlight, ymin, ymax, notes=None
     write(path, p)
 
 
+
+def nsw_space_guide(out):
+    """NSW three-dimension guide: N base shapes x S rescalings x W windows."""
+    n_groups = [
+        ("raw", ["N0"], "raw delta"),
+        ("position bands", ["N1a", "N1b", "N1c", "N1d", "N1e"], "2/4/6/8 bands"),
+        ("curve fits", ["N2", "N2a", "N2b", "N2c", "N2d"], "poly / log / sqrt"),
+        ("non-parametric", ["N3", "N4", "N5"], "iso / spline / kernel"),
+        ("piecewise linear", ["N6", "N7"], "2 / 3 segments"),
+        ("aggregations of the linear fit",
+         ["N2f0", "N2f1", "N2f2", "N2f3", "N2f4", "N2f5", "N2f6", "N2f7", "N2f8", "N2f9"],
+         "10 statistics - see 6.6"),
+    ]
+    w_names = ["Wexp", "W3", "W5", "W7"]
+    s_names = ["S0 centering", "S1 z-score"]
+    ox, oy = 130, 372
+    ndx, ndy = 13.8, 4.5
+    gap_units = 7.0 / 13.0
+    wdx, wdy = 16.0, -16.0
+    slab = 64
+    n_x, cx = [], 0.0
+    for gi, (_, nms, _) in enumerate(n_groups):
+        if gi:
+            cx += gap_units
+        for nm in nms:
+            n_x.append((nm, ox + cx * ndx, oy + cx * ndy))
+            cx += 1
+    g = open_svg(1120, 716, "NSW variant space: 26 base shapes x 2 rescalings x 4 windows = 208 combinations")
+    # S slabs: two baseline strokes (S0 front, S1 lifted)
+    for sk, sname in enumerate(s_names):
+        zoff = -sk * slab
+        col = GRID if sk == 0 else "#d4d7dd"
+        g.append(line(ox - 16, oy + 16 + zoff, ox + 3 * wdx + 30, oy + 3 * wdy - 14 + zoff, col, 1))
+        g.append(line(ox - 16, oy + 16 + zoff, ox - 16, oy - 2 + zoff, col, 1))
+        g.append(text(ox - 22, oy + 8 + zoff, sname, 11, INK if sk == 0 else MUT, "end", "600" if sk == 0 else "400"))
+    # S axis (vertical) with labels on its right
+    g.append(line(ox - 16, oy + 16, ox - 16, 128, MUT, 1.4))
+    g.append(text(ox - 10, 124, "S · rescaling", 12, INK, "start", "700"))
+    g.append(text(ox - 10, 140, "what common scale does", 10.5, MUT))
+    g.append(text(ox - 10, 153, "each value go on?", 10.5, MUT))
+    # W axis (depth direction, upper right), arrow beyond the last slab corner
+    wx_end = ox + 3 * wdx + 30
+    wy_end = oy + 3 * wdy - 14
+    g.append(line(wx_end - 6, wy_end + 6, wx_end + 26, wy_end - 46, MUT, 1.4))
+    g.append(text(wx_end + 30, wy_end - 52, "W · window", 12, INK, "start", "700"))
+    g.append(text(wx_end + 30, wy_end - 38, "how much history,", 10.5, MUT))
+    g.append(text(wx_end + 30, wy_end - 25, "how fast it fades", 10.5, MUT))
+    # W labels at the right end of each depth row
+    last_x = n_x[-1][1]
+    for j, wn in enumerate(w_names):
+        g.append(text(last_x + j * wdx + 24, oy + j * wdy + 4 + (3 - j) * 0, wn, 10.5, MUT, "start", "600"))
+    # 208 points: 26 N x 4 W, two S layers
+    for sk in range(2):
+        zoff = -sk * slab
+        for j in range(4):
+            for (nm, px, py) in n_x:
+                col = "#7f8ea3" if sk == 0 else "#a9b4c4"
+                g.append(f'<circle cx="{px + j * wdx:.1f}" cy="{py + j * wdy + zoff:.1f}" r="2.2" fill="{col}" fill-opacity="0.8"/>')
+    # N group labels below their own group center
+    cx = 0.0
+    for gi, (gname, nms, gdesc) in enumerate(n_groups):
+        if gi:
+            cx += gap_units
+        gx = ox + (cx + len(nms) / 2 - 0.5) * ndx
+        gy = oy + (cx + len(nms) / 2) * ndy
+        drop = 0 if gi % 2 == 0 else 42
+        g.append(text(gx, gy + 44 + drop, gname, 10.5, INK, "middle", "600"))
+        g.append(text(gx, gy + 57 + drop, gdesc, 9.2, MUT, "middle"))
+        cx += len(nms)
+    # incumbent: N2f6 (7th aggregation) x Wexp x S0, leader line to free space above the S1 slab
+    fx, fy = n_x[22][1], n_x[22][2]
+    g.append(line(fx, fy - 5, fx + 6, fy - slab - 62, RED, 1))
+    g.append(f'<circle cx="{fx:.1f}" cy="{fy:.1f}" r="4.4" fill="{RED}"/>')
+    g.append(text(fx - 12, fy - slab - 72, "incumbent source:", 11, RED, "end", "600"))
+    g.append(text(fx - 12, fy - slab - 59, "N2f6 hit rate, Wexp, S0", 11, RED, "end", "600"))
+    # N axis title, bottom-left
+    g.append(text(ox, oy + 26 * ndy + 122, "N · base shape - how is each driver's recovery record summarized?", 12, INK, "start", "700"))
+    for j, note in enumerate([
+        "Read one small dot as one candidate feature: pick a summarization (N), a history window (W) and a rescaling (S).",
+        "26 x 2 x 4 = 208 combinations; 204 produced usable values (four sparse columns). In the frozen formula the S pair",
+        "scores identically (the formula standardizes its input anyway), so the space contains 104 distinct orderings."]):
+        g.append(text(20, 634 + j * 16, note, 11.5, MUT))
+    write(out / "nsw-space-guide.svg", g)
+
+
 def main():
     root, out = Path(sys.argv[1]), Path(sys.argv[2])
     priv = Path(sys.argv[3]) if len(sys.argv) > 3 else root
@@ -405,6 +490,7 @@ def main():
                'The bottom reference row is the field median per round: R13 is the darkest column for everyone (median 0.34),',
                'R09 the brightest (0.53) - the heavy-shuffle reading of 7.2/7.3, visible for the whole field. #30/#31 in red, the two ensembles.'],
         col_ref=med)
+    nsw_space_guide(out)
 
 def scatter_plot(path, title, points, xrange, yrange, ref_lines, hi_points, xlabel, ylabel, notes=None):
     """points: list of (x, y). ref_lines: list of (axis, value, color, dash, label).
