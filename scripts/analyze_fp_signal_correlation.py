@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """FP fastest-lap signal correlation audit -- block A (driver-level, R01-R14).
 
-PLAN-FP-CORR-ANALYSIS-001. Read-only: openf1_laps/sessions archives +
+fp-correlation-analysis-plan. Read-only: openf1_laps/sessions archives +
 actuals.json. No modelling, no src changes.
 
 Signal: fp_best(d,N) = fastest valid lap across FP1/FP2/FP3 (is_pit_out_lap
@@ -386,7 +386,7 @@ def main() -> None:
 
     out = {
         "schema_version": "fp_corr_analysis.blockA.v1",
-        "plan": "PLAN-FP-CORR-ANALYSIS-001",
+        "plan": "fp-correlation-analysis-plan",
         "signal": "fp_best = fastest valid lap across FP1/2/3 (pit-out excluded, 60<lap_duration<240); fp_rank per round",
         "number_map_corrections": {"3": "norris (OpenF1 side; R01 FP1 has no #4, #3 all season)", "22": "tsunoda (first appears R12)"},
         "rounds": {str(k): v for k, v in per_round.items()},
