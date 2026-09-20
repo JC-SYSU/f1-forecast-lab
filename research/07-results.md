@@ -7,93 +7,97 @@ The preceding chapters recorded how the models were built; this chapter reports 
 - **C0 measures how close a prediction came to the outcome**: it tops out at 1 and may go negative (below 0); it is not a win rate (Chapter 05). Scores are comparable only within the same basis — whether a number is a single-round score or a window mean, and which rounds it covers, is annotated alongside the number; single-round scores are noisy and are not used to judge model quality (04.4, 06.4).
 - **When the evaluation happened**: every score in this chapter is a post-race evaluation of completed rounds — this research never released a prediction externally before a session; the fixed arrangement of publishing before a session begins only after this report is published.
 
-The chapter unfolds in three parts: **① the full readings for the race line; ② the qualifying line's combined scorecard (a complete post-hoc evaluation of the 31 candidates over R03–R12) and the latest two rounds; ③ a faithful record of prospective validation and the error surface (in which situations the model fails, and how the errors are distributed)** — the qualifying-line scoring fault mentioned in 6.8 is expanded in ② and ③.
+One basis note covers every table and chart here: they all read the **official scorecards** — `c0_roster_r03_r14_92076830` (qualifying) and `c0_race_r03_r14_d739e6e0` (race), full R03–R14 recomputes under the seat-rotation policy of September 20 (decision log, entries 12 and 15), with the cleaned data behind them in `predictions/`. The readings that came earlier — the July replays, the September 18 merged scorecard — appear in the narrative as steps that led here, not as competing tables. The data-driven charts have been regenerated on the same basis.
 
-One more basis note before we begin: on the race side, the single-round score produces only the total (its scoring implementation is a simplified one, without per-segment detail), so this chapter presents race errors as position-by-position comparison (7.5); the qualifying side's scoring output retains all per-segment detail (the Chapter 05 specification; omitted from the main text, indexed in Appendix C).
+The chapter tells the two lines separately, as the last one did: **① the race line's full readings** (all twelve rounds, the post-freeze stretch, the error surface); **② the qualifying line's** (the 31-candidate scorecard, the in-window/out-of-window reading, the roster-change episode and its resolution); **③ one cross-line event** — the practice-signal experiment that both lines faced on the same day, told once, in its two-question form.
 
-**Post-publication update (2026-09-20).** This chapter was written on the 2026-09-18 basis and is retained as written; the tables below read that caliber. On 2026-09-20 the seat-rotation policy (decision log, entry 12) landed and both lines were recomputed in full over R03–R14; the official scorecards are now `c0_roster_r03_r14_92076830` (qualifying) and `c0_race_r03_r14_d739e6e0` (race), with the cleaned data behind them in `predictions/`.
+A last note of shape: on the race side, the single-round score produces only the total (its scoring implementation is a simplified one, without per-segment detail), so race errors are presented as position-by-position comparison (7.2); the qualifying side's scoring output retains all per-segment detail (the Chapter 05 specification; omitted from the main text, indexed in Appendix C).
 
-- *Qualifying.* #31 leads at **0.4785** (R03–R09 0.5144, R10–R14 0.4282), #30 second at 0.4749. The three-round scoring stoppage described in 7.3 and 7.4 is resolved: every candidate now scores on every round — #31's R12/R13/R14 are 0.5163/0.4160/0.4321, #30's 0.4526/0.5196/0.4839. The 21 classical candidates' R03–R12 scores are bit-identical to the tables below (180/180 cells); the in-window figures of the six feature-set candidates moved slightly (#31 0.5103 → 0.5144) because the reliability feature's window was redefined (three rounds → full season) under the entry-12 rulings. The full 31 × 12 matrix replaces the one in the 7.3 appendix: see `predictions/qualifying/c0_matrix.csv`.
-- *Race.* R03–R14 model mean **0.5581** vs baseline 0.5071. Against 7.2's table: R06 rises 0.4150 → 0.4283 (absorbing the revised R06 classification, as the qualifying rerun of entry 10 already did), R12 and R14 are unchanged, and R13 falls 0.6672 → **0.5864** — the one substantive change: with Lawson's constructor term reading Red Bull (the seat registry's R12 transfer), the model's predicted top ten gained him at P9 at the cost of arvid_lindblad (actually P8), while Lawson finished outside the top ten. The three post-freeze rounds now read 0.6155/0.5864/0.5322 (mean 0.5780) against the baseline's 0.4669 — still three wins, the R13 margin now +0.14.
-- *On 7.5's "standing fault".* The three layers (cannot rank / invisible / mismatch) describe the superseded state; entry 12 records the mechanism that resolved all three, and 7.4's closing sentence about there being "no resolution mechanism" no longer holds. The data-driven charts have been regenerated.
+## 7.2 The Race Line: Twelve Rounds, One Table
 
-**Post-publication update (2026-09-20, later the same day): the practice-session question, answered on both lines.** After the recompute above, the practice-signal line first proposed on September 5 (decision log, entry 11) was run to completion in a two-question form — does the signal correlate at all, and does it add anything the model does not already know — and both sides closed the same day (decision log, entries 13–14). The chapter above is untouched; the experiment was an isolated one, run against the official scorecards as they now stand.
+The race model's readings over all twelve completed rounds are as follows (C0 single-round scores; the model is the optimized version described in 6.7, and the baseline sorts directly by grid position). One provenance note first: the early-August breakthrough evaluation printed its results to the screen only and never wrote them to disk (6.5 records that lesson); the September reruns persisted everything, reproducing the key numbers of the time — a first-seven-rounds model mean of 0.5380 and an R10–R11 two-round mean of 0.5918, against the 0.5380 / 0.5917 reported then (a last-digit rounding difference). Every round is computed under the forward constraint — each round's prediction uses only races before that round; the same holds for the baseline column. R12 onward are the post-freeze prospective rounds (6.8); R13 carries one correction explained below the table:
 
-- *Qualifying side.* Practice rank correlates strongly with same-round qualifying (ρ=0.886, positive in 14/14 rounds; sprint rounds improve 5/5 under pooling, 0.842 → 0.901) — but it is redundant with recent form (overlap 0.876), explains essentially none of #31's errors (ρ=-0.027), and all seven replacement ablations (into recent form / constructor strength / circuit fit, alone or combined, 217 candidate-round cells) fell below the +0.010 bar, the only positive being +0.0072, inside the noise band. Closed: strongly correlated, nothing new.
-- *Race side.* The correlation is weaker (driver version 0.661, fleet version 0.779; both 14/14) and the redundancy lower (0.578 against racecraft), but the residual correlation is real: the grid-anchored race model systematically overestimates practice-fast drivers and teams (residual ρ=-0.291 over 93 driver observations; -0.604 over 69 fleet observations) — a corrective signal, the first of its kind either model has shown. The derived "gap" hypothesis (grid minus practice rank should predict dropback through mean reversion) came out opposite to its framing: the race continues the qualifying-versus-practice deviation rather than reverting from it (pooled ρ=-0.2695 over 308 driver-rounds; the extremes are where it lives — drivers who paced fast in practice but qualified poorly dropped a further median 6 places, while grid overperformers gained 8). Still no conversion: re-ranking the frozen race order by the gap moved the R03–R14 mean by +0.0006, and weighting the practice score directly selected λ*=0. Closed on the same terms.
-- *The lesson.* Correlation is not C0 increment. The scale only responds near the top-ten boundary and at the front of the order; both residual signals live where it is insensitive (outside the top ten, deep in position gaps). Asking the correlation question first is what kept the answer cheap — and the negative results are archived with the same care as the positive ones (scripts and reproduction paths in Appendix B.6).
+| Round | Event | Baseline | Model | Diff | |
+| --- | --- | ---: | ---: | ---: | --- |
+| R03 | Japan | 0.6060 | 0.6836 | +0.0776 | |
+| R04 | Miami | 0.4986 | 0.5133 | +0.0147 | |
+| R05 | Canada | 0.3967 | 0.4969 | +0.1002 | |
+| R06 | Monaco | 0.4417 | 0.4283 | **-0.0134** | |
+| R07 | Barcelona | 0.5160 | 0.5864 | +0.0704 | |
+| R08 | Austria | 0.6317 | 0.5550 | **-0.0767** | |
+| R09 | Silverstone | 0.5064 | 0.5160 | +0.0096 | |
+| R10 | Spa | 0.5160 | 0.6007 | +0.0847 | |
+| R11 | Hungary | 0.5717 | 0.5828 | +0.0111 | |
+| R12 | Zandvoort | 0.4614 | 0.6155 | +0.1541 | post-freeze |
+| R13 | Monza | 0.4464 | 0.5864 | +0.1400 | post-freeze |
+| R14 | Madrid | 0.4928 | 0.5322 | +0.0394 | post-freeze |
+| **Twelve-round mean** |  | **0.5071** | **0.5581** | **+0.0510** | |
 
-**Post-publication update (2026-09-20): the race model's racecraft slot re-examined.** The official numbers above do not move; this block records a same-day audit of the feature choice behind them. All 204 usable grid-delta variants (of 26 × 2 × 4 = 208 combinations; 6.9) were substituted into the frozen formula's racecraft term one at a time and rescored over R03–R14 on the official caliber. The incumbent's source finished first — the model mean stands at 0.5581 exactly as reported, with the rerun's baseline verified against the official artifact to under 1e-6 per round — and the one variant that cleared the prospective gate (+0.018 over R10–R14) lost 0.028 over the full window, failing the pre-registered succession rule, which requires both. The race line's feature choice is confirmed from a second viewpoint; the audit itself closed with no change to any table in this chapter.
+*Notes. (1) The twelve-round mean mixes three kinds of window (tuning, test, and post-freeze) and is not meant for direct comparison against any single window's score — its role is an all-period reference. (2) The R06 (Monaco) actuals were corrected following an appeal ruling (04.6, entry 9): the correction lifted both columns (baseline 0.4283 → 0.4417, model 0.4150 → 0.4283) and the round stays a loss. (3) R13's reading has one correction of its own, told just below.*
 
-## 7.2 The Race Line: Ten Rounds and Three Rounds
-
-The race model's readings over all ten rounds R03–R12 are as follows (C0 single-round scores; the model is the optimized version described in Section 6.7, and the baseline sorts directly by grid position). First, the provenance of one rerun: the early-August breakthrough evaluation printed its results to the screen only and never wrote them to disk (6.5 records that lesson); in September we reran the entire evaluation and persisted it, reproducing the key numbers from that time — a first-seven-rounds model mean of 0.5380 and an R10–R11 two-round mean of 0.5918, consistent with the 0.5380 / 0.5917 reported at the time (a last-digit rounding difference). Each round is still recomputed under the forward constraint — each round's prediction uses only races before that round; the same holds for both the baseline and the model columns:
-
-| Round | Event | Baseline | Model | Diff |
-| --- | --- | ---: | ---: | ---: |
-| R03 | Japan | 0.6060 | 0.6836 | +0.0776 |
-| R04 | Miami | 0.4986 | 0.5133 | +0.0147 |
-| R05 | Canada | 0.3967 | 0.4969 | +0.1002 |
-| R06 | Monaco | 0.4283 | 0.4150 | **-0.0133** |
-| R07 | Barcelona | 0.5160 | 0.5864 | +0.0704 |
-| R08 | Austria | 0.6317 | 0.5550 | **-0.0767** |
-| R09 | Silverstone | 0.5064 | 0.5160 | +0.0096 |
-| R10 | Spa | 0.5160 | 0.6007 | +0.0847 |
-| R11 | Hungary | 0.5717 | 0.5828 | +0.0111 |
-| R12 | Zandvoort | 0.4614 | 0.6155 | +0.1541 |
-| **Ten-round mean** |  | **0.5133** | **0.5565** | **+0.0432** |
-
-*Note: the "ten-round mean" mixes three kinds of window (tuning, test, and the first round after the freeze) and is not meant for direct comparison against any single window's score — its role here is an all-period reference. The R06 (Monaco) actuals were later corrected following an appeal ruling (04.6); the September rerun took place before the actuals were re-collected, using the official classification as it stood before the judgment revision, without retrospective refresh; the size of the change after the correction has not been evaluated (the two bases are reported separately).*
-
-Across the ten rounds the model won eight and lost two. No minimum-difference threshold is set for a "win" — +0.0096 also counts as a win; the count is descriptive, and the magnitude of single-round noise (6.4) means "eight wins, two losses" should not be read as a statistical conclusion. The two losing rounds deserve a separate look: **Monaco** (-0.013) is a street race — little room to overtake, few flips of the finishing order to begin with, and the baseline already close to the true order, so every nudge by the model was more likely a net loss; in **Austria** (-0.077) the baseline posted the ten-round high of 0.6317 — the same logic, amplified. A loss is a loss; both rounds stand on record as they are.
+Across the twelve rounds the model won ten and lost two. No minimum-difference threshold is set for a "win" — +0.0096 also counts as a win; the count is descriptive, and the magnitude of single-round noise (6.4) means "ten wins, two losses" should not be read as a statistical conclusion. The two losing rounds deserve a separate look: **Monaco** (-0.013) is a street race — little room to overtake, few flips of the finishing order to begin with, and the baseline already close to the true order, so every nudge by the model was more likely a net loss; in **Austria** (-0.077) the baseline posted the season high of 0.6317 — the same logic, amplified. A loss is a loss; both rounds stand on record as they are.
 
 ![Race model round by round](../assets/charts/race-by-round.svg)
 
 *Figure: round-by-round scores for the race model and the grid-position baseline (R03–R14; from R12 onward these are prospective rounds under the frozen weights).*
 
-After the weight freeze (6.8), the three rounds R12–R14 against the baseline (again single-round scores):
+**The post-freeze stretch: three wins, one correction.** The three rounds after the weight freeze (6.8) went 0.6155 / 0.5864 / 0.5322 against the baseline's 0.4614 / 0.4464 / 0.4928 — a three-round mean of 0.5780 vs 0.4669, three wins in three, with uneven margins (+0.15, +0.14, +0.04). The largest margin has a concrete origin: at Monza, Antonelli was penalized to the back of the grid for a full power-unit change — the baseline had him nowhere in its top ten, while the model ranked him P1 — and he won that race. The design assumption that "strong teams at the back will recover" (6.7) played out at Monza in its most extreme form.
 
-| Round | Event | Baseline | Model | Diff |
-| --- | --- | ---: | ---: | ---: |
-| R12 | Zandvoort | 0.4614 | 0.6155 | +0.1541 |
-| R13 | Monza | 0.4464 | 0.6672 | +0.2208 |
-| R14 | Madrid | 0.4928 | 0.5322 | +0.0394 |
-| **Three-round mean** |  | **0.4669** | **0.6050** | **+0.1381** |
+The R13 reading carries the season's one substantive correction. The first run under the frozen weights gave 0.6672; the seat-rotation recompute (6.8) moved Lawson's constructor term to Red Bull — his R12 transfer — and the reading settled at 0.5864: the predicted top ten gained Lawson at P9 at the cost of arvid_lindblad (actually P8), while Lawson finished outside the top ten. The freeze held and no weight moved; what changed was the input contract, exactly where the roster did. The episode is the race-side face of the roster problem told fully in 7.3.
 
-Three wins in three, though the margins are uneven: +0.15, +0.22, +0.04 (model score minus baseline score, in the R12, R13, R14 order). **The large R13 margin has a concrete origin**: at Monza, Antonelli was penalized to the back of the grid for a full power-unit change — the baseline (sorting by grid position) had him nowhere in its top ten, while the model ranked him P1 — and he won that race. The design assumption that "strong teams at the back will recover" (6.7) played out at Monza in its most extreme form.
+**The R14 (Madrid) margin narrowed, and we record it as it is**: +0.0394 is the smallest of the three gaps; under the freeze discipline, single-round movement is not grounds for changing weights — the observation goes on record, to be revisited when more prospective rounds exist. One more reading caution: the three-round baseline mean (0.4669) is well below the season baseline mean (0.5071) — these three races saw more shuffling of positions than a typical round, and the model's value lies precisely in "shuffle-heavy" races; part of the stretch's outsized margin may come from this — a three-round sample supports no firm conclusion.
 
-**The R14 (Madrid) margin narrowed, and we record it as it is**: +0.0394 is the smallest of the three gaps; under the freeze discipline of 6.8, single-round movement is not grounds for changing weights — this observation goes on record, to be revisited when more prospective rounds exist. One more reading caution: the three-round baseline mean (0.4669) is well below the ten-round mean (0.5133) — these three races saw more shuffling of positions than a typical round, and the model's value lies precisely in "shuffle-heavy" races (7.5); part of the jump from +0.0432 to +0.1381 may come from this — a three-round sample supports no firm conclusion.
+### The Error Surface: One Case Study and a Documentation Gap
 
-## 7.3 The Qualifying Line: The Combined Scorecard and the Latest Two Rounds
+**One case study: the full R12 breakdown.** Zandvoort scored well on the total (0.6155), and this time the total can be taken apart: the exact-position segment took 0.1800 on 4/10, the membership segment 0.2450 on 7/10, and the internal-order segment 0.1905 with 40/42 pairs consistent — the three segments combine to exactly 0.6155, reproducible by rerunning the frozen scorer (rechecked while writing this report). The shape of the error:
 
-The qualifying line's official scorecard covers R03–R12, all of it post-hoc evaluation. Sorting the 31 candidates by combined mean, the top eight:
+| Position | Model prediction | Actual result | Correct? |
+| ---: | --- | --- | --- |
+| P1–P4 | Norris / Antonelli / Russell / Hamilton | Norris / Antonelli / Russell / Hamilton | All correct |
+| P5–P6 | Piastri / Leclerc | Leclerc / Piastri | The two swap positions |
+| P7 | Verstappen | Lawson | Wrong |
+| P8–P10 | Lawson / Lindblad / Bortoleto | Hulkenberg / Alonso / Gasly | All three wrong |
 
-| Rank | Candidate | Combined mean | First seven rounds (R03–R09) | Late window | Rounds scored |
-| ---: | --- | ---: | ---: | ---: | ---: |
-| 1 | #31 Slot Ensemble · Robust | **0.4835** | 0.5103 | 0.3898 | 9 |
-| 2 | #30 Slot Ensemble · Peak | **0.4689** | 0.4992 | 0.3629 | 9 |
-| 3 | #15 Borda (constructor double-weighted) | 0.4560 | 0.4617 | 0.4428 | 10 |
-| 4 | #9 Elastic Net | 0.4500 | 0.4510 | 0.4476 | 10 |
-| 5 | #13 Explainable score (tuned) | 0.4493 | 0.4702 | 0.3759 | 9 |
-| 6 | #11 Explainable score (interaction) | 0.4458 | 0.4658 | 0.3759 | 9 |
-| 7 | #7 Elastic Net | 0.4423 | 0.4390 | 0.4501 | 10 |
-| 8 | #14 Borda (equal weights) | 0.4397 | 0.4475 | 0.4215 | 10 |
+The scoring comparison is simple: the two lists are matched cell by cell, each cell judged once. The three errors each have their own cause. P5–P6 is a **slot misplacement** — Leclerc and Piastri both made the actual top ten (no list members lost), but the model put the two in each other's slots (predicted P5/P6, actual P6/P5). The P7 prediction was Verstappen — he retired from this race and is not in the official classification; the official P7 slot is Lawson, so that cell is judged wrong. (Lawson occupies P8 in the model's list, set against the official P8 Hulkenberg — that is another cell's error.) P8–P10 is the model's clearest systematic gap — **too little recovery thrust from the back**: Hulkenberg climbed P13 to P8, Alonso P18 to P9, Gasly P11 to P10 — all three made the actual top ten, while the model filled P8–P10 with Lawson, Lindblad and Bortoleto — the names did not match. "How much thrust is enough" is not quantified (that requires first turning "recovery depth" into a scoreable quantity); no new experiment targeting it has been run either — under the freeze discipline, if it is run, it goes through an isolated experiment with pre-registration first (6.8). In this round's total, exact position and internal order both sit near their ceilings, and the gap at the back is masked by the points earned at the front.
 
-*Note 1 (basis): this table is the scorecard after the 2026-09-18 rerun, superseding the early-September version. The rerun was triggered by inconsistent run conditions: for "circuit history", one of the qualifying features, the data files for R10–R12 were missing in the early-September rerun (candidates effectively went in one reference short), while the two single-round replays of July (6.4) generated data on the spot under different conditions — their R10/R11 figures are therefore not comparable, and this table recomputes both under the same "complete data" condition. The rerun also absorbed one post-race judgment revision for R06 (the FIA revised the race classification and, with it, the standings; this had not entered the early-September version). R12 scores belong only to those candidates in this batch that remain scoreable.*
+**A documentation gap, pinned down by code-tracing.** The first-version race model listed a "reliability" item in its feature spec and did read the value, but its combination formula distributed weight across four other items (recent form, constructor strength, circuit fit, pre-race evidence) and left none for reliability — that is, reliability never actually took part in a race-line prediction; the August standardization rewrite (6.7) stopped reading it, which only made the fact visible. No explicit decision to drop it can be found in the session records, and the concrete account is: not "a working feature lost in the rewrite" but "a feature that, from the first version on, existed only on paper, quietly leaving the stage". The process gap it exposed is real — the feature spec said it was used and the formula did not use it, and nothing in the record flagged that inconsistency. The gap stays marked as it stands; it connects directly to the Verstappen example above — had reliability ever actually entered the model, "who might retire" would at least have been part of the prediction's considerations. (The qualifying side's reliability feature is a separate story: declared in 6.1 at weight 0.10, it is in use there to this day — and its window was the one thing the seat-rotation recompute redefined, 7.3.)
 
-*Note 2 (round counts): the "combined mean" covers nine rounds, R03–R11, for the six entries and ten rounds, R03–R12, for the rest; the "first seven rounds" column is R03–R09 throughout; the "late window" is the two-round mean of R10–R11 for nine-round rows and the three-round mean of R10–R12 for ten-round rows. Scores spanning different round counts are indicative only and form no strict ranking.*
+**A cross-line note: what the practice signal did — and did not — mean here.** The same-week practice-signal experiment (told once, in 7.4) left one genuine discovery on the race line: the grid-anchored model systematically overestimates practice-fast drivers and teams (fleet residual ρ=-0.604) — a corrective signal, the first of its kind either model has shown. It also left the discovery's limit: the correction converts to no score (+0.0006 at best). Both halves are part of this line's record.
 
-Three readings need explanation. First, **why there are nine-round rows**: before R12, Hadjar vacated his seat through injury — and six candidates happened to have him in their prediction lists, so those six candidates could not receive an R12 score (the six are #10–#13 and #30, #31; of these, four — #30, #31, #13 and #11 — sit in this table's top eight). Second, **the leaders' quality has to be read in two segments**: #31 and #30 led clearly over the first seven rounds (the window in which they were selected and tuned), at 0.510 and 0.517, but fell back to 0.390 and 0.363 over the out-of-window stretch (the two rounds R10–R11) — the lead inside the window did not fully carry outside it, and the drop is larger than the earlier basis showed; over the same rounds #9 and #7 (the two Elastic Net entries) were steady instead (0.448, 0.450). Third, among the candidates scored on the full ten rounds, the constructor double-weighted Borda (#15) is the strongest — what separates it from #14 is that the "constructor standings only" signal carries double weight while the other three are equal. Also, in the late-window column #13 and #11 are exactly equal (0.3759) — they produced the same predicted ordering in those two rounds, another instance of "near-duplicate variants" (6.2); #31's late window after the rerun (0.3898) no longer coincides with theirs, because while its T10/order slots share an origin with #13, its P1/T3 slots trace their own path.
+With the readings told, one sentence closes the loop with 6.9: the racecraft source inside this model — chosen in August by correlation rank, frozen, and audited in September by a formula-slot ablation of all 204 sibling variants — finished first in that audit too. The table above is, as far as this research can currently tell, produced by the best of what was tried.
 
-The incremental evaluation over R13 and R14 moves the readings one step further (two-round means):
+## 7.3 The Qualifying Line: The Scorecard, the Windows, and the Roster Episode
 
-- **Among the 25 candidates eligible for these two rounds, the leader is a previously mid-table model**: #27 (Plackett-Luce, a probabilistic ranking model) — it ranks 26/31 on the combined scorecard (0.4043) yet tops these two rounds at 0.3972 (R13 Monza 0.3433, R14 Madrid 0.4512); behind it come #20 (Keener, 0.3929; running the α=0.25 configuration as registered — what 6.3 rejected was a different α=0.10 tuning; the two are not the same parameter set) and #7 (Elastic Net, 0.3878).
-- The six candidates (including #30, #31) remain unscoreable in these two rounds — as long as the driver list changes mid-season, this fault will recur.
-- Both rounds ran hard overall: nearly every classical candidate fell below its own combined mean (by roughly 0.05–0.10). Part of this can be pinned down: R13's actual top ten included Tsunoda — a new driver outside the season-start scoring universe, so every scoreable candidate necessarily missed that seat (the membership-segment loss alone is about 0.035). What caused the rest cannot be separated on the available sample. What this means is taken up in 7.4, where the two lines are placed side by side.
+The qualifying line's official scorecard now covers R03–R14 for all 31 candidates — every cell scored, no exclusions. Sorting by combined mean, the top eight:
+
+| Rank | Candidate | Combined mean (R03–R14) | Window (R03–R09) | Out of window (R10–R14) |
+| ---: | --- | ---: | ---: | ---: |
+| 1 | #31 Slot Ensemble · Robust | **0.4785** | 0.5144 | 0.4282 |
+| 2 | #30 Slot Ensemble · Peak | 0.4749 | 0.5028 | 0.4358 |
+| 3 | #15 Borda (constructor double-weighted) | 0.4400 | 0.4617 | 0.4095 |
+| 4 | #13 Explainable score (independent, tuned) | 0.4392 | 0.4618 | 0.4077 |
+| 5 | #11 Explainable score (interaction, tuned) | 0.4384 | 0.4603 | 0.4077 |
+| 6 | #9 Elastic Net | 0.4372 | 0.4510 | 0.4180 |
+| 7 | #7 Elastic Net | 0.4333 | 0.4390 | 0.4252 |
+| 8 | #10 Explainable score (interaction, default) | 0.4296 | 0.4370 | 0.4193 |
+
+*Provenance, told once. This is the third version of the scorecard, and each version existed for a reason. The July replays (6.4) ran the candidates outside their tuning window for the first time. The September 18 merged rerun (entry 10) found and fixed an input gap — the circuit-history files for R10 onward were missing, so every candidate depending on that feature had been answering with one reference short — and absorbed the R06 judgment revision the early-September run had predated. The September 20 recompute (entry 12) carried the seat-rotation policy: it redefined the reliability feature's window for the six feature-set candidates (three rounds → full season), moved their in-window figures slightly (#31 0.5103 → 0.5144), filled in every cell their absence had left empty, and left the 21 classical candidates' R03–R12 scores **bit-identical** (180/180 cells) — the mechanism changed exactly what it claimed to. All numbers above and below read that final version; `predictions/qualifying/c0_matrix.csv` is its machine-readable form.*
+
+Three readings need explanation. First, **the two windows tell the two ensembles apart**. #31 leads the tuning window at 0.5144 to #30's 0.5028 — consistent with their construction (6.3), where #31 is the robust stitching and #30 the peak-chasing one. Out of window the order reverses: #30 posts 0.4358 to #31's 0.4282. The pair was kept on the roster precisely as "stability" and "ceiling" orientations, and over twelve rounds neither orientation has knocked the other out — they sit 0.0036 apart, with third place a further 0.035 back. Second, **the strongest classical candidates hold the middle**: the constructor double-weighted Borda (#15) leads all non-assembly candidates on the combined mean, and the two Elastic Net entries (#9, #7) are the steadiest across both windows — #7's out-of-window 0.4252 is the second-best in the whole column, with none of the assemblies' window sensitivity. Third, **out-of-window scores run below in-window scores across the board** — every candidate in the table drops from the first column to the second, by as little as 0.01 (the Elastic Nets) and as much as 0.09 (#31). Part of this is regression toward the mean after tuning on the window (the caution of 6.3); part is that R10–R14 contained harder rounds (R13 and R14 were heavy shuffles — the same rounds that kept the race line's baseline low, 7.2). The two explanations are not separable on this sample, and the table does not try.
+
+**The roster episode — the season's hardest scoring problem, and its resolution.** Around R12, one driver roster change set off three layers of knock-on effects, all recorded as they happened:
+
+- **Cannot rank**: the six feature-set candidates (#10–#13 and the two assemblies #30, #31) build their predictions by walking the season-start registration list — Hadjar had stood down through injury, but on the list he still carried his historical results, got scored, and landed in the top ten. Not scoring the round at all is what the scoring contract requires (a prediction containing a driver not on the entry list must raise an error; no silent substitution or proxy is allowed).
+- **Invisible**: Tsunoda is not in the season-start scoring universe — no candidate built features for him, so none could predict him. When he finished inside the top ten at R13, every then-scoreable candidate necessarily missed that seat (the membership-segment loss alone was about 0.035).
+- **Mismatch**: Lawson switched to Red Bull — his recent form and recovery history travel with him, but his "constructor strength" basis switched teams, and the aggregation semantics of constructor points drift across a switch.
+
+Until September 20 the research kept the cost instead of patching it — "every score traceable end to end" outranked convenience (the ruling of entry 8, kept in 8.3's terms). The seat-rotation policy (entry 12) then replaced the blanket refusal with a mechanism, settled point by point: constructor-linked parameters follow the new team, driver-linked ones travel with the driver, whatever is neither stays put, and a fail-closed seat-event registry filters the slot assembly; the C0 scale itself was untouched. Both lines were recomputed in full, and the qualifying line's ledger reads: 372/372 candidate-round cells scored; the 21 classical candidates' pre-episode scores unchanged bit for bit; the reliability window ruling recorded as the sole in-window mover (#31 0.5103 → 0.5144).
+
+The unlocked rounds immediately sharpen the picture. Over R13–R14, **#30 — the window's runner-up, silenced for three rounds — leads all 31 candidates at 0.5018** (R13 0.5196, R14 0.4839), with #31 back in the front group at 0.4240 (0.4160 / 0.4321); the classical candidates mostly sit between 0.30 and 0.40 in these two heavy-shuffle rounds. The episode's end state, three readings in one: the assemblies' ceiling claim survived its first out-of-window test, the mechanism's intervention is visible exactly where it claimed to act, and the practice-signal audit of 7.4 (entry 13) confirmed that no same-week source adds anything these candidates do not already have.
 
 ### Appendix: The Full Roster of 31 Candidates
 
-The top-eight table covered only the leading part; the full picture of all 31 candidates in the registry follows (parameters are the configurations frozen at registration; the assembly details of #30, #31 are in 6.3):
+The top-eight table covered only the leading part; the full picture of all 31 candidates in the registry follows (parameters are the configurations frozen at registration; the assembly details of #30, #31 are in 6.3; single-round C0 for every candidate on every round — all 372 cells scored — follows in the second appendix of this chapter):
 
 | No. | Candidate | Family | Mechanism and key settings |
 | ---: | --- | --- | --- |
@@ -119,8 +123,8 @@ The top-eight table covered only the leading part; the full picture of all 31 ca
 | 20 | `keener_a025` | Head-to-head rating | Keener rating α=0.25 |
 | 21 | `glicko_rd50` | Head-to-head rating | Glicko, initial uncertainty 50 |
 | 22 | `glicko_rd150` | Head-to-head rating | Glicko, initial uncertainty 150 |
-| 23 | `gaussian_pairwise_b417_t05` | Head-to-head rating | Gaussian pairwise approximation β=4.17, τ=0.5 |
-| 24 | `gaussian_pairwise_b8_t0` | Head-to-head rating | Gaussian pairwise approximation β=8, τ=0 |
+| 23 | `gaussian_pairwise_b417_t05` | Gaussian pairwise approximation | β=4.17, τ=0.5 |
+| 24 | `gaussian_pairwise_b8_t0` | Gaussian pairwise approximation | β=8, τ=0 |
 | 25 | `bradley_terry_delta0` | Probabilistic ranking | Bradley–Terry δ=0 |
 | 26 | `bradley_terry_delta1` | Probabilistic ranking | Bradley–Terry δ=1 |
 | 27 | `plackett_luce` | Probabilistic ranking | Plackett–Luce |
@@ -129,55 +133,63 @@ The top-eight table covered only the leading part; the full picture of all 31 ca
 | 30 | `slot_ensemble_peak` | Slot ensemble | #9→P1 slot, #28→T3, circuit version→T5, #13→T10 and order (taken top-down) |
 | 31 | `slot_ensemble_robust` | Slot ensemble | Elastic net→P1 and T3, circuit version→T5, #13→T10 and order (first come, first served) |
 
-## 7.4 Prospective Validation in Practice
+### Appendix: Single-Round C0 Detail, 31 Candidates × 12 Rounds
 
-Set 7.2 and 7.3 side by side and the two lines turn out to give two different shapes of evidence:
+The table below is the complete data behind the box plots and the scorecard: each cell is the candidate's single-round C0 in that round, all 372 cells scored on the official caliber. The seat-rotation recompute filled the twelve cells the roster episode had left empty (7.3) and redefined the six feature-set candidates' reliability window, so those six rows differ from the pre-recompute basis; the 21 classical candidates' R03–R12 cells are bit-identical to it. One data note kept on record: R14's qualifying archive itself carries only 20 rows (the upstream source is missing 2 cars) — the gap is in the data, not the scoring.
 
-- **The race line**: three wins in three rounds after the freeze (model 0.6050, baseline 0.4669, three-round means) — this is what the "freeze, then prospect" protocol wants to see: weights fixed at the freeze, results earned after it. To be clear, this protocol sets no pass line — what it requires is that post-freeze performance be reported as it is, not that success be declared; the judgment is left to a person (the decision-log mechanism of Chapter 09).
-- **The qualifying line**: the two strongest in-window candidates fell back out of the window, the R13/R14 lead passed to a different candidate (a model ranked 26th on the combined table), and six candidates were absent round after round because of a roster change. The qualifying line has no corresponding "freeze" move — its shape is candidates running in parallel, tested continuously; what we see here is one real form of that approach meeting a mid-season roster change (nothing in this speaks to which line is more credible).
+| Candidate | R03 | R04 | R05 | R06 | R07 | R08 | R09 | R10 | R11 | R12 | R13 | R14 |
+| ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| #01 | 0.5241 | 0.3431 | 0.2847 | 0.2350 | 0.3748 | 0.5094 | 0.5860 | 0.4303 | 0.3388 | 0.4165 | 0.4004 | 0.2826 |
+| #02 | 0.3446 | 0.3830 | 0.4131 | 0.3962 | 0.3564 | 0.4816 | 0.5298 | 0.4060 | 0.3786 | 0.5047 | 0.3758 | 0.3967 |
+| #03 | 0.3206 | 0.4707 | 0.4232 | 0.4235 | 0.3184 | 0.4215 | 0.4931 | 0.3609 | 0.3431 | 0.5192 | 0.3704 | 0.4031 |
+| #04 | 0.3446 | 0.3830 | 0.3778 | 0.3828 | 0.3555 | 0.4702 | 0.5673 | 0.3663 | 0.4543 | 0.4454 | 0.3024 | 0.3750 |
+| #05 | 0.3236 | 0.3906 | 0.4232 | 0.4280 | 0.3756 | 0.5133 | 0.5349 | 0.3588 | 0.5127 | 0.4002 | 0.3389 | 0.3879 |
+| #06 | 0.3236 | 0.3145 | 0.4491 | 0.4280 | 0.3184 | 0.5089 | 0.5349 | 0.3588 | 0.5127 | 0.4713 | 0.3174 | 0.3879 |
+| #07 | 0.4629 | 0.3981 | 0.4491 | 0.4235 | 0.3208 | 0.4890 | 0.5298 | 0.4060 | 0.5127 | 0.4315 | 0.3389 | 0.4368 |
+| #08 | 0.4629 | 0.3831 | 0.4305 | 0.4235 | 0.3208 | 0.4890 | 0.5298 | 0.4060 | 0.5127 | 0.4359 | 0.3389 | 0.4019 |
+| #09 | 0.4629 | 0.3981 | 0.4232 | 0.4280 | 0.3711 | 0.5133 | 0.5601 | 0.3588 | 0.5127 | 0.4713 | 0.3389 | 0.4083 |
+| #10 | 0.3896 | 0.4089 | 0.3326 | 0.3733 | 0.4708 | 0.6193 | 0.4647 | 0.3442 | 0.4678 | 0.4327 | 0.3794 | 0.4722 |
+| #11 | 0.3896 | 0.4525 | 0.3883 | 0.4693 | 0.4392 | 0.5763 | 0.5069 | 0.3442 | 0.4032 | 0.4761 | 0.3427 | 0.4722 |
+| #12 | 0.4423 | 0.4089 | 0.3898 | 0.3659 | 0.3970 | 0.5763 | 0.4647 | 0.3442 | 0.4678 | 0.4327 | 0.3794 | 0.4722 |
+| #13 | 0.4423 | 0.4525 | 0.3883 | 0.4693 | 0.3970 | 0.5763 | 0.5069 | 0.3442 | 0.4032 | 0.4761 | 0.3427 | 0.4722 |
+| #14 | 0.3416 | 0.3832 | 0.4319 | 0.4313 | 0.4317 | 0.5503 | 0.5624 | 0.4195 | 0.4742 | 0.3707 | 0.3389 | 0.3284 |
+| #15 | 0.3739 | 0.3862 | 0.4319 | 0.4528 | 0.4317 | 0.5933 | 0.5624 | 0.4060 | 0.4727 | 0.4496 | 0.3389 | 0.3805 |
+| #16 | 0.4453 | 0.3134 | 0.3461 | 0.3498 | 0.4392 | 0.4702 | 0.4743 | 0.4239 | 0.4158 | 0.3883 | 0.3069 | 0.4019 |
+| #17 | 0.4849 | 0.3136 | 0.4092 | 0.2956 | 0.4126 | 0.5005 | 0.5358 | 0.4195 | 0.3848 | 0.3958 | 0.2699 | 0.3085 |
+| #18 | 0.4513 | 0.4204 | 0.4131 | 0.3917 | 0.3564 | 0.4816 | 0.5298 | 0.4060 | 0.3786 | 0.4772 | 0.3758 | 0.3967 |
+| #19 | 0.3446 | 0.4204 | 0.4131 | 0.3962 | 0.3564 | 0.4816 | 0.5298 | 0.4060 | 0.3786 | 0.4772 | 0.3758 | 0.3967 |
+| #20 | 0.4438 | 0.3830 | 0.3828 | 0.3962 | 0.4141 | 0.5325 | 0.5624 | 0.4060 | 0.3202 | 0.4062 | 0.3818 | 0.4039 |
+| #21 | 0.4453 | 0.3830 | 0.3461 | 0.3828 | 0.4738 | 0.4702 | 0.4743 | 0.4195 | 0.4158 | 0.3883 | 0.3069 | 0.4019 |
+| #22 | 0.4453 | 0.3830 | 0.3461 | 0.3843 | 0.4317 | 0.4702 | 0.4743 | 0.4195 | 0.4158 | 0.3958 | 0.3069 | 0.4019 |
+| #23 | 0.3461 | 0.2566 | 0.4432 | 0.3633 | 0.4053 | 0.5409 | 0.4263 | 0.4943 | 0.2864 | 0.4439 | 0.3535 | 0.3975 |
+| #24 | 0.3902 | 0.2522 | 0.4388 | 0.3999 | 0.4355 | 0.5830 | 0.4338 | 0.3514 | 0.2687 | 0.4713 | 0.3026 | 0.4263 |
+| #25 | 0.4453 | 0.4204 | 0.4131 | 0.3962 | 0.3579 | 0.4816 | 0.5298 | 0.4060 | 0.3786 | 0.4648 | 0.3758 | 0.3967 |
+| #26 | 0.4378 | 0.3830 | 0.4131 | 0.3962 | 0.3579 | 0.4816 | 0.5601 | 0.4060 | 0.3786 | 0.4678 | 0.3758 | 0.3967 |
+| #27 | 0.2978 | 0.4788 | 0.4131 | 0.3513 | 0.3461 | 0.4158 | 0.5023 | 0.4074 | 0.3505 | 0.4797 | 0.3433 | 0.4512 |
+| #28 | 0.2792 | 0.3859 | 0.3622 | 0.6033 | 0.4231 | 0.4770 | 0.3405 | 0.2737 | 0.2699 | 0.4418 | 0.2586 | 0.3214 |
+| #29 | 0.2822 | 0.3859 | 0.4050 | 0.6303 | 0.4187 | 0.4047 | 0.3714 | 0.2737 | 0.2773 | 0.3623 | 0.2556 | 0.3139 |
+| #30 | 0.3682 | 0.4525 | 0.4837 | 0.6279 | 0.4646 | 0.5980 | 0.5246 | 0.3153 | 0.4076 | 0.4526 | 0.5196 | 0.4839 |
+| #31 | 0.4789 | 0.4525 | 0.4583 | 0.5225 | 0.5502 | 0.5763 | 0.5624 | 0.3153 | 0.4614 | 0.5163 | 0.4160 | 0.4321 |
 
-The explanation promised in 7.3 belongs here: R13 and R14 ran hard for the qualifying candidates overall (generally 0.05–0.10 below combined means), in the same direction as the race-line signal — both events swapped positions more than a typical round does (the race-side baseline over the same rounds was low too). "Heavy-shuffle" scenarios get harder for every method at once; this is an observation on a two-round sample, not a conclusion.
+## 7.4 One Cross-Line Event: The Practice-Signal Experiment
 
-The six candidates' absence has no "resolution" mechanism — as long as the roster state is unchanged they stay unscoreable (that roster changes get no mechanism is a settled ruling, Chapter 09); this is itself one of the limits of "leading inside the window".
+The two lines ran on separate stories all season, and one event touched both at once. Racing fans ask it first: does the model read the practice sessions? The fact, verified entry by entry (decision log, entry 11): both models use zero practice data — the qualifying feature set is recent form, same-circuit history, constructor strength, circuit fit, track profile, pre-race evidence and reliability; the race formula runs on grid position, form, racecraft and the rear-of-grid interaction. The community splits on whether that is right, and in September the question was put to the test in a two-question form — *does the practice signal correlate with the outcome at all, and if so, does it add anything the model does not already know?* — asked in that order on both lines, with the scoring algorithm frozen before any model score was read (decision log, entries 13–14).
 
-Neither line comes close to licensing "the model is reliable" (the 04.4 stance): three race rounds and two qualifying rounds are both single-digit samples. Read together, the three-round record holds one textbook pass (R13's extreme recovery caught), one narrowing (R14's +0.0394), and one scoring fault permanently on the books — different weights (two are single-round samples; one is an unsolved mechanism problem), but all laid out here as they are.
+**Qualifying side: strongly correlated, nothing new.** Practice rank tracks same-round qualifying at ρ=0.886, positive in 14/14 rounds; sprint rounds improve 5/5 under a pooling fix (0.842 → 0.901), which entered the frozen algorithm. But the signal is redundant with recent form (overlap 0.876), explains essentially none of #31's prediction errors (ρ=-0.027), and all seven replacement ablations — the practice score swapped into recent form / constructor strength / circuit fit, alone or combined, 217 candidate-round cells — fell below the +0.010 bar, the only positive being +0.0072, inside the noise band. The qualifying feature line closed: the skeptics were right that practice adds nothing to the model; the "you just haven't looked" side was right that the signal is real. It is information the model already had.
 
-## 7.5 The Error Surface: Two Lost Rounds and One Case Study
+**Race side: a real discovery, and its limit.** The correlation is weaker (driver version 0.661, fleet version 0.779; both 14/14) and the redundancy lower (0.578 against racecraft) — but the residual correlation is real: the grid-anchored model systematically overestimates practice-fast drivers and teams (residual ρ=-0.291 over 93 driver observations; -0.604 over 69 fleet observations), a corrective signal, the first of its kind either line has produced. The derived "gap" hypothesis — that grid position minus practice rank should predict race-day dropback through mean reversion — came out opposite to its framing: the race continues the qualifying-versus-practice deviation rather than reverting from it (pooled ρ=-0.2695 over 308 driver-rounds; at the extremes, drivers who paced fast in practice but qualified poorly dropped a further median 6 places, while grid overperformers gained 8). Still no conversion into score: re-ranking the frozen race order by the gap moved the R03–R14 mean by +0.0006, and weighting the practice score directly selected λ*=0. The race feature line closed on the same terms.
 
-**The two losing rounds** (listed in 7.2): Monaco and Austria. The former is a structural scenario (a street race leaves little room for position flips); in the latter the baseline posted the ten-round high (0.6317), leaving little to improve in the first place. Both point the same way: the model's value is highest in races where the order shuffles, and lowest in races where the order already hugs the grid. One caveat here: we have no independent metric for "degree of shuffle" — only a post-hoc proxy for now (a low baseline score for the round means the finishing order diverged far from the grid); whether it can be estimated before a session, the available material cannot answer — it goes into Chapter 08's open questions.
+**The lesson, and the two lines' shapes of evidence.** Correlation is not C0 increment: the scale only responds near the top-ten boundary and at the front of the order, and both residual signals live where it is insensitive. Asking the correlation question first is what kept the answer cheap. And reading the two lines' results side by side remains the standing contrast of this chapter: the race line's evidence is a freeze and everything after it (three post-freeze rounds, one audit of its feature family); the qualifying line's is thirty-one candidates under continuous test, through a mid-season roster change and the mechanism that resolved it. Neither shape, on single-digit samples, licenses calling any model reliable (04.4) — both lines lay out what happened, as it happened.
 
-**One case study: the full R12 breakdown.** Zandvoort scored well on the total (0.6155), and this time the total can be taken apart: the exact-position segment took 0.1800 on 4/10, the membership segment 0.2450 on 7/10, and the internal-order segment 0.1905 with 40/42 pairs consistent — the three segments combine to exactly 0.6155, reproducible by rerunning the frozen scorer (rechecked while writing this report). The shape of the error:
+## 7.5 The Limits of These Numbers
 
-| Position | Model prediction | Actual result | Correct? |
-| ---: | --- | --- | --- |
-| P1–P4 | Norris / Antonelli / Russell / Hamilton | Norris / Antonelli / Russell / Hamilton | All correct |
-| P5–P6 | Piastri / Leclerc | Leclerc / Piastri | The two swap positions |
-| P7 | Verstappen | Lawson | Wrong |
-| P8–P10 | Lawson / Lindblad / Bortoleto | Hulkenberg / Alonso / Gasly | All three wrong |
+Every comparison in this chapter rests on single-digit to low-teens counts of race rounds (the 04.4 basis: the independent sample is the race), none sufficient to support any claim of being "significantly better"; the race line's "ten wins, two losses" and "three wins in three" are descriptive statements, not proof of reliability (the two counts cover different rounds: the twelve-round count is R03–R14, the three-win count is the post-freeze R12–R14 — R12 appears in both stretches). This research sets no "reliability line" either — 04.4 said so, and 7.4 repeats it: no declaration that "the model is reliable", and none that it is "unreliable"; the judgment is a human ruling over all the evidence together (Chapter 09), and this report's task is to lay the evidence in order.
 
-The scoring comparison is simple: the two lists are matched cell by cell, each cell judged once. The three errors each have their own cause. P5–P6 is a **slot misplacement** — Leclerc and Piastri both made the actual top ten (no list members lost), but the model put the two in each other's slots (predicted P5/P6, actual P6/P5). The P7 prediction was Verstappen — he retired from this race and is not in the official classification; the official P7 slot is Lawson, so that cell is judged wrong. (Lawson occupies P8 in the model's list, set against the official P8 Hulkenberg — that is another cell's error.) P8–P10 is the model's clearest systematic gap — **too little recovery thrust from the back**: Hulkenberg climbed P13 to P8, Alonso P18 to P9, Gasly P11 to P10 — all three made the actual top ten, while the model filled P8–P10 with Lawson, Lindblad and Bortoleto — the names did not match. "How much thrust is enough" is not quantified (that requires first turning "recovery depth" into a scoreable quantity); no new experiment targeting it has been run either — under the freeze discipline, if it is run, it goes through an isolated experiment with pre-registration first (6.8). In this round's total, exact position and internal order both sit near their ceilings, and the gap at the back is masked by the points earned at the front.
+Where the open items recorded in this chapter go: **the narrowed R14 margin and the insufficient back-of-field thrust** — on record, to be revisited (the freeze discipline of 6.8); **the roster fault's mechanism is settled but young** — the seat-rotation policy has exactly one forward round behind it, and its longer record starts at R15; **the Madrid variable** — R14 was Madrid's first year on the calendar, so the "same-circuit history" feature line was absent across the board there, a structural gap for the qualifying candidates that depend on it (the race formula does not include that item, so its direct exposure is limited) — to be re-evaluated when more "first running" rounds exist (when such a round appears is not ours to decide). The positive readings (R13's extreme recovery caught, R12's perfect top four, #30's unlocked R13–R14 lead) do not enter the "where things go" list, because they need no follow-up action — they are in the record, awaiting the natural test of more rounds.
 
-**A documentation gap.** The first version in 6.1 carried a "reliability" item (worth 0.10) — that is the qualifying line's scoring, and the qualifying-side reliability feature is still in use today; the race-line situation we only pinned down by tracing the code: the first-version race model listed reliability in its feature spec and did read the value, but its combination formula distributed weight across four other items (recent form, constructor strength, circuit fit, pre-race evidence) and left none for reliability — that is, reliability never actually took part in a race-line prediction; the August standardization rewrite (6.7) stopped reading it, which only made the fact visible. No explicit decision to drop it can be found in the session records, and there is now a more concrete account: not "a working feature lost in the rewrite" but "a feature that, from the first version on, existed only on paper, quietly leaving the stage". But the process gap it exposed is real — the feature spec said it was used and the formula did not use it, and nothing in the record flagged that inconsistency (the lesson is recorded in the later discipline). The gap itself stays marked as it stands; it connects directly to the Verstappen example above — had reliability ever actually entered the model, "who might retire" would at least have been part of the prediction's considerations.
+Before entering the discussion of Chapter 08, 7.6 first puts the full picture of the two lines together for a look.
 
-**A standing fault: the knock-on effects of a roster change.** One driver roster change around R12 (Hadjar stood down through injury; Lawson replaced him at Red Bull, and Tsunoda returned to the grid in Lawson's place) set off three layers of knock-on effects in this research, all recorded as they happened.
-
-- **Cannot rank**: the six candidates (the #10–#13 explainable-score family and the two assembly versions derived from it) build their predictions by walking the season-start registration list — Hadjar had stood down, but on the list he still carries his historical results, gets scored, and lands in the top ten. Not scoring the round at all is what the scoring spec requires (if a prediction contains a driver not on the entry list it must raise an error; no silent substitution or proxy is allowed).
-- **Invisible**: Tsunoda is not in the season-start scoring universe (the season-start roster does not have him) — no candidate built features for him, so he cannot appear in any prediction. When he finished 10th at R13, all 25 scoreable candidates necessarily missed that seat.
-- **Mismatch**: after Lawson switched teams, his recent form and recovery history travel with the driver, but the "constructor strength" basis switched to Red Bull — the aggregation semantics of constructor points drift after a switch, and the model has no mechanism for that break.
-
-We built no mechanism for any of the three layers — the shortest reason is in the Chapter 09 decision log: patching around roster assumptions would shake the design foundation that "every candidate stays traceable end to end". This is a known open item, and one of the largest problems the research has not yet begun to solve.
-
-**One extra variable**: R14's Madrid is a circuit entering the calendar for the first time this year — same-circuit history starts from zero. Why it is listed here: it leaves the "same-circuit history" feature line absent at Madrid across the board, a structural gap for the qualifying systems that depend on it (the final race formula does not include that item, so its direct exposure is limited).
-
-## 7.6 The Limits of These Numbers
-
-Every comparison in this chapter rests on single-digit to low-teens counts of race rounds (the 04.4 basis: the independent sample is the race), none sufficient to support any claim of being "significantly better"; the race line's "eight wins, two losses" and "three wins in three" are descriptive statements, not proof of reliability (the two counts cover different rounds: "eight wins, two losses" is R03–R12, "three wins in three" is R12–R14 — R12 appears in both stretches). This research sets no "reliability line" either — 04.4 and 7.4 both said so: no declaration that "the model is reliable", and none that it is "unreliable"; the judgment is a human ruling over all the evidence together (Chapter 09), and this report's task is to lay the evidence in order.
-
-Where the open items recorded in this chapter go: **the narrowed R14 margin and the insufficient back-of-field thrust** — on record, to be revisited (the freeze discipline of 6.8); **the scoring system's roster fault** — filed as an open item; **the Madrid variable** — to be re-evaluated when more "first running" rounds exist (when such a round appears is not ours to decide). The positive readings (R13's extreme recovery caught, R12's perfect top four, #27's two-round lead) do not enter the "where things go" list, because they need no follow-up action — they are in the record, awaiting the natural test of more rounds.
-
-Before entering the discussion of Chapter 08, 7.7 first puts the full picture of the two lines together for a look.
-
-## 7.7 The Full Picture: Versions and Candidates
+## 7.6 The Full Picture: Versions and Candidates
 
 Before the discussion, the full picture of both lines, side by side.
 
@@ -201,46 +213,8 @@ The round-by-round distributions of the baseline and the final version, side by 
 
 ![Qualifying candidates, box plots](../assets/charts/qualifying-box.svg)
 
-*Figure: each candidate's single-round score distribution over its own scoreable rounds; the box is the interquartile range, the center line the median, the whiskers the extremes.*
+*Figure: each candidate's single-round score distribution over R03–R14 (all candidates score on all rounds on the official caliber); the box is the interquartile range, the center line the median, the whiskers the extremes.*
 
-Two reading notes for the charts. First, the top of the qualifying line still has a small break: #31 and #30 (0.4835, 0.4689) lead third place by about 0.013 — the gap is narrower than on the pre-rerun basis, and, as 7.3 said, this lead shrinks more visibly out of window, so read the charts with that note in hand. Second, in the lower half of the box plots some candidates' distributions extend below 0 — C0 may go negative (the reading rule of 7.1; one concrete instance: in R11 the constructor-only #3 took -0.0266, 6.4).
-
-### Appendix: Single-Round C0 Detail, 31 Candidates × 12 Rounds
-
-The table below is the complete data behind the box plots: each cell is the candidate's single-round C0 in that round; "—" means not scoreable. Six entries — #10–#13 and #30, #31 — are unscoreable in the three rounds R12, R13, R14: after the roster change their prediction lists contain a withdrawn driver, and the scoring contract allows no score (7.3); the remaining candidates are scoreable at R14 as usual, even though that round's qualifying record itself carries only 20 rows (the upstream data source is missing 2 cars) — the gap is kept on record.
-
-| Candidate | R03 | R04 | R05 | R06 | R07 | R08 | R09 | R10 | R11 | R12 | R13 | R14 |
-| ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| #01 | 0.5241 | 0.3431 | 0.2847 | 0.2350 | 0.3748 | 0.5094 | 0.5860 | 0.4303 | 0.3388 | 0.4165 | 0.4004 | 0.2826 |
-| #02 | 0.3446 | 0.3830 | 0.4131 | 0.3962 | 0.3564 | 0.4816 | 0.5298 | 0.4060 | 0.3786 | 0.5047 | 0.3758 | 0.3967 |
-| #03 | 0.3206 | 0.4707 | 0.4232 | 0.4235 | 0.3184 | 0.4215 | 0.4931 | 0.3609 | 0.3431 | 0.5192 | 0.3704 | 0.4031 |
-| #04 | 0.3446 | 0.3830 | 0.3778 | 0.3828 | 0.3555 | 0.4702 | 0.5673 | 0.3663 | 0.4543 | 0.4454 | 0.3024 | 0.3750 |
-| #05 | 0.3236 | 0.3906 | 0.4232 | 0.4280 | 0.3756 | 0.5133 | 0.5349 | 0.3588 | 0.5127 | 0.4002 | 0.3389 | 0.3879 |
-| #06 | 0.3236 | 0.3145 | 0.4491 | 0.4280 | 0.3184 | 0.5089 | 0.5349 | 0.3588 | 0.5127 | 0.4713 | 0.3174 | 0.3879 |
-| #07 | 0.4629 | 0.3981 | 0.4491 | 0.4235 | 0.3208 | 0.4890 | 0.5298 | 0.4060 | 0.5127 | 0.4315 | 0.3389 | 0.4368 |
-| #08 | 0.4629 | 0.3831 | 0.4305 | 0.4235 | 0.3208 | 0.4890 | 0.5298 | 0.4060 | 0.5127 | 0.4359 | 0.3389 | 0.4019 |
-| #09 | 0.4629 | 0.3981 | 0.4232 | 0.4280 | 0.3711 | 0.5133 | 0.5601 | 0.3588 | 0.5127 | 0.4713 | 0.3389 | 0.4083 |
-| #10 | 0.4243 | 0.4089 | 0.3883 | 0.4025 | 0.3711 | 0.6014 | 0.4639 | 0.3353 | 0.4832 | — | — | — |
-| #11 | 0.4243 | 0.4525 | 0.3958 | 0.4737 | 0.3970 | 0.5763 | 0.5409 | 0.3442 | 0.4076 | — | — | — |
-| #12 | 0.4769 | 0.4089 | 0.3853 | 0.3418 | 0.3756 | 0.6014 | 0.4639 | 0.3353 | 0.4832 | — | — | — |
-| #13 | 0.4769 | 0.4525 | 0.3958 | 0.4737 | 0.3756 | 0.5763 | 0.5409 | 0.3442 | 0.4076 | — | — | — |
-| #14 | 0.3416 | 0.3832 | 0.4319 | 0.4313 | 0.4317 | 0.5503 | 0.5624 | 0.4195 | 0.4742 | 0.3707 | 0.3389 | 0.3284 |
-| #15 | 0.3739 | 0.3862 | 0.4319 | 0.4528 | 0.4317 | 0.5933 | 0.5624 | 0.4060 | 0.4727 | 0.4496 | 0.3389 | 0.3805 |
-| #16 | 0.4453 | 0.3134 | 0.3461 | 0.3498 | 0.4392 | 0.4702 | 0.4743 | 0.4239 | 0.4158 | 0.3883 | 0.3069 | 0.4019 |
-| #17 | 0.4849 | 0.3136 | 0.4092 | 0.2956 | 0.4126 | 0.5005 | 0.5358 | 0.4195 | 0.3848 | 0.3958 | 0.2699 | 0.3085 |
-| #18 | 0.4513 | 0.4204 | 0.4131 | 0.3917 | 0.3564 | 0.4816 | 0.5298 | 0.4060 | 0.3786 | 0.4772 | 0.3758 | 0.3967 |
-| #19 | 0.3446 | 0.4204 | 0.4131 | 0.3962 | 0.3564 | 0.4816 | 0.5298 | 0.4060 | 0.3786 | 0.4772 | 0.3758 | 0.3967 |
-| #20 | 0.4438 | 0.3830 | 0.3828 | 0.3962 | 0.4141 | 0.5325 | 0.5624 | 0.4060 | 0.3202 | 0.4062 | 0.3818 | 0.4039 |
-| #21 | 0.4453 | 0.3830 | 0.3461 | 0.3828 | 0.4738 | 0.4702 | 0.4743 | 0.4195 | 0.4158 | 0.3883 | 0.3069 | 0.4019 |
-| #22 | 0.4453 | 0.3830 | 0.3461 | 0.3843 | 0.4317 | 0.4702 | 0.4743 | 0.4195 | 0.4158 | 0.3958 | 0.3069 | 0.4019 |
-| #23 | 0.3461 | 0.2566 | 0.4432 | 0.3633 | 0.4053 | 0.5409 | 0.4263 | 0.4943 | 0.2864 | 0.4439 | 0.3535 | 0.3975 |
-| #24 | 0.3902 | 0.2522 | 0.4388 | 0.3999 | 0.4355 | 0.5830 | 0.4338 | 0.3514 | 0.2687 | 0.4713 | 0.3026 | 0.4263 |
-| #25 | 0.4453 | 0.4204 | 0.4131 | 0.3962 | 0.3579 | 0.4816 | 0.5298 | 0.4060 | 0.3786 | 0.4648 | 0.3758 | 0.3967 |
-| #26 | 0.4378 | 0.3830 | 0.4131 | 0.3962 | 0.3579 | 0.4816 | 0.5601 | 0.4060 | 0.3786 | 0.4678 | 0.3758 | 0.3967 |
-| #27 | 0.2978 | 0.4788 | 0.4131 | 0.3513 | 0.3461 | 0.4158 | 0.5023 | 0.4074 | 0.3505 | 0.4797 | 0.3433 | 0.4512 |
-| #28 | 0.2792 | 0.3859 | 0.3622 | 0.6033 | 0.4231 | 0.4770 | 0.3405 | 0.2737 | 0.2699 | 0.4418 | 0.2586 | 0.3214 |
-| #29 | 0.2822 | 0.3859 | 0.4050 | 0.6303 | 0.4187 | 0.4047 | 0.3714 | 0.2737 | 0.2773 | 0.3623 | 0.2556 | 0.3139 |
-| #30 | 0.4029 | 0.4525 | 0.4912 | 0.6323 | 0.4949 | 0.5980 | 0.4225 | 0.3183 | 0.4076 | — | — | — |
-| #31 | 0.5155 | 0.4525 | 0.4658 | 0.5269 | 0.5502 | 0.5763 | 0.4846 | 0.3183 | 0.4614 | — | — | — |
+Two reading notes for the charts. First, the top of the qualifying line has a clear break: #31 and #30 (0.4785, 0.4749) lead third place by about 0.035 — and, as 7.3 said, the pair's order flips between the windows (#31 inside, #30 out), so read the charts with that note in hand. Second, in the lower half of the box plots some candidates' distributions extend below 0 — C0 may go negative (the reading rule of 7.1; one concrete instance: in R11 the constructor-only #3 took -0.0266, 6.4).
 
 The two full pictures end here; the limitations, work in flight, and open questions they raise are all in Chapter 08.
