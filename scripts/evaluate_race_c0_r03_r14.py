@@ -2,7 +2,7 @@
 """Race Top-10 C0 evaluation R03-R14 with persisted artifacts.
 
 Full recompute under the seat-rotation policy implementation
-(PLAN-SEAT-ROTATION-IMPL-001, DEC-CONTROL-SEAT-ROTATION-UNLOCK-001):
+(the seat-rotation implementation plan, the seat-rotation unlock decision):
 constructor attribution now follows the manual seat registry from R12 on
 (lawson -> red_bull), so constructor_raw for R12-R14 uses the new team.
 Supersedes c0_race_r03_r12_615232a3 and c0_race_r13_r14_6a01fdaa.

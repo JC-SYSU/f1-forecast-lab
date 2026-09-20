@@ -508,7 +508,7 @@ def _load_seat_registry(project_root: Path) -> dict[str, Any]:
     if not path.exists():
         raise FileNotFoundError(
             f"seat registry missing: {path} (fail-closed per "
-            "DEC-CONTROL-SEAT-ROTATION-UNLOCK-001)"
+            "the seat-rotation unlock decision)"
         )
     return _load_json(path)
 
@@ -582,7 +582,7 @@ def _reliability_scores(
 ) -> tuple[dict[str, float | None], dict[str, str]]:
     """Finish rate per (driver, constructor) over the full prior season.
 
-    Seat-rotation semantics (DEC-CONTROL-SEAT-ROTATION-UNLOCK-001): the score
+    Seat-rotation semantics (the seat-rotation unlock decision): the score
     means "this driver at this team". Direct value requires >=3 starts at the
     current team; below that the value is scaled from the previous team as
     ``team_rate_cur * (driver_rate_prev / team_rate_prev)`` with full-season

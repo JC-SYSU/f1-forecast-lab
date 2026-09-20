@@ -132,7 +132,7 @@ def build_feature_matrix(
             "constructor_id": cid,
             # Audit-only field (not in FEATURE_NAMES): which teammate the
             # delta is computed against at the target round. Seat-rotation
-            # semantics (DEC-CONTROL-SEAT-ROTATION-UNLOCK-001): the delta is
+            # semantics (the seat-rotation unlock decision): the delta is
             # always relative to the current-team teammate.
             "qual_teammate_id": teammate_id,
             "drv_standings_pos": _opt(drv_pos_map.get(did)),

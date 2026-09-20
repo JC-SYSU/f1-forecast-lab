@@ -156,7 +156,7 @@ def _seat_exit_filter(root: Path) -> dict[int, set[str]]:
     Defense-in-depth for the slot assembly: feature-row overrides already
     remove exited drivers from donor candidate pools, but the assembly layer
     refuses to slot them in even if a donor ranking still carries one.
-    Fail-closed on a missing registry (DEC-CONTROL-SEAT-ROTATION-UNLOCK-001).
+    Fail-closed on a missing registry (the seat-rotation unlock decision).
     """
     path = root / "data/manual/seat_changes_2026_v1.json"
     if not path.exists():

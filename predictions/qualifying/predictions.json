@@ -9,7 +9,7 @@
   "R12": "raw actuals (pending FIA overlay)",
   "R13-R14": "raw actuals (pending FIA overlay)"
  },
- "notes": "R12 seat events (hadjar exit; lawson rb->red_bull; tsunoda entry at rb) are modeled through the manual seat registry data/manual/seat_changes_2026_v1.json per DEC-CONTROL-SEAT-ROTATION-UNLOCK-001: from R12 on, exited drivers are excluded from predictions and the incoming driver carries no historical parameters - the unscoreable_field_mismatch status of the superseded caliber no longer occurs (372/372 cells scored). R14 official qualifying has 20 rows (upstream missing 2).",
+ "notes": "R12 seat events (hadjar exit; lawson rb->red_bull; tsunoda entry at rb) are modeled through the manual seat registry data/manual/seat_changes_2026_v1.json per the seat-rotation unlock decision: from R12 on, exited drivers are excluded from predictions and the incoming driver carries no historical parameters - the unscoreable_field_mismatch status of the superseded caliber no longer occurs (372/372 cells scored). R14 official qualifying has 20 rows (upstream missing 2).",
  "candidates": [
   {
    "ordinal": 31,

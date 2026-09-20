@@ -2,7 +2,7 @@
 """Merged qualifying C0 roster scorecard over R03-R14 (31 candidates).
 
 Full recompute under the seat-rotation policy implementation
-(PLAN-SEAT-ROTATION-IMPL-001, DEC-CONTROL-SEAT-ROTATION-UNLOCK-001):
+(the seat-rotation implementation plan, the seat-rotation unlock decision):
 feature-row seat overrides + split reliability + slot entry filter are in
 effect for every round; supersedes c0_roster_r03_r12_a90bf4ad and
 c0_roster_r13_r14_a90bf4ad as the official qualifying scorecard.
