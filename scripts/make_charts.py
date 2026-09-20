@@ -335,21 +335,21 @@ def main():
     for c in qual['candidates']:
         o = c['ordinal']
         labels.append(f'#{o}')
-        means.append(c['combined_mean_r03_r12'])
+        means.append(c['combined_mean_r03_r14'])
         vals = [rd['c0'] for rd in c['rounds'].values() if rd['c0'] is not None]
         boxes.append(vals)
         if o in (30, 31):
             hilite.add(len(labels) - 1)
     vertical_bars(out / 'qualifying-bars.svg',
-        'Qualifying line: combined means of 31 candidates (R03–R12; R13/R14 increments in the box plot)',
-        labels, means, hilite, 0.38, 0.53,
+        'Qualifying line: combined means of 31 candidates (R03–R14, every candidate scored on every round)',
+        labels, means, hilite, 0.36, 0.49,
         notes=['Sorted by combined mean; #30 and #31 (red) are the two final ensembles.',
-               'For the nine-round candidates (#10–#13, #30, #31), R12 was unscoreable due to the mid-season line-up change.'])
+               'All 372 candidate-round cells are scored under the seat-rotation policy (decision-log entry 12).'])
     groups = [(lab, vals, RED if i in hilite else '#9aa4b2') for i, (lab, vals) in enumerate(zip(labels, boxes))]
-    box_plot(out / 'qualifying-box.svg', 'Qualifying line: single-event score distribution per candidate (combined rounds + R13/R14 increments)',
+    box_plot(out / 'qualifying-box.svg', 'Qualifying line: single-event score distribution per candidate (R03–R14)',
         groups, -0.05, 0.72,
         notes=['31 candidates, sorted by combined mean; #30 and #31 (red) are the two final ensembles.',
-               'Boxes use every scoreable round (six candidates have R03–R11, the rest ten rounds).'],
+               'Boxes use all twelve rounds; every candidate-round cell is scored.'],
         width=900)
 
 if __name__ == '__main__':

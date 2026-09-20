@@ -18,10 +18,10 @@
 <rect x="140.0" y="183.0" width="20" height="42.9" fill="none" stroke="#9aa4b2" stroke-width="1.4"/>
 <line x1="140.0" y1="199.32432432432435" x2="160.0" y2="199.32432432432435" stroke="#9aa4b2" stroke-width="2.4"/>
 <text x="150.0" y="308" font-size="12" fill="#9aa4b2" text-anchor="middle">Grid baseline</text>
-<line x1="310.0" y1="91.66048648648643" x2="310.0" y2="251.35135135135135" stroke="#d40000" stroke-width="1.2"/>
+<line x1="310.0" y1="91.66048648648643" x2="310.0" y2="243.4236216216216" stroke="#d40000" stroke-width="1.2"/>
 <line x1="303.3333333333333" y1="91.66048648648643" x2="316.6666666666667" y2="91.66048648648643" stroke="#d40000" stroke-width="1.2"/>
-<line x1="303.3333333333333" y1="251.35135135135135" x2="316.6666666666667" y2="251.35135135135135" stroke="#d40000" stroke-width="1.2"/>
-<rect x="300.0" y="138.7" width="20" height="53.0" fill="none" stroke="#d40000" stroke-width="1.4"/>
+<line x1="303.3333333333333" y1="243.4236216216216" x2="316.6666666666667" y2="243.4236216216216" stroke="#d40000" stroke-width="1.2"/>
+<rect x="300.0" y="147.3" width="20" height="44.4" fill="none" stroke="#d40000" stroke-width="1.4"/>
 <line x1="300.0" y1="159.84978378378378" x2="320.0" y2="159.84978378378378" stroke="#d40000" stroke-width="2.4"/>
 <text x="310.0" y="308" font-size="12" fill="#d40000" text-anchor="middle">Final (frozen)</text>
 <text x="70" y="342" font-size="11.5" fill="#5f6368" text-anchor="start" font-weight="400">12 rounds each (R03–R14). Box = interquartile range, line = median, whiskers = extremes;</text>

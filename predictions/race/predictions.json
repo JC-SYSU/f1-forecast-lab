@@ -1,7 +1,7 @@
 {
  "schema": "race.predictions.v1",
  "season": 2026,
- "description": "Race-line predictions and C0 scores for R03-R14: the grid-order baseline versus the optimized model (weights frozen at commit 606117e, before R12). Extracted from c0_race_r03_r12_615232a3 and c0_race_r13_r14_6a01fdaa.",
+ "description": "Race-line predictions and C0 scores for R03-R14: the grid-order baseline versus the optimized model (weights frozen at commit 606117e, before R12). Extracted from c0_race_r03_r14_d739e6e0 (2026-09-20 recompute: constructor attribution follows the seat registry from R12 on; supersedes c0_race_r03_r12_615232a3 and c0_race_r13_r14_6a01fdaa).",
  "models": [
   {
    "model_id": "race_grid_only",
@@ -136,7 +136,7 @@
      "gasly",
      "lawson"
     ],
-    "c0": 0.428333,
+    "c0": 0.441667,
     "status": "scored"
    },
    "race_optimized_606117e": {
@@ -152,7 +152,7 @@
      "gasly",
      "lawson"
     ],
-    "c0": 0.415,
+    "c0": 0.428333,
     "status": "scored"
    },
    "actual_top10": null
@@ -401,10 +401,10 @@
      "norris",
      "gasly",
      "piastri",
-     "colapinto",
-     "arvid_lindblad"
+     "lawson",
+     "colapinto"
     ],
-    "c0": 0.667222,
+    "c0": 0.586429,
     "status": "scored"
    },
    "actual_top10": null
