@@ -77,10 +77,10 @@ This appendix collects the project's main events across its whole run, in date o
 **09-20** The FP feature line for qualifying is declared closed ("strongly correlated but redundant, no model increment"); constructor-level × race-line, the review-lens use and the data pipeline are retained, with reopening conditions recorded.
 
 
-**09-20** Provenance audit of the practice-signal proposal: the September 5 what-if had never been answered rather than rejected — it was the last message of a session that ended four minutes later, and the release text's "September 7" date (a summary artifact with no primary-source basis) was corrected to September 5 on this day.
+**09-20** Provenance audit of the practice-signal proposal: the September 5 what-if had never been answered rather than rejected — it was the last message of a session that ended four minutes later, which is why it sat unaddressed until the seat-rotation work of this day.
 
 **09-20** Race-side audit: fleet-level practice rank tracks the constructors' race order at ρ=0.779 (driver version 0.661, both 14/14); redundancy with racecraft 0.578, far below the qualifying side; the residual correlation is significant and corrective — the grid-anchored race model overestimates practice-fast drivers and teams (driver -0.291 over 93 observations, fleet -0.604 over 69). Artifact: `fp_corr_stats_race.json` in the `fp_signal_corr_d739e6e0` set (raw JSON in the private archive, not distributed).
 
-**09-20** Block D gap test: the mean-reversion framing is falsified — the sign, once read correctly, shows the race continuing the qualifying-versus-practice deviation rather than reverting from it (pooled ρ=-0.2695 over 308 driver-rounds, negative in 11/14 rounds; a first reading had the sign backwards and was corrected on the record). Artifact: `fp_gap_test_D.json` (private archive).
+**09-20** Block D gap test: the mean-reversion framing is falsified — the sign points the other way: the race continues the qualifying-versus-practice deviation rather than reverting from it (pooled ρ=-0.2695 over 308 driver-rounds, negative in 11/14 rounds). Artifact: `fp_gap_test_D.json` (private archive).
 
 **09-20** Race-side ablation and full closure: the GAP correction gains +0.0006 (λ*=5 selected on the dev rounds, gone in the prospective R10–R14) and FP-DIRECT weighting selects λ*=0 — both far below the +0.010 bar, so the practice-feature line is closed on both lines (closure record v1.1). Artifact: `race_ablation_results.json` (private archive).
