@@ -36,7 +36,14 @@ Prediction depends only on data from before the target round (`evaluate_model` t
 ## B.4 Full-volume rerun
 
 ```bash
-# Qualifying: merged 31-candidate × R03–R12 scorecard (tens of minutes)
+# Official caliber (2026-09-20, seat-rotation policy, decision log entry 12)
+# Qualifying: merged 31-candidate × R03–R14 scorecard (tens of minutes)
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 scripts/run_qualifying_c0_roster_r03_r14.py
+# Race: baseline vs frozen model comparison over R03–R14
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 scripts/evaluate_race_c0_r03_r14.py
+
+# Superseded caliber (2026-09-18) — reproduces the retained a90bf4ad / 615232a3 artifacts
+# Qualifying: merged 31-candidate × R03–R12 scorecard
 PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 scripts/run_qualifying_c0_roster_r03_r12.py
 # Qualifying: R13–R14 incremental
 PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 scripts/run_qualifying_c0_roster_r13_r14.py

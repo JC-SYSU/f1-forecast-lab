@@ -63,3 +63,7 @@ This appendix collects the project's main events across its whole run, in date o
 **09-17** The writing repository f1-forecast-lab initialized; report writing started (54b6006).
 
 **09-18** The qualifying C0 scorecard fully rerun after the circuit-history archive was completed, absorbing the R06 judgment revision; #31 rose to first in the merged scorecard at 0.4835 (41d97d7).
+
+**09-20** The seat-rotation policy unlocked (decision log, entry 12), reversing the September 5 no-mechanism ruling: a manual seat-event registry, three-way parameter attribution, split reliability, and a slot entry filter landed in code (55076e4 through 9207683).
+
+**09-20** Both lines recomputed in full over R03–R14 under the policy: qualifying #31 first at 0.4785 with every candidate-round cell scored (a166623); race model mean 0.5581 vs baseline 0.5071, R13 corrected 0.6672 → 0.5864 on the registry's constructor attribution (4ef473b).

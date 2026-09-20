@@ -12,9 +12,9 @@ It is not a "we predict accurately" showcase. It cares more about three question
 
 ## Headline results (details in Chapter 07)
 
-- **Race line.** In the three real rounds after the weight freeze (R12–R14), the model beat the grid-order baseline every time — 0.6050 vs 0.4669 on three-round means. The margins are uneven: +0.15, +0.22, +0.04. In R13 at Monza the model put Antonelli — penalized to the back of the grid — first, and he went on to win the race (7.2).
-- **Qualifying line.** 31 candidates (numbers are IDs, not rankings) competed round by round on the same scale. On the combined scorecard recomputed on 2026-09-18, the slot ensemble #31 leads at 0.4835 — a mixed-round reference table, since #31 is scored on only 9 rounds. What matters more is its out-of-window record: 0.5103 in the window where it was selected and tuned, falling to 0.3898 across the two rounds outside it.
-- **Two rejections** (Chapter 09): the constructor-strength correction — gain +0.007, below the +0.010 threshold, with one placebo-event control outgaining the real-event group — stays out of the mainline and becomes a pre-registered blind test. The name-list mechanism — ruled out entirely: patching line-up assumptions would break the "one scoring universe, start to finish" foundation.
+- **Race line.** In the three real rounds after the weight freeze (R12–R14), the model beat the grid-order baseline every time — 0.5780 vs 0.4669 on three-round means (2026-09-20 caliber). The margins are uneven: +0.15, +0.14, +0.04. In R13 at Monza the model put Antonelli — penalized to the back of the grid — first, and he went on to win the race (7.2).
+- **Qualifying line.** 31 candidates (numbers are IDs, not rankings) competed round by round on the same scale. On the 2026-09-20 scorecard — recomputed over R03–R14 under the seat-rotation policy of decision log entry 12 — the slot ensemble #31 leads at 0.4785 (0.5144 in the seven in-window rounds, 0.4282 across the five out-of-window rounds), and every candidate now scores on every round: the mid-season line-up change is modeled, not dodged.
+- **Two rejections, one reversal** (Chapter 09): the constructor-strength correction — gain +0.007, below the +0.010 threshold, with one placebo-event control outgaining the real-event group — stays out of the mainline and becomes a pre-registered blind test. The name-list mechanism was ruled out entirely on September 5 (entry 8), then reversed on September 20 (entry 12): a fail-closed seat-event registry now models team switches and substitutes, and every qualifying cell scores again.
 
 ## Reading paths
 
@@ -28,7 +28,7 @@ It is not a "we predict accurately" showcase. It cares more about three question
 | [research/06](research/06-model-lineage.md) | Full lineage of both model lines |
 | [research/07](research/07-results.md) | Results: scorecards and prospective rounds |
 | [research/08](research/08-discussion.md) | Discussion: limits, work in flight, open questions |
-| [research/09](research/09-decision-log.md) | Decision log: ten key rulings |
+| [research/09](research/09-decision-log.md) | Decision log: twelve key rulings |
 | `appendix/` | Data sources, reproduction guide, scorecard index, glossary, timeline, process & collaboration |
 
 Results only: Chapters 07 + 08. To reproduce: Appendix B (guide) + Appendix C (scorecard index).
@@ -42,4 +42,4 @@ Results only: Chapters 07 + 08. To reproduce: Appendix B (guide) + Appendix C (s
 
 ## Status
 
-This is research in progress, with no fixed endpoint. In flight: **practice sessions are untouched — on purpose, for now**. All 31 qualifying candidates use zero practice data, verified entry by entry (Chapter 09, entry 11); whether practice pace would help is a genuine controversy among fans, and inside this research it is untested — the proposed experiment was not approved, so neither side has evidence here. Also in flight: In flight: the blind test for the constructor-strength correction (trigger rounds R14/R15, criteria pre-registered; R14 has finished but its trigger ruling is not yet logged — the late logging is on the record, 8.2); the knock-on effects of line-up changes (the "no mechanism" ruling is final; a separate "dynamic roster" redesign is registered but not started); the lap-time layer (conditions not yet met). Written as of 2026-09-18, covering through R14.
+This is research in progress, with no fixed endpoint. In flight: **practice sessions are untouched — on purpose, for now**. All 31 qualifying candidates use zero practice data, verified entry by entry (Chapter 09, entry 11); whether practice pace would help is a genuine controversy among fans, and inside this research it is untested — the proposed experiment was not approved, so neither side has evidence here. Also in flight: In flight: the blind test for the constructor-strength correction (trigger rounds R14/R15, criteria pre-registered; R14 has finished but its trigger ruling is not yet logged — the late logging is on the record, 8.2); the seat-rotation policy, which landed on 2026-09-20 and superseded the "no mechanism" ruling (decision log, entry 12) — both scorecards were recomputed the same day, and R15 (Baku) is the first forward round under it; a deeper "dynamic roster" redesign remains registered but not started; the lap-time layer (conditions not yet met). Written as of 2026-09-18; updated 2026-09-20 (seat-rotation recompute, entry 12), covering through R14.
