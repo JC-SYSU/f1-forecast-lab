@@ -20,6 +20,7 @@ robust extension of the same prefix.
 """
 from __future__ import annotations
 
+import json
 from functools import partial
 from pathlib import Path
 from typing import Any, Callable
@@ -149,6 +150,28 @@ def _set_first(p1_src, t3_src, t5_src, t10_src, order_src) -> list[str]:
 
 
 # --- Runner assembly -------------------------------------------------------
+def _seat_exit_filter(root: Path) -> dict[int, set[str]]:
+    """round -> set of drivers that have exited by that round (manual registry).
+
+    Defense-in-depth for the slot assembly: feature-row overrides already
+    remove exited drivers from donor candidate pools, but the assembly layer
+    refuses to slot them in even if a donor ranking still carries one.
+    Fail-closed on a missing registry (DEC-CONTROL-SEAT-ROTATION-UNLOCK-001).
+    """
+    path = root / "data/manual/seat_changes_2026_v1.json"
+    if not path.exists():
+        raise FileNotFoundError(f"seat registry missing: {path}")
+    registry = json.loads(path.read_text(encoding="utf-8"))
+    exits: dict[int, set[str]] = {}
+    for event in registry.get("events", []):
+        if str(event["type"]) != "exit":
+            continue
+        rn = int(event["round"])
+        for round_number in range(rn, 99):
+            exits.setdefault(round_number, set()).add(str(event["driver_id"]))
+    return exits
+
+
 def _rankings_top10(runner: Callable[[Path], dict[str, Any]], root: Path) -> dict[int, list[str]]:
     """Take the top 10 of each donor per-round full_field ranking (same convention as the ST-6d scaffold)."""
     out: dict[int, list[str]] = {}
@@ -181,8 +204,20 @@ def _run_slot_ensemble(
 
     per_round: list[dict[str, Any]] = []
     rounds = sorted(set(p1_rk) & set(t3_rk) & set(t5_rk) & set(t10_rk) & set(ord_rk))
+    seat_filter = _seat_exit_filter(root)
     for rn in rounds:
-        top10 = assemble(p1_rk[rn], t3_rk[rn], t5_rk[rn], t10_rk[rn], ord_rk[rn])
+        excluded = seat_filter.get(rn, set())
+
+        def _strip(src: list[str]) -> list[str]:
+            return [d for d in src if d not in excluded]
+
+        top10 = assemble(
+            _strip(p1_rk[rn]),
+            _strip(t3_rk[rn]),
+            _strip(t5_rk[rn]),
+            _strip(t10_rk[rn]),
+            _strip(ord_rk[rn]),
+        )
         src_meta = meta.get(rn, {})
         per_round.append(
             {

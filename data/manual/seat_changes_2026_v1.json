@@ -1,0 +1,55 @@
+{
+  "schema_version": "seat_changes_2026_v1",
+  "generated_on": "2026-09-20",
+  "source_policy": "manual registry is the authority for seat events; an automatic field-diff cross-check (actuals qualifying+race layers, round over round) must agree with this registry before any prediction run — mismatches fail closed. Absence from a qualifying layer with a race grid slot is an exemption, not a seat event.",
+  "events": [
+    {
+      "round": 12,
+      "driver_id": "hadjar",
+      "type": "exit",
+      "from_constructor": "red_bull",
+      "to_constructor": null,
+      "note": "last qualifying+race appearance R11 (red_bull); absent from R12 onward in both layers"
+    },
+    {
+      "round": 12,
+      "driver_id": "lawson",
+      "type": "transfer",
+      "from_constructor": "rb",
+      "to_constructor": "red_bull",
+      "note": "promotion rb -> red_bull filling hadjar seat; present all rounds"
+    },
+    {
+      "round": 12,
+      "driver_id": "tsunoda",
+      "type": "entry",
+      "from_constructor": null,
+      "to_constructor": "rb",
+      "note": "first season appearance R12 (rb); no prior 2026 parameters (missing-data path applies); display_name sourced from actuals R12 driver_name",
+      "display_name": "Yuki Tsunoda"
+    }
+  ],
+  "exemptions": [
+    {
+      "round": 2,
+      "drivers": [
+        "max_verstappen",
+        "sainz",
+        "stroll"
+      ],
+      "reason": "diff-observed at R2 (qualifying layer re-entry): no R1 qualifying record, raced from grid 20/21/22 — not a seat event"
+    },
+    {
+      "round": 14,
+      "drivers": [
+        "bearman",
+        "stroll"
+      ],
+      "reason": "no R14 qualifying record, raced (qual 20 rows vs race 22) — not a seat event"
+    }
+  ],
+  "cross_check": {
+    "field_diff_basis": "data/processed/season_2026_actuals/actuals.json rounds 1-14, qualifying+race layers",
+    "result_2026_09_20": "registry matches diff; no unregistered changes; R13 identical to R12"
+  }
+}

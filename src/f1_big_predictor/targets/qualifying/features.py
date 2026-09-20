@@ -22,6 +22,8 @@ TRACK_PROFILE_PATH = Path("data/manual/track_profile_2026_v1.json")
 AGENT_EVIDENCE_PATH = Path("data/manual/agent_evidence_2026_v1.json")
 SUBJECTIVE_RESIDUALS_DIR = Path("data/manual/subjective_residuals_2026_v1")
 CIRCUIT_HISTORY_DIR = Path("data/processed/circuit_history_2026_v1")
+SEAT_CHANGES_PATH = Path("data/manual/seat_changes_2026_v1.json")
+MIN_RELIABILITY_STARTS = 3
 
 
 def required_features() -> tuple[str, ...]:
@@ -60,7 +62,8 @@ def build_qualifying_features(
     target_event = _round_by_number(rounds, target_round)
     prior_rounds = [item for item in rounds if int(item["round"]) < target_round]
     prior_window = prior_rounds[-config.form_window :]
-    drivers = _grid_drivers(grid)
+    registry = _load_seat_registry(project_root)
+    drivers, seat_notes = _apply_seat_overrides(grid, registry, target_round)
     teams = _grid_teams(grid)
     track_profile = _track_profile_for_round(project_root, target_event, target_round)
     resolved_weights = resolve_weights(config.track_profile_method, config.weights)
@@ -75,7 +78,9 @@ def build_qualifying_features(
         drivers=drivers,
         config=config,
     )
-    reliability_scores = _reliability_scores(prior_window, drivers, feature_gaps)
+    reliability_scores, reliability_methods = _reliability_scores(
+        prior_rounds, drivers, registry, target_round, feature_gaps
+    )
     track_profile_scores = _track_profile_scores(
         project_root=project_root,
         prior_rounds=prior_rounds,
@@ -114,6 +119,8 @@ def build_qualifying_features(
                 "circuit_fit_score": circuit_fit_scores.get(driver_id),
                 "evidence_score": evidence_scores.get(driver_id),
                 "reliability_score": reliability_scores.get(driver_id),
+                "reliability_method": reliability_methods.get(driver_id),
+                "seat_note": seat_notes.get(driver_id),
                 "track_profile_score": track_profile_scores.get(driver_id),
                 "track_profile_method": config.track_profile_method,
                 "track_profile": track_profile,
@@ -496,30 +503,147 @@ def _scores_from_target_values(
     return scores
 
 
+def _load_seat_registry(project_root: Path) -> dict[str, Any]:
+    path = project_root / SEAT_CHANGES_PATH
+    if not path.exists():
+        raise FileNotFoundError(
+            f"seat registry missing: {path} (fail-closed per "
+            "DEC-CONTROL-SEAT-ROTATION-UNLOCK-001)"
+        )
+    return _load_json(path)
+
+
+def _apply_seat_overrides(
+    grid: dict[str, Any],
+    registry: dict[str, Any],
+    target_round: int,
+) -> tuple[list[dict[str, Any]], dict[str, str]]:
+    """Project the manual seat registry onto the season-start grid snapshot.
+
+    Returns the driver rows valid at ``target_round`` (exits removed,
+    transfers moved, entries appended) plus per-driver seat notes for
+    row-level audit. Event semantics come from the manual registry, which is
+    the authority; the field-diff cross-check lives in the collection layer.
+    """
+    grid_drivers = _grid_drivers(grid)
+    by_id = {str(d["driver_id"]): dict(d) for d in grid_drivers}
+    notes: dict[str, str] = {}
+    for event in registry.get("events", []):
+        if int(event["round"]) > target_round:
+            continue
+        did = str(event["driver_id"])
+        etype = str(event["type"])
+        if etype == "exit":
+            by_id.pop(did, None)
+            notes[did] = f"exit@R{event['round']}"
+        elif etype == "transfer":
+            row = by_id.get(did)
+            if row is None:
+                raise ValueError(f"seat transfer for unknown driver {did}")
+            row["team_id"] = str(event["to_constructor"])
+            notes[did] = f"transfer@R{event['round']}->{row['team_id']}"
+        elif etype == "entry":
+            if did in by_id:
+                raise ValueError(f"seat entry for already-present driver {did}")
+            if not event.get("display_name"):
+                raise ValueError(f"seat entry {did} lacks display_name")
+            by_id[did] = {
+                "driver_id": did,
+                "display_name": str(event["display_name"]),
+                "team_id": str(event["to_constructor"]),
+            }
+            notes[did] = f"entry@R{event['round']}->{by_id[did]['team_id']}"
+        else:
+            raise ValueError(f"unknown seat event type {etype}")
+    kept = [by_id[str(d["driver_id"])] for d in grid_drivers if str(d["driver_id"]) in by_id]
+    new_ids = {str(d["driver_id"]) for d in grid_drivers}
+    kept += [row for did, row in by_id.items() if did not in new_ids]
+    return kept, notes
+
+
+def _previous_constructors(registry: dict[str, Any], target_round: int) -> dict[str, str]:
+    """driver_id -> most recent constructor before the current seat (<= target)."""
+    prev: dict[str, str] = {}
+    for event in registry.get("events", []):
+        if int(event["round"]) > target_round:
+            continue
+        etype = str(event["type"])
+        if etype in {"exit", "transfer"} and event.get("from_constructor"):
+            prev[str(event["driver_id"])] = str(event["from_constructor"])
+    return prev
+
+
 def _reliability_scores(
     prior_rounds: list[dict[str, Any]],
     drivers: list[dict[str, Any]],
+    registry: dict[str, Any],
+    target_round: int,
     evidence_gaps: list[str],
-) -> dict[str, float | None]:
+) -> tuple[dict[str, float | None], dict[str, str]]:
+    """Finish rate per (driver, constructor) over the full prior season.
+
+    Seat-rotation semantics (DEC-CONTROL-SEAT-ROTATION-UNLOCK-001): the score
+    means "this driver at this team". Direct value requires >=3 starts at the
+    current team; below that the value is scaled from the previous team as
+    ``team_rate_cur * (driver_rate_prev / team_rate_prev)`` with full-season
+    windows on both sides. Drivers without a previous team return None.
+    """
+    methods: dict[str, str] = {}
     if not prior_rounds:
         evidence_gaps.append("no_prior_rounds_for_reliability")
-        return {str(driver["driver_id"]): None for driver in drivers}
-    starts: dict[str, int] = {str(driver["driver_id"]): 0 for driver in drivers}
-    failures: dict[str, int] = {str(driver["driver_id"]): 0 for driver in drivers}
+        return {str(d["driver_id"]): None for d in drivers}, methods
+    starts: dict[tuple[str, str], int] = {}
+    failures: dict[tuple[str, str], int] = {}
     for round_payload in prior_rounds:
         for item in round_payload.get("race_results", {}).get("records", []) or []:
-            driver_id = str(item.get("driver_id"))
-            if driver_id not in starts:
+            did = str(item.get("driver_id") or "")
+            cid = str(item.get("constructor_id") or "")
+            if not did or not cid:
                 continue
-            starts[driver_id] += 1
+            key = (did, cid)
+            starts[key] = starts.get(key, 0) + 1
             if _is_non_finish(item.get("status")):
-                failures[driver_id] += 1
-    return {
-        driver_id: (1.0 - failures[driver_id] / starts[driver_id])
-        if starts[driver_id]
-        else None
-        for driver_id in starts
-    }
+                failures[key] = failures.get(key, 0) + 1
+
+    def _rate(keys: list[tuple[str, str]]) -> tuple[float | None, int]:
+        total = sum(starts.get(k, 0) for k in keys)
+        fails = sum(failures.get(k, 0) for k in keys)
+        return ((1.0 - fails / total), total) if total else (None, 0)
+
+    def _team_keys(cid: str) -> list[tuple[str, str]]:
+        return [key for key in starts if key[1] == cid]
+
+    prev_ctors = _previous_constructors(registry, target_round)
+    scores: dict[str, float | None] = {}
+    for driver in drivers:
+        did = str(driver["driver_id"])
+        cur = str(driver["team_id"])
+        cur_rate, cur_starts = _rate([(did, cur)])
+        if cur_starts >= MIN_RELIABILITY_STARTS:
+            scores[did] = cur_rate
+            methods[did] = "direct"
+            continue
+        prev = prev_ctors.get(did)
+        if prev is None:
+            evidence_gaps.append(f"reliability_no_prev_team_{did}")
+            scores[did] = None
+            methods[did] = "missing_no_prev_team"
+            continue
+        team_cur_rate, _ = _rate(_team_keys(cur))
+        driver_prev_rate, _ = _rate([(did, prev)])
+        team_prev_rate, _ = _rate(_team_keys(prev))
+        if (
+            team_cur_rate is None
+            or driver_prev_rate is None
+            or not team_prev_rate
+        ):
+            evidence_gaps.append(f"reliability_scale_unavailable_{did}")
+            scores[did] = None
+            methods[did] = "missing_scale_unavailable"
+            continue
+        scores[did] = _clamp(team_cur_rate * (driver_prev_rate / team_prev_rate))
+        methods[did] = "scaled"
+    return scores, methods
 
 
 def _track_profile_scores(

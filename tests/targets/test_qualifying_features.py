@@ -70,6 +70,8 @@ def test_build_qualifying_features_payload_and_row_schema_are_auditable() -> Non
         "circuit_fit_score",
         "evidence_score",
         "reliability_score",
+        "reliability_method",
+        "seat_note",
         "track_profile_score",
         "track_profile_method",
         "track_profile",
@@ -288,6 +290,10 @@ def _write_fixture(
     (root / "data/manual").mkdir(parents=True, exist_ok=True)
     (root / "data/processed/season_2026_actuals").mkdir(parents=True, exist_ok=True)
     (root / "data/processed/circuit_history_2026_v1").mkdir(parents=True, exist_ok=True)
+    _dump(
+        root / "data/manual/seat_changes_2026_v1.json",
+        {"schema_version": "seat_changes_2026_v1", "events": [], "exemptions": []},
+    )
     (root / "data/manual/subjective_residuals_2026_v1").mkdir(
         parents=True, exist_ok=True
     )

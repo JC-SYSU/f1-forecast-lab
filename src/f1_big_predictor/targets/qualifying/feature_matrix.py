@@ -130,6 +130,11 @@ def build_feature_matrix(
         row: dict[str, Any] = {
             "driver_id": did,
             "constructor_id": cid,
+            # Audit-only field (not in FEATURE_NAMES): which teammate the
+            # delta is computed against at the target round. Seat-rotation
+            # semantics (DEC-CONTROL-SEAT-ROTATION-UNLOCK-001): the delta is
+            # always relative to the current-team teammate.
+            "qual_teammate_id": teammate_id,
             "drv_standings_pos": _opt(drv_pos_map.get(did)),
             "drv_standings_pts": _opt(drv_pts_map.get(did)),
             "ctor_standings_pos": _opt(ctor_pos_map.get(cid)),
