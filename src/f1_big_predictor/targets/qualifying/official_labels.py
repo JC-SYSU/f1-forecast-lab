@@ -10,7 +10,7 @@ from typing import Any
 
 ACTUALS_PATH = Path("data/processed/season_2026_actuals/actuals.json")
 OFFICIAL_LABELS_PATH = Path(
-    "docs/data_and_evidence/qualifying/official_labels/"
+    "data/official_labels/"
     "qualifying_v1_official_labels_r01_r09.json"
 )
 _SUPPORTED_NON_NUMERIC_STATUSES = {"DSQ"}

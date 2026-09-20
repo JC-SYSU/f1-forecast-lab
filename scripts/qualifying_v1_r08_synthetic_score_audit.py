@@ -22,11 +22,11 @@ from typing import Sequence
 ROOT = Path(__file__).resolve().parents[1]
 OFFICIAL_AUDIT_PATH = (
     ROOT
-    / "docs/data_and_evidence/qualifying/official_labels/qualifying_v1_p0_4_official_label_audit.json"
+    / "data/official_labels/qualifying_v1_p0_4_official_label_audit.json"
 )
 FIELD_SIZE_AUDIT_PATH = (
     ROOT
-    / "docs/data_and_evidence/qualifying/official_labels/qualifying_v1_p0_4b_field_size_evidence.json"
+    / "data/official_labels/qualifying_v1_p0_4b_field_size_evidence.json"
 )
 DEFAULT_OUTPUT_PATH = (
     ROOT

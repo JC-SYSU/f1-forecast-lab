@@ -38,7 +38,7 @@ TARGET_ROUND = 10
 SEASON = 2026
 EXPECTED_TRAINING_ROUNDS = list(range(1, TARGET_ROUND))
 R10_AUDIT_PATH = Path(
-    "docs/data_and_evidence/qualifying/official_labels/"
+    "data/official_labels/"
     "qualifying_v1_r10_official_label_audit.json"
 )
 R10_CIRCUIT_HISTORY_FILENAME = "r10_spa_circuit_history.json"

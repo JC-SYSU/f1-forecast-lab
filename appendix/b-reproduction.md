@@ -17,7 +17,7 @@ Rerunning the evaluations requires the following minimal datasets (SHA-256 value
 | `data/processed/season_2026_actuals/actuals.json` | Actuals for each round (qualifying/race results and standings) |
 | `data/processed/circuit_history_2026_v1/` | Circuit history for R01–R13 (R14 Madrid is a new circuit; no file is expected) |
 | `data/manual/` | Manually maintained files: season rosters, track profiles, pre-race evidence, and the like |
-| `docs/data_and_evidence/qualifying/official_labels/` | Official qualifying label lists for R03–R09 (the scoring overlay layer) |
+| `data/official_labels/` | Official qualifying label lists for R03–R09 (the scoring overlay layer) |
 | `data/raw/` | Raw archives (required to rerun qualifying R03–R12; offline circuit-history generation depends on it) |
 
 ## B.3 Minimal example: scoring a single round with the frozen race model
