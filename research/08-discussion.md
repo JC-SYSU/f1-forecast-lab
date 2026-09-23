@@ -30,11 +30,13 @@ The results chapter laid out the evidence; this chapter puts it back into contex
 
 ## 8.3 Settled rulings and directions not yet started
 
-The three items in this section carry different statuses: the first two are final rulings (barring new evidence); the third is waiting on its preconditions.
+The four items in this section carry different statuses: the first three are final rulings (barring new evidence); the last is waiting on its preconditions.
 
 **Name-list mechanism: none.** Patching the lineup assumption would shake the design foundation that "candidates are traceable end to end" — a score must answer "could this prediction have been made before the session", and a lineup patch is precisely the kind of thing that is hard to prove in hindsight. The cost was a loss in the comparability of the qualifying line (7.3); the mechanism of entry 12 has since resolved the scoring stoppage itself. This is a ruling made after weighing the trade-off, not an oversight. To face the three layers head-on, the direction is not to patch the old candidates (that type of "mechanism" is indeed ruled out) but to move the scoring universe from a "season-start snapshot" to a versioned dynamic lineup — a structural change that needs dedicated design and pre-registration (see item 4 in 8.4).
 
 **Constructor strength correction: not in the main line.** The rulings from two rounds of isolated experiments — the first tested six correction variants, the second tested a "gated" variant (the correction switches on only in designated rounds after an upgrade event) — put the effect size of every correction form inside the noise band of +0.006 to +0.010 (best combination about +0.007), below the reconsideration threshold; more persuasively, the gains of the fake-event control exceeded those of the real-signal group — meaning this magnitude is indistinguishable from noise. The ruling moved the candidate into the pre-registered blind test (8.2).
+
+**Pre-race evidence: removed from the main line.** The fifth component never scored a round (entry 15 traced why); a full reconstruction of what it would have consumed — rebuilt for twelve rounds under mechanical-inclusion and existence-proof rules, then run through correlation, combination and ablation — produced no increment (the best signal was a strength proxy; the ablation summed +2 against a bar of +3, with ΔC0 ≈ 0). The component was retired from the scoring pipeline as a verified equivalence transform, the official caliber unchanged (entry 16).
 
 **Lap-time layer: not started (waiting on preconditions).** The precondition (feature aggregation of the OpenF1 raw data) is incomplete; the fusion constraint was also written down in advance (chapter 03): the lap-time layer may change the ordering of the scoring system's backbone only when forward validation improves both ranking quality and lap-time error at the same time.
 
