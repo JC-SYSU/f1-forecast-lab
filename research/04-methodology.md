@@ -12,7 +12,7 @@ Taken together, the three recording points guarantee one thing: any historical p
 
 ## 4.2 Backtest: Event-Grouped Forward Validation
 
-Our backtest uses event-grouped expanding walk-forward validation: races are ordered in time, and when predicting round N the model uses only data from the preceding N−1 rounds. This reproduces the real situation — standing before a round, you can only ever use the past, with no exceptions.
+Our backtest uses event-grouped expanding walk-forward validation: races are ordered in time, and when predicting round N the model uses only data from the preceding N−1 rounds. This reproduces the real situation — a prediction made before a round can only ever use the past, with no exceptions.
 
 Two practices are explicitly forbidden within this backtest.
 
