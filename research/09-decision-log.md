@@ -1,6 +1,6 @@
 # 09 · Decision Log
 
-Most of the choices in this research, large and small, are scattered across the chapters where they happened: the choice of scale in 05 and 6.3, the freezes in 6.3 and 6.8, the two rejections in 3.6 and 8.2. This chapter gathers them into a single timeline, and each entry tries to state the same few things: the problem at the time, the evidence relied on, the decision made, and the consequences that followed — a few entries (entry 5, for instance) are background events rather than rulings, and are listed alongside the rest to complete the causal chain. Every ruling that an earlier chapter flagged with "see chapter 09" traces back to an entry here.
+Most of the choices in this research, large and small, are scattered across the chapters where they happened: the choice of scale in 05 and 6.3, the freezes in 6.3 and 6.8, the two rejections in 3.5 and 8.3. This chapter gathers them into a single timeline, and each entry tries to state the same few things: the problem at the time, the evidence relied on, the decision made, and the consequences that followed — a few entries (entry 5, for instance) are background events rather than rulings, and are listed alongside the rest to complete the causal chain. Every ruling that an earlier chapter flagged with "see chapter 09" traces back to an entry here.
 
 One point of authority first: every decision was made by a human; the AI handled proposals, execution, and checking the evidence (Appendix F covers this uniformly). This chapter is the ledger of those calls.
 
