@@ -20,17 +20,6 @@ The label manifests were moved here from `docs/` on 2026-09-20; the scoring cont
 
 `scripts/check_fp_sq_laps_coverage.py` verifies, for every completed round, that practice (FP) and sprint-qualifying lap archives are present and non-empty before the week is considered closed. It runs as part of the weekly collection checklist; a missing batch blocks the week's closure rather than failing silently.
 
-## Pre-race live evidence collection (from R15, Baku)
+## Pre-race evidence: retired (September 23)
 
-The scoring contract carries a pre-race evidence term whose gate requires each source to be retrieved into the archive **before** the round's pre-qualifying cutoff (the anti-leakage requirement). Every historical entry was back-filled after the fact, so the term has scored zero all season — by design, not by bug. From September 20 the process, not the code, is what changes: each race week, before the cutoff, a handful (2–4) of paddock/media items relevant to qualifying prospects are retrieved and recorded with their actual retrieval timestamps.
-
-The gate reads four fields per entry, and stepping over any one excludes the item:
-
-| Rule | Requirement |
-| --- | --- |
-| retrieved after cutoff | `retrieved_on` must precede the cutoff — record the real retrieval time, never back-fill |
-| published after cutoff | `published_on` must precede the cutoff — only material published **before** qualifying counts |
-| scope missing | `session_scope` must include `"qualifying"` (race-only tagging is rejected) |
-| usage not feature | `model_usage` must be `"feature"` |
-
-Entries go into the `events` array of `data/manual/agent_evidence_2026_v1.json` for the target round. After the round, the weekly collection checklist and the actuals merge run as usual — the evidence term then scores non-zero for the first time at R15.
+The scoring contract's fifth component, a pre-race evidence term, was retired on September 23 (decision log, entry 16): a full reconstruction of what it would have consumed — rebuilt for R03–R14 under mechanical-inclusion and existence-proof rules, then run through correlation and ablation — produced no model increment, and the component was removed from the pipeline as a verified equivalence transform (all 372 candidate-round predictions identical to the official artifact). The live-collection SOP this section previously documented is suspended. The rebuilt archive (R01–R14 sources and structured annotations) stays in the private archive; any future live-collection decision would start from it.
