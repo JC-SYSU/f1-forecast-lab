@@ -1,10 +1,10 @@
 """Borda-count heuristic aggregation model for qualifying prediction.
 
 Aggregates the four simple deterministic baselines via weighted Borda scores:
-  - latest_prior      (previous round qualifying)
-  - season_to_date    (season-to-date average)
+  - latest_prior      (previous round's qualifying order)
+  - season_to_date    (season-to-date mean)
   - constructor_only  (constructor standings)
-  - form_w3           (last 3 rounds average)
+  - form_w3           (mean of the last three rounds)
 
 Each baseline produces a full 22-driver ranking.  A Borda score is assigned to
 each driver from each ranking (position P → n+1-P, where n = field size), then

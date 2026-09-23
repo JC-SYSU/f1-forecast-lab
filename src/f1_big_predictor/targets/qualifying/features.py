@@ -8,7 +8,6 @@ from typing import Any
 
 from .official_labels import load_officialized_actuals
 from .types import (
-    EVIDENCE_POLICY,
     FEATURE_SET_ID,
     QualifyingFeatureConfig,
     resolve_weights,
@@ -19,8 +18,6 @@ DEFAULT_SEASON = 2026
 ACTUALS_PATH = Path("data/processed/season_2026_actuals/actuals.json")
 GRID_PATH = Path("data/manual/2026_grid.json")
 TRACK_PROFILE_PATH = Path("data/manual/track_profile_2026_v1.json")
-AGENT_EVIDENCE_PATH = Path("data/manual/agent_evidence_2026_v1.json")
-SUBJECTIVE_RESIDUALS_DIR = Path("data/manual/subjective_residuals_2026_v1")
 CIRCUIT_HISTORY_DIR = Path("data/processed/circuit_history_2026_v1")
 SEAT_CHANGES_PATH = Path("data/manual/seat_changes_2026_v1.json")
 MIN_RELIABILITY_STARTS = 3
@@ -32,7 +29,6 @@ def required_features() -> tuple[str, ...]:
         "form_score",
         "constructor_score",
         "circuit_fit_score",
-        "evidence_score",
         "reliability_score",
     )
 
@@ -72,12 +68,6 @@ def build_qualifying_features(
     form_scores = _form_scores(prior_window, drivers, feature_gaps)
     constructor_scores = _constructor_scores(prior_rounds[-1] if prior_rounds else None)
     circuit_fit_scores = _circuit_fit_scores(project_root, target_round, feature_gaps)
-    evidence_scores, evidence_gaps, evidence_exclusion_summary = _evidence_scores(
-        project_root=project_root,
-        target_round=target_round,
-        drivers=drivers,
-        config=config,
-    )
     reliability_scores, reliability_methods = _reliability_scores(
         prior_rounds, drivers, registry, target_round, feature_gaps
     )
@@ -97,13 +87,9 @@ def build_qualifying_features(
             form_score=form_scores.get(driver_id),
             constructor_score=constructor_scores.get(team_id),
             circuit_fit_score=circuit_fit_scores.get(driver_id),
-            evidence_score=evidence_scores.get(driver_id),
             reliability_score=reliability_scores.get(driver_id),
             track_profile_score=track_profile_scores.get(driver_id),
             track_profile_method=config.track_profile_method,
-            has_eligible_evidence=bool(
-                evidence_exclusion_summary.get("eligible_count", 0)
-            ),
         )
         rows.append(
             {
@@ -117,20 +103,17 @@ def build_qualifying_features(
                 "form_score": form_scores.get(driver_id),
                 "constructor_score": constructor_scores.get(team_id),
                 "circuit_fit_score": circuit_fit_scores.get(driver_id),
-                "evidence_score": evidence_scores.get(driver_id),
                 "reliability_score": reliability_scores.get(driver_id),
                 "reliability_method": reliability_methods.get(driver_id),
                 "seat_note": seat_notes.get(driver_id),
                 "track_profile_score": track_profile_scores.get(driver_id),
                 "track_profile_method": config.track_profile_method,
                 "track_profile": track_profile,
-                "evidence_method": config.evidence_method,
                 "weights": dict(resolved_weights),
                 "component_gaps": row_gaps,
             }
         )
 
-    all_gaps = _unique([*feature_gaps, *evidence_gaps])
     return {
         "feature_set_id": FEATURE_SET_ID,
         "season": season,
@@ -145,15 +128,12 @@ def build_qualifying_features(
         },
         "config": {
             "form_window": config.form_window,
-            "evidence_method": config.evidence_method,
             "track_profile_method": config.track_profile_method,
             "weights": dict(resolved_weights),
         },
         "track_profile": track_profile,
         "rows": rows,
-        "evidence_policy": EVIDENCE_POLICY,
-        "evidence_gaps": all_gaps,
-        "evidence_exclusion_summary": evidence_exclusion_summary,
+        "evidence_gaps": feature_gaps,
     }
 
 
@@ -271,236 +251,9 @@ def _circuit_fit_scores(
     return scores
 
 
-def _evidence_scores(
-    *,
-    project_root: Path,
-    target_round: int,
-    drivers: list[dict[str, Any]],
-    config: QualifyingFeatureConfig,
-) -> tuple[dict[str, float | None], list[str], dict[str, Any]]:
-    context = _eligible_agent_evidence(project_root, target_round)
-    gaps = list(context["gaps"])
-    exclusion_summary = dict(context["exclusion_summary"])
-    eligible_items = context["eligible_items"]
-
-    if config.evidence_method == "directional":
-        values = _target_values_from_items(eligible_items, value_key="direction")
-        scores = _scores_from_target_values(values, drivers, ordinal=False)
-    elif config.evidence_method == "ordinal":
-        residual_path = _round_file(
-            project_root / SUBJECTIVE_RESIDUALS_DIR, target_round
-        )
-        if residual_path is None:
-            gaps.append("ordinal_residuals_missing_fallback_directional")
-            values = _target_values_from_items(eligible_items, value_key="direction")
-            scores = _scores_from_target_values(values, drivers, ordinal=False)
-        else:
-            residual_entries, residual_gaps, residual_exclusions = (
-                _eligible_residual_entries(
-                    residual_path,
-                    target_round=target_round,
-                    cutoff=context["cutoff"],
-                    eligible_evidence_ids=set(context["eligible_evidence_ids"]),
-                    all_evidence_ids=set(context["all_evidence_ids"]),
-                )
-            )
-            gaps.extend(residual_gaps)
-            _merge_counts(exclusion_summary, residual_exclusions)
-            values = _target_values_from_items(
-                residual_entries, value_key="ordinal_signal"
-            )
-            scores = _scores_from_target_values(values, drivers, ordinal=True)
-    else:  # pragma: no cover - QualifyingFeatureConfig validates this branch.
-        raise ValueError(f"unknown evidence_method: {config.evidence_method}")
-
-    if not eligible_items:
-        _append_unique(gaps, "no_eligible_qualifying_evidence")
-    exclusion_summary["eligible_count"] = len(eligible_items)
-    exclusion_summary["eligible_evidence_ids"] = sorted(
-        context["eligible_evidence_ids"]
-    )
-    for reason in sorted(
-        key
-        for key in exclusion_summary
-        if key not in {"eligible_count", "eligible_evidence_ids"}
-    ):
-        _append_unique(gaps, f"evidence_exclusion_{reason}")
-    return scores, _unique(gaps), exclusion_summary
 
 
-def _eligible_agent_evidence(project_root: Path, target_round: int) -> dict[str, Any]:
-    payload = _load_json(project_root / AGENT_EVIDENCE_PATH)
-    event = next(
-        (
-            item
-            for item in payload.get("events", [])
-            if int(item.get("event_round", -1)) == target_round
-        ),
-        None,
-    )
-    if event is None:
-        return {
-            "cutoff": None,
-            "eligible_items": [],
-            "eligible_evidence_ids": [],
-            "all_evidence_ids": [],
-            "gaps": [
-                f"no_agent_evidence_round_{target_round:02d}",
-                "no_eligible_qualifying_evidence",
-            ],
-            "exclusion_summary": {"event_missing": 1},
-        }
 
-    cutoff = _parse_timestamp(event.get("pre_qualifying_cutoff"))
-    gaps: list[str] = []
-    exclusion_summary: dict[str, int] = {}
-    if cutoff is None:
-        gaps.append("invalid_pre_qualifying_cutoff")
-        _increment(exclusion_summary, "invalid_pre_qualifying_cutoff")
-
-    eligible_items: list[dict[str, Any]] = []
-    eligible_ids: list[str] = []
-    all_ids: list[str] = []
-    for item in event.get("evidence", []) or []:
-        evidence_id = str(item.get("evidence_id") or "")
-        if evidence_id:
-            all_ids.append(evidence_id)
-        reasons: list[str] = []
-        if int(item.get("event_round", -1)) != target_round:
-            reasons.append("event_round_mismatch")
-        published = _parse_timestamp(item.get("published_on"))
-        retrieved = _parse_timestamp(item.get("retrieved_on"))
-        if published is None:
-            reasons.append("invalid_published_timestamp")
-        elif cutoff is not None and published > cutoff:
-            reasons.append("published_after_cutoff")
-        if retrieved is None:
-            reasons.append("invalid_retrieved_timestamp")
-        elif cutoff is not None and retrieved > cutoff:
-            reasons.append("retrieved_after_cutoff")
-        if "qualifying" not in (item.get("session_scope") or []):
-            reasons.append("qualifying_scope_missing")
-        if item.get("model_usage") != "feature":
-            reasons.append("model_usage_not_feature")
-        if reasons:
-            for reason in reasons:
-                _increment(exclusion_summary, reason)
-            continue
-        eligible_items.append(item)
-        if evidence_id:
-            eligible_ids.append(evidence_id)
-
-    return {
-        "cutoff": cutoff,
-        "eligible_items": eligible_items,
-        "eligible_evidence_ids": eligible_ids,
-        "all_evidence_ids": all_ids,
-        "gaps": gaps,
-        "exclusion_summary": exclusion_summary,
-    }
-
-
-def _eligible_residual_entries(
-    path: Path,
-    *,
-    target_round: int,
-    cutoff: datetime | None,
-    eligible_evidence_ids: set[str],
-    all_evidence_ids: set[str],
-) -> tuple[list[dict[str, Any]], list[str], dict[str, int]]:
-    payload = _load_json(path)
-    exclusions: dict[str, int] = {}
-    gaps: list[str] = []
-    if int(payload.get("event_round", -1)) != target_round:
-        return (
-            [],
-            ["residual_event_round_mismatch"],
-            {"residual_event_round_mismatch": 1},
-        )
-
-    valid: list[dict[str, Any]] = []
-    for entry in payload.get("entries", []) or []:
-        reasons: list[str] = []
-        if entry.get("event_round", target_round) != target_round:
-            reasons.append("residual_event_round_mismatch")
-        if payload.get("frozen") is not True:
-            reasons.append("residual_not_frozen")
-        frozen_at = _parse_timestamp(payload.get("frozen_at"))
-        if frozen_at is None:
-            reasons.append("invalid_residual_frozen_at")
-        elif cutoff is not None and frozen_at > cutoff:
-            reasons.append("residual_frozen_after_cutoff")
-        if "qualifying" not in (entry.get("session_scope") or []):
-            reasons.append("residual_scope_missing")
-        references = entry.get("evidence_ids")
-        if not isinstance(references, list) or not references:
-            reasons.append("unresolved_evidence_reference")
-        else:
-            for reference in references:
-                reference_id = str(reference)
-                if reference_id not in all_evidence_ids:
-                    reasons.append("unresolved_evidence_reference")
-                elif reference_id not in eligible_evidence_ids:
-                    reasons.append("ineligible_evidence_reference")
-        if reasons:
-            for reason in set(reasons):
-                _increment(exclusions, reason)
-            continue
-        valid.append(entry)
-
-    if not valid:
-        gaps.append("no_eligible_qualifying_residual")
-    for reason in sorted(exclusions):
-        _append_unique(gaps, f"residual_exclusion_{reason}")
-    return valid, gaps, exclusions
-
-
-def _target_values_from_items(
-    items: list[dict[str, Any]], *, value_key: str
-) -> dict[tuple[str, str], list[float]]:
-    values: dict[tuple[str, str], list[float]] = {}
-    for item in items:
-        target = item.get("applies_to") or item.get("target") or {}
-        target_type = target.get("type")
-        ids = target.get("ids") or []
-        confidence = float(item.get("confidence") or 0.0)
-        raw_value = item.get(value_key)
-        value = (
-            _direction_value(raw_value)
-            if value_key == "direction"
-            else _optional_float(raw_value)
-        )
-        if target_type not in {"driver", "team"} or value is None:
-            continue
-        for target_id in ids:
-            values.setdefault((str(target_type), str(target_id)), []).append(
-                value * confidence
-            )
-    return values
-
-
-def _scores_from_target_values(
-    values: dict[tuple[str, str], list[float]],
-    drivers: list[dict[str, Any]],
-    *,
-    ordinal: bool,
-) -> dict[str, float | None]:
-    denominator = 4.0 if ordinal else 2.0
-    scores: dict[str, float | None] = {}
-    for driver in drivers:
-        driver_id = str(driver["driver_id"])
-        team_id = str(driver["team_id"])
-        driver_values = [
-            *values.get(("driver", driver_id), []),
-            *values.get(("team", team_id), []),
-        ]
-        if not driver_values:
-            scores[driver_id] = None
-            continue
-        scores[driver_id] = _clamp(
-            0.5 + (sum(driver_values) / len(driver_values)) / denominator
-        )
-    return scores
 
 
 def _load_seat_registry(project_root: Path) -> dict[str, Any]:
@@ -508,7 +261,7 @@ def _load_seat_registry(project_root: Path) -> dict[str, Any]:
     if not path.exists():
         raise FileNotFoundError(
             f"seat registry missing: {path} (fail-closed per "
-            "the seat-rotation unlock decision)"
+            "the seat-rotation policy)"
         )
     return _load_json(path)
 
@@ -582,7 +335,7 @@ def _reliability_scores(
 ) -> tuple[dict[str, float | None], dict[str, str]]:
     """Finish rate per (driver, constructor) over the full prior season.
 
-    Seat-rotation semantics (the seat-rotation unlock decision): the score
+    Seat-rotation semantics (the seat-rotation policy): the score
     means "this driver at this team". Direct value requires >=3 starts at the
     current team; below that the value is scaled from the previous team as
     ``team_rate_cur * (driver_rate_prev / team_rate_prev)`` with full-season
@@ -713,11 +466,9 @@ def _component_gaps(
     form_score: float | None,
     constructor_score: float | None,
     circuit_fit_score: float | None,
-    evidence_score: float | None,
     reliability_score: float | None,
     track_profile_score: float | None,
     track_profile_method: str,
-    has_eligible_evidence: bool,
 ) -> list[str]:
     gaps: list[str] = []
     if form_score is None:
@@ -726,12 +477,6 @@ def _component_gaps(
         gaps.append("missing_constructor_score")
     if circuit_fit_score is None:
         gaps.append("no_same_circuit_history")
-    if evidence_score is None:
-        gaps.append(
-            "missing_qualifying_evidence_signal"
-            if has_eligible_evidence
-            else "no_eligible_qualifying_evidence"
-        )
     if reliability_score is None:
         gaps.append("missing_reliability_score")
     if track_profile_method == "independent" and track_profile_score is None:
@@ -750,15 +495,6 @@ def _parse_timestamp(value: Any) -> datetime | None:
         return None
     return parsed.astimezone(timezone.utc)
 
-
-def _direction_value(value: Any) -> float | None:
-    if value == "positive":
-        return 1.0
-    if value == "negative":
-        return -1.0
-    if value == "neutral":
-        return 0.0
-    return None
 
 
 def _optional_float(value: Any) -> float | None:

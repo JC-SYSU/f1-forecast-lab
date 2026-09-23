@@ -79,7 +79,6 @@ def test_qualifying_target_ranks_by_component_score() -> None:
                     "form_score": 0.2,
                     "constructor_score": 0.2,
                     "circuit_fit_score": 0.2,
-                    "evidence_score": 0.2,
                     "reliability_score": 0.2,
                 },
                 {
@@ -87,7 +86,6 @@ def test_qualifying_target_ranks_by_component_score() -> None:
                     "form_score": 0.9,
                     "constructor_score": 0.9,
                     "circuit_fit_score": 0.9,
-                    "evidence_score": 0.9,
                     "reliability_score": 0.9,
                 },
                 *[
@@ -96,7 +94,6 @@ def test_qualifying_target_ranks_by_component_score() -> None:
                         "form_score": 0.0,
                         "constructor_score": 0.0,
                         "circuit_fit_score": 0.0,
-                        "evidence_score": 0.0,
                         "reliability_score": 0.0,
                     }
                     for index in range(8)
@@ -228,7 +225,6 @@ def _qualifying_component_features() -> list[dict[str, object]]:
             "form_score": 1.0 - index / 100,
             "constructor_score": 0.8,
             "circuit_fit_score": 0.7,
-            "evidence_score": 0.6,
             "reliability_score": 0.5,
         }
         for index in range(1, 11)

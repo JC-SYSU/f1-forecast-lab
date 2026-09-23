@@ -15,7 +15,6 @@ def search_space() -> dict[str, object]:
             {"name": "reliability_weight", "type": "float", "default": 0.10},
             {"name": "track_profile_weight", "type": "float", "default": 0.10},
             {"name": "form_window", "type": "int", "default": 3},
-            {"name": "evidence_method", "type": "str", "default": "directional"},
             {"name": "track_profile_method", "type": "str", "default": "interaction"},
         ],
         "weight_profiles": {

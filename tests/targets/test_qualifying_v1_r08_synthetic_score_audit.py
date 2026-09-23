@@ -128,15 +128,15 @@ def test_rendered_report_exposes_every_sample_and_all_score_families() -> None:
             + result.internal_order_contribution
         )
     for required_heading in (
-        "## 1. Authoritative data and gates",
-        "## 4. Overall ranking and main branches",
-        "## 5. Membership details",
-        "## 6. Exact, Combo, and Distance details",
-        "## 7. Internal Order details",
-        "## 8. Outer weight contributions",
-        "## 9. Fixed adversarial checks",
-        "## 10. Project lead's preliminary judgment",
-        "## 11. Limitations and next steps",
+        "## 1. 权威数据与门控",
+        "## 4. 综合榜与主分支",
+        "## 5. Membership 明细",
+        "## 6. Exact、Combo 与 Distance 明细",
+        "## 7. Internal Order 明细",
+        "## 8. 外部权重贡献",
+        "## 9. 固定对抗样本检查",
+        "## 10. 项目总管初步判断",
+        "## 11. 限制与下一步",
     ):
         assert required_heading in report
-    assert "must not be used as an official comparator backtest" in report
+    assert "本报告不得作为正式 comparator 回测" in report

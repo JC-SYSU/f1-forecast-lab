@@ -19,7 +19,6 @@ COMPONENT_FIELDS: tuple[tuple[str, str], ...] = (
     ("form", "form_score"),
     ("constructor", "constructor_score"),
     ("circuit_fit", "circuit_fit_score"),
-    ("evidence", "evidence_score"),
     ("reliability", "reliability_score"),
 )
 TRACK_PROFILE_COMPONENT = ("track_profile", "track_profile_score")
@@ -163,8 +162,6 @@ def _component_gaps(row: dict[str, Any], method: str) -> list[str]:
             continue
         if component == "circuit_fit":
             gap = "no_same_circuit_history"
-        elif component == "evidence":
-            gap = "missing_qualifying_evidence_signal"
         elif component == "track_profile":
             gap = "no_same_track_profile_history"
         else:

@@ -17,10 +17,8 @@ from .borda_model import CTOR_UP_WEIGHTS, EQUAL_WEIGHTS
 from .c0_scorer import score_qualifying
 from .features import (
     ACTUALS_PATH,
-    AGENT_EVIDENCE_PATH,
     CIRCUIT_HISTORY_DIR,
     GRID_PATH,
-    SUBJECTIVE_RESIDUALS_DIR,
     TRACK_PROFILE_PATH,
 )
 from .official_labels import OFFICIAL_LABELS_PATH, official_records_for_round
@@ -51,24 +49,23 @@ from .walk_forward_slot_ensemble import (
 
 SCHEMA_VERSION = "qualifying.c0_roster_run.v1"
 SCORING_SCHEME_ID = "qualifying.c0.frozen_candidate.2026-07-17"
-# R02 is permanently excluded from the scoring window by strategic decision: its
-# only training source R01 has just 19 rows, an irreproducible cold-start data
-# vacuum that would pollute selection. R02 still exists in the walk-forward
-# history as training knowledge for R03, but is never a scored round. The scoring
-# window is fixed at R03-R09 (same convention for all candidates, 7 rounds).
+# R02 has been excluded from the scoring window permanently, by strategic
+# decision: its only training source, R01, is a 19-row cold-start data vacuum
+# that would contaminate the selection. R02 still exists in the walk-forward
+# history as training knowledge for R03, but is never a scored round. The
+# scoring window is fixed at R03-R09 (seven rounds, one caliber for all candidates).
 EVALUATION_ROUNDS = tuple(range(3, 10))
 
 _TUNED_EXPLAINABLE_WEIGHTS = {
     "form": 0.25,
     "constructor": 0.35,
     "circuit_fit": 0.20,
-    "evidence": 0.05,
     "reliability": 0.05,
 }
 
 _REQUIRED_INPUT_FILES = (ACTUALS_PATH, OFFICIAL_LABELS_PATH, GRID_PATH)
-_OPTIONAL_INPUT_FILES = (TRACK_PROFILE_PATH, AGENT_EVIDENCE_PATH)
-_OPTIONAL_INPUT_DIRECTORIES = (SUBJECTIVE_RESIDUALS_DIR, CIRCUIT_HISTORY_DIR)
+_OPTIONAL_INPUT_FILES = (TRACK_PROFILE_PATH,)
+_OPTIONAL_INPUT_DIRECTORIES = (CIRCUIT_HISTORY_DIR,)
 
 
 @dataclass(frozen=True)
@@ -670,7 +667,6 @@ def _explainable_spec(
         "exp-C",
         {
             "form_window": config.form_window,
-            "evidence_method": config.evidence_method,
             "track_profile_method": config.track_profile_method,
             "resolved_weights": resolved,
         },

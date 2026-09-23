@@ -136,10 +136,10 @@ def test_current_report_is_deterministic_and_declares_current_protocol() -> None
     assert first == second
     assert "| x_combo | 0.2000000000 |" in first
     assert "| k_distance | 0.0333333333 |" in first
-    assert "current authoritative algorithm specification and ELG" in first
-    assert "All 30 predicted rankings differ" in first
-    assert "P1-P5 consecutive Exact should narrowly beat the fully shuffled Top10" in first
-    assert "podium Exact with severe misses should slightly beat the fully reversed Top10" in first
+    assert "当前权威算法说明书与 ELG" in first
+    assert "30 组预测排名彼此不同" in first
+    assert "P1-P5 连续 Exact 应微胜全 Top10 循环错位" in first
+    assert "领奖台 Exact 严重漏选应小幅胜过全 Top10 完全倒序" in first
 
 
 def test_all_previously_confirmed_fixed_directions_hold_for_current() -> None:

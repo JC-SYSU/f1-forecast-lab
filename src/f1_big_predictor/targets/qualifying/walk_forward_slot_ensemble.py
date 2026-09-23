@@ -1,22 +1,22 @@
 """ST-6d slot-specialist ensemble runners (roster candidates #30 / #31).
 
-Two C0 sub-specialist slot-assembly recipes, merged into the roster as formally
-registered candidates:
+Two C0 sub-specialist slot-assembly recipes, registered as official roster
+candidates:
 
-  #30 slot_peak   (top_down)   #9 → P1; #28 → T3; circuit_T5 → T5; #13 → T10+order
-  #31 slot_robust (set_first)  EN_new → P1+T3; circuit_T5 → T5; #13 → T10+order
+  #30 slot_peak   (top_down)   #9 -> P1; #28 -> T3; circuit_T5 -> T5; #13 -> T10 and order
+  #31 slot_robust (set_first)  EN_new -> P1+T3; circuit_T5 -> T5; #13 -> T10 and order
 
-circuit_T5 = explainable(interaction, circuit_fit upweighted); weak on the raw C0
-metric but strong on T5 hits, found by the ST-6d knob grid.
-EN_new = elastic_net(alpha=0.01, l1_ratio=0.7).
+circuit_T5 = explainable(interaction, circuit_fit up-weighted): a weak single
+C0 but a strong T5 hit rate, found by the ST-6d knob grid. EN_new =
+elastic_net(alpha=0.01, l1_ratio=0.7).
 
-Assembly is decoupled from the C0 ruler: this module only produces a top10 (plus
-a filled-in full-field order); scoring is still handled by the frozen
+Assembly is decoupled from the C0 scale: this module only produces the top10
+(plus the completed full-field order); scoring stays with the frozen
 score_qualifying. Each donor contributes its walk-forward full-field ranking
-(full_field), filling the slots with deduplication; this is identical in outcome
-to the ST-6d scaffold (each donor contributing its top10) on R03-R09, because
-every scaffold slot was already filled within the top10 — full_field is only a
-robust extension of the same prefix.
+(full_field), deduplicated slot by slot; this reproduces the ST-6d scaffold
+(each donor taken to its top10) exactly over R03-R09 -- the scaffold's slots
+were already filled within the top10, so full_field is only a robust extension
+of the same prefix.
 """
 from __future__ import annotations
 
@@ -30,14 +30,14 @@ from .walk_forward import run_walk_forward
 from .walk_forward_elastic_net import run_walk_forward_elastic_net
 from .walk_forward_lambdamart import run_walk_forward_lambdamart
 
-# --- Donor configuration (matches the ST-6d scaffold) ----------------------
+# --- Donor configurations (matching the ST-6d scaffold) --------------------
 _EXP_TUNED_INDEPENDENT = {
     "form": 0.25, "constructor": 0.35, "circuit_fit": 0.20,
-    "evidence": 0.05, "reliability": 0.05,
+    "reliability": 0.05,
 }
 _CIRCUIT_T5_WEIGHTS = {
     "form": 0.20, "constructor": 0.30, "circuit_fit": 0.35,
-    "evidence": 0.05, "reliability": 0.05,
+    "reliability": 0.05,
 }
 _LTR_N100_PARAMS = {
     "n_estimators": 100, "num_leaves": 7, "learning_rate": 0.1,
@@ -46,7 +46,7 @@ _LTR_N100_PARAMS = {
 
 
 def _donor_p1_en_a001_l1_030(root: Path) -> dict[str, Any]:
-    # Donor #9
+    # donor #9
     return run_walk_forward_elastic_net(root, alpha=0.01, l1_ratio=0.3)
 
 
@@ -56,7 +56,7 @@ def _donor_en_new(root: Path) -> dict[str, Any]:
 
 
 def _donor_t3_ltr_n100(root: Path) -> dict[str, Any]:
-    # Donor #28
+    # donor #28
     return run_walk_forward_lambdamart(root, params=dict(_LTR_N100_PARAMS))
 
 
@@ -70,7 +70,7 @@ def _donor_circuit_t5(root: Path) -> dict[str, Any]:
 
 
 def _donor_exp13(root: Path) -> dict[str, Any]:
-    # Donor #13
+    # donor #13
     cfg = QualifyingFeatureConfig(
         track_profile_method="independent",
         weights=dict(_EXP_TUNED_INDEPENDENT),
@@ -78,7 +78,7 @@ def _donor_exp13(root: Path) -> dict[str, Any]:
     return run_walk_forward(root, config=cfg)
 
 
-# --- Assembly algorithm (verbatim from the ST-6d scaffold) -----------------
+# --- Assembly algorithms (verbatim from the ST-6d scaffold) -----------------
 def _take_unique(src: list[str], n: int, used: set[str]) -> list[str]:
     out: list[str] = []
     for d in src:
@@ -149,14 +149,14 @@ def _set_first(p1_src, t3_src, t5_src, t10_src, order_src) -> list[str]:
     )
 
 
-# --- Runner assembly -------------------------------------------------------
+# --- runner assembly --------------------------------------------------------
 def _seat_exit_filter(root: Path) -> dict[int, set[str]]:
     """round -> set of drivers that have exited by that round (manual registry).
 
     Defense-in-depth for the slot assembly: feature-row overrides already
     remove exited drivers from donor candidate pools, but the assembly layer
     refuses to slot them in even if a donor ranking still carries one.
-    Fail-closed on a missing registry (the seat-rotation unlock decision).
+    Fail-closed on a missing registry (the seat-rotation policy).
     """
     path = root / "data/manual/seat_changes_2026_v1.json"
     if not path.exists():
@@ -173,7 +173,7 @@ def _seat_exit_filter(root: Path) -> dict[int, set[str]]:
 
 
 def _rankings_top10(runner: Callable[[Path], dict[str, Any]], root: Path) -> dict[int, list[str]]:
-    """Take the top 10 of each donor per-round full_field ranking (same convention as the ST-6d scaffold)."""
+    """Top 10 of each donor's per-round full-field ranking (same caliber as the ST-6d scaffold)."""
     out: dict[int, list[str]] = {}
     meta: dict[int, dict[str, Any]] = {}
     res = runner(root)
@@ -234,7 +234,7 @@ def _run_slot_ensemble(
 
 
 def run_walk_forward_slot_peak(project_root: Path) -> dict[str, Any]:
-    """#30 ST-6d peak: #9→P1; #28→T3; circuit_T5→T5; #13→T10+order (top_down)."""
+    """#30 ST-6d peak: #9 -> P1; #28 -> T3; circuit_T5 -> T5; #13 -> T10 and order (top_down)."""
     return _run_slot_ensemble(
         project_root,
         method="top_down",
@@ -247,7 +247,7 @@ def run_walk_forward_slot_peak(project_root: Path) -> dict[str, Any]:
 
 
 def run_walk_forward_slot_robust(project_root: Path) -> dict[str, Any]:
-    """#31 ST-6d robust: EN_new→P1+T3; circuit_T5→T5; #13→T10+order (set_first)."""
+    """#31 ST-6d robust: EN_new -> P1+T3; circuit_T5 -> T5; #13 -> T10 and order (set_first)."""
     return _run_slot_ensemble(
         project_root,
         method="set_first",

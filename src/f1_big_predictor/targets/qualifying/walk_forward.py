@@ -12,7 +12,6 @@ from .model import predict_qualifying_target, score_qualifying_field
 from .official_labels import load_officialized_actuals
 from .types import (
     COMPONENT_NAMES,
-    EVIDENCE_POLICY,
     TARGET_ID,
     TRACK_PROFILE_NAME,
     QualifyingFeatureConfig,
@@ -55,9 +54,6 @@ def run_walk_forward(
             target_round=target_round,
             season=int(actuals.get("season") or DEFAULT_SEASON),
             config=feature_config,
-        )
-        _merge_counts(
-            aggregate_exclusions, feature_payload["evidence_exclusion_summary"]
         )
 
         # The feature builder owns the as-of evidence policy. Do not clear or rewrite
@@ -116,9 +112,6 @@ def run_walk_forward(
                 "component_availability_summary": _component_availability_summary(
                     full_ranking
                 ),
-                "evidence_exclusion_summary": feature_payload[
-                    "evidence_exclusion_summary"
-                ],
                 "effective_weight_summary": _effective_weight_summary(full_ranking),
                 "full_field_diagnostic": _full_field_diagnostic(full_ranking),
                 "training_rounds": [
@@ -136,16 +129,10 @@ def run_walk_forward(
         "season": int(actuals.get("season") or DEFAULT_SEASON),
         "config": {
             "form_window": feature_config.form_window,
-            "evidence_method": feature_config.evidence_method,
             "track_profile_method": feature_config.track_profile_method,
             "weights": resolve_weights(
                 feature_config.track_profile_method, feature_config.weights
             ),
-        },
-        "evidence_policy": EVIDENCE_POLICY,
-        "evidence_summary": {
-            **aggregate_exclusions,
-            "round_count": len(per_round),
         },
         "evaluation_window": {
             "start_round": per_round[0]["round"] if per_round else None,

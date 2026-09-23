@@ -12,13 +12,11 @@ SEARCH_SPACE_ID = "qualifying.search_space.v1.weighted"
 FALLBACK_POLICY = "require_qualifying_driver_features_lap_time_gap_if_missing"
 EVALUATION_GATE = "top10_accuracy_rank_mae_lap_time_mae"
 TOP10_SIZE = 10
-EVIDENCE_POLICY = "strict_historical_as_of"
 
 COMPONENT_NAMES: tuple[str, ...] = (
     "form",
     "constructor",
     "circuit_fit",
-    "evidence",
     "reliability",
 )
 TRACK_PROFILE_NAME = "track_profile"
@@ -27,7 +25,6 @@ DEFAULT_WEIGHTS: dict[str, float] = {
     "form": 0.30,
     "constructor": 0.25,
     "circuit_fit": 0.20,
-    "evidence": 0.15,
     "reliability": 0.10,
 }
 
@@ -35,7 +32,6 @@ INDEPENDENT_WEIGHTS: dict[str, float] = {
     "form": 0.270,
     "constructor": 0.225,
     "circuit_fit": 0.180,
-    "evidence": 0.135,
     "reliability": 0.090,
     "track_profile": 0.100,
 }
@@ -106,15 +102,12 @@ class QualifyingFeatureConfig:
     """Configuration for the v1 explainable score feature builder."""
 
     form_window: int = 3
-    evidence_method: str = "directional"
     track_profile_method: str = "interaction"
     weights: dict[str, float] = field(default_factory=lambda: dict(DEFAULT_WEIGHTS))
 
     def __post_init__(self) -> None:
         if self.form_window < 1:
             raise ValueError("form_window must be at least 1")
-        if self.evidence_method not in {"directional", "ordinal"}:
-            raise ValueError(f"unknown evidence_method: {self.evidence_method}")
         resolve_weights(self.track_profile_method, self.weights)
 
 

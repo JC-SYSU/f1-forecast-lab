@@ -102,7 +102,6 @@ def test_predict_qualifying_target_reports_evidence_issue_when_all_components_mi
                     "form_score": None,
                     "constructor_score": None,
                     "circuit_fit_score": None,
-                    "evidence_score": None,
                     "reliability_score": None,
                 }
             ]
@@ -135,7 +134,6 @@ def test_predict_qualifying_target_rejects_rows_without_driver_id() -> None:
                         "form_score": 1.0,
                         "constructor_score": 1.0,
                         "circuit_fit_score": 1.0,
-                        "evidence_score": 1.0,
                         "reliability_score": 1.0,
                     }
                 ]
@@ -157,7 +155,6 @@ def test_predict_qualifying_target_applies_high_downforce_interaction_weights() 
                     "form_score": 0.0,
                     "constructor_score": None,
                     "circuit_fit_score": 1.0,
-                    "evidence_score": None,
                     "reliability_score": None,
                     "track_profile_method": "interaction",
                     "track_profile_speed_type": "high_downforce",
@@ -167,7 +164,6 @@ def test_predict_qualifying_target_applies_high_downforce_interaction_weights() 
                     "form_score": 0.84,
                     "constructor_score": None,
                     "circuit_fit_score": 0.0,
-                    "evidence_score": None,
                     "reliability_score": None,
                     "track_profile_method": "interaction",
                     "track_profile_speed_type": "high_downforce",
@@ -178,7 +174,6 @@ def test_predict_qualifying_target_applies_high_downforce_interaction_weights() 
                         "form_score": 0.0,
                         "constructor_score": 0.0,
                         "circuit_fit_score": 0.0,
-                        "evidence_score": 0.0,
                         "reliability_score": 0.0,
                         "track_profile_method": "interaction",
                         "track_profile_speed_type": "high_downforce",
@@ -206,7 +201,6 @@ def test_predict_qualifying_target_uses_track_profile_from_feature_builder_rows(
                     "form_score": 0.0,
                     "constructor_score": None,
                     "circuit_fit_score": None,
-                    "evidence_score": None,
                     "reliability_score": 1.0,
                 },
                 {
@@ -215,7 +209,6 @@ def test_predict_qualifying_target_uses_track_profile_from_feature_builder_rows(
                     "form_score": 0.35,
                     "constructor_score": None,
                     "circuit_fit_score": None,
-                    "evidence_score": None,
                     "reliability_score": 0.0,
                 },
                     *[
@@ -224,7 +217,6 @@ def test_predict_qualifying_target_uses_track_profile_from_feature_builder_rows(
                             "form_score": 0.0,
                             "constructor_score": 0.0,
                             "circuit_fit_score": 0.0,
-                            "evidence_score": 0.0,
                             "reliability_score": 0.0,
                             "track_profile_method": "interaction",
                             "track_profile": payload["track_profile"],
@@ -240,14 +232,13 @@ def test_predict_qualifying_target_uses_track_profile_from_feature_builder_rows(
     assert [item["driver_id"] for item in prediction.entries[:2]] == ["reliability_driver", "form_driver"]
 
 
-def test_independent_effective_weights_match_registered_six_component_profile() -> None:
+def test_independent_effective_weights_match_registered_profile() -> None:
     rows = [
         {
             "driver_id": f"driver_{index:02d}",
             "form_score": 0.8,
             "constructor_score": 0.7,
             "circuit_fit_score": 0.6,
-            "evidence_score": 0.5,
             "reliability_score": 0.4,
             "track_profile_score": 0.3,
             "track_profile_method": "independent",
@@ -258,33 +249,17 @@ def test_independent_effective_weights_match_registered_six_component_profile() 
     full_ranking = score_qualifying_field(driver_features=rows)
     effective = full_ranking[0]["effective_weights"]
 
-    assert effective == INDEPENDENT_WEIGHTS
-    assert sum(effective.values()) == 1.0
+    # after the evidence removal the track share 0.10 is kept and the rest rescaled to total 0.90
+    assert effective == {
+        "form": pytest.approx(0.27 * 0.90 / 0.765),
+        "constructor": pytest.approx(0.225 * 0.90 / 0.765),
+        "circuit_fit": pytest.approx(0.18 * 0.90 / 0.765),
+        "reliability": pytest.approx(0.09 * 0.90 / 0.765),
+        "track_profile": pytest.approx(0.10),
+    }
+    assert sum(effective.values()) == pytest.approx(1.0)
     assert search_space()["weight_profiles"]["independent"] == INDEPENDENT_WEIGHTS
 
-
-def test_independent_missing_evidence_renormalizes_without_reusing_reliability_weight() -> None:
-    rows = [
-        {
-            "driver_id": f"driver_{index:02d}",
-            "form_score": 0.8,
-            "constructor_score": 0.7,
-            "circuit_fit_score": 0.6,
-            "evidence_score": None,
-            "reliability_score": 0.4,
-            "track_profile_score": 0.3,
-            "track_profile_method": "independent",
-        }
-        for index in range(10)
-    ]
-
-    effective = score_qualifying_field(driver_features=rows)[0]["effective_weights"]
-    denominator = 0.27 + 0.225 + 0.18 + 0.09 + 0.10
-
-    assert "evidence" not in effective
-    assert effective["track_profile"] == pytest.approx(0.10 / denominator)
-    assert effective["reliability"] == pytest.approx(0.09 / denominator)
-    assert sum(effective.values()) == pytest.approx(1.0)
 
 
 def test_qualifying_weight_validation_rejects_negative_zero_and_unknown_components() -> None:
@@ -295,7 +270,6 @@ def test_qualifying_weight_validation_rejects_negative_zero_and_unknown_componen
             "form": 0.0,
             "constructor": 0.0,
             "circuit_fit": 0.0,
-            "evidence": 0.0,
             "reliability": 0.0,
         })
     with pytest.raises(ValueError, match="unknown qualifying weight components"):
@@ -312,11 +286,11 @@ def test_custom_weight_profiles_are_normalized_without_changing_requested_track_
     independent = resolve_weights("independent", {"form": 0.60, "track_profile": 0.20})
 
     assert sum(interaction.values()) == pytest.approx(1.0)
-    assert interaction["form"] == pytest.approx(0.60 / 1.30)
+    assert interaction["form"] == pytest.approx(0.60 / 1.15)
     assert sum(independent.values()) == pytest.approx(1.0)
     assert independent["track_profile"] == pytest.approx(0.20)
     assert sum(value for key, value in independent.items() if key != "track_profile") == pytest.approx(0.80)
-    assert independent["form"] == pytest.approx(0.60 * 0.80 / 1.30)
+    assert independent["form"] == pytest.approx(0.60 * 0.80 / 1.15)
 
 
 @pytest.mark.parametrize(
@@ -334,7 +308,6 @@ def test_interaction_profiles_keep_registered_component_multipliers(profile: str
             "form_score": 0.8,
             "constructor_score": 0.7,
             "circuit_fit_score": 0.6,
-            "evidence_score": 0.5,
             "reliability_score": 0.4,
             "track_profile_method": "interaction",
             "track_profile_speed_type": profile,
@@ -342,7 +315,7 @@ def test_interaction_profiles_keep_registered_component_multipliers(profile: str
         for index in range(10)
     ]
     effective = score_qualifying_field(driver_features=rows)[0]["effective_weights"]
-    base = {"form": 0.30, "constructor": 0.25, "circuit_fit": 0.20, "evidence": 0.15, "reliability": 0.10}
+    base = {"form": 0.30, "constructor": 0.25, "circuit_fit": 0.20, "reliability": 0.10}
     adjusted = {key: value * adjustments.get(key, 1.0) for key, value in base.items()}
     total = sum(adjusted.values())
 
@@ -357,7 +330,6 @@ def test_full_field_diagnostic_preserves_component_gaps() -> None:
             "form_score": None,
             "constructor_score": None,
             "circuit_fit_score": None,
-            "evidence_score": None,
             "reliability_score": 0.5,
         }
         for index in range(10)
@@ -370,7 +342,6 @@ def test_full_field_diagnostic_preserves_component_gaps() -> None:
         "missing_form_score",
         "missing_constructor_score",
         "no_same_circuit_history",
-        "missing_qualifying_evidence_signal",
     ]
 
 
@@ -384,7 +355,6 @@ def _component_features() -> list[dict[str, object]]:
             "form_score": 1.0 - index / 100,
             "constructor_score": 0.75,
             "circuit_fit_score": 0.70,
-            "evidence_score": 0.65,
             "reliability_score": 0.60,
             "track_profile_method": "interaction",
             "track_profile_speed_type": "street",

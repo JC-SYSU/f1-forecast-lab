@@ -27,9 +27,9 @@ def test_candidate_registry_matches_confirmed_31_entry_roster() -> None:
     assert registry[4].public_config == {"alpha": 10.0}
     assert registry[19].public_config == {"alpha": 0.25}
     assert registry[22].model_id.endswith("gaussian_pairwise_approx")
-    # #28/#29 LambdaMART cold starts both begin at R03
+    # #28/#29 LambdaMART cold-start both from R03
     assert [item.first_scoring_round for item in registry[27:29]] == [3, 3]
-    # #30/#31 ST-6d slot-assembly ensembles
+    # #30/#31 ST-6d slot-specialist ensembles
     assert registry[29].model_id.endswith("ensemble.slot_specialist")
     assert registry[30].model_id.endswith("ensemble.slot_specialist")
     assert registry[29].public_config["method"] == "top_down"
