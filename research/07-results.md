@@ -5,7 +5,7 @@
 The preceding chapters recorded how the models were built; this chapter reports the readings. Two reading rules from Chapters 05 and 06 bear restating here in one place:
 
 - **C0 measures how close a prediction came to the outcome**: it tops out at 1 and may go negative (below 0); it is not a win rate (Chapter 05). Scores are comparable only within the same basis — whether a number is a single-round score or a window mean, and which rounds it covers, is annotated alongside the number; single-round scores are noisy and are not used to judge model quality (04.4, 06.4).
-- **When the evaluation happened**: every score in this chapter is a post-race evaluation of completed rounds — this research never released a prediction externally before a session; the fixed arrangement of publishing before a session begins only after this report is published.
+- **When the evaluation happened**: every score in this chapter is a post-race evaluation of completed rounds.
 
 One basis note covers every table and chart here: they all read the **official scorecards**, `c0_roster_r03_r14_356ff08` (qualifying) and `c0_race_r03_r14_d739e6e0` (race), full R03–R14 recomputes under the seat-rotation policy of September 20 (decision log, entries 12 and 15) and the caliber-v3 switch of September 26 (entry 18), with the cleaned data behind them in `predictions/`. The readings that came earlier, the July replays, the September 18 merged scorecard and the 92076830 scorecard it superseded, appear in the narrative as steps that led here rather than as competing tables. The data-driven charts have been regenerated on the same basis.
 
