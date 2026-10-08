@@ -6,7 +6,8 @@ This appendix lists the directories under `outputs/experiments/` directly relate
 
 | Directory | Line | Rounds covered | Generated | Candidates/models | Status |
 | --- | --- | --- | --- | --- | --- |
-| c0_roster_r03_r14_92076830 | qualifying | R03-R14 | 2026-09-20 | 31 | Canonical |
+| c0_roster_r03_r14_356ff08 | qualifying | R03-R14 | 2026-09-26 | 31 | Canonical |
+| c0_roster_r03_r14_92076830 | qualifying | R03-R14 | 2026-09-20 | 31 | Retained (superseded by the 356ff08 caliber-v3 recompute) |
 | c0_race_r03_r14_d739e6e0 | race | R03-R14 | 2026-09-20 | 2 models | Canonical |
 | c0_roster_r03_r12_a90bf4ad | qualifying | R03-R12 | 2026-09-17 | 31 | Retained (superseded by the 92076830 recompute) |
 | c0_roster_r13_r14_a90bf4ad | qualifying | R13-R14 | 2026-09-17 | 31 | Retained (superseded by the 92076830 recompute) |
@@ -27,19 +28,19 @@ This appendix lists the directories under `outputs/experiments/` directly relate
 | nsw_racecraft_scan_035117f2 | race | R03–R14 | 2026-09-20 | 204 variants | Formula-slot scan (race.nsw line; decision log, entry 15) |
 | c0_roster_r03_r14_c579e6d0 | qualifying | R03–R14 | 2026-09-23 | 31 | Verification re-issue (bit-identical to 92076830; decision log, entry 16) |
 
-For qualifying, the canonical artifact is the 92076830 recompute of 2026-09-20 — one merged R03–R14 run under the seat-rotation policy (decision log, entry 12) — which supersedes the two a90bf4ad products, themselves superseding 615232a3 and 6a01fdaa; the old artifacts are retained. The two r03_r09 directories are official historical versions, and the two r02_r09 directories are development-phase versions. On the race line the d739e6e0 recompute of 2026-09-20 (constructor attribution following the seat registry from R12 on) is canonical and supersedes the two 615232a3/6a01fdaa artifacts, which are retained. Under `race/` there is also 1 json file and 5 loose PNGs — grid-feature exploration charts — which are not listed; under `whatif_upgrade/`, two json files (whatif_upgrade_results.json, gcr_results.json) are side-branch weight-variant comparison artifacts and carry no `generated_at`/`code_commit` fields, and the `fp_signal_corr_d739e6e0` set (fp_corr_stats_race.json, fp_gap_test_D.json, race_ablation_results.json) holds the practice-signal audit and race-side ablation results of the September 20 closure (decision log, entries 13–14).
+For qualifying, the canonical artifact is now the 356ff08 recompute of 2026-09-26 (caliber v3, decision log entry 18), which supersedes the 92076830 recompute of 2026-09-20 — one merged R03–R14 run under the seat-rotation policy (entry 12) — which in turn supersedes the two a90bf4ad products, themselves superseding 615232a3 and 6a01fdaa; the old artifacts are retained. The two r03_r09 directories are official historical versions, and the two r02_r09 directories are development-phase versions. On the race line the d739e6e0 recompute of 2026-09-20 (constructor attribution following the seat registry from R12 on) is canonical and supersedes the two 615232a3/6a01fdaa artifacts, which are retained. Under `race/` there is also 1 json file and 5 loose PNGs — grid-feature exploration charts — which are not listed; under `whatif_upgrade/`, two json files (whatif_upgrade_results.json, gcr_results.json) are side-branch weight-variant comparison artifacts and carry no `generated_at`/`code_commit` fields, and the `fp_signal_corr_d739e6e0` set (fp_corr_stats_race.json, fp_gap_test_D.json, race_ablation_results.json) holds the practice-signal audit and race-side ablation results of the September 20 closure (decision log, entries 13–14).
 
 ## C.2 c0_results.json field reference (qualifying version)
 
-The canonical reference is c0_roster_r03_r14_92076830 (schema `qualifying.c0_roster.v2_full_r03_r14`). The superseded a90bf4ad pair used schema `qualifying.c0_roster.v2_merged` (merged) and `qualifying.c0_roster.v2_incremental_r13_r14` (incremental, additionally carrying `continuation_of`, pointing to the artifact it continued); both are field-identical to the current one apart from the summary mean key.
+The canonical reference is c0_roster_r03_r14_356ff08 (schema `qualifying.c0_roster.v2_full_r03_r14`). The superseded a90bf4ad pair used schema `qualifying.c0_roster.v2_merged` (merged) and `qualifying.c0_roster.v2_incremental_r13_r14` (incremental, additionally carrying `continuation_of`, pointing to the artifact it continued); both are field-identical to the current one apart from the summary mean key.
 
 | Field | Meaning |
 | --- | --- |
 | schema_version | Artifact schema identifier; see above |
 | season | Data season: 2026 |
 | candidate_registry | Registry entries for the 31 candidates: index, candidate_id, model_id, variant description, first scored round and expected scored rounds, configuration |
-| evaluation_rounds | List of scored rounds: R03-R14 for the 92076830 version, R03-R12 for the merged version, R13-R14 for the incremental version |
-| label_provenance | Label source per round: R03-R09 official_overlay_manifest (official-label overlay); R10-R11 raw_actuals_verified_equal_to_fia_replay_audit (raw classification verified); from R12 on raw_actuals_pending_fia_overlay (pending FIA overlay) |
+| evaluation_rounds | List of scored rounds: R03-R14 for the current version, R03-R12 for the merged version, R13-R14 for the incremental version |
+| label_provenance | Label source per round: R03-R09 official_overlay_manifest (official-label overlay); R10-R11 raw_actuals_verified_equal_to_fia_replay_audit (raw classification verified); R12-R14 raw_actuals_verified_equal_to_fia_transcription (FIA-transcribed, zero inconsistency; the pending-overlay era closed with the caliber-v3 merge) |
 | cutoff_semantics | Cutoff semantics: the commit at which weights were frozen, and the rule that feature training uses only data from before the target round |
 | run_purpose | Statement of this run's purpose |
 | input_snapshot | Input snapshot: paths and SHA-256 of the 25 input files, the list of missing paths, and the combined_sha256 rollup hash |

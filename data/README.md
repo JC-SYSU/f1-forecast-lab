@@ -6,7 +6,7 @@ The single data layer read by the pipeline. Layout matches the paths hard-coded 
 
 | Path | Content |
 | --- | --- |
-| `processed/season_2026_actuals/actuals.json` | Season actuals: per-round race / qualifying / sprint results and standings (R01–R14). |
+| `processed/season_2026_actuals/actuals.json` | Season actuals: per-round race / qualifying / sprint results and standings (distribution snapshot R01–R14; the source repository has since extended to R16). |
 | `processed/circuit_history_2026_v1/` | Circuit history per round, R01–R13 (R14 Madrid is a new circuit — no history by fact, not by omission). |
 | `manual/` | Curated inputs: season entry list (`2026_grid.json`), circuit profiles (`track_profile_2026_v1.json`), pre-race evidence snapshots (`agent_evidence_2026_v1.json`, R02–R08, each entry with source URL / retrieval time / direction / confidence), manual rating residuals (R02–R08), and registration templates. |
 | `official_labels/` | Official qualifying-label overlay (R01–R09) and the R10/R11 FIA audit manifests — the inputs that make a prediction scoreable. |

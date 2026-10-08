@@ -1,22 +1,21 @@
 {
  "schema": "qualifying.predictions.v1",
  "season": 2026,
- "description": "All 31 registered qualifying candidates, their predicted top-10 lists and per-round C0 scores, R03-R14. Every candidate is scored on every round. Walk-forward: each prediction uses only rounds strictly before its target. Extracted from the official scorecard c0_roster_r03_r14_92076830 (2026-09-20 seat-rotation policy implementation; supersedes c0_roster_r03_r12_a90bf4ad and c0_roster_r13_r14_a90bf4ad).",
+ "description": "All 31 registered qualifying candidates, their predicted top-10 lists and per-round C0 scores, R03-R14. Every candidate is scored on every round. Walk-forward: each prediction uses only rounds strictly before its target. Extracted from the official scorecard c0_roster_r03_r14_356ff08 (2026-09-26 caliber v3, DEC-CONTROL-QUALIFYING-CALIBER-V3-001; supersedes c0_roster_r03_r14_92076830).",
  "scoring_scale": "C0 (Chapter 05): three segments - exact-position 45%, membership 35%, internal order 20%; top 1, may go negative.",
  "label_provenance": {
   "R03-R09": "official overlay manifest",
   "R10-R11": "raw actuals, verified equal to FIA replay audit",
-  "R12": "raw actuals (pending FIA overlay)",
-  "R13-R14": "raw actuals (pending FIA overlay)"
+  "R12-R14": "raw actuals, verified equal to FIA transcription (zero inconsistency)"
  },
- "notes": "R12 seat events (hadjar exit; lawson rb->red_bull; tsunoda entry at rb) are modeled through the manual seat registry data/manual/seat_changes_2026_v1.json per the seat-rotation unlock decision: from R12 on, exited drivers are excluded from predictions and the incoming driver carries no historical parameters - the unscoreable_field_mismatch status of the superseded caliber no longer occurs (372/372 cells scored). R14 official qualifying has 20 rows (upstream missing 2).",
+ "notes": "R12 seat events (hadjar exit; lawson rb->red_bull; tsunoda entry at rb) are modeled through the manual seat registry data/manual/seat_changes_2026_v1.json per the seat-rotation unlock decision: from R12 on, exited drivers are excluded from predictions and the incoming driver carries no historical parameters - the unscoreable_field_mismatch status of the superseded caliber no longer occurs (372/372 cells scored). R14 official qualifying has 20 rows (upstream missing 2). Caliber v3 (2026-09-26) unified the whitelist enumeration, restored the track-profile supply for R09-R15, and upgraded the R12-R14 labels to FIA transcription status: 14 cells moved, all among the six profile-consuming candidates over R09-R14; the other 358 cells are bit-identical to the previous caliber.",
  "candidates": [
   {
    "ordinal": 31,
    "candidate_id": "qv1-031-slot_ensemble_robust",
    "model_id": "qualifying.model.ensemble.slot_specialist",
    "variant": "ST-6d robust: EN_new->P1+T3; circuit_T5->T5; #13->T10+order (set_first)",
-   "combined_mean_r03_r14": 0.478503,
+   "combined_mean_r03_r14": 0.464947,
    "rounds": {
     "3": {
      "predicted_top10": [
@@ -119,15 +118,15 @@
       "antonelli",
       "russell",
       "hamilton",
-      "leclerc",
-      "max_verstappen",
-      "norris",
       "piastri",
+      "max_verstappen",
+      "leclerc",
+      "norris",
       "hadjar",
       "gasly",
       "lawson"
      ],
-     "c0": 0.5623545989,
+     "c0": 0.4846036778,
      "status": "scored"
     },
     "10": {
@@ -167,15 +166,15 @@
       "antonelli",
       "russell",
       "leclerc",
-      "hamilton",
       "norris",
-      "piastri",
       "max_verstappen",
+      "hamilton",
+      "piastri",
       "lawson",
       "arvid_lindblad",
       "gasly"
      ],
-     "c0": 0.516265226,
+     "c0": 0.4587937041,
      "status": "scored"
     },
     "13": {
@@ -204,10 +203,10 @@
       "piastri",
       "max_verstappen",
       "lawson",
-      "gasly",
-      "arvid_lindblad"
+      "arvid_lindblad",
+      "gasly"
      ],
-     "c0": 0.4320563377,
+     "c0": 0.4046060158,
      "status": "scored"
     }
    }
@@ -217,7 +216,7 @@
    "candidate_id": "qv1-030-slot_ensemble_peak",
    "model_id": "qualifying.model.ensemble.slot_specialist",
    "variant": "ST-6d peak: #9->P1; #28->T3; circuit_T5->T5; #13->T10+order (top_down)",
-   "combined_mean_r03_r14": 0.474872,
+   "combined_mean_r03_r14": 0.464078,
    "rounds": {
     "3": {
      "predicted_top10": [
@@ -321,14 +320,14 @@
       "russell",
       "piastri",
       "hamilton",
+      "max_verstappen",
       "leclerc",
       "norris",
-      "max_verstappen",
       "hadjar",
       "gasly",
       "lawson"
      ],
-     "c0": 0.5246115189,
+     "c0": 0.4225341917,
      "status": "scored"
     },
     "10": {
@@ -405,10 +404,10 @@
       "norris",
       "max_verstappen",
       "lawson",
-      "gasly",
-      "arvid_lindblad"
+      "arvid_lindblad",
+      "gasly"
      ],
-     "c0": 0.4838990306,
+     "c0": 0.4564487087,
      "status": "scored"
     }
    }
@@ -615,408 +614,6 @@
    }
   },
   {
-   "ordinal": 13,
-   "candidate_id": "qv1-013-explainable_independent_tuned",
-   "model_id": "qualifying.model.v1.explainable_score",
-   "variant": "independent_tuned",
-   "combined_mean_r03_r14": 0.439239,
-   "rounds": {
-    "3": {
-     "predicted_top10": [
-      "antonelli",
-      "russell",
-      "leclerc",
-      "hamilton",
-      "piastri",
-      "norris",
-      "hadjar",
-      "max_verstappen",
-      "bearman",
-      "gasly"
-     ],
-     "c0": 0.4422534968,
-     "status": "scored"
-    },
-    "4": {
-     "predicted_top10": [
-      "antonelli",
-      "russell",
-      "leclerc",
-      "hamilton",
-      "norris",
-      "piastri",
-      "max_verstappen",
-      "hadjar",
-      "gasly",
-      "ocon"
-     ],
-     "c0": 0.4524503276,
-     "status": "scored"
-    },
-    "5": {
-     "predicted_top10": [
-      "antonelli",
-      "russell",
-      "hamilton",
-      "leclerc",
-      "piastri",
-      "norris",
-      "max_verstappen",
-      "colapinto",
-      "hadjar",
-      "gasly"
-     ],
-     "c0": 0.3883333333,
-     "status": "scored"
-    },
-    "6": {
-     "predicted_top10": [
-      "russell",
-      "antonelli",
-      "leclerc",
-      "hamilton",
-      "norris",
-      "piastri",
-      "max_verstappen",
-      "hadjar",
-      "gasly",
-      "lawson"
-     ],
-     "c0": 0.4692874512,
-     "status": "scored"
-    },
-    "7": {
-     "predicted_top10": [
-      "antonelli",
-      "russell",
-      "hamilton",
-      "leclerc",
-      "norris",
-      "piastri",
-      "max_verstappen",
-      "hadjar",
-      "gasly",
-      "lawson"
-     ],
-     "c0": 0.397,
-     "status": "scored"
-    },
-    "8": {
-     "predicted_top10": [
-      "russell",
-      "antonelli",
-      "hamilton",
-      "leclerc",
-      "norris",
-      "piastri",
-      "max_verstappen",
-      "hadjar",
-      "lawson",
-      "gasly"
-     ],
-     "c0": 0.5762956934,
-     "status": "scored"
-    },
-    "9": {
-     "predicted_top10": [
-      "russell",
-      "antonelli",
-      "hamilton",
-      "leclerc",
-      "norris",
-      "piastri",
-      "max_verstappen",
-      "hadjar",
-      "gasly",
-      "lawson"
-     ],
-     "c0": 0.5069129374,
-     "status": "scored"
-    },
-    "10": {
-     "predicted_top10": [
-      "russell",
-      "leclerc",
-      "hamilton",
-      "antonelli",
-      "norris",
-      "piastri",
-      "max_verstappen",
-      "hadjar",
-      "lawson",
-      "arvid_lindblad"
-     ],
-     "c0": 0.3441666667,
-     "status": "scored"
-    },
-    "11": {
-     "predicted_top10": [
-      "russell",
-      "leclerc",
-      "antonelli",
-      "hamilton",
-      "norris",
-      "piastri",
-      "max_verstappen",
-      "hadjar",
-      "lawson",
-      "arvid_lindblad"
-     ],
-     "c0": 0.4031615713,
-     "status": "scored"
-    },
-    "12": {
-     "predicted_top10": [
-      "russell",
-      "antonelli",
-      "leclerc",
-      "hamilton",
-      "norris",
-      "piastri",
-      "max_verstappen",
-      "lawson",
-      "arvid_lindblad",
-      "gasly"
-     ],
-     "c0": 0.4761330933,
-     "status": "scored"
-    },
-    "13": {
-     "predicted_top10": [
-      "antonelli",
-      "russell",
-      "leclerc",
-      "hamilton",
-      "norris",
-      "piastri",
-      "max_verstappen",
-      "lawson",
-      "arvid_lindblad",
-      "bortoleto"
-     ],
-     "c0": 0.3426876883,
-     "status": "scored"
-    },
-    "14": {
-     "predicted_top10": [
-      "russell",
-      "antonelli",
-      "hamilton",
-      "leclerc",
-      "norris",
-      "piastri",
-      "max_verstappen",
-      "lawson",
-      "gasly",
-      "arvid_lindblad"
-     ],
-     "c0": 0.4721884704,
-     "status": "scored"
-    }
-   }
-  },
-  {
-   "ordinal": 11,
-   "candidate_id": "qv1-011-explainable_interaction_tuned",
-   "model_id": "qualifying.model.v1.explainable_score",
-   "variant": "interaction_tuned",
-   "combined_mean_r03_r14": 0.438365,
-   "rounds": {
-    "3": {
-     "predicted_top10": [
-      "antonelli",
-      "russell",
-      "leclerc",
-      "hamilton",
-      "piastri",
-      "norris",
-      "hadjar",
-      "max_verstappen",
-      "bearman",
-      "lawson"
-     ],
-     "c0": 0.3895868302,
-     "status": "scored"
-    },
-    "4": {
-     "predicted_top10": [
-      "antonelli",
-      "russell",
-      "leclerc",
-      "hamilton",
-      "norris",
-      "piastri",
-      "max_verstappen",
-      "hadjar",
-      "gasly",
-      "ocon"
-     ],
-     "c0": 0.4524503276,
-     "status": "scored"
-    },
-    "5": {
-     "predicted_top10": [
-      "antonelli",
-      "russell",
-      "hamilton",
-      "leclerc",
-      "piastri",
-      "norris",
-      "max_verstappen",
-      "colapinto",
-      "hadjar",
-      "gasly"
-     ],
-     "c0": 0.3883333333,
-     "status": "scored"
-    },
-    "6": {
-     "predicted_top10": [
-      "russell",
-      "antonelli",
-      "leclerc",
-      "hamilton",
-      "norris",
-      "piastri",
-      "max_verstappen",
-      "hadjar",
-      "gasly",
-      "lawson"
-     ],
-     "c0": 0.4692874512,
-     "status": "scored"
-    },
-    "7": {
-     "predicted_top10": [
-      "antonelli",
-      "russell",
-      "hamilton",
-      "leclerc",
-      "norris",
-      "max_verstappen",
-      "piastri",
-      "hadjar",
-      "gasly",
-      "lawson"
-     ],
-     "c0": 0.4391709072,
-     "status": "scored"
-    },
-    "8": {
-     "predicted_top10": [
-      "russell",
-      "antonelli",
-      "hamilton",
-      "leclerc",
-      "norris",
-      "piastri",
-      "max_verstappen",
-      "hadjar",
-      "lawson",
-      "gasly"
-     ],
-     "c0": 0.5762956934,
-     "status": "scored"
-    },
-    "9": {
-     "predicted_top10": [
-      "russell",
-      "antonelli",
-      "hamilton",
-      "leclerc",
-      "norris",
-      "piastri",
-      "max_verstappen",
-      "hadjar",
-      "gasly",
-      "lawson"
-     ],
-     "c0": 0.5069129374,
-     "status": "scored"
-    },
-    "10": {
-     "predicted_top10": [
-      "russell",
-      "leclerc",
-      "hamilton",
-      "antonelli",
-      "norris",
-      "piastri",
-      "max_verstappen",
-      "hadjar",
-      "lawson",
-      "arvid_lindblad"
-     ],
-     "c0": 0.3441666667,
-     "status": "scored"
-    },
-    "11": {
-     "predicted_top10": [
-      "russell",
-      "leclerc",
-      "antonelli",
-      "hamilton",
-      "norris",
-      "piastri",
-      "max_verstappen",
-      "hadjar",
-      "lawson",
-      "arvid_lindblad"
-     ],
-     "c0": 0.4031615713,
-     "status": "scored"
-    },
-    "12": {
-     "predicted_top10": [
-      "russell",
-      "antonelli",
-      "leclerc",
-      "hamilton",
-      "norris",
-      "piastri",
-      "max_verstappen",
-      "lawson",
-      "arvid_lindblad",
-      "gasly"
-     ],
-     "c0": 0.4761330933,
-     "status": "scored"
-    },
-    "13": {
-     "predicted_top10": [
-      "antonelli",
-      "russell",
-      "leclerc",
-      "hamilton",
-      "norris",
-      "piastri",
-      "max_verstappen",
-      "lawson",
-      "arvid_lindblad",
-      "bortoleto"
-     ],
-     "c0": 0.3426876883,
-     "status": "scored"
-    },
-    "14": {
-     "predicted_top10": [
-      "russell",
-      "antonelli",
-      "hamilton",
-      "leclerc",
-      "norris",
-      "piastri",
-      "max_verstappen",
-      "lawson",
-      "gasly",
-      "arvid_lindblad"
-     ],
-     "c0": 0.4721884704,
-     "status": "scored"
-    }
-   }
-  },
-  {
    "ordinal": 9,
    "candidate_id": "qv1-009-elastic_net_a001_l1_030",
    "model_id": "qualifying.model.stat.elastic_net",
@@ -1213,6 +810,207 @@
       "lawson"
      ],
      "c0": 0.408331842,
+     "status": "scored"
+    }
+   }
+  },
+  {
+   "ordinal": 13,
+   "candidate_id": "qv1-013-explainable_independent_tuned",
+   "model_id": "qualifying.model.v1.explainable_score",
+   "variant": "independent_tuned",
+   "combined_mean_r03_r14": 0.436952,
+   "rounds": {
+    "3": {
+     "predicted_top10": [
+      "antonelli",
+      "russell",
+      "leclerc",
+      "hamilton",
+      "piastri",
+      "norris",
+      "hadjar",
+      "max_verstappen",
+      "bearman",
+      "gasly"
+     ],
+     "c0": 0.4422534968,
+     "status": "scored"
+    },
+    "4": {
+     "predicted_top10": [
+      "antonelli",
+      "russell",
+      "leclerc",
+      "hamilton",
+      "norris",
+      "piastri",
+      "max_verstappen",
+      "hadjar",
+      "gasly",
+      "ocon"
+     ],
+     "c0": 0.4524503276,
+     "status": "scored"
+    },
+    "5": {
+     "predicted_top10": [
+      "antonelli",
+      "russell",
+      "hamilton",
+      "leclerc",
+      "piastri",
+      "norris",
+      "max_verstappen",
+      "colapinto",
+      "hadjar",
+      "gasly"
+     ],
+     "c0": 0.3883333333,
+     "status": "scored"
+    },
+    "6": {
+     "predicted_top10": [
+      "russell",
+      "antonelli",
+      "leclerc",
+      "hamilton",
+      "norris",
+      "piastri",
+      "max_verstappen",
+      "hadjar",
+      "gasly",
+      "lawson"
+     ],
+     "c0": 0.4692874512,
+     "status": "scored"
+    },
+    "7": {
+     "predicted_top10": [
+      "antonelli",
+      "russell",
+      "hamilton",
+      "leclerc",
+      "norris",
+      "piastri",
+      "max_verstappen",
+      "hadjar",
+      "gasly",
+      "lawson"
+     ],
+     "c0": 0.397,
+     "status": "scored"
+    },
+    "8": {
+     "predicted_top10": [
+      "russell",
+      "antonelli",
+      "hamilton",
+      "leclerc",
+      "norris",
+      "piastri",
+      "max_verstappen",
+      "hadjar",
+      "lawson",
+      "gasly"
+     ],
+     "c0": 0.5762956934,
+     "status": "scored"
+    },
+    "9": {
+     "predicted_top10": [
+      "russell",
+      "antonelli",
+      "hamilton",
+      "leclerc",
+      "norris",
+      "piastri",
+      "max_verstappen",
+      "hadjar",
+      "gasly",
+      "lawson"
+     ],
+     "c0": 0.5069129374,
+     "status": "scored"
+    },
+    "10": {
+     "predicted_top10": [
+      "russell",
+      "leclerc",
+      "hamilton",
+      "antonelli",
+      "norris",
+      "piastri",
+      "max_verstappen",
+      "hadjar",
+      "lawson",
+      "arvid_lindblad"
+     ],
+     "c0": 0.3441666667,
+     "status": "scored"
+    },
+    "11": {
+     "predicted_top10": [
+      "russell",
+      "leclerc",
+      "antonelli",
+      "hamilton",
+      "norris",
+      "piastri",
+      "max_verstappen",
+      "hadjar",
+      "lawson",
+      "arvid_lindblad"
+     ],
+     "c0": 0.4031615713,
+     "status": "scored"
+    },
+    "12": {
+     "predicted_top10": [
+      "russell",
+      "antonelli",
+      "leclerc",
+      "hamilton",
+      "norris",
+      "piastri",
+      "max_verstappen",
+      "lawson",
+      "arvid_lindblad",
+      "gasly"
+     ],
+     "c0": 0.4761330933,
+     "status": "scored"
+    },
+    "13": {
+     "predicted_top10": [
+      "antonelli",
+      "russell",
+      "leclerc",
+      "hamilton",
+      "norris",
+      "piastri",
+      "max_verstappen",
+      "lawson",
+      "arvid_lindblad",
+      "bortoleto"
+     ],
+     "c0": 0.3426876883,
+     "status": "scored"
+    },
+    "14": {
+     "predicted_top10": [
+      "russell",
+      "antonelli",
+      "hamilton",
+      "leclerc",
+      "norris",
+      "piastri",
+      "max_verstappen",
+      "lawson",
+      "arvid_lindblad",
+      "gasly"
+     ],
+     "c0": 0.4447381485,
      "status": "scored"
     }
    }
@@ -1419,212 +1217,11 @@
    }
   },
   {
-   "ordinal": 10,
-   "candidate_id": "qv1-010-explainable_interaction_default",
-   "model_id": "qualifying.model.v1.explainable_score",
-   "variant": "interaction_default",
-   "combined_mean_r03_r14": 0.429623,
-   "rounds": {
-    "3": {
-     "predicted_top10": [
-      "antonelli",
-      "russell",
-      "leclerc",
-      "hamilton",
-      "piastri",
-      "norris",
-      "hadjar",
-      "max_verstappen",
-      "bearman",
-      "lawson"
-     ],
-     "c0": 0.3895868302,
-     "status": "scored"
-    },
-    "4": {
-     "predicted_top10": [
-      "antonelli",
-      "russell",
-      "leclerc",
-      "hamilton",
-      "norris",
-      "piastri",
-      "hadjar",
-      "gasly",
-      "max_verstappen",
-      "arvid_lindblad"
-     ],
-     "c0": 0.4088653689,
-     "status": "scored"
-    },
-    "5": {
-     "predicted_top10": [
-      "antonelli",
-      "russell",
-      "hamilton",
-      "leclerc",
-      "norris",
-      "piastri",
-      "max_verstappen",
-      "colapinto",
-      "gasly",
-      "ocon"
-     ],
-     "c0": 0.3326111111,
-     "status": "scored"
-    },
-    "6": {
-     "predicted_top10": [
-      "russell",
-      "antonelli",
-      "leclerc",
-      "hamilton",
-      "norris",
-      "piastri",
-      "max_verstappen",
-      "hadjar",
-      "gasly",
-      "sainz"
-     ],
-     "c0": 0.3733445745,
-     "status": "scored"
-    },
-    "7": {
-     "predicted_top10": [
-      "antonelli",
-      "russell",
-      "hamilton",
-      "leclerc",
-      "max_verstappen",
-      "norris",
-      "piastri",
-      "gasly",
-      "hadjar",
-      "lawson"
-     ],
-     "c0": 0.4708360825,
-     "status": "scored"
-    },
-    "8": {
-     "predicted_top10": [
-      "russell",
-      "antonelli",
-      "hamilton",
-      "leclerc",
-      "norris",
-      "max_verstappen",
-      "piastri",
-      "hadjar",
-      "lawson",
-      "gasly"
-     ],
-     "c0": 0.6192813311,
-     "status": "scored"
-    },
-    "9": {
-     "predicted_top10": [
-      "russell",
-      "antonelli",
-      "hamilton",
-      "leclerc",
-      "max_verstappen",
-      "piastri",
-      "norris",
-      "hadjar",
-      "gasly",
-      "lawson"
-     ],
-     "c0": 0.4647420302,
-     "status": "scored"
-    },
-    "10": {
-     "predicted_top10": [
-      "russell",
-      "leclerc",
-      "hamilton",
-      "antonelli",
-      "norris",
-      "piastri",
-      "max_verstappen",
-      "hadjar",
-      "lawson",
-      "arvid_lindblad"
-     ],
-     "c0": 0.3441666667,
-     "status": "scored"
-    },
-    "11": {
-     "predicted_top10": [
-      "leclerc",
-      "russell",
-      "hamilton",
-      "antonelli",
-      "norris",
-      "piastri",
-      "max_verstappen",
-      "hadjar",
-      "lawson",
-      "arvid_lindblad"
-     ],
-     "c0": 0.4678326114,
-     "status": "scored"
-    },
-    "12": {
-     "predicted_top10": [
-      "russell",
-      "antonelli",
-      "leclerc",
-      "hamilton",
-      "norris",
-      "max_verstappen",
-      "piastri",
-      "lawson",
-      "arvid_lindblad",
-      "gasly"
-     ],
-     "c0": 0.4326615713,
-     "status": "scored"
-    },
-    "13": {
-     "predicted_top10": [
-      "antonelli",
-      "russell",
-      "hamilton",
-      "leclerc",
-      "norris",
-      "piastri",
-      "max_verstappen",
-      "arvid_lindblad",
-      "bortoleto",
-      "lawson"
-     ],
-     "c0": 0.3793587283,
-     "status": "scored"
-    },
-    "14": {
-     "predicted_top10": [
-      "russell",
-      "antonelli",
-      "hamilton",
-      "leclerc",
-      "norris",
-      "piastri",
-      "max_verstappen",
-      "lawson",
-      "gasly",
-      "arvid_lindblad"
-     ],
-     "c0": 0.4721884704,
-     "status": "scored"
-    }
-   }
-  },
-  {
    "ordinal": 12,
    "candidate_id": "qv1-012-explainable_independent_default",
    "model_id": "qualifying.model.v1.explainable_score",
    "variant": "independent_default",
-   "combined_mean_r03_r14": 0.42842,
+   "combined_mean_r03_r14": 0.431672,
    "rounds": {
     "3": {
      "predicted_top10": [
@@ -1756,8 +1353,8 @@
     },
     "11": {
      "predicted_top10": [
-      "leclerc",
       "russell",
+      "leclerc",
       "hamilton",
       "antonelli",
       "norris",
@@ -1767,7 +1364,208 @@
       "lawson",
       "arvid_lindblad"
      ],
-     "c0": 0.4678326114,
+     "c0": 0.4633881669,
+     "status": "scored"
+    },
+    "12": {
+     "predicted_top10": [
+      "russell",
+      "antonelli",
+      "leclerc",
+      "hamilton",
+      "norris",
+      "piastri",
+      "max_verstappen",
+      "lawson",
+      "arvid_lindblad",
+      "gasly"
+     ],
+     "c0": 0.4761330933,
+     "status": "scored"
+    },
+    "13": {
+     "predicted_top10": [
+      "antonelli",
+      "russell",
+      "hamilton",
+      "leclerc",
+      "norris",
+      "piastri",
+      "max_verstappen",
+      "arvid_lindblad",
+      "lawson",
+      "bortoleto"
+     ],
+     "c0": 0.3793587283,
+     "status": "scored"
+    },
+    "14": {
+     "predicted_top10": [
+      "russell",
+      "antonelli",
+      "hamilton",
+      "leclerc",
+      "norris",
+      "piastri",
+      "max_verstappen",
+      "lawson",
+      "gasly",
+      "arvid_lindblad"
+     ],
+     "c0": 0.4721884704,
+     "status": "scored"
+    }
+   }
+  },
+  {
+   "ordinal": 10,
+   "candidate_id": "qv1-010-explainable_interaction_default",
+   "model_id": "qualifying.model.v1.explainable_score",
+   "variant": "interaction_default",
+   "combined_mean_r03_r14": 0.431546,
+   "rounds": {
+    "3": {
+     "predicted_top10": [
+      "antonelli",
+      "russell",
+      "leclerc",
+      "hamilton",
+      "piastri",
+      "norris",
+      "hadjar",
+      "max_verstappen",
+      "bearman",
+      "lawson"
+     ],
+     "c0": 0.3895868302,
+     "status": "scored"
+    },
+    "4": {
+     "predicted_top10": [
+      "antonelli",
+      "russell",
+      "leclerc",
+      "hamilton",
+      "norris",
+      "piastri",
+      "hadjar",
+      "gasly",
+      "max_verstappen",
+      "arvid_lindblad"
+     ],
+     "c0": 0.4088653689,
+     "status": "scored"
+    },
+    "5": {
+     "predicted_top10": [
+      "antonelli",
+      "russell",
+      "hamilton",
+      "leclerc",
+      "norris",
+      "piastri",
+      "max_verstappen",
+      "colapinto",
+      "gasly",
+      "ocon"
+     ],
+     "c0": 0.3326111111,
+     "status": "scored"
+    },
+    "6": {
+     "predicted_top10": [
+      "russell",
+      "antonelli",
+      "leclerc",
+      "hamilton",
+      "norris",
+      "piastri",
+      "max_verstappen",
+      "hadjar",
+      "gasly",
+      "sainz"
+     ],
+     "c0": 0.3733445745,
+     "status": "scored"
+    },
+    "7": {
+     "predicted_top10": [
+      "antonelli",
+      "russell",
+      "hamilton",
+      "leclerc",
+      "max_verstappen",
+      "norris",
+      "piastri",
+      "gasly",
+      "hadjar",
+      "lawson"
+     ],
+     "c0": 0.4708360825,
+     "status": "scored"
+    },
+    "8": {
+     "predicted_top10": [
+      "russell",
+      "antonelli",
+      "hamilton",
+      "leclerc",
+      "norris",
+      "max_verstappen",
+      "piastri",
+      "hadjar",
+      "lawson",
+      "gasly"
+     ],
+     "c0": 0.6192813311,
+     "status": "scored"
+    },
+    "9": {
+     "predicted_top10": [
+      "russell",
+      "antonelli",
+      "hamilton",
+      "leclerc",
+      "max_verstappen",
+      "piastri",
+      "norris",
+      "hadjar",
+      "gasly",
+      "arvid_lindblad"
+     ],
+     "c0": 0.4357917083,
+     "status": "scored"
+    },
+    "10": {
+     "predicted_top10": [
+      "russell",
+      "leclerc",
+      "hamilton",
+      "antonelli",
+      "norris",
+      "piastri",
+      "max_verstappen",
+      "hadjar",
+      "lawson",
+      "arvid_lindblad"
+     ],
+     "c0": 0.3441666667,
+     "status": "scored"
+    },
+    "11": {
+     "predicted_top10": [
+      "leclerc",
+      "hamilton",
+      "russell",
+      "antonelli",
+      "norris",
+      "piastri",
+      "max_verstappen",
+      "hadjar",
+      "lawson",
+      "arvid_lindblad"
+     ],
+     "c0": 0.5198536329,
      "status": "scored"
     },
     "12": {
@@ -1796,10 +1594,211 @@
       "piastri",
       "max_verstappen",
       "arvid_lindblad",
-      "bortoleto",
-      "lawson"
+      "lawson",
+      "bortoleto"
      ],
      "c0": 0.3793587283,
+     "status": "scored"
+    },
+    "14": {
+     "predicted_top10": [
+      "russell",
+      "antonelli",
+      "hamilton",
+      "leclerc",
+      "norris",
+      "piastri",
+      "max_verstappen",
+      "lawson",
+      "gasly",
+      "arvid_lindblad"
+     ],
+     "c0": 0.4721884704,
+     "status": "scored"
+    }
+   }
+  },
+  {
+   "ordinal": 11,
+   "candidate_id": "qv1-011-explainable_interaction_tuned",
+   "model_id": "qualifying.model.v1.explainable_score",
+   "variant": "interaction_tuned",
+   "combined_mean_r03_r14": 0.430457,
+   "rounds": {
+    "3": {
+     "predicted_top10": [
+      "antonelli",
+      "russell",
+      "leclerc",
+      "hamilton",
+      "piastri",
+      "norris",
+      "hadjar",
+      "max_verstappen",
+      "bearman",
+      "lawson"
+     ],
+     "c0": 0.3895868302,
+     "status": "scored"
+    },
+    "4": {
+     "predicted_top10": [
+      "antonelli",
+      "russell",
+      "leclerc",
+      "hamilton",
+      "norris",
+      "piastri",
+      "max_verstappen",
+      "hadjar",
+      "gasly",
+      "ocon"
+     ],
+     "c0": 0.4524503276,
+     "status": "scored"
+    },
+    "5": {
+     "predicted_top10": [
+      "antonelli",
+      "russell",
+      "hamilton",
+      "leclerc",
+      "piastri",
+      "norris",
+      "max_verstappen",
+      "colapinto",
+      "hadjar",
+      "gasly"
+     ],
+     "c0": 0.3883333333,
+     "status": "scored"
+    },
+    "6": {
+     "predicted_top10": [
+      "russell",
+      "antonelli",
+      "leclerc",
+      "hamilton",
+      "norris",
+      "piastri",
+      "max_verstappen",
+      "hadjar",
+      "gasly",
+      "lawson"
+     ],
+     "c0": 0.4692874512,
+     "status": "scored"
+    },
+    "7": {
+     "predicted_top10": [
+      "antonelli",
+      "russell",
+      "hamilton",
+      "leclerc",
+      "norris",
+      "max_verstappen",
+      "piastri",
+      "hadjar",
+      "gasly",
+      "lawson"
+     ],
+     "c0": 0.4391709072,
+     "status": "scored"
+    },
+    "8": {
+     "predicted_top10": [
+      "russell",
+      "antonelli",
+      "hamilton",
+      "leclerc",
+      "norris",
+      "piastri",
+      "max_verstappen",
+      "hadjar",
+      "lawson",
+      "gasly"
+     ],
+     "c0": 0.5762956934,
+     "status": "scored"
+    },
+    "9": {
+     "predicted_top10": [
+      "russell",
+      "antonelli",
+      "hamilton",
+      "leclerc",
+      "norris",
+      "piastri",
+      "max_verstappen",
+      "hadjar",
+      "gasly",
+      "sainz"
+     ],
+     "c0": 0.4119070599,
+     "status": "scored"
+    },
+    "10": {
+     "predicted_top10": [
+      "russell",
+      "leclerc",
+      "hamilton",
+      "antonelli",
+      "norris",
+      "piastri",
+      "max_verstappen",
+      "hadjar",
+      "lawson",
+      "arvid_lindblad"
+     ],
+     "c0": 0.3441666667,
+     "status": "scored"
+    },
+    "11": {
+     "predicted_top10": [
+      "leclerc",
+      "russell",
+      "hamilton",
+      "antonelli",
+      "norris",
+      "piastri",
+      "max_verstappen",
+      "hadjar",
+      "lawson",
+      "bortoleto"
+     ],
+     "c0": 0.4032770558,
+     "status": "scored"
+    },
+    "12": {
+     "predicted_top10": [
+      "russell",
+      "antonelli",
+      "leclerc",
+      "hamilton",
+      "norris",
+      "piastri",
+      "max_verstappen",
+      "lawson",
+      "arvid_lindblad",
+      "gasly"
+     ],
+     "c0": 0.4761330933,
+     "status": "scored"
+    },
+    "13": {
+     "predicted_top10": [
+      "antonelli",
+      "russell",
+      "leclerc",
+      "hamilton",
+      "norris",
+      "piastri",
+      "max_verstappen",
+      "lawson",
+      "arvid_lindblad",
+      "bortoleto"
+     ],
+     "c0": 0.3426876883,
      "status": "scored"
     },
     "14": {

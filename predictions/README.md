@@ -1,6 +1,6 @@
 # predictions/ — all predictions and C0 scores
 
-The final, cleaned form of every prediction this study produced, organized by model line. Two sources of truth were used: the official qualifying scorecard (`c0_roster_r03_r14_92076830`) and the official race scorecard (`c0_race_r03_r14_d739e6e0`) from the private research repository. Both are the 2026-09-20 recompute under the seat-rotation policy (decision log, entry 12); they supersede the previous caliber (`c0_roster_r03_r12/r13_r14_a90bf4ad`, `c0_race_r03_r12_615232a3`, `c0_race_r13_r14_6a01fdaa`), which remains archived in the private repository.
+The final, cleaned form of every prediction this study produced, organized by model line. Two sources of truth were used: the official qualifying scorecard (`c0_roster_r03_r14_356ff08`, the 2026-09-26 caliber-v3 recompute, decision log entry 18) and the official race scorecard (`c0_race_r03_r14_d739e6e0`, the 2026-09-20 recompute, decision log entry 12) from the private research repository. The qualifying side supersedes the previous caliber (`c0_roster_r03_r14_92076830`, and before it `c0_roster_r03_r12/r13_r14_a90bf4ad`, `c0_race_r03_r12_615232a3`, `c0_race_r13_r14_6a01fdaa`), which remains archived in the private repository.
 
 ## qualifying/
 

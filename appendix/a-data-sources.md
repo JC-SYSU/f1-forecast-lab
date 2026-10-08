@@ -25,7 +25,7 @@ Six source IDs are registered in total; the full registry is `data/source_catalo
 
 ## A.2 Archiving and reuse
 
-All external data is written first to `data/raw/<week_id>/<source_id>/`, and cleaned results are generated afterwards. Raw files are not committed to Git, but each must have a matching `.meta.json` with required fields: URL, parameters, retrieval time, HTTP status, content type, SHA-256, success flag, and error message.
+All external data is written first to the raw archive, organized source-major since September 28 (`data/raw/<source_id>/<week_id>/`; this appendix keeps the release snapshot's week-major wording), and cleaned results are generated afterwards. Raw files are not committed to Git, but each must have a matching `.meta.json` with required fields: URL, parameters, retrieval time, HTTP status, content type, SHA-256, success flag, and error message.
 
 Before any fetch, a successful archive is looked up by `week_id + source_id + dataset + params`: on a hit with the SHA-256 verified, it is reused and no network call is made; refetching happens only when an archive is missing, failed, lost, carries corrupted metadata, or the SHA-256 does not match. Season-level actuals collection may enable read-only reuse across `week_id`, provided `source_id + canonical dataset + params` match exactly and verification passes; legacy dataset names are not accepted. OpenF1 401 responses during a live session are archived as evidence of failure in the same way, and the subsequent flow switches to FIA/F1/Jolpica or a manual snapshot. Production flows must fetch data through archive-aware entry points such as the CLI or the `archived_*_client` classes; low-level HTTP adapters are not called directly in the weekly flow.
 
