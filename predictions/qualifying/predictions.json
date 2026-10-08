@@ -1,7 +1,7 @@
 {
  "schema": "qualifying.predictions.v1",
  "season": 2026,
- "description": "All 31 registered qualifying candidates, their predicted top-10 lists and per-round C0 scores, R03-R14. Every candidate is scored on every round. Walk-forward: each prediction uses only rounds strictly before its target. Extracted from the official scorecard c0_roster_r03_r14_356ff08 (2026-09-26 caliber v3, DEC-CONTROL-QUALIFYING-CALIBER-V3-001; supersedes c0_roster_r03_r14_92076830).",
+ "description": "All 31 registered qualifying candidates, their predicted top-10 lists and per-round C0 scores, R03-R14. Every candidate is scored on every round. Walk-forward: each prediction uses only rounds strictly before its target. Extracted from the official scorecard c0_roster_r03_r14_356ff08 (2026-09-26 caliber v3, decision log entry 18; supersedes c0_roster_r03_r14_92076830).",
  "scoring_scale": "C0 (Chapter 05): three segments - exact-position 45%, membership 35%, internal order 20%; top 1, may go negative.",
  "label_provenance": {
   "R03-R09": "official overlay manifest",
