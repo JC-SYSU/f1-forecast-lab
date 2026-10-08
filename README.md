@@ -36,7 +36,7 @@ Results only: Chapters 07 + 08. To reproduce: Appendix B (guide) + Appendix C (s
 ## Code and data
 
 - **Repository layout.** `src/`, `scripts/`, `tests/` hold the selected code (data pipeline, the scoring scale with all 31 candidates, the frozen race model, reproduction entry points). `data/` holds the cleaned data the pipeline reads; `docs/` the official-label manifests; `predictions/` every archived scorecard (all C0 scores) plus the v1.6 prediction archive; `research/` and `appendix/` the report; `zh/` (git-ignored) keeps the Chinese originals.
-- **Tests**: **270 of 294 pass** (`PYTHONPATH=src python3 -m pytest tests -q`); the 24 failures are end-to-end integration tests requiring the full raw archive, which is not distributed.
+- **Tests**: **265 of 289 pass** (`PYTHONPATH=src python3 -m pytest tests -q`); the 24 failures are end-to-end integration tests requiring the full raw archive, which is not distributed.
 - Selection and de-identification method: `SELECTION.md`.
 - License: code MIT (`LICENSE`); text CC-BY-4.0 (`LICENSE-docs`).
 
