@@ -10,6 +10,27 @@ It is not a "we predict accurately" showcase. It cares more about three question
 - **One scale built from fan intuition.** There is no off-the-shelf score for "a good predicted top-ten list", and everyone who follows the sport has an intuition that no one can write down as a formula. C0 treats that intuition as data to mine: an 84-question formal interview (every ruling recorded verbatim) turned vague comparisons into explicit statements; a blind questionnaire (question order frozen before answering, model scores never visible) collected preferences; the answers became machine-checkable constraints, and a solver found the parameter set satisfying all of them — with a proof that the feasible set is non-empty. **Every weight in C0 is therefore not tuned; it is the solution to a declared set of preferences.** The structure is three weighted parts — exact-position (45%), membership (35%), internal order (20%). Verifiable design decisions include: a disqualified driver is never treated as "P11" but gets a bounded mirror correction (worth at most 0.003 of the total); scores may go negative (an R11 candidate scored -0.0266); the combo-bonus shape was verified by exhaustive enumeration over 1,024 hit masks. The scale itself was audited: R08 revealed an anchor that made "missing only P1" cost 0.0358 more than intended, and the old anchor was retired. Since then the scale is frozen — only models change. Every "which is better" statement in this report presumes that freeze (full parameter provenance in Chapter 05).
 - **Humans decide.** AI handles proposals, execution and evidence checks; every freeze and every rejection was decided by a human. New ideas go through isolated experiments first; serious candidates go through pre-registered blind tests; a gain below the quantitative threshold never enters the mainline.
 
+<!-- LATEST:BEGIN -->
+## Latest round: R17 · Singapore Grand Prix (2026-10-11)
+
+| Line | Top-10 (best first) | C0 |
+| --- | --- | ---: |
+| Race · optimized (606117e) — retrospective replay | Russell · Verstappen · Hadjar · Leclerc · Hamilton · Antonelli · Norris · Piastri · Lawson · Gasly | 0.4261 |
+| Race · grid-order baseline — retrospective replay | Verstappen · Leclerc · Hamilton · Antonelli · Norris · Piastri · Gasly · Lawson · Lindblad · Hulkenberg | 0.5486 |
+| Qualifying · #31 slot ensemble — prospective | Russell · Antonelli · Hamilton · Leclerc · Norris · Hadjar · Verstappen · Piastri · Lawson · Gasly | 0.4656 |
+| Qualifying · best of 31 (#9) | — | 0.5067 |
+
+Actual qualifying top-10: Verstappen · Leclerc · Hamilton · Antonelli · Norris · Russell · Piastri · Gasly · Lawson · Lindblad
+Actual race top-10: Verstappen · Leclerc · Antonelli · Norris · Piastri · Hamilton · Lawson · Hulkenberg · Russell · Hadjar
+Qualifying forward archived: 2026-10-08T08:59:12+00:00
+
+## Next round: R18 · United States Grand Prix (2026-10-25)
+
+Qualifying forward · #31 (archived 2026-10-23T08:30:44+00:00, before the session): Russell · Antonelli · Leclerc · Hamilton · Verstappen · Norris · Piastri · Hadjar · Gasly · Lawson
+
+_Auto-updated from the private data mirror. Prospective = archived before the session; retrospective replay = computed after the race._
+<!-- LATEST:END -->
+
 ## Headline results (details in Chapter 07)
 
 - **Race line.** In the three real rounds after the weight freeze (R12–R14), the model beat the grid-order baseline every time — 0.5780 vs 0.4669 on three-round means (2026-09-20 caliber). The margins are uneven: +0.15, +0.14, +0.04. In R13 at Monza the model put Antonelli — penalized to the back of the grid — first, and he went on to win the race (7.2).
