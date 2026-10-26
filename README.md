@@ -18,8 +18,12 @@ It is not a "we predict accurately" showcase. It cares more about three question
 | Model | Predicted top-10 | C0 |
 | --- | --- | ---: |
 | Historical best — #31 slot ensemble | Russell · Antonelli · Leclerc · Hamilton · Verstappen · Norris · Piastri · Hadjar · Gasly · Lawson | 0.4270 |
+| Retrospective · #32 theoretical-best baseline | Leclerc · Antonelli · Hamilton · Verstappen · Norris · Russell · Piastri · Hadjar · Hulkenberg · Gasly | 0.3869 |
 | Last-round best — #29 (lambdamart_n200) | Verstappen · Norris · Hadjar · Antonelli · Russell · Leclerc · Piastri · Hamilton · Lindblad · Lawson | 0.5735 |
 | Actual | Antonelli · Verstappen · Hadjar · Leclerc · Hamilton · Russell · Piastri · Norris · Lindblad · Lawson | — |
+
+Roster: 31 historical candidates + #32 theoretical-best baseline (retrospective R03–R18; the 31-candidate historical scorecard is unchanged).
+Retrospective #32 scorecard: predictions/qualifying/theoretical_best_r03_r18.json.
 
 ![R18 qualifying, predicted vs actual](assets/charts/latest-qualifying.svg)
 
@@ -43,8 +47,9 @@ Evaluation caliber: final (official labels).
 | --- | --- |
 | Historical best — #31 slot ensemble | Antonelli · Russell · Hamilton · Leclerc · Verstappen · Norris · Piastri · Hadjar · Lawson · Gasly |
 | Last-round best — #29 | Russell · Verstappen · Antonelli · Norris · Piastri · Hamilton · Leclerc · Gasly · Hadjar · Lawson |
+| Theoretical best — #32 | waiting for FP/SQ data |
 
-Qualifying forward archived: 2026-10-26T01:42:44+00:00
+Qualifying forward archived (pre-#32 (31-candidate)): 2026-10-26T01:42:44+00:00
 
 ### Race
 
