@@ -21,11 +21,17 @@ It is not a "we predict accurately" showcase. It cares more about three question
 | Last-round best — #29 (lambdamart_n200) | Verstappen · Norris · Hadjar · Antonelli · Russell · Leclerc · Piastri · Hamilton · Lindblad · Lawson | 0.5735 |
 | Actual | Antonelli · Verstappen · Hadjar · Leclerc · Hamilton · Russell · Piastri · Norris · Lindblad · Lawson | — |
 
+![R18 qualifying, predicted vs actual](assets/charts/latest-qualifying.svg)
+
 ### Race
 
 | Model | Predicted top-10 | C0 |
 | --- | --- | ---: |
+| Historical best — optimized (606117e) | Verstappen · Antonelli · Leclerc · Hamilton · Hadjar · Russell · Norris · Piastri · Lawson · Gasly | 0.6628 |
+| Last-round best — grid-order baseline | Antonelli · Verstappen · Hadjar · Leclerc · Hamilton · Russell · Piastri · Norris · Lawson · Gasly | 0.6989 |
 | Actual | Antonelli · Leclerc · Verstappen · Hamilton · Norris · Hadjar · Piastri · Russell · Lawson · Gasly | — |
+
+![R18 race, predicted vs actual](assets/charts/latest-race.svg)
 
 Evaluation caliber: final (official labels).
 
