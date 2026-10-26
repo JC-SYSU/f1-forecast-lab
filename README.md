@@ -11,40 +11,34 @@ It is not a "we predict accurately" showcase. It cares more about three question
 - **Humans decide.** AI handles proposals, execution and evidence checks; every freeze and every rejection was decided by a human. New ideas go through isolated experiments first; serious candidates go through pre-registered blind tests; a gain below the quantitative threshold never enters the mainline.
 
 <!-- LATEST:BEGIN -->
-## Latest round: R17 · Singapore Grand Prix (2026-10-11)
+## Latest round: R18 · United States Grand Prix (2026-10-25)
 
 ### Qualifying
 
 | Model | Predicted top-10 | C0 |
 | --- | --- | ---: |
-| Historical best — #31 slot ensemble | Russell · Antonelli · Hamilton · Leclerc · Norris · Hadjar · Verstappen · Piastri · Lawson · Gasly | 0.4656 |
-| Last-round best — #9 (elastic_net_a001_l1_030) | Russell · Antonelli · Hamilton · Leclerc · Norris · Verstappen · Piastri · Hadjar · Lawson · Gasly | 0.5067 |
-| Actual | Verstappen · Leclerc · Hamilton · Antonelli · Norris · Russell · Piastri · Gasly · Lawson · Lindblad | — |
-
-![R17 qualifying, predicted vs actual](assets/charts/latest-qualifying.svg)
+| Historical best — #31 slot ensemble | Russell · Antonelli · Leclerc · Hamilton · Verstappen · Norris · Piastri · Hadjar · Gasly · Lawson | 0.4270 |
+| Last-round best — #29 (lambdamart_n200) | Verstappen · Norris · Hadjar · Antonelli · Russell · Leclerc · Piastri · Hamilton · Lindblad · Lawson | 0.5735 |
+| Actual | Antonelli · Verstappen · Hadjar · Leclerc · Hamilton · Russell · Piastri · Norris · Lindblad · Lawson | — |
 
 ### Race
 
 | Model | Predicted top-10 | C0 |
 | --- | --- | ---: |
-| Historical best — optimized (606117e) | Russell · Verstappen · Hadjar · Leclerc · Hamilton · Antonelli · Norris · Piastri · Lawson · Gasly | 0.4261 |
-| Last-round best — grid-order baseline | Verstappen · Leclerc · Hamilton · Antonelli · Norris · Piastri · Gasly · Lawson · Lindblad · Hulkenberg | 0.5486 |
-| Actual | Verstappen · Leclerc · Antonelli · Norris · Piastri · Hamilton · Lawson · Hulkenberg · Russell · Hadjar | — |
-
-![R17 race, predicted vs actual](assets/charts/latest-race.svg)
+| Actual | Antonelli · Leclerc · Verstappen · Hamilton · Norris · Hadjar · Piastri · Russell · Lawson · Gasly | — |
 
 Evaluation caliber: final (official labels).
 
-## Next round: R18 · United States Grand Prix (2026-10-25)
+## Next round: R19 · Mexico City Grand Prix (2026-11-01)
 
 ### Qualifying
 
 | Model | Predicted top-10 |
 | --- | --- |
-| Historical best — #31 slot ensemble | Russell · Antonelli · Leclerc · Hamilton · Verstappen · Norris · Piastri · Hadjar · Gasly · Lawson |
-| Last-round best — #9 | Russell · Leclerc · Hamilton · Antonelli · Verstappen · Norris · Piastri · Hadjar · Gasly · Lawson |
+| Historical best — #31 slot ensemble | Antonelli · Russell · Hamilton · Leclerc · Verstappen · Norris · Piastri · Hadjar · Lawson · Gasly |
+| Last-round best — #29 | Russell · Verstappen · Antonelli · Norris · Piastri · Hamilton · Leclerc · Gasly · Hadjar · Lawson |
 
-Qualifying forward archived: 2026-10-23T08:30:44+00:00
+Qualifying forward archived: 2026-10-26T01:42:44+00:00
 
 ### Race
 
