@@ -32,8 +32,11 @@ Retrospective #32 scorecard: predictions/qualifying/theoretical_best_r03_r18.jso
 | Model | Predicted top-10 | C0 |
 | --- | --- | ---: |
 | Historical best — optimized (606117e) | Verstappen · Antonelli · Leclerc · Hamilton · Hadjar · Russell · Norris · Piastri · Lawson · Gasly | 0.6628 |
+| Retrospective · race_theoretical_best | Leclerc · Antonelli · Hamilton · Verstappen · Norris · Russell · Piastri · Hadjar · Hulkenberg · Gasly | 0.6222 |
 | Last-round best — grid-order baseline | Antonelli · Verstappen · Hadjar · Leclerc · Hamilton · Russell · Piastri · Norris · Lawson · Gasly | 0.6989 |
 | Actual | Antonelli · Leclerc · Verstappen · Hamilton · Norris · Hadjar · Piastri · Russell · Lawson · Gasly | — |
+
+Race roster: optimized (606117e), grid-order baseline, and race_theoretical_best (reference baseline; not a champion).
 
 ![R18 race, predicted vs actual](assets/charts/latest-race.svg)
 
