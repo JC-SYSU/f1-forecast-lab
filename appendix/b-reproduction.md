@@ -76,3 +76,9 @@ PYTHONPATH=src:scripts python3 scripts/ablation_fp_race.py
 ```
 
 The headline outcome, for checking a rerun against: every combination on either side stayed below the +0.010 bar (qualifying best +0.0072, inside the noise band; race GAP correction +0.0006, FP-DIRECT selecting λ*=0) — the evidence the line was closed on. The weekly coverage check behind B.2's collection list is `scripts/check_fp_sq_laps_coverage.py`.
+
+## B.7 Scope of the October 2026 historical exploration
+
+The A/B/C and rank-blending experiments were run in an isolated experiment workspace with their own frozen protocols, input snapshots, source snapshots and independent verifiers. This public repository publishes the aggregated results and the four final run identifiers (Appendix C.4), not the runners, input rows or full run directories. The numbers in Chapters 06–08 can be checked against the tables and the run identifiers, but a full rerun of those experiments requires the original workspace and its frozen protocols; this appendix does not claim that the branch is fully reproducible from the public repository alone.
+
+The branch did not change the active model, the C0 scale, the archived predictions, the data pipeline or the publication workflow. The theoretical-best baseline (#32 / race_theoretical_best) is an existing reference baseline that uses FP/SQ sector minima; it is not the A/B/C branch and it does not reopen the closed practice-feature line of entries 13–14. The mainline models still use zero practice data.

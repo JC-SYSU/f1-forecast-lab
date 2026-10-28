@@ -11,7 +11,7 @@ The human carries three kinds of work: setting the research direction (the scori
 Four.
 
 - **Git commit discipline.** One commit per completed, self-contained task; the commit message states the scope, the result, and the verification performed (the Result / Verification sections). Vague messages of the `wip` kind are not accepted; a commit contains only files relevant to the task at hand, and raw scraped data and generated outputs stay out of the repository.
-- **Decision records.** Major rulings have versioned documents: each of the twenty-one entries in the Chapter 09 log states the question at the time, the evidence relied on, the decision made, and what followed from it.
+- **Decision records.** Major rulings have versioned documents: each of the twenty-two entries in the Chapter 09 log states the question at the time, the evidence relied on, the decision made, and what followed from it.
 - **Self-describing scorecards.** Every scorecard artifact carries an `input_snapshot` field recording the SHA-256 of its inputs and the code commit at generation time, so any score can be checked against the conditions that produced it; the reproduction steps in Appendix B rely on this field.
 - **Transactional state files.** Changes to the project state are executed through a command that carries the expected revision number; the file is never hand-edited, and the command refuses to run when the revision number does not match.
 

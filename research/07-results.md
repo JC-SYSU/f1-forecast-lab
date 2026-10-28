@@ -225,4 +225,32 @@ The round-by-round distributions of the baseline and the final version, side by 
 
 Two reading notes for the charts. First, the top of the qualifying line has a clear break: #31 and #30 (0.4649, 0.4641) lead third place by about 0.024, and as 7.3 said, the pair's order flips between the windows (#31 inside, #30 out), so read the charts with that in mind. Second, in the lower half of the box plots some candidates' distributions extend below 0, because C0 may go negative (the reading rule of 7.1; one concrete instance is R11, where the constructor-only #3 took -0.0266, 6.4).
 
-The two full pictures end here; the limitations, work in flight, and open questions they raise are all in Chapter 08.
+The two mainline pictures end here; the limitations, work in flight, and open questions they raise are all in Chapter 08. A separate historical exploration branch follows in 7.7.
+
+## 7.7 The Historical Exploration Branch: R05–R18 Comparison (October 2026)
+
+The two mainline pictures above end with the current mainline. A separate historical exploration branch ran on the race side in October 2026. It used the frozen race C0 over R05–R18 (14 races) and a rolling-origin protocol; all numbers below are post-selection historical evidence. They describe what happened on a window every method had already seen. They are not future accuracy and not a blind test.
+
+| Method | C0 mean (R05–R18) | Reading |
+| --- | ---: | --- |
+| B local random swap (rolling) | 0.548146 | Ranking PROMISING_UNCONFIRMED; probability NOT_SUPPORTED |
+| Fixed 0.50 rank blend | 0.545624 | Simplest reference; post-hoc diagnostic, not a champion |
+| Rolling rank blend | 0.536916 | PROMISING_UNCONFIRMED; rolling value unproven |
+| Optimized archive | 0.533696 | R05–R11 participated in development/selection |
+| C product (rolling) | 0.516536 | NO_INCREMENTAL_EVIDENCE |
+| Theoretical-best reference | 0.516310 | Single-signal reference |
+| Grid-order reference | 0.515476 | Single-signal reference |
+| A movement model (full) | 0.504178 | Probability and ranking NOT_SUPPORTED |
+
+Key statistics, presented together with the table:
+
+- B − fixed 0.50: +0.002523, 95% paired interval [−0.015578, +0.022534]; B won 5 rounds, lost 7 and tied 2.
+- B top-ten membership: Brier 0.182178 vs 0.173803 for grid-history; ECE 0.175861 vs 0.037026; 19 q = 0 driver-rounds finished in the top ten and 25 q = 1 driver-rounds did not. Simulated zero frequency is not a true zero probability.
+- Rolling blend − theoretical-best: +0.020607, 95% interval [−0.016321, +0.062370], crossing zero.
+- Fixed 0.40 = 0.549569 is a post-hoc diagnostic only; it is not the fixed 0.50 result and is not promoted as a new champion.
+- A full − its grid-probability ablation: +0.001190, but the full model remains below the grid-only, theoretical-best and fixed 0.50 references. This does not support the claim that the theoretical-best signal has no value anywhere; it says this A model did not convert it into a ranking gain.
+- C − theoretical-best: +0.000227, 95% interval [−0.040295, +0.040527]; C − grid: +0.001060, 95% interval [−0.026122, +0.027438]. Both cross zero. The conclusion is NO_INCREMENTAL_EVIDENCE, and the k grid was not retuned.
+
+The old three-round race result (0.5780 vs 0.4669, R12–R14, 2026-09-20 caliber) is a different window and is not comparable with this table. The table also does not replace the mainline scorecards in 7.2–7.3. The run identifiers are listed in Appendix C.4.
+
+The old practice-feature line (7.4, decision log entries 13–14) remains closed. The theoretical-best baseline (#32 in qualifying; race_theoretical_best in the race line) is a separate reference that uses FP/SQ sector minima; the A/B/C/blend branch consumes that reference as an input signal. This is a different question from the old practice-feature experiment, and it does not reopen it. The mainline models still use zero practice data.

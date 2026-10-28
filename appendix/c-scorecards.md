@@ -61,3 +61,18 @@ In the actual files, c0_full also carries three derived keys — exact_branch, i
 ## C.3 How to read the numbers
 
 To find a candidate's merged mean: locate it in the `summary` array by candidate_id and read mean_c0_r03_r14 in the 92076830 version (mean_c0_r03_r12 / mean_c0_r13_r14 in the superseded pair); per_round gives the round-by-round breakdown. To see single-round detail: find the same candidate_id in the `candidates` array; its rounds list status, prediction_top10, and c0 per round, and c0_full's four components can be expanded when attribution is needed. To check the inputs as of the run: take the sha256 for that path in `input_snapshot.files` and compare it against a recomputation over the current file under `data/`, or compare combined_sha256 directly. A mismatch means the inputs have changed; read the numbers against the snapshot inside the artifact.
+
+## C.4 Independent historical exploration, October 2026
+
+The A/B/C and rank-blending branch is a separate historical exploration, not a mainline scorecard. The table below lists the final valid runs and the aggregated frozen-race C0 means; the full reports, decisions, verifications, source snapshots and input rows remain in the isolated experiment workspace and are not bundled here. All numbers are R05–R18, 14 races, post-selection historical, and are not comparable with the three-round R12–R14 mainline reading.
+
+| Research line | Final run identifier | Window | Key result |
+| --- | --- | --- | --- |
+| A movement probabilities | `a_movement_v1_20261027T234547Z` | R05–R18 | C0 0.504178; probability and ranking NOT_SUPPORTED |
+| C deterministic product | `c_product_v1_20261027T142537Z` | R05–R18 | C0 0.516536; NO_INCREMENTAL_EVIDENCE |
+| Rank blending | `rank_blend_v1_20261027T144557Z` | R05–R18 | Rolling 0.536916, fixed 0.50 0.545624; rolling PROMISING_UNCONFIRMED, rolling value unproven |
+| B local random swaps | `b_local_swap_v1_20261028T024222Z` | R05–R18 | C0 0.548146; ranking PROMISING_UNCONFIRMED, probability NOT_SUPPORTED |
+
+For reference, the method means are: B 0.548146; fixed 0.50 0.545624; rolling blend 0.536916; optimized archive 0.533696; C 0.516536; theoretical-best 0.516310; grid 0.515476; A full 0.504178. Fixed 0.40 = 0.549569 is a post-hoc diagnostic only and is not the fixed 0.50 result.
+
+Failed or aborted runs are preserved and excluded from all means: A `a_movement_v1_20261027T234242Z` (verifier row-count defect; INVALID_RUN); B `b_local_swap_v1_20261028T011427Z` (aborted before results); B `b_local_swap_v1_20261028T023917Z` (protocol/verifier field mismatch; INVALID_RUN; superseded by the final B run). A failure is not a negative result and is not counted as one.
