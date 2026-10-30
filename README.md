@@ -50,9 +50,9 @@ Evaluation caliber: final (official labels).
 | --- | --- |
 | Historical best — #31 slot ensemble | Antonelli · Russell · Hamilton · Leclerc · Verstappen · Norris · Piastri · Hadjar · Lawson · Gasly |
 | Last-round best — #29 | Russell · Verstappen · Antonelli · Norris · Piastri · Hamilton · Leclerc · Gasly · Hadjar · Lawson |
-| Theoretical best — #32 | waiting for FP/SQ data |
+| Theoretical best — #32 | Leclerc · Hamilton · Norris · Russell · Antonelli · Verstappen · Piastri · Lindblad · Hadjar · Gasly |
 
-Qualifying forward archived (pre-#32 (31-candidate)): 2026-10-26T01:42:44+00:00
+Qualifying forward archived (32-candidate): 2026-10-30T23:42:35+00:00
 
 ### Race
 
