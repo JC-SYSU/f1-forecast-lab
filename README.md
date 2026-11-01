@@ -42,17 +42,16 @@ Race roster: optimized (606117e), grid-order baseline, and race_theoretical_best
 
 Evaluation caliber: final (official labels).
 
-## Next round: R19 · Mexico City Grand Prix (2026-11-01)
+## Next round: R20 · Brazilian Grand Prix (2026-11-08)
 
 ### Qualifying
 
 | Model | Predicted top-10 |
 | --- | --- |
-| Historical best — #31 slot ensemble | Antonelli · Russell · Hamilton · Leclerc · Verstappen · Norris · Piastri · Hadjar · Lawson · Gasly |
-| Last-round best — #29 | Russell · Verstappen · Antonelli · Norris · Piastri · Hamilton · Leclerc · Gasly · Hadjar · Lawson |
-| Theoretical best — #32 | Leclerc · Hamilton · Norris · Russell · Antonelli · Verstappen · Piastri · Lindblad · Hadjar · Gasly |
+| Theoretical best — #32 | waiting for FP/SQ data |
+| Forward not generated yet | — |
 
-Qualifying forward archived (32-candidate): 2026-10-30T23:42:35+00:00
+Qualifying forward archived (pre-#32 (31-candidate)): n/a
 
 ### Race
 
