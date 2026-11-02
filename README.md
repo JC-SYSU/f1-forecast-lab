@@ -11,34 +11,31 @@ It is not a "we predict accurately" showcase. It cares more about three question
 - **Humans decide.** AI handles proposals, execution and evidence checks; every freeze and every rejection was decided by a human. New ideas go through isolated experiments first; serious candidates go through pre-registered blind tests; a gain below the quantitative threshold never enters the mainline.
 
 <!-- LATEST:BEGIN -->
-## Latest round: R18 · United States Grand Prix (2026-10-25)
+## Latest round: R19 · Mexico City Grand Prix (2026-11-01)
 
 ### Qualifying
 
 | Model | Predicted top-10 | C0 |
 | --- | --- | ---: |
-| Historical best — #31 slot ensemble | Russell · Antonelli · Leclerc · Hamilton · Verstappen · Norris · Piastri · Hadjar · Gasly · Lawson | 0.4270 |
-| Retrospective · #32 theoretical-best baseline | Leclerc · Antonelli · Hamilton · Verstappen · Norris · Russell · Piastri · Hadjar · Hulkenberg · Gasly | 0.3869 |
-| Last-round best — #29 (lambdamart_n200) | Verstappen · Norris · Hadjar · Antonelli · Russell · Leclerc · Piastri · Hamilton · Lindblad · Lawson | 0.5735 |
-| Actual | Antonelli · Verstappen · Hadjar · Leclerc · Hamilton · Russell · Piastri · Norris · Lindblad · Lawson | — |
+| Historical best — #31 slot ensemble | Antonelli · Russell · Hamilton · Leclerc · Verstappen · Norris · Piastri · Hadjar · Lawson · Gasly | 0.4459 |
+| Theoretical best — #32 theoretical-best baseline | Leclerc · Hamilton · Norris · Russell · Antonelli · Verstappen · Piastri · Lindblad · Hadjar · Gasly | 0.4732 |
+| Last-round best — #2 (season_to_date) | Antonelli · Russell · Hamilton · Leclerc · Verstappen · Norris · Piastri · Hadjar · Gasly · Lawson | 0.4791 |
+| Actual | Hamilton · Russell · Leclerc · Verstappen · Antonelli · Norris · Hadjar · Lindblad · Lawson · Gasly | — |
 
 Roster: 31 historical candidates + #32 theoretical-best baseline (retrospective R03–R18; the 31-candidate historical scorecard is unchanged).
 Retrospective #32 scorecard: predictions/qualifying/theoretical_best_r03_r18.json.
 
-![R18 qualifying, predicted vs actual](assets/charts/latest-qualifying.svg)
+![R19 qualifying, predicted vs actual](assets/charts/latest-qualifying.svg)
 
 ### Race
 
 | Model | Predicted top-10 | C0 |
 | --- | --- | ---: |
-| Historical best — optimized (606117e) | Verstappen · Antonelli · Leclerc · Hamilton · Hadjar · Russell · Norris · Piastri · Lawson · Gasly | 0.6628 |
-| Retrospective · race_theoretical_best | Leclerc · Antonelli · Hamilton · Verstappen · Norris · Russell · Piastri · Hadjar · Hulkenberg · Gasly | 0.6222 |
-| Last-round best — grid-order baseline | Antonelli · Verstappen · Hadjar · Leclerc · Hamilton · Russell · Piastri · Norris · Lawson · Gasly | 0.6989 |
-| Actual | Antonelli · Leclerc · Verstappen · Hamilton · Norris · Hadjar · Piastri · Russell · Lawson · Gasly | — |
+| Actual | Verstappen · Hamilton · Antonelli · Leclerc · Norris · Russell · Piastri · Colapinto · Lawson · Gasly | — |
 
 Race roster: optimized (606117e), grid-order baseline, and race_theoretical_best (reference baseline; not a champion).
 
-![R18 race, predicted vs actual](assets/charts/latest-race.svg)
+![R19 race, predicted vs actual](assets/charts/latest-race.svg)
 
 Evaluation caliber: final (official labels).
 
