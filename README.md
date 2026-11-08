@@ -55,6 +55,7 @@ Evaluation caliber: final (official labels).
 
 Qualifying forward archived (32-candidate): 2026-11-07T00:13:22+00:00
 Evaluation caliber: final (official labels).
+![R20 qualifying, predicted vs actual](assets/charts/r20-qualifying.svg)
 
 ### Race
 
