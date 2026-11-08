@@ -11,58 +11,48 @@ It is not a "we predict accurately" showcase. It cares more about three question
 - **Humans decide.** AI handles proposals, execution and evidence checks; every freeze and every rejection was decided by a human. New ideas go through isolated experiments first; serious candidates go through pre-registered blind tests; a gain below the quantitative threshold never enters the mainline.
 
 <!-- LATEST:BEGIN -->
-## Latest round: R19 · Mexico City Grand Prix (2026-11-01)
-
-### Qualifying
-
-| Model | Predicted top-10 | C0 |
-| --- | --- | ---: |
-| Historical best — #31 slot ensemble | Antonelli · Russell · Hamilton · Leclerc · Verstappen · Norris · Piastri · Hadjar · Lawson · Gasly | 0.4459 |
-| Theoretical best — #32 theoretical-best baseline | Leclerc · Hamilton · Norris · Russell · Antonelli · Verstappen · Piastri · Lindblad · Hadjar · Gasly | 0.4732 |
-| Last-round best — #2 (season_to_date) | Antonelli · Russell · Hamilton · Leclerc · Verstappen · Norris · Piastri · Hadjar · Gasly · Lawson | 0.4791 |
-| Actual | Hamilton · Russell · Leclerc · Verstappen · Antonelli · Norris · Hadjar · Lindblad · Lawson · Gasly | — |
-
-Roster: 31 historical candidates + #32 theoretical-best baseline (retrospective R03–R18; the 31-candidate historical scorecard is unchanged).
-Retrospective #32 scorecard: predictions/qualifying/theoretical_best_r03_r18.json.
-
-![R19 qualifying, predicted vs actual](assets/charts/latest-qualifying.svg)
-
-### Race
-
-| Model | Predicted top-10 | C0 |
-| --- | --- | ---: |
-| Historical best — optimized (606117e) | Hamilton · Antonelli · Verstappen · Leclerc · Russell · Norris · Hadjar · Piastri · Lindblad · Gasly | 0.4614 |
-| Theoretical best — race_theoretical_best | Leclerc · Hamilton · Norris · Russell · Antonelli · Verstappen · Piastri · Lindblad · Hadjar · Gasly | 0.4493 |
-| Actual | Verstappen · Hamilton · Antonelli · Leclerc · Norris · Russell · Piastri · Colapinto · Lawson · Gasly | — |
-
-Race roster: optimized (606117e), grid-order baseline, and race_theoretical_best (reference baseline; not a champion).
-Race posture: retrospective replay (computed after the race; no forward was archived before the start).
-
-![R19 race, predicted vs actual](assets/charts/latest-race.svg)
-
-Evaluation caliber: final (official labels).
-
-## Next round: R20 · Brazilian Grand Prix (2026-11-08)
+## Latest round: R20 · Brazilian Grand Prix (2026-11-08)
 
 ### Qualifying
 
 | Model | Predicted top-10 | C0 |
 | --- | --- | ---: |
 | Historical best — #31 slot ensemble | Antonelli · Russell · Hamilton · Leclerc · Verstappen · Norris · Piastri · Hadjar · Lindblad · Gasly | 0.2327 |
-| Last-round best — #2 | Antonelli · Russell · Hamilton · Leclerc · Verstappen · Norris · Piastri · Hadjar · Gasly · Lawson | 0.2735 |
-| Theoretical best — #32 | Antonelli · Norris · Verstappen · Russell · Piastri · Hamilton · Leclerc · Hadjar · Bortoleto · Bearman | 0.1966 |
+| Theoretical best — #32 theoretical-best baseline | Antonelli · Norris · Verstappen · Russell · Piastri · Hamilton · Leclerc · Hadjar · Bortoleto · Bearman | 0.1966 |
+| Last-round best — #27 (plackett_luce) | Russell · Hamilton · Antonelli · Leclerc · Norris · Verstappen · Hadjar · Piastri · Lawson · Lindblad | 0.3423 |
 | Actual | Norris · Russell · Antonelli · Leclerc · Lawson · Hulkenberg · Hadjar · Bearman · Alonso · Albon | — |
 
-Qualifying forward archived (32-candidate): 2026-11-07T00:13:22+00:00
-Evaluation caliber: final (official labels).
-![R20 qualifying, predicted vs actual](assets/charts/r20-qualifying.svg)
+Roster: 31 historical candidates + #32 theoretical-best baseline (retrospective R03–R18; the 31-candidate historical scorecard is unchanged).
+Retrospective #32 scorecard: predictions/qualifying/theoretical_best_r03_r18.json.
+
+![R20 qualifying, predicted vs actual](assets/charts/latest-qualifying.svg)
 
 ### Race
 
-| Model | Predicted top-10 |
-| --- | --- |
-| Historical best — optimized (606117e) | Hamilton · Verstappen · Antonelli · Norris · Leclerc · Lawson · Hadjar · Russell · Hulkenberg · Piastri |
-| Theoretical best — race_theoretical_best | Antonelli · Piastri · Verstappen · Norris · Russell · Hamilton · Leclerc · Bortoleto · Hadjar · Lindblad |
+| Model | Predicted top-10 | C0 |
+| --- | --- | ---: |
+| Historical best — optimized (606117e) | Hamilton · Verstappen · Antonelli · Norris · Leclerc · Lawson · Hadjar · Russell · Hulkenberg · Piastri | 0.0000 |
+| Theoretical best — race_theoretical_best | Antonelli · Piastri · Verstappen · Norris · Russell · Hamilton · Leclerc · Bortoleto · Hadjar · Lindblad | — |
+| Actual | Norris · Verstappen · Hadjar · Russell · Antonelli · Piastri · Lawson · Leclerc · Hamilton · Hulkenberg | — |
+
+Race roster: optimized (606117e), grid-order baseline, and race_theoretical_best (reference baseline; not a champion).
+
+Evaluation caliber: final (official labels).
+
+## Next round: R21 · Las Vegas Grand Prix (2026-11-22)
+
+### Qualifying
+
+| Model | Predicted top-10 | C0 |
+| --- | --- | ---: |
+| Theoretical best — #32 | waiting for FP/SQ data | — |
+| Forward not generated yet | — | — |
+
+Qualifying forward archived (pre-#32 (31-candidate)): n/a
+
+### Race
+
+Not generated yet (waiting for the starting grid).
 
 _Auto-updated from the private data mirror. Prospective = archived before the session; retrospective replay = computed after the race._
 <!-- LATEST:END -->
