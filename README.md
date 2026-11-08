@@ -46,13 +46,15 @@ Evaluation caliber: final (official labels).
 
 ### Qualifying
 
-| Model | Predicted top-10 |
-| --- | --- |
-| Historical best — #31 slot ensemble | Antonelli · Russell · Hamilton · Leclerc · Verstappen · Norris · Piastri · Hadjar · Lindblad · Gasly |
-| Last-round best — #2 | Antonelli · Russell · Hamilton · Leclerc · Verstappen · Norris · Piastri · Hadjar · Gasly · Lawson |
-| Theoretical best — #32 | Antonelli · Norris · Verstappen · Russell · Piastri · Hamilton · Leclerc · Hadjar · Bortoleto · Bearman |
+| Model | Predicted top-10 | C0 |
+| --- | --- | ---: |
+| Historical best — #31 slot ensemble | Antonelli · Russell · Hamilton · Leclerc · Verstappen · Norris · Piastri · Hadjar · Lindblad · Gasly | 0.3850 |
+| Last-round best — #2 | Antonelli · Russell · Hamilton · Leclerc · Verstappen · Norris · Piastri · Hadjar · Gasly · Lawson | 0.4333 |
+| Theoretical best — #32 | Antonelli · Norris · Verstappen · Russell · Piastri · Hamilton · Leclerc · Hadjar · Bortoleto · Bearman | 0.3833 |
+| Actual | Norris · Russell · Antonelli · Leclerc · Lawson · Hulkenberg · Hadjar · Bearman · Alonso · Albon | — |
 
 Qualifying forward archived (32-candidate): 2026-11-07T00:13:22+00:00
+Evaluation caliber: preliminary (raw actuals; FIA final qualifying classification pending).
 
 ### Race
 
