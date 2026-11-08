@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="734" height="658" viewBox="0 0 734 658">
+<rect width="734" height="658" fill="#ffffff"/>
+<text x="10" y="26" font-size="15" font-weight="700" fill="#1c1c1e">R20 qualifying — predicted vs actual top-10</text>
+<circle cx="16" cy="54" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"/>
+<text x="26" y="58" font-size="11" fill="#5f6368">historical best #31</text>
+<circle cx="165" cy="54" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"/>
+<text x="175" y="58" font-size="11" fill="#5f6368">last-round best #27</text>
+<circle cx="314" cy="54" r="4.6" fill="#1c1c1e"/>
+<text x="324" y="58" font-size="11" fill="#5f6368">actual</text>
+<circle cx="378" cy="54" r="4.6" fill="#d40000"/>
+<text x="388" y="58" font-size="11" fill="#5f6368">outside top 10</text>
+<line x1="191.0" y1="82.0" x2="191.0" y2="618.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
+<text x="191.0" y="76.0" font-size="10" fill="#5f6368" text-anchor="middle">P1</text>
+<line x1="237.0" y1="82.0" x2="237.0" y2="618.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
+<text x="237.0" y="76.0" font-size="10" fill="#5f6368" text-anchor="middle">P2</text>
+<line x1="283.0" y1="82.0" x2="283.0" y2="618.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
+<text x="283.0" y="76.0" font-size="10" fill="#5f6368" text-anchor="middle">P3</text>
+<line x1="329.0" y1="82.0" x2="329.0" y2="618.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
+<text x="329.0" y="76.0" font-size="10" fill="#5f6368" text-anchor="middle">P4</text>
+<line x1="375.0" y1="82.0" x2="375.0" y2="618.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
+<text x="375.0" y="76.0" font-size="10" fill="#5f6368" text-anchor="middle">P5</text>
+<line x1="421.0" y1="82.0" x2="421.0" y2="618.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
+<text x="421.0" y="76.0" font-size="10" fill="#5f6368" text-anchor="middle">P6</text>
+<line x1="467.0" y1="82.0" x2="467.0" y2="618.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
+<text x="467.0" y="76.0" font-size="10" fill="#5f6368" text-anchor="middle">P7</text>
+<line x1="513.0" y1="82.0" x2="513.0" y2="618.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
+<text x="513.0" y="76.0" font-size="10" fill="#5f6368" text-anchor="middle">P8</text>
+<line x1="559.0" y1="82.0" x2="559.0" y2="618.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
+<text x="559.0" y="76.0" font-size="10" fill="#5f6368" text-anchor="middle">P9</text>
+<line x1="605.0" y1="82.0" x2="605.0" y2="618.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
+<text x="605.0" y="76.0" font-size="10" fill="#5f6368" text-anchor="middle">P10</text>
+<text x="658.0" y="76.0" font-size="10" fill="#d40000" text-anchor="middle">out</text>
+<text x="10" y="117.0" font-size="12" fill="#1c1c1e">Norris</text>
+<line x1="421.0" y1="107.0" x2="191.0" y2="107.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
+<polygon points="300.0,107.0 310.0,102.8 310.0,111.2" fill="#1f5fa8"/>
+<circle cx="421.0" cy="107.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>historical best #31: predicted P6</title></circle>
+<circle cx="191.0" cy="107.0" r="4.6" fill="#1f5fa8"><title>historical best #31: actual P1</title></circle>
+<line x1="375.0" y1="119.0" x2="191.0" y2="119.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
+<polygon points="277.0,119.0 287.0,114.8 287.0,123.2" fill="#d97706"/>
+<circle cx="375.0" cy="119.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>last-round best #27: predicted P5</title></circle>
+<circle cx="191.0" cy="119.0" r="4.6" fill="#d97706"><title>last-round best #27: actual P1</title></circle>
+<text x="10" y="151.0" font-size="12" fill="#1c1c1e">Russell</text>
+<line x1="237.0" y1="141.0" x2="237.0" y2="141.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
+<circle cx="237.0" cy="141.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>historical best #31: predicted P2</title></circle>
+<circle cx="237.0" cy="141.0" r="4.6" fill="#1f5fa8"><title>historical best #31: actual P2</title></circle>
+<line x1="191.0" y1="153.0" x2="237.0" y2="153.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
+<polygon points="220.0,153.0 210.0,148.8 210.0,157.2" fill="#d97706"/>
+<circle cx="191.0" cy="153.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>last-round best #27: predicted P1</title></circle>
+<circle cx="237.0" cy="153.0" r="4.6" fill="#d97706"><title>last-round best #27: actual P2</title></circle>
+<text x="10" y="185.0" font-size="12" fill="#1c1c1e">Antonelli</text>
+<line x1="191.0" y1="175.0" x2="283.0" y2="175.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
+<polygon points="243.0,175.0 233.0,170.8 233.0,179.2" fill="#1f5fa8"/>
+<circle cx="191.0" cy="175.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>historical best #31: predicted P1</title></circle>
+<circle cx="283.0" cy="175.0" r="4.6" fill="#1f5fa8"><title>historical best #31: actual P3</title></circle>
+<line x1="283.0" y1="187.0" x2="283.0" y2="187.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
+<circle cx="283.0" cy="187.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>last-round best #27: predicted P3</title></circle>
+<circle cx="283.0" cy="187.0" r="4.6" fill="#d97706"><title>last-round best #27: actual P3</title></circle>
+<text x="10" y="219.0" font-size="12" fill="#1c1c1e">Leclerc</text>
+<line x1="329.0" y1="209.0" x2="329.0" y2="209.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
+<circle cx="329.0" cy="209.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>historical best #31: predicted P4</title></circle>
+<circle cx="329.0" cy="209.0" r="4.6" fill="#1f5fa8"><title>historical best #31: actual P4</title></circle>
+<line x1="329.0" y1="221.0" x2="329.0" y2="221.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
+<circle cx="329.0" cy="221.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>last-round best #27: predicted P4</title></circle>
+<circle cx="329.0" cy="221.0" r="4.6" fill="#d97706"><title>last-round best #27: actual P4</title></circle>
+<text x="10" y="253.0" font-size="12" fill="#1c1c1e">Lawson</text>
+<line x1="559.0" y1="255.0" x2="375.0" y2="255.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
+<polygon points="461.0,255.0 471.0,250.8 471.0,259.2" fill="#d97706"/>
+<circle cx="559.0" cy="255.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>last-round best #27: predicted P9</title></circle>
+<circle cx="375.0" cy="255.0" r="4.6" fill="#d97706"><title>last-round best #27: actual P5</title></circle>
+<text x="10" y="287.0" font-size="12" fill="#1c1c1e">Hülkenberg</text>
+<circle cx="421.0" cy="283.0" r="4.6" fill="#1c1c1e"><title>actual P6</title></circle>
+<text x="433.0" y="287.0" font-size="10" fill="#d40000">not predicted</text>
+<text x="10" y="321.0" font-size="12" fill="#1c1c1e">Hadjar</text>
+<line x1="513.0" y1="311.0" x2="467.0" y2="311.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
+<polygon points="484.0,311.0 494.0,306.8 494.0,315.2" fill="#1f5fa8"/>
+<circle cx="513.0" cy="311.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>historical best #31: predicted P8</title></circle>
+<circle cx="467.0" cy="311.0" r="4.6" fill="#1f5fa8"><title>historical best #31: actual P7</title></circle>
+<line x1="467.0" y1="323.0" x2="467.0" y2="323.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
+<circle cx="467.0" cy="323.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>last-round best #27: predicted P7</title></circle>
+<circle cx="467.0" cy="323.0" r="4.6" fill="#d97706"><title>last-round best #27: actual P7</title></circle>
+<text x="10" y="355.0" font-size="12" fill="#1c1c1e">Bearman</text>
+<circle cx="513.0" cy="351.0" r="4.6" fill="#1c1c1e"><title>actual P8</title></circle>
+<text x="525.0" y="355.0" font-size="10" fill="#d40000">not predicted</text>
+<text x="10" y="389.0" font-size="12" fill="#1c1c1e">Alonso</text>
+<circle cx="559.0" cy="385.0" r="4.6" fill="#1c1c1e"><title>actual P9</title></circle>
+<text x="571.0" y="389.0" font-size="10" fill="#d40000">not predicted</text>
+<text x="10" y="423.0" font-size="12" fill="#1c1c1e">Albon</text>
+<circle cx="605.0" cy="419.0" r="4.6" fill="#1c1c1e"><title>actual P10</title></circle>
+<text x="617.0" y="423.0" font-size="10" fill="#d40000">not predicted</text>
+<text x="10" y="457.0" font-size="12" fill="#1c1c1e">Hamilton</text>
+<line x1="283.0" y1="447.0" x2="658.0" y2="447.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
+<polygon points="476.5,447.0 466.5,442.8 466.5,451.2" fill="#1f5fa8"/>
+<circle cx="283.0" cy="447.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>historical best #31: predicted P3</title></circle>
+<circle cx="658.0" cy="447.0" r="4.6" fill="#d40000"><title>historical best #31: actual outside top 10</title></circle>
+<line x1="237.0" y1="459.0" x2="658.0" y2="459.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
+<polygon points="453.5,459.0 443.5,454.8 443.5,463.2" fill="#d97706"/>
+<circle cx="237.0" cy="459.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>last-round best #27: predicted P2</title></circle>
+<circle cx="658.0" cy="459.0" r="4.6" fill="#d40000"><title>last-round best #27: actual outside top 10</title></circle>
+<text x="10" y="491.0" font-size="12" fill="#1c1c1e">Verstappen</text>
+<line x1="375.0" y1="481.0" x2="658.0" y2="481.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
+<polygon points="522.5,481.0 512.5,476.8 512.5,485.2" fill="#1f5fa8"/>
+<circle cx="375.0" cy="481.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>historical best #31: predicted P5</title></circle>
+<circle cx="658.0" cy="481.0" r="4.6" fill="#d40000"><title>historical best #31: actual outside top 10</title></circle>
+<line x1="421.0" y1="493.0" x2="658.0" y2="493.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
+<polygon points="545.5,493.0 535.5,488.8 535.5,497.2" fill="#d97706"/>
+<circle cx="421.0" cy="493.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>last-round best #27: predicted P6</title></circle>
+<circle cx="658.0" cy="493.0" r="4.6" fill="#d40000"><title>last-round best #27: actual outside top 10</title></circle>
+<text x="10" y="525.0" font-size="12" fill="#1c1c1e">Piastri</text>
+<line x1="467.0" y1="515.0" x2="658.0" y2="515.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
+<polygon points="568.5,515.0 558.5,510.8 558.5,519.2" fill="#1f5fa8"/>
+<circle cx="467.0" cy="515.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>historical best #31: predicted P7</title></circle>
+<circle cx="658.0" cy="515.0" r="4.6" fill="#d40000"><title>historical best #31: actual outside top 10</title></circle>
+<line x1="513.0" y1="527.0" x2="658.0" y2="527.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
+<polygon points="591.5,527.0 581.5,522.8 581.5,531.2" fill="#d97706"/>
+<circle cx="513.0" cy="527.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>last-round best #27: predicted P8</title></circle>
+<circle cx="658.0" cy="527.0" r="4.6" fill="#d40000"><title>last-round best #27: actual outside top 10</title></circle>
+<text x="10" y="559.0" font-size="12" fill="#1c1c1e">Lindblad</text>
+<line x1="559.0" y1="549.0" x2="658.0" y2="549.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
+<polygon points="614.5,549.0 604.5,544.8 604.5,553.2" fill="#1f5fa8"/>
+<circle cx="559.0" cy="549.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>historical best #31: predicted P9</title></circle>
+<circle cx="658.0" cy="549.0" r="4.6" fill="#d40000"><title>historical best #31: actual outside top 10</title></circle>
+<line x1="605.0" y1="561.0" x2="658.0" y2="561.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
+<polygon points="637.5,561.0 627.5,556.8 627.5,565.2" fill="#d97706"/>
+<circle cx="605.0" cy="561.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>last-round best #27: predicted P10</title></circle>
+<circle cx="658.0" cy="561.0" r="4.6" fill="#d40000"><title>last-round best #27: actual outside top 10</title></circle>
+<text x="10" y="593.0" font-size="12" fill="#1c1c1e">Gasly</text>
+<line x1="605.0" y1="583.0" x2="658.0" y2="583.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
+<polygon points="637.5,583.0 627.5,578.8 627.5,587.2" fill="#1f5fa8"/>
+<circle cx="605.0" cy="583.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>historical best #31: predicted P10</title></circle>
+<circle cx="658.0" cy="583.0" r="4.6" fill="#d40000"><title>historical best #31: actual outside top 10</title></circle>
+<text x="10" y="636" font-size="10" fill="#5f6368">C0 — historical best #31: 0.2327 · last-round best #27: 0.3423. Caliber: final (official labels).</text>
+<text x="10" y="650" font-size="10" fill="#5f6368">Hollow = predicted, solid = actual, arrow points from prediction to result (left = better than predicted), red = outside the top ten.</text>
+</svg>
