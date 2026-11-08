@@ -48,17 +48,20 @@ Evaluation caliber: final (official labels).
 
 | Model | Predicted top-10 | C0 |
 | --- | --- | ---: |
-| Historical best — #31 slot ensemble | Antonelli · Russell · Hamilton · Leclerc · Verstappen · Norris · Piastri · Hadjar · Lindblad · Gasly | 0.3850 |
-| Last-round best — #2 | Antonelli · Russell · Hamilton · Leclerc · Verstappen · Norris · Piastri · Hadjar · Gasly · Lawson | 0.4333 |
-| Theoretical best — #32 | Antonelli · Norris · Verstappen · Russell · Piastri · Hamilton · Leclerc · Hadjar · Bortoleto · Bearman | 0.3833 |
+| Historical best — #31 slot ensemble | Antonelli · Russell · Hamilton · Leclerc · Verstappen · Norris · Piastri · Hadjar · Lindblad · Gasly | 0.2327 |
+| Last-round best — #2 | Antonelli · Russell · Hamilton · Leclerc · Verstappen · Norris · Piastri · Hadjar · Gasly · Lawson | 0.2735 |
+| Theoretical best — #32 | Antonelli · Norris · Verstappen · Russell · Piastri · Hamilton · Leclerc · Hadjar · Bortoleto · Bearman | 0.1966 |
 | Actual | Norris · Russell · Antonelli · Leclerc · Lawson · Hulkenberg · Hadjar · Bearman · Alonso · Albon | — |
 
 Qualifying forward archived (32-candidate): 2026-11-07T00:13:22+00:00
-Evaluation caliber: preliminary (raw actuals; FIA final qualifying classification pending).
+Evaluation caliber: final (official labels).
 
 ### Race
 
-Not generated yet (waiting for the starting grid).
+| Model | Predicted top-10 |
+| --- | --- |
+| Historical best — optimized (606117e) | Hamilton · Verstappen · Antonelli · Norris · Leclerc · Lawson · Hadjar · Russell · Hulkenberg · Piastri |
+| Theoretical best — race_theoretical_best | Antonelli · Piastri · Verstappen · Norris · Russell · Hamilton · Leclerc · Bortoleto · Hadjar · Lindblad |
 
 _Auto-updated from the private data mirror. Prospective = archived before the session; retrospective replay = computed after the race._
 <!-- LATEST:END -->
