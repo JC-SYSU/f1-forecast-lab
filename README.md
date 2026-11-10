@@ -20,13 +20,12 @@ Evaluation: final (official labels).
 | Model | Predicted top-10 | C0 |
 | --- | --- | ---: |
 | Historical best — #31 slot ensemble | Antonelli · Russell · Hamilton · Leclerc · Verstappen · Norris · Piastri · Hadjar · Lindblad · Gasly | 0.2327 |
-| Theoretical best — #32 theoretical-best baseline | Antonelli · Norris · Verstappen · Russell · Piastri · Hamilton · Leclerc · Hadjar · Bortoleto · Bearman | 0.1966 |
 | Last-round best — #2 (season_to_date) | Antonelli · Russell · Hamilton · Leclerc · Verstappen · Norris · Piastri · Hadjar · Gasly · Lawson | 0.2735 |
 | This-round best (hindsight) — #27 (plackett_luce) | Russell · Hamilton · Antonelli · Leclerc · Norris · Verstappen · Hadjar · Piastri · Lawson · Lindblad | 0.3423 |
 | Actual | Norris · Russell · Antonelli · Leclerc · Lawson · Hulkenberg · Hadjar · Bearman · Alonso · Albon | — |
 
 Forward archived: 2026-11-07T00:13:22+00:00.
-Roster: 31 historical candidates + #32 theoretical-best baseline (retrospective R03–R18; the 31-candidate historical scorecard is unchanged).
+Rows: historical best #31, the previous round's best model and this round's hindsight best. All 31 historical candidates and the #32 theoretical-best baseline stay archived in the data mirror.
 Retrospective #32 scorecard: predictions/qualifying/theoretical_best_r03_r18.json.
 
 ![R20 qualifying, predicted vs actual](assets/charts/r20-qualifying.svg)
