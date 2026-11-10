@@ -1,134 +1,174 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="734" height="680" viewBox="0 0 734 680" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif">
-<rect width="734" height="680" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="734" height="1012" viewBox="0 0 734 1012" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif">
+<rect width="734" height="1012" fill="#ffffff"/>
 <text x="10" y="26" font-size="15" font-weight="700" fill="#1c1c1e">R20 qualifying — predicted vs actual top-10</text>
 <circle cx="16" cy="46" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"/>
 <text x="26" y="50" font-size="11" fill="#5f6368">Historical best — #31 slot ensemble</text>
 <circle cx="16" cy="64" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"/>
 <text x="26" y="68" font-size="11" fill="#5f6368">Last-round best — #2 (season_to_date)</text>
-<circle cx="16" cy="82" r="4.6" fill="#1c1c1e"/>
-<text x="26" y="86" font-size="11" fill="#5f6368">actual</text>
-<circle cx="86" cy="82" r="4.6" fill="#d40000"/>
-<text x="96" y="86" font-size="11" fill="#5f6368">outside top 10</text>
-<line x1="191.0" y1="104.0" x2="191.0" y2="640.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
-<text x="191.0" y="98.0" font-size="10" fill="#5f6368" text-anchor="middle">P1</text>
-<line x1="237.0" y1="104.0" x2="237.0" y2="640.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
-<text x="237.0" y="98.0" font-size="10" fill="#5f6368" text-anchor="middle">P2</text>
-<line x1="283.0" y1="104.0" x2="283.0" y2="640.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
-<text x="283.0" y="98.0" font-size="10" fill="#5f6368" text-anchor="middle">P3</text>
-<line x1="329.0" y1="104.0" x2="329.0" y2="640.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
-<text x="329.0" y="98.0" font-size="10" fill="#5f6368" text-anchor="middle">P4</text>
-<line x1="375.0" y1="104.0" x2="375.0" y2="640.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
-<text x="375.0" y="98.0" font-size="10" fill="#5f6368" text-anchor="middle">P5</text>
-<line x1="421.0" y1="104.0" x2="421.0" y2="640.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
-<text x="421.0" y="98.0" font-size="10" fill="#5f6368" text-anchor="middle">P6</text>
-<line x1="467.0" y1="104.0" x2="467.0" y2="640.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
-<text x="467.0" y="98.0" font-size="10" fill="#5f6368" text-anchor="middle">P7</text>
-<line x1="513.0" y1="104.0" x2="513.0" y2="640.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
-<text x="513.0" y="98.0" font-size="10" fill="#5f6368" text-anchor="middle">P8</text>
-<line x1="559.0" y1="104.0" x2="559.0" y2="640.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
-<text x="559.0" y="98.0" font-size="10" fill="#5f6368" text-anchor="middle">P9</text>
-<line x1="605.0" y1="104.0" x2="605.0" y2="640.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
-<text x="605.0" y="98.0" font-size="10" fill="#5f6368" text-anchor="middle">P10</text>
-<text x="658.0" y="98.0" font-size="10" fill="#d40000" text-anchor="middle">out</text>
-<text x="10" y="139.0" font-size="12" fill="#1c1c1e">Norris</text>
-<line x1="421.0" y1="129.0" x2="191.0" y2="129.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
-<polygon points="300.0,129.0 310.0,124.8 310.0,133.2" fill="#1f5fa8"/>
-<circle cx="421.0" cy="129.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Historical best — #31 slot ensemble: predicted P6</title></circle>
-<circle cx="191.0" cy="129.0" r="4.6" fill="#1f5fa8"><title>Historical best — #31 slot ensemble: actual P1</title></circle>
-<line x1="421.0" y1="141.0" x2="191.0" y2="141.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
-<polygon points="300.0,141.0 310.0,136.8 310.0,145.2" fill="#d97706"/>
-<circle cx="421.0" cy="141.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>Last-round best — #2 (season_to_date): predicted P6</title></circle>
-<circle cx="191.0" cy="141.0" r="4.6" fill="#d97706"><title>Last-round best — #2 (season_to_date): actual P1</title></circle>
-<text x="10" y="173.0" font-size="12" fill="#1c1c1e">Russell</text>
-<line x1="237.0" y1="163.0" x2="237.0" y2="163.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
-<circle cx="237.0" cy="163.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Historical best — #31 slot ensemble: predicted P2</title></circle>
-<circle cx="237.0" cy="163.0" r="4.6" fill="#1f5fa8"><title>Historical best — #31 slot ensemble: actual P2</title></circle>
-<line x1="237.0" y1="175.0" x2="237.0" y2="175.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
-<circle cx="237.0" cy="175.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>Last-round best — #2 (season_to_date): predicted P2</title></circle>
-<circle cx="237.0" cy="175.0" r="4.6" fill="#d97706"><title>Last-round best — #2 (season_to_date): actual P2</title></circle>
-<text x="10" y="207.0" font-size="12" fill="#1c1c1e">Antonelli</text>
-<line x1="191.0" y1="197.0" x2="283.0" y2="197.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
-<polygon points="243.0,197.0 233.0,192.8 233.0,201.2" fill="#1f5fa8"/>
-<circle cx="191.0" cy="197.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Historical best — #31 slot ensemble: predicted P1</title></circle>
-<circle cx="283.0" cy="197.0" r="4.6" fill="#1f5fa8"><title>Historical best — #31 slot ensemble: actual P3</title></circle>
-<line x1="191.0" y1="209.0" x2="283.0" y2="209.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
-<polygon points="243.0,209.0 233.0,204.8 233.0,213.2" fill="#d97706"/>
-<circle cx="191.0" cy="209.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>Last-round best — #2 (season_to_date): predicted P1</title></circle>
-<circle cx="283.0" cy="209.0" r="4.6" fill="#d97706"><title>Last-round best — #2 (season_to_date): actual P3</title></circle>
-<text x="10" y="241.0" font-size="12" fill="#1c1c1e">Leclerc</text>
-<line x1="329.0" y1="231.0" x2="329.0" y2="231.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
-<circle cx="329.0" cy="231.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Historical best — #31 slot ensemble: predicted P4</title></circle>
-<circle cx="329.0" cy="231.0" r="4.6" fill="#1f5fa8"><title>Historical best — #31 slot ensemble: actual P4</title></circle>
-<line x1="329.0" y1="243.0" x2="329.0" y2="243.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
-<circle cx="329.0" cy="243.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>Last-round best — #2 (season_to_date): predicted P4</title></circle>
-<circle cx="329.0" cy="243.0" r="4.6" fill="#d97706"><title>Last-round best — #2 (season_to_date): actual P4</title></circle>
-<text x="10" y="275.0" font-size="12" fill="#1c1c1e">Lawson</text>
-<line x1="605.0" y1="277.0" x2="375.0" y2="277.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
-<polygon points="484.0,277.0 494.0,272.8 494.0,281.2" fill="#d97706"/>
-<circle cx="605.0" cy="277.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>Last-round best — #2 (season_to_date): predicted P10</title></circle>
-<circle cx="375.0" cy="277.0" r="4.6" fill="#d97706"><title>Last-round best — #2 (season_to_date): actual P5</title></circle>
-<text x="10" y="309.0" font-size="12" fill="#1c1c1e">Hülkenberg</text>
-<circle cx="421.0" cy="305.0" r="4.6" fill="#1c1c1e"><title>actual P6</title></circle>
-<text x="433.0" y="309.0" font-size="10" fill="#d40000">not predicted</text>
-<text x="10" y="343.0" font-size="12" fill="#1c1c1e">Hadjar</text>
-<line x1="513.0" y1="333.0" x2="467.0" y2="333.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
-<polygon points="484.0,333.0 494.0,328.8 494.0,337.2" fill="#1f5fa8"/>
-<circle cx="513.0" cy="333.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Historical best — #31 slot ensemble: predicted P8</title></circle>
-<circle cx="467.0" cy="333.0" r="4.6" fill="#1f5fa8"><title>Historical best — #31 slot ensemble: actual P7</title></circle>
-<line x1="513.0" y1="345.0" x2="467.0" y2="345.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
-<polygon points="484.0,345.0 494.0,340.8 494.0,349.2" fill="#d97706"/>
-<circle cx="513.0" cy="345.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>Last-round best — #2 (season_to_date): predicted P8</title></circle>
-<circle cx="467.0" cy="345.0" r="4.6" fill="#d97706"><title>Last-round best — #2 (season_to_date): actual P7</title></circle>
-<text x="10" y="377.0" font-size="12" fill="#1c1c1e">Bearman</text>
-<circle cx="513.0" cy="373.0" r="4.6" fill="#1c1c1e"><title>actual P8</title></circle>
-<text x="525.0" y="377.0" font-size="10" fill="#d40000">not predicted</text>
-<text x="10" y="411.0" font-size="12" fill="#1c1c1e">Alonso</text>
-<circle cx="559.0" cy="407.0" r="4.6" fill="#1c1c1e"><title>actual P9</title></circle>
-<text x="571.0" y="411.0" font-size="10" fill="#d40000">not predicted</text>
-<text x="10" y="445.0" font-size="12" fill="#1c1c1e">Albon</text>
-<circle cx="605.0" cy="441.0" r="4.6" fill="#1c1c1e"><title>actual P10</title></circle>
-<text x="617.0" y="445.0" font-size="10" fill="#d40000">not predicted</text>
-<text x="10" y="479.0" font-size="12" fill="#1c1c1e">Hamilton</text>
-<line x1="283.0" y1="469.0" x2="658.0" y2="469.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
-<polygon points="476.5,469.0 466.5,464.8 466.5,473.2" fill="#1f5fa8"/>
-<circle cx="283.0" cy="469.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Historical best — #31 slot ensemble: predicted P3</title></circle>
-<circle cx="658.0" cy="469.0" r="4.6" fill="#d40000"><title>Historical best — #31 slot ensemble: actual outside top 10</title></circle>
-<line x1="283.0" y1="481.0" x2="658.0" y2="481.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
-<polygon points="476.5,481.0 466.5,476.8 466.5,485.2" fill="#d97706"/>
-<circle cx="283.0" cy="481.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>Last-round best — #2 (season_to_date): predicted P3</title></circle>
-<circle cx="658.0" cy="481.0" r="4.6" fill="#d40000"><title>Last-round best — #2 (season_to_date): actual outside top 10</title></circle>
-<text x="10" y="513.0" font-size="12" fill="#1c1c1e">Verstappen</text>
-<line x1="375.0" y1="503.0" x2="658.0" y2="503.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
-<polygon points="522.5,503.0 512.5,498.8 512.5,507.2" fill="#1f5fa8"/>
-<circle cx="375.0" cy="503.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Historical best — #31 slot ensemble: predicted P5</title></circle>
-<circle cx="658.0" cy="503.0" r="4.6" fill="#d40000"><title>Historical best — #31 slot ensemble: actual outside top 10</title></circle>
-<line x1="375.0" y1="515.0" x2="658.0" y2="515.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
-<polygon points="522.5,515.0 512.5,510.8 512.5,519.2" fill="#d97706"/>
-<circle cx="375.0" cy="515.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>Last-round best — #2 (season_to_date): predicted P5</title></circle>
-<circle cx="658.0" cy="515.0" r="4.6" fill="#d40000"><title>Last-round best — #2 (season_to_date): actual outside top 10</title></circle>
-<text x="10" y="547.0" font-size="12" fill="#1c1c1e">Piastri</text>
-<line x1="467.0" y1="537.0" x2="658.0" y2="537.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
-<polygon points="568.5,537.0 558.5,532.8 558.5,541.2" fill="#1f5fa8"/>
-<circle cx="467.0" cy="537.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Historical best — #31 slot ensemble: predicted P7</title></circle>
-<circle cx="658.0" cy="537.0" r="4.6" fill="#d40000"><title>Historical best — #31 slot ensemble: actual outside top 10</title></circle>
-<line x1="467.0" y1="549.0" x2="658.0" y2="549.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
-<polygon points="568.5,549.0 558.5,544.8 558.5,553.2" fill="#d97706"/>
-<circle cx="467.0" cy="549.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>Last-round best — #2 (season_to_date): predicted P7</title></circle>
-<circle cx="658.0" cy="549.0" r="4.6" fill="#d40000"><title>Last-round best — #2 (season_to_date): actual outside top 10</title></circle>
-<text x="10" y="581.0" font-size="12" fill="#1c1c1e">Lindblad</text>
-<line x1="559.0" y1="571.0" x2="658.0" y2="571.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
-<polygon points="614.5,571.0 604.5,566.8 604.5,575.2" fill="#1f5fa8"/>
-<circle cx="559.0" cy="571.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Historical best — #31 slot ensemble: predicted P9</title></circle>
-<circle cx="658.0" cy="571.0" r="4.6" fill="#d40000"><title>Historical best — #31 slot ensemble: actual outside top 10</title></circle>
-<text x="10" y="615.0" font-size="12" fill="#1c1c1e">Gasly</text>
-<line x1="605.0" y1="605.0" x2="658.0" y2="605.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
-<polygon points="637.5,605.0 627.5,600.8 627.5,609.2" fill="#1f5fa8"/>
-<circle cx="605.0" cy="605.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Historical best — #31 slot ensemble: predicted P10</title></circle>
-<circle cx="658.0" cy="605.0" r="4.6" fill="#d40000"><title>Historical best — #31 slot ensemble: actual outside top 10</title></circle>
-<line x1="559.0" y1="617.0" x2="658.0" y2="617.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
-<polygon points="614.5,617.0 604.5,612.8 604.5,621.2" fill="#d97706"/>
-<circle cx="559.0" cy="617.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>Last-round best — #2 (season_to_date): predicted P9</title></circle>
-<circle cx="658.0" cy="617.0" r="4.6" fill="#d40000"><title>Last-round best — #2 (season_to_date): actual outside top 10</title></circle>
-<text x="10" y="658" font-size="10" fill="#5f6368">C0 — Historical best — #31 slot ensemble: 0.2327 · Last-round best — #2 (season_to_date): 0.2735. Caliber: final (official labels).</text>
-<text x="10" y="672" font-size="10" fill="#5f6368">Hollow = predicted, solid = actual, arrow points from prediction to result (left = better than predicted), red = outside the top ten.</text>
+<circle cx="16" cy="82" r="4.6" fill="#ffffff" stroke="#2e7d32" stroke-width="1.8"/>
+<text x="26" y="86" font-size="11" fill="#5f6368">This-round best (hindsight) — #27 (plackett_luce)</text>
+<circle cx="16" cy="100" r="4.6" fill="#1c1c1e"/>
+<text x="26" y="104" font-size="11" fill="#5f6368">actual</text>
+<circle cx="86" cy="100" r="4.6" fill="#d40000"/>
+<text x="96" y="104" font-size="11" fill="#5f6368">outside top 10</text>
+<line x1="191.0" y1="122.0" x2="191.0" y2="972.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
+<text x="191.0" y="116.0" font-size="10" fill="#5f6368" text-anchor="middle">P1</text>
+<line x1="237.0" y1="122.0" x2="237.0" y2="972.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
+<text x="237.0" y="116.0" font-size="10" fill="#5f6368" text-anchor="middle">P2</text>
+<line x1="283.0" y1="122.0" x2="283.0" y2="972.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
+<text x="283.0" y="116.0" font-size="10" fill="#5f6368" text-anchor="middle">P3</text>
+<line x1="329.0" y1="122.0" x2="329.0" y2="972.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
+<text x="329.0" y="116.0" font-size="10" fill="#5f6368" text-anchor="middle">P4</text>
+<line x1="375.0" y1="122.0" x2="375.0" y2="972.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
+<text x="375.0" y="116.0" font-size="10" fill="#5f6368" text-anchor="middle">P5</text>
+<line x1="421.0" y1="122.0" x2="421.0" y2="972.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
+<text x="421.0" y="116.0" font-size="10" fill="#5f6368" text-anchor="middle">P6</text>
+<line x1="467.0" y1="122.0" x2="467.0" y2="972.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
+<text x="467.0" y="116.0" font-size="10" fill="#5f6368" text-anchor="middle">P7</text>
+<line x1="513.0" y1="122.0" x2="513.0" y2="972.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
+<text x="513.0" y="116.0" font-size="10" fill="#5f6368" text-anchor="middle">P8</text>
+<line x1="559.0" y1="122.0" x2="559.0" y2="972.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
+<text x="559.0" y="116.0" font-size="10" fill="#5f6368" text-anchor="middle">P9</text>
+<line x1="605.0" y1="122.0" x2="605.0" y2="972.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
+<text x="605.0" y="116.0" font-size="10" fill="#5f6368" text-anchor="middle">P10</text>
+<text x="658.0" y="116.0" font-size="10" fill="#d40000" text-anchor="middle">out</text>
+<text x="10" y="167.0" font-size="12" fill="#1c1c1e">Norris</text>
+<line x1="421.0" y1="151.0" x2="191.0" y2="151.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
+<polygon points="300.0,151.0 310.0,146.8 310.0,155.2" fill="#1f5fa8"/>
+<circle cx="421.0" cy="151.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Historical best — #31 slot ensemble: predicted P6</title></circle>
+<circle cx="191.0" cy="151.0" r="4.6" fill="#1f5fa8"><title>Historical best — #31 slot ensemble: actual P1</title></circle>
+<line x1="421.0" y1="163.0" x2="191.0" y2="163.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
+<polygon points="300.0,163.0 310.0,158.8 310.0,167.2" fill="#d97706"/>
+<circle cx="421.0" cy="163.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>Last-round best — #2 (season_to_date): predicted P6</title></circle>
+<circle cx="191.0" cy="163.0" r="4.6" fill="#d97706"><title>Last-round best — #2 (season_to_date): actual P1</title></circle>
+<line x1="375.0" y1="175.0" x2="191.0" y2="175.0" stroke="#2e7d32" stroke-width="1.6" opacity="0.75"/>
+<polygon points="277.0,175.0 287.0,170.8 287.0,179.2" fill="#2e7d32"/>
+<circle cx="375.0" cy="175.0" r="4.6" fill="#ffffff" stroke="#2e7d32" stroke-width="1.8"><title>This-round best (hindsight) — #27 (plackett_luce): predicted P5</title></circle>
+<circle cx="191.0" cy="175.0" r="4.6" fill="#2e7d32"><title>This-round best (hindsight) — #27 (plackett_luce): actual P1</title></circle>
+<text x="10" y="221.0" font-size="12" fill="#1c1c1e">Russell</text>
+<line x1="237.0" y1="205.0" x2="237.0" y2="205.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
+<circle cx="237.0" cy="205.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Historical best — #31 slot ensemble: predicted P2</title></circle>
+<circle cx="237.0" cy="205.0" r="4.6" fill="#1f5fa8"><title>Historical best — #31 slot ensemble: actual P2</title></circle>
+<line x1="237.0" y1="217.0" x2="237.0" y2="217.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
+<circle cx="237.0" cy="217.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>Last-round best — #2 (season_to_date): predicted P2</title></circle>
+<circle cx="237.0" cy="217.0" r="4.6" fill="#d97706"><title>Last-round best — #2 (season_to_date): actual P2</title></circle>
+<line x1="191.0" y1="229.0" x2="237.0" y2="229.0" stroke="#2e7d32" stroke-width="1.6" opacity="0.75"/>
+<polygon points="220.0,229.0 210.0,224.8 210.0,233.2" fill="#2e7d32"/>
+<circle cx="191.0" cy="229.0" r="4.6" fill="#ffffff" stroke="#2e7d32" stroke-width="1.8"><title>This-round best (hindsight) — #27 (plackett_luce): predicted P1</title></circle>
+<circle cx="237.0" cy="229.0" r="4.6" fill="#2e7d32"><title>This-round best (hindsight) — #27 (plackett_luce): actual P2</title></circle>
+<text x="10" y="275.0" font-size="12" fill="#1c1c1e">Antonelli</text>
+<line x1="191.0" y1="259.0" x2="283.0" y2="259.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
+<polygon points="243.0,259.0 233.0,254.8 233.0,263.2" fill="#1f5fa8"/>
+<circle cx="191.0" cy="259.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Historical best — #31 slot ensemble: predicted P1</title></circle>
+<circle cx="283.0" cy="259.0" r="4.6" fill="#1f5fa8"><title>Historical best — #31 slot ensemble: actual P3</title></circle>
+<line x1="191.0" y1="271.0" x2="283.0" y2="271.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
+<polygon points="243.0,271.0 233.0,266.8 233.0,275.2" fill="#d97706"/>
+<circle cx="191.0" cy="271.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>Last-round best — #2 (season_to_date): predicted P1</title></circle>
+<circle cx="283.0" cy="271.0" r="4.6" fill="#d97706"><title>Last-round best — #2 (season_to_date): actual P3</title></circle>
+<line x1="283.0" y1="283.0" x2="283.0" y2="283.0" stroke="#2e7d32" stroke-width="1.6" opacity="0.75"/>
+<circle cx="283.0" cy="283.0" r="4.6" fill="#ffffff" stroke="#2e7d32" stroke-width="1.8"><title>This-round best (hindsight) — #27 (plackett_luce): predicted P3</title></circle>
+<circle cx="283.0" cy="283.0" r="4.6" fill="#2e7d32"><title>This-round best (hindsight) — #27 (plackett_luce): actual P3</title></circle>
+<text x="10" y="329.0" font-size="12" fill="#1c1c1e">Leclerc</text>
+<line x1="329.0" y1="313.0" x2="329.0" y2="313.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
+<circle cx="329.0" cy="313.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Historical best — #31 slot ensemble: predicted P4</title></circle>
+<circle cx="329.0" cy="313.0" r="4.6" fill="#1f5fa8"><title>Historical best — #31 slot ensemble: actual P4</title></circle>
+<line x1="329.0" y1="325.0" x2="329.0" y2="325.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
+<circle cx="329.0" cy="325.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>Last-round best — #2 (season_to_date): predicted P4</title></circle>
+<circle cx="329.0" cy="325.0" r="4.6" fill="#d97706"><title>Last-round best — #2 (season_to_date): actual P4</title></circle>
+<line x1="329.0" y1="337.0" x2="329.0" y2="337.0" stroke="#2e7d32" stroke-width="1.6" opacity="0.75"/>
+<circle cx="329.0" cy="337.0" r="4.6" fill="#ffffff" stroke="#2e7d32" stroke-width="1.8"><title>This-round best (hindsight) — #27 (plackett_luce): predicted P4</title></circle>
+<circle cx="329.0" cy="337.0" r="4.6" fill="#2e7d32"><title>This-round best (hindsight) — #27 (plackett_luce): actual P4</title></circle>
+<text x="10" y="383.0" font-size="12" fill="#1c1c1e">Lawson</text>
+<line x1="605.0" y1="379.0" x2="375.0" y2="379.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
+<polygon points="484.0,379.0 494.0,374.8 494.0,383.2" fill="#d97706"/>
+<circle cx="605.0" cy="379.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>Last-round best — #2 (season_to_date): predicted P10</title></circle>
+<circle cx="375.0" cy="379.0" r="4.6" fill="#d97706"><title>Last-round best — #2 (season_to_date): actual P5</title></circle>
+<line x1="559.0" y1="391.0" x2="375.0" y2="391.0" stroke="#2e7d32" stroke-width="1.6" opacity="0.75"/>
+<polygon points="461.0,391.0 471.0,386.8 471.0,395.2" fill="#2e7d32"/>
+<circle cx="559.0" cy="391.0" r="4.6" fill="#ffffff" stroke="#2e7d32" stroke-width="1.8"><title>This-round best (hindsight) — #27 (plackett_luce): predicted P9</title></circle>
+<circle cx="375.0" cy="391.0" r="4.6" fill="#2e7d32"><title>This-round best (hindsight) — #27 (plackett_luce): actual P5</title></circle>
+<text x="10" y="437.0" font-size="12" fill="#1c1c1e">Hülkenberg</text>
+<circle cx="421.0" cy="433.0" r="4.6" fill="#1c1c1e"><title>actual P6</title></circle>
+<text x="433.0" y="437.0" font-size="10" fill="#d40000">not predicted</text>
+<text x="10" y="491.0" font-size="12" fill="#1c1c1e">Hadjar</text>
+<line x1="513.0" y1="475.0" x2="467.0" y2="475.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
+<polygon points="484.0,475.0 494.0,470.8 494.0,479.2" fill="#1f5fa8"/>
+<circle cx="513.0" cy="475.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Historical best — #31 slot ensemble: predicted P8</title></circle>
+<circle cx="467.0" cy="475.0" r="4.6" fill="#1f5fa8"><title>Historical best — #31 slot ensemble: actual P7</title></circle>
+<line x1="513.0" y1="487.0" x2="467.0" y2="487.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
+<polygon points="484.0,487.0 494.0,482.8 494.0,491.2" fill="#d97706"/>
+<circle cx="513.0" cy="487.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>Last-round best — #2 (season_to_date): predicted P8</title></circle>
+<circle cx="467.0" cy="487.0" r="4.6" fill="#d97706"><title>Last-round best — #2 (season_to_date): actual P7</title></circle>
+<line x1="467.0" y1="499.0" x2="467.0" y2="499.0" stroke="#2e7d32" stroke-width="1.6" opacity="0.75"/>
+<circle cx="467.0" cy="499.0" r="4.6" fill="#ffffff" stroke="#2e7d32" stroke-width="1.8"><title>This-round best (hindsight) — #27 (plackett_luce): predicted P7</title></circle>
+<circle cx="467.0" cy="499.0" r="4.6" fill="#2e7d32"><title>This-round best (hindsight) — #27 (plackett_luce): actual P7</title></circle>
+<text x="10" y="545.0" font-size="12" fill="#1c1c1e">Bearman</text>
+<circle cx="513.0" cy="541.0" r="4.6" fill="#1c1c1e"><title>actual P8</title></circle>
+<text x="525.0" y="545.0" font-size="10" fill="#d40000">not predicted</text>
+<text x="10" y="599.0" font-size="12" fill="#1c1c1e">Alonso</text>
+<circle cx="559.0" cy="595.0" r="4.6" fill="#1c1c1e"><title>actual P9</title></circle>
+<text x="571.0" y="599.0" font-size="10" fill="#d40000">not predicted</text>
+<text x="10" y="653.0" font-size="12" fill="#1c1c1e">Albon</text>
+<circle cx="605.0" cy="649.0" r="4.6" fill="#1c1c1e"><title>actual P10</title></circle>
+<text x="617.0" y="653.0" font-size="10" fill="#d40000">not predicted</text>
+<text x="10" y="707.0" font-size="12" fill="#1c1c1e">Hamilton</text>
+<line x1="283.0" y1="691.0" x2="658.0" y2="691.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
+<polygon points="476.5,691.0 466.5,686.8 466.5,695.2" fill="#1f5fa8"/>
+<circle cx="283.0" cy="691.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Historical best — #31 slot ensemble: predicted P3</title></circle>
+<circle cx="658.0" cy="691.0" r="4.6" fill="#d40000"><title>Historical best — #31 slot ensemble: actual outside top 10</title></circle>
+<line x1="283.0" y1="703.0" x2="658.0" y2="703.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
+<polygon points="476.5,703.0 466.5,698.8 466.5,707.2" fill="#d97706"/>
+<circle cx="283.0" cy="703.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>Last-round best — #2 (season_to_date): predicted P3</title></circle>
+<circle cx="658.0" cy="703.0" r="4.6" fill="#d40000"><title>Last-round best — #2 (season_to_date): actual outside top 10</title></circle>
+<line x1="237.0" y1="715.0" x2="658.0" y2="715.0" stroke="#2e7d32" stroke-width="1.6" opacity="0.75"/>
+<polygon points="453.5,715.0 443.5,710.8 443.5,719.2" fill="#2e7d32"/>
+<circle cx="237.0" cy="715.0" r="4.6" fill="#ffffff" stroke="#2e7d32" stroke-width="1.8"><title>This-round best (hindsight) — #27 (plackett_luce): predicted P2</title></circle>
+<circle cx="658.0" cy="715.0" r="4.6" fill="#d40000"><title>This-round best (hindsight) — #27 (plackett_luce): actual outside top 10</title></circle>
+<text x="10" y="761.0" font-size="12" fill="#1c1c1e">Verstappen</text>
+<line x1="375.0" y1="745.0" x2="658.0" y2="745.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
+<polygon points="522.5,745.0 512.5,740.8 512.5,749.2" fill="#1f5fa8"/>
+<circle cx="375.0" cy="745.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Historical best — #31 slot ensemble: predicted P5</title></circle>
+<circle cx="658.0" cy="745.0" r="4.6" fill="#d40000"><title>Historical best — #31 slot ensemble: actual outside top 10</title></circle>
+<line x1="375.0" y1="757.0" x2="658.0" y2="757.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
+<polygon points="522.5,757.0 512.5,752.8 512.5,761.2" fill="#d97706"/>
+<circle cx="375.0" cy="757.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>Last-round best — #2 (season_to_date): predicted P5</title></circle>
+<circle cx="658.0" cy="757.0" r="4.6" fill="#d40000"><title>Last-round best — #2 (season_to_date): actual outside top 10</title></circle>
+<line x1="421.0" y1="769.0" x2="658.0" y2="769.0" stroke="#2e7d32" stroke-width="1.6" opacity="0.75"/>
+<polygon points="545.5,769.0 535.5,764.8 535.5,773.2" fill="#2e7d32"/>
+<circle cx="421.0" cy="769.0" r="4.6" fill="#ffffff" stroke="#2e7d32" stroke-width="1.8"><title>This-round best (hindsight) — #27 (plackett_luce): predicted P6</title></circle>
+<circle cx="658.0" cy="769.0" r="4.6" fill="#d40000"><title>This-round best (hindsight) — #27 (plackett_luce): actual outside top 10</title></circle>
+<text x="10" y="815.0" font-size="12" fill="#1c1c1e">Piastri</text>
+<line x1="467.0" y1="799.0" x2="658.0" y2="799.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
+<polygon points="568.5,799.0 558.5,794.8 558.5,803.2" fill="#1f5fa8"/>
+<circle cx="467.0" cy="799.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Historical best — #31 slot ensemble: predicted P7</title></circle>
+<circle cx="658.0" cy="799.0" r="4.6" fill="#d40000"><title>Historical best — #31 slot ensemble: actual outside top 10</title></circle>
+<line x1="467.0" y1="811.0" x2="658.0" y2="811.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
+<polygon points="568.5,811.0 558.5,806.8 558.5,815.2" fill="#d97706"/>
+<circle cx="467.0" cy="811.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>Last-round best — #2 (season_to_date): predicted P7</title></circle>
+<circle cx="658.0" cy="811.0" r="4.6" fill="#d40000"><title>Last-round best — #2 (season_to_date): actual outside top 10</title></circle>
+<line x1="513.0" y1="823.0" x2="658.0" y2="823.0" stroke="#2e7d32" stroke-width="1.6" opacity="0.75"/>
+<polygon points="591.5,823.0 581.5,818.8 581.5,827.2" fill="#2e7d32"/>
+<circle cx="513.0" cy="823.0" r="4.6" fill="#ffffff" stroke="#2e7d32" stroke-width="1.8"><title>This-round best (hindsight) — #27 (plackett_luce): predicted P8</title></circle>
+<circle cx="658.0" cy="823.0" r="4.6" fill="#d40000"><title>This-round best (hindsight) — #27 (plackett_luce): actual outside top 10</title></circle>
+<text x="10" y="869.0" font-size="12" fill="#1c1c1e">Lindblad</text>
+<line x1="559.0" y1="853.0" x2="658.0" y2="853.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
+<polygon points="614.5,853.0 604.5,848.8 604.5,857.2" fill="#1f5fa8"/>
+<circle cx="559.0" cy="853.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Historical best — #31 slot ensemble: predicted P9</title></circle>
+<circle cx="658.0" cy="853.0" r="4.6" fill="#d40000"><title>Historical best — #31 slot ensemble: actual outside top 10</title></circle>
+<line x1="605.0" y1="877.0" x2="658.0" y2="877.0" stroke="#2e7d32" stroke-width="1.6" opacity="0.75"/>
+<polygon points="637.5,877.0 627.5,872.8 627.5,881.2" fill="#2e7d32"/>
+<circle cx="605.0" cy="877.0" r="4.6" fill="#ffffff" stroke="#2e7d32" stroke-width="1.8"><title>This-round best (hindsight) — #27 (plackett_luce): predicted P10</title></circle>
+<circle cx="658.0" cy="877.0" r="4.6" fill="#d40000"><title>This-round best (hindsight) — #27 (plackett_luce): actual outside top 10</title></circle>
+<text x="10" y="923.0" font-size="12" fill="#1c1c1e">Gasly</text>
+<line x1="605.0" y1="907.0" x2="658.0" y2="907.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
+<polygon points="637.5,907.0 627.5,902.8 627.5,911.2" fill="#1f5fa8"/>
+<circle cx="605.0" cy="907.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Historical best — #31 slot ensemble: predicted P10</title></circle>
+<circle cx="658.0" cy="907.0" r="4.6" fill="#d40000"><title>Historical best — #31 slot ensemble: actual outside top 10</title></circle>
+<line x1="559.0" y1="919.0" x2="658.0" y2="919.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
+<polygon points="614.5,919.0 604.5,914.8 604.5,923.2" fill="#d97706"/>
+<circle cx="559.0" cy="919.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>Last-round best — #2 (season_to_date): predicted P9</title></circle>
+<circle cx="658.0" cy="919.0" r="4.6" fill="#d40000"><title>Last-round best — #2 (season_to_date): actual outside top 10</title></circle>
+<text x="10" y="976" font-size="10" fill="#5f6368">C0 — #31 slot ensemble: 0.2327 · #2 (season_to_date): 0.2735 · #27 (plackett_luce): 0.3423.</text>
+<text x="10" y="990" font-size="10" fill="#5f6368">Caliber: final (official labels).</text>
+<text x="10" y="1004" font-size="10" fill="#5f6368">Hollow = predicted, solid = actual, arrow points from prediction to result (left = better than predicted), red = outside the top ten.</text>
 </svg>
