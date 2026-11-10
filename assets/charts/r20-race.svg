@@ -1,126 +1,82 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="734" height="612" viewBox="0 0 734 612" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif">
-<rect width="734" height="612" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="734" height="510" viewBox="0 0 734 510" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif">
+<rect width="734" height="510" fill="#ffffff"/>
 <text x="10" y="26" font-size="15" font-weight="700" fill="#1c1c1e">R20 race — predicted vs actual top-10</text>
 <circle cx="16" cy="46" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"/>
-<text x="26" y="50" font-size="11" fill="#5f6368">Historical best — optimized (606117e)</text>
-<circle cx="16" cy="64" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"/>
-<text x="26" y="68" font-size="11" fill="#5f6368">grid-order baseline</text>
-<circle cx="16" cy="82" r="4.6" fill="#1c1c1e"/>
-<text x="26" y="86" font-size="11" fill="#5f6368">actual</text>
-<circle cx="86" cy="82" r="4.6" fill="#d40000"/>
-<text x="96" y="86" font-size="11" fill="#5f6368">outside top 10</text>
-<line x1="191.0" y1="104.0" x2="191.0" y2="572.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
+<text x="26" y="50" font-size="11" fill="#5f6368">Last-round best and This-round best (hindsight) — optimized (606117e)</text>
+<circle cx="16" cy="64" r="4.6" fill="#1c1c1e"/>
+<text x="26" y="68" font-size="11" fill="#5f6368">actual</text>
+<circle cx="86" cy="64" r="4.6" fill="#d40000"/>
+<text x="96" y="68" font-size="11" fill="#5f6368">outside top 10</text>
+<line x1="191.0" y1="104.0" x2="191.0" y2="470.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
 <text x="191.0" y="98.0" font-size="10" fill="#5f6368" text-anchor="middle">P1</text>
-<line x1="237.0" y1="104.0" x2="237.0" y2="572.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
+<line x1="237.0" y1="104.0" x2="237.0" y2="470.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
 <text x="237.0" y="98.0" font-size="10" fill="#5f6368" text-anchor="middle">P2</text>
-<line x1="283.0" y1="104.0" x2="283.0" y2="572.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
+<line x1="283.0" y1="104.0" x2="283.0" y2="470.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
 <text x="283.0" y="98.0" font-size="10" fill="#5f6368" text-anchor="middle">P3</text>
-<line x1="329.0" y1="104.0" x2="329.0" y2="572.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
+<line x1="329.0" y1="104.0" x2="329.0" y2="470.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
 <text x="329.0" y="98.0" font-size="10" fill="#5f6368" text-anchor="middle">P4</text>
-<line x1="375.0" y1="104.0" x2="375.0" y2="572.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
+<line x1="375.0" y1="104.0" x2="375.0" y2="470.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
 <text x="375.0" y="98.0" font-size="10" fill="#5f6368" text-anchor="middle">P5</text>
-<line x1="421.0" y1="104.0" x2="421.0" y2="572.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
+<line x1="421.0" y1="104.0" x2="421.0" y2="470.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
 <text x="421.0" y="98.0" font-size="10" fill="#5f6368" text-anchor="middle">P6</text>
-<line x1="467.0" y1="104.0" x2="467.0" y2="572.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
+<line x1="467.0" y1="104.0" x2="467.0" y2="470.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
 <text x="467.0" y="98.0" font-size="10" fill="#5f6368" text-anchor="middle">P7</text>
-<line x1="513.0" y1="104.0" x2="513.0" y2="572.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
+<line x1="513.0" y1="104.0" x2="513.0" y2="470.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
 <text x="513.0" y="98.0" font-size="10" fill="#5f6368" text-anchor="middle">P8</text>
-<line x1="559.0" y1="104.0" x2="559.0" y2="572.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
+<line x1="559.0" y1="104.0" x2="559.0" y2="470.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
 <text x="559.0" y="98.0" font-size="10" fill="#5f6368" text-anchor="middle">P9</text>
-<line x1="605.0" y1="104.0" x2="605.0" y2="572.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
+<line x1="605.0" y1="104.0" x2="605.0" y2="470.0" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="2,4"/>
 <text x="605.0" y="98.0" font-size="10" fill="#5f6368" text-anchor="middle">P10</text>
 <text x="658.0" y="98.0" font-size="10" fill="#d40000" text-anchor="middle">out</text>
 <text x="10" y="139.0" font-size="12" fill="#1c1c1e">Norris</text>
-<line x1="329.0" y1="129.0" x2="191.0" y2="129.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
-<polygon points="254.0,129.0 264.0,124.8 264.0,133.2" fill="#1f5fa8"/>
-<circle cx="329.0" cy="129.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Historical best — optimized (606117e): predicted P4</title></circle>
-<circle cx="191.0" cy="129.0" r="4.6" fill="#1f5fa8"><title>Historical best — optimized (606117e): actual P1</title></circle>
-<line x1="191.0" y1="141.0" x2="191.0" y2="141.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
-<circle cx="191.0" cy="141.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>grid-order baseline: predicted P1</title></circle>
-<circle cx="191.0" cy="141.0" r="4.6" fill="#d97706"><title>grid-order baseline: actual P1</title></circle>
+<line x1="329.0" y1="135.0" x2="191.0" y2="135.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
+<polygon points="254.0,135.0 264.0,130.8 264.0,139.2" fill="#1f5fa8"/>
+<circle cx="329.0" cy="135.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Last-round best and This-round best (hindsight) — optimized (606117e): predicted P4</title></circle>
+<circle cx="191.0" cy="135.0" r="4.6" fill="#1f5fa8"><title>Last-round best and This-round best (hindsight) — optimized (606117e): actual P1</title></circle>
 <text x="10" y="173.0" font-size="12" fill="#1c1c1e">Verstappen</text>
-<line x1="237.0" y1="163.0" x2="237.0" y2="163.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
-<circle cx="237.0" cy="163.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Historical best — optimized (606117e): predicted P2</title></circle>
-<circle cx="237.0" cy="163.0" r="4.6" fill="#1f5fa8"><title>Historical best — optimized (606117e): actual P2</title></circle>
+<line x1="237.0" y1="169.0" x2="237.0" y2="169.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
+<circle cx="237.0" cy="169.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Last-round best and This-round best (hindsight) — optimized (606117e): predicted P2</title></circle>
+<circle cx="237.0" cy="169.0" r="4.6" fill="#1f5fa8"><title>Last-round best and This-round best (hindsight) — optimized (606117e): actual P2</title></circle>
 <text x="10" y="207.0" font-size="12" fill="#1c1c1e">Hadjar</text>
-<line x1="467.0" y1="197.0" x2="283.0" y2="197.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
-<polygon points="369.0,197.0 379.0,192.8 379.0,201.2" fill="#1f5fa8"/>
-<circle cx="467.0" cy="197.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Historical best — optimized (606117e): predicted P7</title></circle>
-<circle cx="283.0" cy="197.0" r="4.6" fill="#1f5fa8"><title>Historical best — optimized (606117e): actual P3</title></circle>
-<line x1="375.0" y1="209.0" x2="283.0" y2="209.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
-<polygon points="323.0,209.0 333.0,204.8 333.0,213.2" fill="#d97706"/>
-<circle cx="375.0" cy="209.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>grid-order baseline: predicted P5</title></circle>
-<circle cx="283.0" cy="209.0" r="4.6" fill="#d97706"><title>grid-order baseline: actual P3</title></circle>
+<line x1="467.0" y1="203.0" x2="283.0" y2="203.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
+<polygon points="369.0,203.0 379.0,198.8 379.0,207.2" fill="#1f5fa8"/>
+<circle cx="467.0" cy="203.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Last-round best and This-round best (hindsight) — optimized (606117e): predicted P7</title></circle>
+<circle cx="283.0" cy="203.0" r="4.6" fill="#1f5fa8"><title>Last-round best and This-round best (hindsight) — optimized (606117e): actual P3</title></circle>
 <text x="10" y="241.0" font-size="12" fill="#1c1c1e">Russell</text>
-<line x1="513.0" y1="231.0" x2="329.0" y2="231.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
-<polygon points="415.0,231.0 425.0,226.8 425.0,235.2" fill="#1f5fa8"/>
-<circle cx="513.0" cy="231.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Historical best — optimized (606117e): predicted P8</title></circle>
-<circle cx="329.0" cy="231.0" r="4.6" fill="#1f5fa8"><title>Historical best — optimized (606117e): actual P4</title></circle>
-<line x1="467.0" y1="243.0" x2="329.0" y2="243.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
-<polygon points="392.0,243.0 402.0,238.8 402.0,247.2" fill="#d97706"/>
-<circle cx="467.0" cy="243.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>grid-order baseline: predicted P7</title></circle>
-<circle cx="329.0" cy="243.0" r="4.6" fill="#d97706"><title>grid-order baseline: actual P4</title></circle>
+<line x1="513.0" y1="237.0" x2="329.0" y2="237.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
+<polygon points="415.0,237.0 425.0,232.8 425.0,241.2" fill="#1f5fa8"/>
+<circle cx="513.0" cy="237.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Last-round best and This-round best (hindsight) — optimized (606117e): predicted P8</title></circle>
+<circle cx="329.0" cy="237.0" r="4.6" fill="#1f5fa8"><title>Last-round best and This-round best (hindsight) — optimized (606117e): actual P4</title></circle>
 <text x="10" y="275.0" font-size="12" fill="#1c1c1e">Antonelli</text>
-<line x1="283.0" y1="265.0" x2="375.0" y2="265.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
-<polygon points="335.0,265.0 325.0,260.8 325.0,269.2" fill="#1f5fa8"/>
-<circle cx="283.0" cy="265.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Historical best — optimized (606117e): predicted P3</title></circle>
-<circle cx="375.0" cy="265.0" r="4.6" fill="#1f5fa8"><title>Historical best — optimized (606117e): actual P5</title></circle>
-<line x1="237.0" y1="277.0" x2="375.0" y2="277.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
-<polygon points="312.0,277.0 302.0,272.8 302.0,281.2" fill="#d97706"/>
-<circle cx="237.0" cy="277.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>grid-order baseline: predicted P2</title></circle>
-<circle cx="375.0" cy="277.0" r="4.6" fill="#d97706"><title>grid-order baseline: actual P5</title></circle>
+<line x1="283.0" y1="271.0" x2="375.0" y2="271.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
+<polygon points="335.0,271.0 325.0,266.8 325.0,275.2" fill="#1f5fa8"/>
+<circle cx="283.0" cy="271.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Last-round best and This-round best (hindsight) — optimized (606117e): predicted P3</title></circle>
+<circle cx="375.0" cy="271.0" r="4.6" fill="#1f5fa8"><title>Last-round best and This-round best (hindsight) — optimized (606117e): actual P5</title></circle>
 <text x="10" y="309.0" font-size="12" fill="#1c1c1e">Piastri</text>
-<line x1="605.0" y1="299.0" x2="421.0" y2="299.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
-<polygon points="507.0,299.0 517.0,294.8 517.0,303.2" fill="#1f5fa8"/>
-<circle cx="605.0" cy="299.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Historical best — optimized (606117e): predicted P10</title></circle>
-<circle cx="421.0" cy="299.0" r="4.6" fill="#1f5fa8"><title>Historical best — optimized (606117e): actual P6</title></circle>
-<line x1="605.0" y1="311.0" x2="421.0" y2="311.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
-<polygon points="507.0,311.0 517.0,306.8 517.0,315.2" fill="#d97706"/>
-<circle cx="605.0" cy="311.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>grid-order baseline: predicted P10</title></circle>
-<circle cx="421.0" cy="311.0" r="4.6" fill="#d97706"><title>grid-order baseline: actual P6</title></circle>
+<line x1="605.0" y1="305.0" x2="421.0" y2="305.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
+<polygon points="507.0,305.0 517.0,300.8 517.0,309.2" fill="#1f5fa8"/>
+<circle cx="605.0" cy="305.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Last-round best and This-round best (hindsight) — optimized (606117e): predicted P10</title></circle>
+<circle cx="421.0" cy="305.0" r="4.6" fill="#1f5fa8"><title>Last-round best and This-round best (hindsight) — optimized (606117e): actual P6</title></circle>
 <text x="10" y="343.0" font-size="12" fill="#1c1c1e">Lawson</text>
-<line x1="421.0" y1="333.0" x2="467.0" y2="333.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
-<polygon points="450.0,333.0 440.0,328.8 440.0,337.2" fill="#1f5fa8"/>
-<circle cx="421.0" cy="333.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Historical best — optimized (606117e): predicted P6</title></circle>
-<circle cx="467.0" cy="333.0" r="4.6" fill="#1f5fa8"><title>Historical best — optimized (606117e): actual P7</title></circle>
-<line x1="283.0" y1="345.0" x2="467.0" y2="345.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
-<polygon points="381.0,345.0 371.0,340.8 371.0,349.2" fill="#d97706"/>
-<circle cx="283.0" cy="345.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>grid-order baseline: predicted P3</title></circle>
-<circle cx="467.0" cy="345.0" r="4.6" fill="#d97706"><title>grid-order baseline: actual P7</title></circle>
+<line x1="421.0" y1="339.0" x2="467.0" y2="339.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
+<polygon points="450.0,339.0 440.0,334.8 440.0,343.2" fill="#1f5fa8"/>
+<circle cx="421.0" cy="339.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Last-round best and This-round best (hindsight) — optimized (606117e): predicted P6</title></circle>
+<circle cx="467.0" cy="339.0" r="4.6" fill="#1f5fa8"><title>Last-round best and This-round best (hindsight) — optimized (606117e): actual P7</title></circle>
 <text x="10" y="377.0" font-size="12" fill="#1c1c1e">Leclerc</text>
-<line x1="375.0" y1="367.0" x2="513.0" y2="367.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
-<polygon points="450.0,367.0 440.0,362.8 440.0,371.2" fill="#1f5fa8"/>
-<circle cx="375.0" cy="367.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Historical best — optimized (606117e): predicted P5</title></circle>
-<circle cx="513.0" cy="367.0" r="4.6" fill="#1f5fa8"><title>Historical best — optimized (606117e): actual P8</title></circle>
+<line x1="375.0" y1="373.0" x2="513.0" y2="373.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
+<polygon points="450.0,373.0 440.0,368.8 440.0,377.2" fill="#1f5fa8"/>
+<circle cx="375.0" cy="373.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Last-round best and This-round best (hindsight) — optimized (606117e): predicted P5</title></circle>
+<circle cx="513.0" cy="373.0" r="4.6" fill="#1f5fa8"><title>Last-round best and This-round best (hindsight) — optimized (606117e): actual P8</title></circle>
 <text x="10" y="411.0" font-size="12" fill="#1c1c1e">Hamilton</text>
-<line x1="191.0" y1="401.0" x2="559.0" y2="401.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
-<polygon points="381.0,401.0 371.0,396.8 371.0,405.2" fill="#1f5fa8"/>
-<circle cx="191.0" cy="401.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Historical best — optimized (606117e): predicted P1</title></circle>
-<circle cx="559.0" cy="401.0" r="4.6" fill="#1f5fa8"><title>Historical best — optimized (606117e): actual P9</title></circle>
+<line x1="191.0" y1="407.0" x2="559.0" y2="407.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
+<polygon points="381.0,407.0 371.0,402.8 371.0,411.2" fill="#1f5fa8"/>
+<circle cx="191.0" cy="407.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Last-round best and This-round best (hindsight) — optimized (606117e): predicted P1</title></circle>
+<circle cx="559.0" cy="407.0" r="4.6" fill="#1f5fa8"><title>Last-round best and This-round best (hindsight) — optimized (606117e): actual P9</title></circle>
 <text x="10" y="445.0" font-size="12" fill="#1c1c1e">Hülkenberg</text>
-<line x1="559.0" y1="435.0" x2="605.0" y2="435.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
-<polygon points="588.0,435.0 578.0,430.8 578.0,439.2" fill="#1f5fa8"/>
-<circle cx="559.0" cy="435.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Historical best — optimized (606117e): predicted P9</title></circle>
-<circle cx="605.0" cy="435.0" r="4.6" fill="#1f5fa8"><title>Historical best — optimized (606117e): actual P10</title></circle>
-<line x1="329.0" y1="447.0" x2="605.0" y2="447.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
-<polygon points="473.0,447.0 463.0,442.8 463.0,451.2" fill="#d97706"/>
-<circle cx="329.0" cy="447.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>grid-order baseline: predicted P4</title></circle>
-<circle cx="605.0" cy="447.0" r="4.6" fill="#d97706"><title>grid-order baseline: actual P10</title></circle>
-<text x="10" y="479.0" font-size="12" fill="#1c1c1e">Bearman</text>
-<line x1="421.0" y1="481.0" x2="658.0" y2="481.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
-<polygon points="545.5,481.0 535.5,476.8 535.5,485.2" fill="#d97706"/>
-<circle cx="421.0" cy="481.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>grid-order baseline: predicted P6</title></circle>
-<circle cx="658.0" cy="481.0" r="4.6" fill="#d40000"><title>grid-order baseline: actual outside top 10</title></circle>
-<text x="10" y="513.0" font-size="12" fill="#1c1c1e">Alonso</text>
-<line x1="513.0" y1="515.0" x2="658.0" y2="515.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
-<polygon points="591.5,515.0 581.5,510.8 581.5,519.2" fill="#d97706"/>
-<circle cx="513.0" cy="515.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>grid-order baseline: predicted P8</title></circle>
-<circle cx="658.0" cy="515.0" r="4.6" fill="#d40000"><title>grid-order baseline: actual outside top 10</title></circle>
-<text x="10" y="547.0" font-size="12" fill="#1c1c1e">Albon</text>
-<line x1="559.0" y1="549.0" x2="658.0" y2="549.0" stroke="#d97706" stroke-width="1.6" opacity="0.75"/>
-<polygon points="614.5,549.0 604.5,544.8 604.5,553.2" fill="#d97706"/>
-<circle cx="559.0" cy="549.0" r="4.6" fill="#ffffff" stroke="#d97706" stroke-width="1.8"><title>grid-order baseline: predicted P9</title></circle>
-<circle cx="658.0" cy="549.0" r="4.6" fill="#d40000"><title>grid-order baseline: actual outside top 10</title></circle>
-<text x="10" y="590" font-size="10" fill="#5f6368">C0 — Historical best — optimized (606117e): 0.5061 · grid-order baseline: 0.4138. Caliber: final (official labels).</text>
-<text x="10" y="604" font-size="10" fill="#5f6368">Hollow = predicted, solid = actual, arrow points from prediction to result (left = better than predicted), red = outside the top ten.</text>
+<line x1="559.0" y1="441.0" x2="605.0" y2="441.0" stroke="#1f5fa8" stroke-width="1.6" opacity="0.75"/>
+<polygon points="588.0,441.0 578.0,436.8 578.0,445.2" fill="#1f5fa8"/>
+<circle cx="559.0" cy="441.0" r="4.6" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.8"><title>Last-round best and This-round best (hindsight) — optimized (606117e): predicted P9</title></circle>
+<circle cx="605.0" cy="441.0" r="4.6" fill="#1f5fa8"><title>Last-round best and This-round best (hindsight) — optimized (606117e): actual P10</title></circle>
+<text x="10" y="488" font-size="10" fill="#5f6368">C0 — Last-round best and This-round best (hindsight) — optimized (606117e): 0.5061. Caliber: final (official labels).</text>
+<text x="10" y="502" font-size="10" fill="#5f6368">Hollow = predicted, solid = actual, arrow points from prediction to result (left = better than predicted), red = outside the top ten.</text>
 </svg>
