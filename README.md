@@ -43,13 +43,12 @@ Evaluation: final (official labels).
 
 | Model | Predicted top-10 | C0 |
 | --- | --- | ---: |
-| Historical best — optimized (606117e) | Hamilton · Verstappen · Antonelli · Norris · Leclerc · Lawson · Hadjar · Russell · Hulkenberg · Piastri | 0.5061 |
-| Theoretical best — race_theoretical_best | Antonelli · Piastri · Verstappen · Norris · Russell · Hamilton · Leclerc · Bortoleto · Hadjar · Lindblad | 0.3871 |
+| Last-round best — optimized (606117e) | Hamilton · Verstappen · Antonelli · Norris · Leclerc · Lawson · Hadjar · Russell · Hulkenberg · Piastri | 0.5061 |
+| This-round best (hindsight) — optimized (606117e) | Hamilton · Verstappen · Antonelli · Norris · Leclerc · Lawson · Hadjar · Russell · Hulkenberg · Piastri | 0.5061 |
 | Actual | Norris · Verstappen · Hadjar · Russell · Antonelli · Piastri · Lawson · Leclerc · Hamilton · Hulkenberg | — |
 
 Forward archived: 2026-11-08T10:12:59+00:00.
 Race roster: optimized (606117e), grid-order baseline, and race_theoretical_best (reference baseline; not a champion).
-Last-round best (R19 final): optimized (606117e), listed above.
 
 ![R20 race, predicted vs actual](assets/charts/r20-race.svg)
 
