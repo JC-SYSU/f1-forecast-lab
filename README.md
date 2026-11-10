@@ -48,7 +48,7 @@ Evaluation: final (official labels).
 | Actual | Norris · Verstappen · Hadjar · Russell · Antonelli · Piastri · Lawson · Leclerc · Hamilton · Hulkenberg | — |
 
 Forward archived: 2026-11-08T10:12:59+00:00.
-Race roster: optimized (606117e), grid-order baseline, and race_theoretical_best (reference baseline; not a champion).
+Rows: the previous round's best model and this round's hindsight best. Every race model's C0 (optimized, grid-order, race_theoretical_best) stays archived in the data mirror.
 
 ![R20 race, predicted vs actual](assets/charts/r20-race.svg)
 
